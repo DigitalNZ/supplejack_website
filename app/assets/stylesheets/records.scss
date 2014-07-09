@@ -1,0 +1,142 @@
+/*
+ * The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+ * and is licensed under the GNU General Public License, version 3. Some components are 
+ * third party components that are licensed under the MIT license or other terms. 
+ * See https://github.com/DigitalNZ/supplejack_website for details. 
+ * 
+ * Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+ * http://digitalnz.org/supplejack
+ */
+
+// Place all the styles related to the Records controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**********************
+COLOR VARIABLES
+**********************/
+
+$dark-grey: #4a4a47;
+$red: #ff384c;
+$middle-grey: #777;
+$text-red: #ff384c;
+$text-grey: #4b4b51;
+$light-grey: #f7f6f6;
+
+/**********************
+RECORDS STYLES
+**********************/
+
+
+
+.gallery-container {
+
+	a:hover {
+		border-bottom: none;
+	}
+
+	.gallery-record {
+		padding: 8px 8px 20px 8px !important;
+		color: $light-grey;
+		width: 194px;
+		margin: 0.5em;
+		margin-bottom: 51px;
+		background-color: $light-grey;
+		border: 1px solid #ddd;
+		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.3);
+		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.3);
+		.image a:hover, .image a {
+			border-bottom: none;
+		}
+		img {
+			margin: -51px 0 18px 0;	
+			-webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
+			-moz-box-shadow:    0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
+			box-shadow:         0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
+		}
+		a {
+			margin-top: 18px;
+			font-size: 14px;
+			// display: block;
+			// float: left;
+			border-bottom: 1px solid none;
+			color: $text-red;
+			font-weight: 500;
+			letter-spacing: 1px;
+			border-bottom: 1px solid $light-grey;
+			h3 {
+				margin-top: 18px;
+				font-size: 14px;
+			}
+		}
+		p {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+		a:hover {
+			border-bottom: 1px solid $text-red;
+		}
+	}
+}
+
+h1 {
+	font-size: 2em;
+	color: $dark-grey;
+}
+
+.record {
+	padding-top: 3em;
+	.about, figure {
+		width: 100%;
+		display: block;
+	}
+
+	figure > a {
+		border-bottom: none;
+		&> img {
+			padding: 0.5em;
+			
+			border: 1px solid $light-grey;
+			display: block;
+		}
+	}
+}
+
+.pullout {
+	padding: 1em;
+	border: 1px solid #efefef;
+	border-left: 0.3em solid red;
+	margin-top: 1em;
+}
+.about {
+	.field-label {
+		text-transform: none;
+		font-weight: bold;
+		display: block;
+	}
+	margin: 3em 0;
+}
+
+/*MOBILE STYLING FROM 480px WIDTH*/
+
+@media only screen and (min-width: 481px) {
+
+}
+
+/*DESKTOP STYLING FROM 1000px WIDE*/
+
+@media only screen and (min-width: 1000px) {
+	.record {
+		.about, figure {
+			width: 50%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.about {
+			width: 49%;
+			padding-left: 2em;
+			margin: 0;
+		}
+	}
+}

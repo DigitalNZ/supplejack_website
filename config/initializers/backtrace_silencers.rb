@@ -1,0 +1,15 @@
+# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+# and is licensed under the GNU General Public License, version 3. Some components are 
+# third party components that are licensed under the MIT license or other terms. 
+# See https://github.com/DigitalNZ/supplejack_website for details. 
+# 
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# http://digitalnz.org/supplejack
+
+# Be sure to restart your server when you modify this file.
+
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+# Rails.backtrace_cleaner.add_silencer { |line| line =~ /my_noisy_library/ }
+
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+# Rails.backtrace_cleaner.remove_silencers!

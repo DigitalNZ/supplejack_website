@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/records.json?api_key=WW4PgyQxsk4_1SUag7wz&debug=true&facets=type&facets_per_page=10&fields=all,type&page=1&per_page=0&record_type=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"09204c85b955c36c3cc9f7b27dc116c3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bfb1bc474693e093b18982e9b35d549f
+      X-Runtime:
+      - '0.512885'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.2 codename Doc Brown
+    body:
+      encoding: US-ASCII
+      string: ! '{"search":{"result_count":53,"results":[],"per_page":0,"page":1,"request_url":"http://localhost:3000/records.json?&api_key=WW4PgyQxsk4_1SUag7wz&debug=true&facets=type&facets_per_page=10&fields=all%2Ctype&page=1&per_page=0&record_type=0","solr_request_params":{"fq":["type:SupplejackApi\\:\\:Record",null],"start":0,"rows":0,"facet":"true","f.type_sm.facet.limit":10,"f.type_sm.facet.offset":0,"f.type_sm.facet.mincount":1,"facet.field":["type_sm"],"q":"*:*"},"facets":{"type":{"silver":17,"gold":13,"lavender":10,"salmon":10}}}}'
+    http_version: 
+  recorded_at: Thu, 03 Jul 2014 21:35:23 GMT
+recorded_with: VCR 2.9.0
