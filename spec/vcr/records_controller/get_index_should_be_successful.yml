@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.supplejack.boost.co.nz/records.json?api_key=6h7_WPx5wQxs1hCyGWNh&debug=true&facets=type&facets_per_page=10&fields=all,type&page=1&per_page=0&record_type=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 08 Jul 2014 04:42:47 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"340d937ac0ec257faf7f4afb2444771c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - aad4acfbb9aa13abcfa300337225273f
+      X-Runtime:
+      - '0.015075'
+      X-Rack-Cache:
+      - miss
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"search":{"result_count":5,"results":[],"per_page":0,"page":1,"request_url":"http://api.supplejack.boost.co.nz/records.json?&api_key=6h7_WPx5wQxs1hCyGWNh&debug=true&facets=type&facets_per_page=10&fields=all%2Ctype&page=1&per_page=0&record_type=0","solr_request_params":{"fq":["type:SupplejackApi\\:\\:Record",null],"start":0,"rows":0,"facet":"true","f.type_sm.facet.limit":10,"f.type_sm.facet.offset":0,"f.type_sm.facet.mincount":1,"facet.field":["type_sm"],"q":"*:*"},"facets":{"type":{"Article":5}}}}'
+    http_version: 
+  recorded_at: Tue, 08 Jul 2014 04:42:48 GMT
+recorded_with: VCR 2.9.0

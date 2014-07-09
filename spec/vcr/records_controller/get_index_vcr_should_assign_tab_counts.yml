@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/records.json?api_key=WW4PgyQxsk4_1SUag7wz&debug=true&facets=source_provider_name,source_contributor_name,source_website_name,type&facets_per_page=10&fields=all,type&page=1&per_page=20&record_type=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"5c257683698550c599f596b7634f42a4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5284388e73e42d92e52715a4e1caa782
+      X-Runtime:
+      - '0.116220'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.2 codename Doc Brown
+    body:
+      encoding: US-ASCII
+      string: ! '{"search":{"result_count":53,"results":[{"title":"Voluptas modi adipisci
+        aut at distinctio ut molestiae est.","description":"Autem qui sit reprehenderit
+        culpa quidem illum omnis.","record_id":1,"creator":["Garrick Ryan"],"date":"2014-07-03T03:37:38Z","display_date":"2014-07-03
+        15:37:38 +1200","subject":"Inc","identifier":"id-1404358658","rights":"Minima
+        mollitia cumque ad eius sed dolor sunt nihil.","type":["gold"],"coverage":"Hirambury","language":"Nicaragua","source_provider_name":"Blick,
+        Bosco and Cormier","source_contributor_name":["Emmerich, MacGyver and Luettgen"],"source_website_name":"reichert","source_url":"http://localhost:3000/records/1/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Ullam
+        animi hic natus rerum nulla suscipit atque.","description":"Adipisci non sint
+        modi itaque eos voluptas.","record_id":6,"creator":["Abdiel Sipes"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"LLC","identifier":"id-1404358659","rights":"Officia
+        consequuntur voluptatem et.","type":["silver"],"coverage":"New Yesseniaborough","language":"Congo","source_provider_name":"Schuppe-Hamill","source_contributor_name":["Emmerich,
+        MacGyver and Luettgen"],"source_website_name":"kovacek","source_url":"http://localhost:3000/records/6/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Voluptates
+        exercitationem distinctio quibusdam sapiente quasi nisi reiciendis.","description":"Voluptatum
+        non et sit error soluta.","record_id":9,"creator":["Kelvin Buckridge"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"Inc","identifier":"id-1404358659","rights":"Sint
+        et ut vero tenetur sed esse eligendi.","type":["gold"],"coverage":"North Sigmundborough","language":"Isle
+        of Man","source_provider_name":"Hagenes, Mohr and Dach","source_contributor_name":["Brakus
+        and Sons"],"source_website_name":"bartell","source_url":"http://localhost:3000/records/9/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Itaque
+        rerum labore voluptatem nemo.","description":"Culpa quidem animi ducimus vero
+        maiores ipsum aut.","record_id":5,"creator":["Juanita Rippin"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"and Sons","identifier":"id-1404358659","rights":"Voluptates
+        veritatis a voluptas voluptatum voluptas quia maxime unde.","type":["silver"],"coverage":"Gracielachester","language":"Montserrat","source_provider_name":"Purdy-Metz","source_contributor_name":["Emmerich,
+        MacGyver and Luettgen"],"source_website_name":"blandamcdermott","source_url":"http://localhost:3000/records/5/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Nobis
+        sint eos vitae quia nihil enim maiores.","description":"Ipsum dolor iure quod
+        eum.","record_id":8,"creator":["Gino Bernhard"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"LLC","identifier":"id-1404358659","rights":"Minima
+        veniam perspiciatis et vitae.","type":["salmon"],"coverage":"Audreanneton","language":"Cuba","source_provider_name":"McGlynn
+        LLC","source_contributor_name":["Emmerich, MacGyver and Luettgen"],"source_website_name":"hermann","source_url":"http://localhost:3000/records/8/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Veritatis
+        sint impedit voluptatum rerum.","description":"Numquam non consequatur doloremque
+        quos qui.","record_id":2,"creator":["Caden Wilderman"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"and Sons","identifier":"id-1404358659","rights":"Autem
+        assumenda vero autem laudantium.","type":["salmon"],"coverage":"West Dasia","language":"Ecuador","source_provider_name":"Torp,
+        Ritchie and Lubowitz","source_contributor_name":["Schoen Group"],"source_website_name":"bartellgusikowski","source_url":"http://localhost:3000/records/2/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Esse
+        exercitationem est architecto.","description":"Consectetur ab corrupti sunt
+        cum similique.","record_id":4,"creator":["Miss Roma Buckridge"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"Inc","identifier":"id-1404358659","rights":"Quasi
+        qui rerum totam sit dolor.","type":["gold"],"coverage":"North Gildahaven","language":"Namibia","source_provider_name":"Nicolas
+        Inc","source_contributor_name":["Schoen Group"],"source_website_name":"lindgrenkuhlman","source_url":"http://localhost:3000/records/4/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Alias
+        cupiditate fuga consequatur.","description":"Dolor id id aliquid voluptas.","record_id":7,"creator":["Dorothea
+        Maggio"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03 15:37:39
+        +1200","subject":"Inc","identifier":"id-1404358659","rights":"Sed a ut veritatis
+        ut.","type":["silver"],"coverage":"Port Evert","language":"Guernsey","source_provider_name":"Runolfsdottir,
+        Wunsch and Wolff","source_contributor_name":["Schoen Group"],"source_website_name":"danielabshire","source_url":"http://localhost:3000/records/7/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Sint
+        vel facere alias.","description":"Doloremque officia rem delectus.","record_id":3,"creator":["Kenya
+        Christiansen"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03 15:37:39
+        +1200","subject":"and Sons","identifier":"id-1404358659","rights":"Nemo ab
+        tempore ducimus ipsam voluptates et consequatur.","type":["gold"],"coverage":"Lake
+        Serena","language":"Bermuda","source_provider_name":"Prosacco-Kozey","source_contributor_name":["Emmerich,
+        MacGyver and Luettgen"],"source_website_name":"hickle","source_url":"http://localhost:3000/records/3/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Voluptatibus
+        incidunt atque doloremque aliquid dolore ratione sed.","description":"Corporis
+        vero est odio amet repudiandae laboriosam.","record_id":18,"creator":["Reginald
+        Mosciski"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03 15:37:39
+        +1200","subject":"Group","identifier":"id-1404358659","rights":"Quidem ipsum
+        reiciendis quo.","type":["silver"],"coverage":"Kieranfort","language":"Syrian
+        Arab Republic","source_provider_name":"Mayert LLC","source_contributor_name":["Emmerich,
+        MacGyver and Luettgen"],"source_website_name":"ernser","source_url":"http://localhost:3000/records/18/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Reprehenderit
+        possimus id adipisci culpa est.","description":"At optio veniam nulla voluptatem
+        sit laborum.","record_id":10,"creator":["Jadon Abshire DDS"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"Inc","identifier":"id-1404358659","rights":"Nostrum
+        tempora voluptatem consequatur nisi quis.","type":["silver"],"coverage":"Howeshire","language":"Iran","source_provider_name":"Runolfsdottir
+        Group","source_contributor_name":["Schoen Group"],"source_website_name":"lang","source_url":"http://localhost:3000/records/10/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Quis
+        omnis error et aut illum in.","description":"Accusantium delectus et beatae
+        quibusdam qui.","record_id":13,"creator":["Patrick Witting"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"Group","identifier":"id-1404358659","rights":"Magnam
+        vitae facere placeat aut quidem.","type":["lavender"],"coverage":"Osinskiview","language":"Isle
+        of Man","source_provider_name":"Cormier, Rohan and Toy","source_contributor_name":["Schoen
+        Group"],"source_website_name":"braun","source_url":"http://localhost:3000/records/13/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Similique
+        voluptatem possimus iure.","description":"Nulla voluptates reiciendis architecto
+        soluta aliquam.","record_id":14,"creator":["Lolita Lemke"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"Group","identifier":"id-1404358659","rights":"Quas
+        aut quasi reprehenderit aut voluptatem.","type":["silver"],"coverage":"Port
+        Idella","language":"French Southern Territories","source_provider_name":"Grant
+        LLC","source_contributor_name":["Brakus and Sons"],"source_website_name":"hartmannwiza","source_url":"http://localhost:3000/records/14/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Quod
+        odio expedita quo placeat sed occaecati.","description":"Voluptates debitis
+        odit fuga.","record_id":12,"creator":["Ms. Madalyn Jerde"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03
+        15:37:39 +1200","subject":"Group","identifier":"id-1404358659","rights":"Deleniti
+        repellat ut et molestiae officia consequatur.","type":["lavender"],"coverage":"South
+        Kelsi","language":"Iran","source_provider_name":"Denesik-Hauck","source_contributor_name":["Brakus
+        and Sons"],"source_website_name":"kutchblanda","source_url":"http://localhost:3000/records/12/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Earum
+        accusamus sit omnis qui inventore.","description":"Et ut eius minima sit.","record_id":16,"creator":["Martine
+        Rau"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03 15:37:39 +1200","subject":"Group","identifier":"id-1404358659","rights":"Perspiciatis
+        enim animi autem vitae.","type":["gold"],"coverage":"Vonberg","language":"Armenia","source_provider_name":"Morar,
+        Senger and Schuppe","source_contributor_name":["Schoen Group"],"source_website_name":"larson","source_url":"http://localhost:3000/records/16/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Fugiat
+        illum quo illo omnis nesciunt dolorem quis sunt.","description":"Id quia quo.","record_id":15,"creator":["Rafaela
+        Weimann"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03 15:37:39
+        +1200","subject":"Inc","identifier":"id-1404358659","rights":"Non odit ducimus
+        doloribus nesciunt doloremque voluptatem dolorem.","type":["gold"],"coverage":"North
+        Kim","language":"Bouvet Island (Bouvetoya)","source_provider_name":"Leuschke
+        Inc","source_contributor_name":["Brakus and Sons"],"source_website_name":"gislason","source_url":"http://localhost:3000/records/15/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"},{"title":"Voluptates
+        hic consequatur repellendus.","description":"Hic quia quos et.","record_id":11,"creator":["Schuyler
+        Romaguera"],"date":"2014-07-03T03:37:39Z","display_date":"2014-07-03 15:37:39
+        +1200","subject":"Group","identifier":"id-1404358659","rights":"Temporibus
+        quia nesciunt iusto quo quasi.","type":["lavender"],"coverage":"West Jevon","language":"Indonesia","source_provider_name":"Boyle,
+        Mertz and Trantow","source_contributor_name":["Brakus and Sons"],"source_website_name":"streichhahn","source_url":"http://localhost:3000/records/11/source","thumbnail_url":"http://ndhadeliver.natlib.govt.nz/NLNZStreamGate/get?dps_pid=IE487415"}],"per_page":20,"page":1,"request_url":"http://localhost:3000/records.json?api_key=WW4PgyQxsk4_1SUag7wz&debug=true&facets=source_provider_name%2Csource_contributor_name%2Csource_website_name%2Ctype&facets_per_page=10&fields=all%2Ctype&page=1&per_page=20&record_type=0","solr_request_params":{"fq":["type:SupplejackApi\\:\\:Record",null],"start":0,"rows":20,"facet":"true","f.source_provider_name_s.facet.limit":10,"f.source_provider_name_s.facet.offset":0,"f.source_provider_name_s.facet.mincount":1,"facet.field":["source_provider_name_s","source_contributor_name_sm","source_website_name_s","type_sm"],"f.source_contributor_name_sm.facet.limit":10,"f.source_contributor_name_sm.facet.offset":0,"f.source_contributor_name_sm.facet.mincount":1,"f.source_website_name_s.facet.limit":10,"f.source_website_name_s.facet.offset":0,"f.source_website_name_s.facet.mincount":1,"f.type_sm.facet.limit":10,"f.type_sm.facet.offset":0,"f.type_sm.facet.mincount":1,"q":"*:*"},"facets":{"source_provider_name":{"Abernathy
+        Group":1,"Batz-Runolfsdottir":1,"Beatty, Gottlieb and Gerhold":1,"Blick, Bosco
+        and Cormier":1,"Boyle, Mertz and Trantow":1,"Cormier, Rohan and Toy":1,"Deckow
+        LLC":1,"Denesik-Hauck":1,"Effertz, Sporer and Stracke":1,"Emard-Towne":1},"source_contributor_name":{"Brakus
+        and Sons":19,"Emmerich, MacGyver and Luettgen":16,"Schoen Group":15},"source_website_name":{"altenwerthwest":1,"ankundingmayer":1,"ankundingrunolfsson":1,"bartell":1,"bartellgusikowski":1,"beattytoy":1,"bergstrom":1,"blandamcdermott":1,"blockturner":1,"braun":1},"type":{"silver":17,"gold":13,"lavender":10,"salmon":10}}}}'
+    http_version: 
+  recorded_at: Thu, 03 Jul 2014 21:35:24 GMT
+recorded_with: VCR 2.9.0

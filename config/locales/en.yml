@@ -1,0 +1,58 @@
+# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+# and is licensed under the GNU General Public License, version 3. Some components are 
+# third party components that are licensed under the MIT license or other terms. 
+# See https://github.com/DigitalNZ/supplejack_website for details. 
+# 
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# http://digitalnz.org/supplejack
+
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  site_title:           "Demo"
+
+  home:
+    intro: 'This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources. <a href="/about">Find out more...</a>'
+
+  records:
+    current_results:    "CURRENT RESULTS: %{count}"
+    more_results:       "More results"
+    go:                 "GO"
+    return_to_results:  "Return to results"
+    count_results:      "%{count} RESULTS"
+    count_images:       "%{count} IMAGES"
+    count_sets:         "%{count} SETS"
+
+    count_all:          "All <span class='count'>%{count}</span>"
+    count_images:       
+      zero:             "Image <span class='count'>0</span>"
+      one:              "Image <span class='count'>1</span>"
+      other:            "Images <span class='count'>%{raw_count}</span>"
+
+    view_websites:      "View the website at:"
+    view_video:         "Watch video at:"
+    view_newspapers:    "Get the full version at:"
+
+    related_results:    "Related results"
+    see_related_items:  "See related items"
+
+    enter_search:       "Enter your search..."
+
+    from:               "From"
+    by:                 "By"
+    provided_by:        "Provided by:"
+    download:           "Download"
+    date:               "Date"
+    view_at:            "View At"
+    source:             "Source"
+    credit_line:        "Credit line"
+    description:        "Description"
+
+    click_to:           "Click to "
+    view_external_item: "view external item"
+    no_preview:         "No preview available"
+    creator:            "By"
+
+    gallery_view:       "Gallery View"
+    list_view:          "List View"
