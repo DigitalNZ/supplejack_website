@@ -70,7 +70,7 @@ Demo::Application.configure do
   config.active_support.deprecation = :notify
 
   API_HOST = 'http://api.supplejack.boost.co.nz'
-  API_KEY = '6h7_WPx5wQxs1hCyGWNh'
+  API_KEY = 'GdvPEgFC4z6oVF93Gx7h'
   THUMBNAIL_SERVER_URL = 'http://thumbnails.digitalnz.org'
 
   # Log the query plan for queries taking more than this (works
