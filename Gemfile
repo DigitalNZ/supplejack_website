@@ -8,7 +8,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~> 4.1.0'
 gem 'supplejack_client', git: 'git@github.com:DigitalNZ/supplejack_client.git'
 
 gem 'json'
@@ -16,8 +16,8 @@ gem 'will_paginate'
 gem 'jquery-rails'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 4.0.3'
+  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'zurb-foundation', '~> 4.0.0'
@@ -26,12 +26,10 @@ end
 group :development do
   gem 'thin'
   gem 'quiet_assets'
-  gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :test, :development do
-  gem 'debugger'
   gem "rspec-rails", "2.14"
   gem 'oily_png'
 end
@@ -45,5 +43,11 @@ end
 
 group :production do
   gem 'therubyracer'
+end
+
+if RUBY_VERSION =~ /2/
+  gem 'better_errors', group: :development
+elsif RUBY_VERSION =~ /1.9/
+  gem 'debugger', group: :development
 end
 
