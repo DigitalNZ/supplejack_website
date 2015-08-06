@@ -18,43 +18,43 @@ describe SearchTab do
     end
 
     it 'defaults to all' do
-      SearchTab.new(nil).tab.should eq 'all'
+      SearchTab.new(nil).tab.should eq 'All'
     end
   end
 
-  describe 'add_type_facets' do
+  describe 'valid_category_facets' do
     before(:each) do 
       @search = Search.new
-      SearchTab.stub(:valid_type_facets) { ['Images']}
+      SearchTab.stub(:valid_category_facets) { ['Images']}
     end
 
-    it 'gets the valid type facets' do
-      SearchTab.should_receive(:valid_type_facets)
-      SearchTab.add_type_facets(@search, 'Images')
+    it 'gets the valid category facets' do
+      SearchTab.should_receive(:valid_category_facets)
+      SearchTab.add_category_facets(@search, 'Images')
     end 
 
-    context 'valid type' do
-      it 'adds the type to the search' do
-        SearchTab.add_type_facets(@search, 'Images')
-        @search.and[:type].should eq 'Images'
+    context 'valid category' do
+      it 'adds the category to the search' do
+        SearchTab.add_category_facets(@search, 'Images')
+        @search.and[:category].should eq 'Images'
       end
     end
 
-    context 'invalid type' do
+    context 'invalid category' do
       it 'doesn\'t add invalid categories to the search' do
-        SearchTab.add_type_facets(@search, 'INVALID')
+        SearchTab.add_category_facets(@search, 'INVALID')
         @search.and[:INVALID].should eq nil
       end
     end
   end
 
-  describe 'valid_type_facets' do
+  describe 'valid_category_facets' do
     let(:search) { double('search', :facet_values => {}) }
     
     it 'returns the valid type facets' do
       Search.stub(:new) { search }
-      search.should_receive(:facet_values).with('type')
-      SearchTab.valid_type_facets
+      search.should_receive(:facet_values).with('category')
+      SearchTab.valid_category_facets
     end
   end
 
@@ -78,7 +78,7 @@ describe SearchTab do
 
   describe 'all?' do
     it 'returns true' do
-      st.stub(:tab) { 'all' }
+      st.stub(:tab) { 'All' }
       expect(st.all?).to be true
     end
 

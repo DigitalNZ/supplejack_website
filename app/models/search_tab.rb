@@ -10,20 +10,20 @@ class SearchTab
 
   attr_reader :tab
   
-  def initialize(tab='all')
-    @tab = tab.present? ? tab : 'all'
+  def initialize(tab='All')
+    @tab = tab.present? ? tab : 'All'
   end
 
-  def self.add_type_facets(search, type)
-    if valid_type_facets.include?(type)
+  def self.add_category_facets(search, category)
+    if valid_category_facets.include?(category)
       search.and ||= {}
-      search.and[:type] ||= {}
-      search.and[:type] = type
+      search.and[:category] ||= {}
+      search.and[:category] = category
     end
   end
 
-  def self.valid_type_facets
-    Search.new.facet_values('type').keys
+  def self.valid_category_facets
+    Search.new.facet_values("category").keys
   end
 
   def self.sorted_counts(counts)
@@ -36,7 +36,7 @@ class SearchTab
   end
 
   def all?
-    tab == 'all'
+    tab == 'All'
   end
   
   def value

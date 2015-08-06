@@ -11,7 +11,13 @@ You can install Rails 3.2, Rails 4.1 or Rails 4.2 to run this website. Please do
 
 ## Installation
 
-Clone the project
+Start API server on port 3000
+
+```bash
+rails s
+```
+
+Clone the demo website project
 
 ```bash
 git clone git@github.com:DigitalNZ/supplejack_website.git
@@ -23,6 +29,7 @@ Create a `local_env.rb` file and place it inside `config/`
 # config/local_env.rb
 API_HOST = 'http://localhost:3000'
 API_KEY = 'your_api_key'
+THUMBNAIL_SERVER_URL = "http://magickly.afeld.me/"
 ```
 To generate api key, please refer to [API Docs](http://digitalnz.github.io/supplejack/start/supplejack-api.html).
 
@@ -32,11 +39,13 @@ Run `bundle install`
 bundle install
 ```
 
-Run Rails server(on different port if your api is running on port 3000)
+Run Rails server
 
 ```bash
-rails s
+rails s -p 3001
 ```
+
+:warning: This demo website has been configured to work with sample record schema that comes with supplejack api. It should work fine without any modification. If you want customization, please refer to **Configuration** section to know how to do.
 
 ## Configuration
 
@@ -44,7 +53,7 @@ To interact with supplejack_api, you need to configure `supplejack_client.rb` fi
 
 Open `config/initializers/supplejack_client.rb`
 
-You **must** update these options:
+You **must** update these options for customization:
 
 * **api_key**  
 * **api_url**
@@ -52,11 +61,16 @@ You **must** update these options:
 * **fields**: List of fields that you want to be requested to the API for every record. They must be defined in record schema. You can also include group in the list.
 Please refer to [API docs](http://digitalnz.github.io/supplejack/api/creating-schemas.html) to know how to define group.
 * **search_attributes**: List of fields to be sent to search object. These fields must be defined in record schema.
-* **enable_debugging**
-* **enable_caching**
+* **enable_debugging**: Turn on full logging, default to true.
+* **enable_caching**: Enable caching long api request, default to false.
 
 Other commented fields can be left with their default values.
 
+## Notes
+
+You need to set up thumbnailer server for image processing(**THUMBNAIL_SERVER_URL** setting in *local_env.rb* file). Check out [Magickly](https://github.com/afeld/magickly) on how to set up an image manipulation service.
+
+For the purpose of demo, you can use the existing [Magickly](http://magickly.afeld.me/) instance.  
 ## COPYRIGHT AND LICENSING  
 
 ### MAJORITY OF SUPPLEJACK CODE - GNU GENERAL PUBLIC LICENCE, VERSION 3  

@@ -23,18 +23,18 @@ describe Record do
     end
 
     it 'should tell the thumbailer the specified width' do
-      @record.image_url(:width => 300).should eq "#{THUMBNAIL_SERVER_URL}/from_large/664/?resize=300&src=https%3A%2F%2Fpicasa.com%2Fimage.png"
+      @record.image_url(:width => 300).should eq "#{THUMBNAIL_SERVER_URL}?resize=300&src=https%3A%2F%2Fpicasa.com%2Fimage.png"
     end
 
     it 'should resize the thumbnail_url through the thumbnailer' do
       @record.stub(:thumbnail_url) { 'http://picasa.com/small_image.png' }
-      @record.image_url.should eq 'http://thumbnails.digitalnz.org/from_large/664/?resize=204&src=http%3A%2F%2Fpicasa.com%2Fsmall_image.png'
+      @record.image_url.should eq "#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Fpicasa.com%2Fsmall_image.png"
     end
 
     it 'should use thumbnail_url if thumbnail_url is not present' do
       @record.stub(:thumbnail_url) { nil }
       @record.stub(:thumbnail_url) { 'http://picasa.com/regular_image.png' }
-      @record.image_url.should eq 'http://thumbnails.digitalnz.org/from_large/664/?resize=204&src=http%3A%2F%2Fpicasa.com%2Fregular_image.png'
+      @record.image_url.should eq "#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Fpicasa.com%2Fregular_image.png"
     end
 
     it 'should tell the thumbnailer to get the original size' do

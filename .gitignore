@@ -5,6 +5,7 @@ db/*.sqlite3-journal
 *.log
 tmp
 tmp/**/*
+coverage/
 
 # Documentation
 doc/api

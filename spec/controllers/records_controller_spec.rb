@@ -71,12 +71,12 @@ describe RecordsController do
 
   describe 'tab_counts' do
     it 'should remove the tab parameter from options' do
-      Search.should_receive(:new).with({text: 'dog'}) { double(:search, types: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) }
+      Search.should_receive(:new).with({text: 'dog'}) { double(:search, categories: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) }
       controller.send(:tab_counts, {text: 'dog', tab: 'sets'})
     end
 
     it 'should merge the text attribute from the main search to the tab count search' do
-      Search.should_receive(:new).with({text: 'dog'}) { double(:search, types: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) }
+      Search.should_receive(:new).with({text: 'dog'}) { double(:search, categories: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) }
       controller.send(:tab_counts, {text: 'dog', tab: 'sets'})
     end
   end

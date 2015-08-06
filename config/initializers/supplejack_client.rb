@@ -27,9 +27,7 @@ Supplejack.configure do |config|
   # When you ask for the facets, they are going to be ordered in the
   # order presented here
   config.facets = [
-    :name,
-    :address,
-    :email
+    :category
   ]
   #
   # ===> Facet values sorting
@@ -44,7 +42,10 @@ Supplejack.configure do |config|
   # record. :default will return the default set of fields.
   #
   config.fields = [
-    :all
+    :default,
+    :source_contributor_name,
+    :source_website_name,
+    :subject
   ]
 
   # ===> Number of facet values
@@ -78,7 +79,7 @@ Supplejack.configure do |config|
   #   search.type
   #
   config.search_attributes = [
-    :name
+    :subject
   ]
   #
   # ===> Record klass
@@ -97,5 +98,5 @@ Supplejack.configure do |config|
   # ===> Enable Caching
   # Set this flag to true in order to cache the facet_value response and the search counts
   #
-  config.enable_caching = true
+  config.enable_caching = false
 end

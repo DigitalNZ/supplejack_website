@@ -16,7 +16,7 @@ class RecordsController < ApplicationController
 
   def index
     @search = search(params.dup)
-    SearchTab.add_type_facets(@search, params[:tab])
+    SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
     @facets = @search.facets
     @counts = tab_counts(params.dup)
@@ -33,6 +33,6 @@ class RecordsController < ApplicationController
     options.delete(:tab)
 
     counts_search = Search.new(options)
-    counts = Hash.new(0).merge(counts_search.types)    
+    counts = Hash.new(0).merge(counts_search.categories) rescue {}
   end
 end

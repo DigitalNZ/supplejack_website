@@ -13,13 +13,12 @@ class Record
   def image_url(options={})
     size = '204'
     size = "#{options[:width]}" unless options == {}
-    thumbnail_endpoint = "#{THUMBNAIL_SERVER_URL}/from_large/664/"
-    source_url = self.thumbnail_url
+    source_url = self.thumbnail_url || ""
 
     if options[:original]
       "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
     else
-      "#{thumbnail_endpoint}?resize=#{size}&src=#{CGI.escape(source_url)}"
+      "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{CGI.escape(source_url)}"
     end
   end
 

@@ -14,6 +14,7 @@ gem 'supplejack_client', git: 'git@github.com:DigitalNZ/supplejack_client.git'
 gem 'json'
 gem 'will_paginate'
 gem 'jquery-rails'
+gem 'activeresource'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
@@ -32,6 +33,8 @@ end
 group :test, :development do
   gem "rspec-rails", "2.14"
   gem 'oily_png'
+  gem 'minitest'
+  gem 'simplecov'
 end
 
 group :test do
@@ -47,6 +50,7 @@ end
 
 if RUBY_VERSION =~ /2/
   gem 'better_errors', group: :development
+  gem 'byebug', group: :development
 elsif RUBY_VERSION =~ /1.9/
   gem 'debugger', group: :development
 end
