@@ -15,7 +15,7 @@
         <%= 
           content_tag :li, class: ('active' if search_tab.value.downcase == type.downcase) do 
             link_to SearchTab.tab_label(type, number_with_precision(count, delimiter: ',', precision: 0)), 
-            records_path(search_tab_options(search.options, type.downcase)), 
+            records_path(search_tab_options(search.options, type)), 
             id: "#{type}-tab"
           end
         %>

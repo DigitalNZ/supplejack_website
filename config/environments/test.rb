@@ -44,7 +44,7 @@ Demo::Application.configure do
   config.active_support.deprecation = :stderr
 
   HOST = "http://host.test"
-  API_HOST = 'http://api.supplejack.boost.co.nz'
-  API_KEY = '6h7_WPx5wQxs1hCyGWNh'
-  THUMBNAIL_SERVER_URL = "http://thumbnails.digitalnz.org"
+  API_HOST = 'http://api.dnz0a.digitalnz.org'
+  API_KEY = '387d16c7596c9cfff190d14a81ec189a'
+  THUMBNAIL_SERVER_URL = "http://magickly.afeld.me"
 end

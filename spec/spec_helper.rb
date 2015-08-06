@@ -6,6 +6,9 @@
 # Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
 # http://digitalnz.org/supplejack
 
+require 'simplecov'
+SimpleCov.start
+
 require 'rubygems'
 require 'spork'
 #uncomment the following line to use spork with the debugger
