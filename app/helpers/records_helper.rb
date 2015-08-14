@@ -8,10 +8,6 @@
 
 module RecordsHelper
 
-  def source_contributor_name(record)
-    content_tag(:p, record.source_contributor_name.join(', ').html_safe)
-  end
-
   def record_thumbnail(record, search=nil)
     image_options = {}
     search ||= Search.new
