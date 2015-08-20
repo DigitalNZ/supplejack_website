@@ -27,7 +27,11 @@ Supplejack.configure do |config|
   # When you ask for the facets, they are going to be ordered in the
   # order presented here
   config.facets = [
-    :category
+    :category,
+    :content_partner,
+    :primary_collection,
+    :usage,
+    :date
   ]
   #
   # ===> Facet values sorting
