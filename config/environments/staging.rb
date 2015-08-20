@@ -69,10 +69,9 @@ Demo::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  API_HOST = 'http://api.supplejack.boost.co.nz'
-  API_KEY = 'GdvPEgFC4z6oVF93Gx7h'
+  API_HOST = 'http://api.dnz0a.digitalnz.org'
+  API_KEY = '387d16c7596c9cfff190d14a81ec189a'
   THUMBNAIL_SERVER_URL = 'http://thumbnails.digitalnz.org'
-
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
