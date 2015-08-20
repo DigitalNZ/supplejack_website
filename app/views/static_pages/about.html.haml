@@ -1,0 +1,16 @@
+/
+  \# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+  \# and is licensed under the GNU General Public License, version 3. Some components are
+  \# third party components that are licensed under the MIT license or other terms.
+  \# See https://github.com/DigitalNZ/supplejack_website for details.
+  \#
+  \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
+  \# http://digitalnz.org/supplejack
+.container.static
+  %h1 About
+  %p This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources. This website connects to harvested content via the Supplejack API. The default configuration of this website assumes the use of common schema elements and matching test data.
+  %p If you are not seeing the expected content in this demo, you may need to either check you have harvested the right data, update your schema in the supplejack_api, or update your connecting fields in the supplejack_client and supplejack_website applications.
+  %p
+    The standard search tabs and filter options are populated dynamically based on top record counts, and can be overridden in the supplejack_website application. You can find further details at
+    = succeed "." do
+      %a{:href => "http://www.digitalnz.org/supplejack"} www.digitalnz.org/supplejack

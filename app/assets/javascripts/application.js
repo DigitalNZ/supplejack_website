@@ -24,8 +24,11 @@
 //= require jquery_ujs
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
-//= require_tree .
-
+//= require main
+//= require records.js
+//= require temp.js
+//= require medium-editor.js
+//= require foundation
 $(function() {
-  window.addToSet.init();
+  $(document).foundation();
 });

@@ -1,0 +1,16 @@
+- title @user_set.name.truncate(40)
+- content_for(:body_class) {'user_set'}
+.container.record
+  %figure
+    .gallery-container
+      %span.gallery-spinner
+      - @records.each do |r|
+        = render partial: 'set_item', locals: {item: r, search: @search}
+      #second-spinner.infinite-spinner
+  .about
+    = attribute(@user_set, :name, label: false, tag: 'h1')
+    %p
+      %span.field-label= t('user_sets.creator')
+      = @user_set.user.try(:name)
+    = attribute(@user_set, :tags, { label_tag: 'span', label_class: 'field-label', trans_key: 'user_sets.date' })
+    = attribute(@user_set, :description, label_tag: 'span', label_class: 'field-label', trans_key: 'user_sets.description', limit: 1000)
