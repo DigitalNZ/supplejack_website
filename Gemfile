@@ -48,10 +48,3 @@ group :production do
   gem 'therubyracer'
 end
 
-if RUBY_VERSION =~ /2/
-  gem 'better_errors', group: :development
-  gem 'byebug', group: :development
-elsif RUBY_VERSION =~ /1.9/
-  gem 'debugger', group: :development
-end
-
