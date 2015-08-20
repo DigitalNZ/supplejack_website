@@ -1,0 +1,84 @@
+@import 'colors.scss';
+@import 'media-ranges.scss';
+
+
+
+body {
+	font-family: 'Raleway';
+}
+
+.top-bar .name h1 a {
+	font-weight: 800 !important;
+}
+
+.filters {
+	border-bottom: 1px solid $gray;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		overflow: hidden;
+	}
+	li {
+		margin: 0;
+		padding: 0;
+		float: left;
+		display: block;
+		a {
+			display: block;
+			padding: 1rem;
+		}
+		a span {
+			display: block;
+			font-size: 0.8em;
+		}
+		&.active {
+			a {
+				background: white;
+				color: $hilite;
+				border-bottom: 3px solid $hilite;
+			}
+		}
+	}
+}
+
+	@media #{$small-only} {
+		.filters {
+			border-bottom: 0px;
+			li {
+				float: none !important;
+				border-bottom: 1px solid $gray;
+				&.active {
+					a {
+						border-bottom: 0px;
+						border-left: 3px solid $hilite;
+					}
+				}
+				a span {
+					display: inline;
+					color: $gray;
+				}
+			}
+		}
+	}
+
+
+
+
+.container {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 60rem;
+}
+
+footer {
+	padding: 2em 0 30em;
+	background: #444;
+	color: white;
+	a {
+		color: white;
+	}
+}
+
+
+

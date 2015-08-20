@@ -13,6 +13,15 @@ describe RecordsHelper do
     @mock_record ||= mock_model(Record, stubs).as_null_object
   end
 
+  describe '#source_contributor_name' do
+    let(:record) { mock_record(title: 'Title', description: 'Description').as_null_record }
+
+    it 'displays the contributing content partner' do
+      record = mock_record(source_contributor_name: ['Culture', 'Europeana'])
+      helper.source_contributor_name(record).should eq(%{<p>Culture, Europeana</p>})
+    end
+  end
+
   describe '#record_thumbnail' do
     before(:each) do
       @search = double(:search, :options => nil, :url_options => nil)
