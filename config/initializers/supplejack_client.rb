@@ -43,6 +43,7 @@ Supplejack.configure do |config|
   #
   config.fields = [
     :default,
+    :source_contributor_name,
     :display_collection,
     :display_content_partner,
     :source_url,
