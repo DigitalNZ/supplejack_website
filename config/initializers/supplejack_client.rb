@@ -44,6 +44,12 @@ Supplejack.configure do |config|
   config.fields = [
     :default,
     :display_collection,
+    :display_content_partner,
+    :source_url,
+    :thumbnail_url,
+    :display_date,
+    :creator,
+    :category
     :subject
   ]
 
