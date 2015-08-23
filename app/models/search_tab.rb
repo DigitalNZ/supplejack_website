@@ -7,9 +7,9 @@
 # http://digitalnz.org/supplejack
 
 class SearchTab
-
+  TABS = %w(All Images Audio Videos Sets)
   attr_reader :tab
-  
+
   def initialize(tab='All')
     @tab = tab.present? ? tab : 'All'
   end
@@ -27,7 +27,10 @@ class SearchTab
   end
 
   def self.sorted_counts(counts)
-    sorted = Hash[counts.sort_by{|k, v| v}.reverse[0..4]]
+    sorted = {}
+    TABS.each do |tab|
+      sorted[tab] = counts[tab]
+    end
     sorted
   end
 
