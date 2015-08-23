@@ -49,14 +49,14 @@ Supplejack.configure do |config|
     :thumbnail_url,
     :display_date,
     :creator,
-    :category
+    :category,
     :subject
   ]
 
   # ===> Number of facet values
   # This will limit the number of facet values returned for each facet
   # Be carefull not to make it too high for performance reasons
-  # config.facets_per_page = 10
+  config.facets_per_page = 20
   #
   # ===> Per Page
   # Number of results returned per page
