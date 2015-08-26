@@ -7,7 +7,6 @@
 # http://digitalnz.org/supplejack
 
 class Record
-
   include Supplejack::Record
 
   def image_url(options={})

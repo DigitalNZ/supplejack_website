@@ -6,16 +6,24 @@
 # Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
 # http://digitalnz.org/supplejack
 
-module UserSetsHelper
-  def set_item_thumbnail(item, search=nil)
-    image_options = {}
-    search ||= Search.new
-    search_options = search.options.try(:any?) ? search.options : nil
+require 'cgi'
 
-    image_options[:alt] ||= item.title
-    image_options[:title] ||= image_options[:alt]
+module Supplejack
+  module ItemDecorator
+    def image_url(options={})
+      size = '204'
+      size = "#{options[:width]}" unless options == {}
+      source_url = self.thumbnail_url || ""
 
-    content = content_tag(:div, link_to(image_tag(item.image_url, image_options), record_path(item.record_id, search: search_options)))
-    content.html_safe
+      if options[:original]
+        "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
+      else
+        "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{CGI.escape(source_url)}"
+      end
+    end
+  end
+
+  class Item
+    include ItemDecorator
   end
 end
