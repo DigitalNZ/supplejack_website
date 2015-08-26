@@ -28,6 +28,7 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
+  gem 'pry-rails'
 end
 
 group :test, :development do
@@ -42,6 +43,7 @@ group :test do
   gem 'factory_girl_rails', "= 1.2.0"
   gem 'spork', '>= 1.0.0rc3'
   gem 'vcr', '2.9.0'
+  gem 'pry'
 end
 
 group :production do
