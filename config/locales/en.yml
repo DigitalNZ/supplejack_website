@@ -15,6 +15,12 @@ en:
   home:
     intro: 'This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources. <a href="/about">Find out more...</a>'
 
+
+  user_sets:
+    creator: 'Creator:'
+    tags: 'Tags:'
+    description: 'Description'
+
   records:
     current_results:    "CURRENT RESULTS: %{count}"
     more_results:       "More results"

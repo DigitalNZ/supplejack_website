@@ -1,4 +1,3 @@
-<!--
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
 # and is licensed under the GNU General Public License, version 3. Some components are 
 # third party components that are licensed under the MIT license or other terms. 
@@ -6,23 +5,11 @@
 # 
 # Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
 # http://digitalnz.org/supplejack
--->
 
-<% content_for(:body_class) {'records'} %>
-<% title @search.text %>
-
-<%= render 'search_tabs' %>
-
-<div class="container results">
-	<%= render 'filters' %>
-
-	<div class="gallery-container">
-		<span class="gallery-spinner"></span>
-		<%= render @records %>
-		<div id="second-spinner" class="infinite-spinner"></div>
-	</div>
-
-	<div id="navigation">
-	  <%= will_paginate(@records) %>
-	</div>
-</div>
+class UserSetsController < ApplicationController
+  def show
+    @user_set = Supplejack::UserSet.find(params[:id])
+    @records = @user_set.items
+    @search = search(params[:search])
+  end
+end

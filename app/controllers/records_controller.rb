@@ -24,6 +24,14 @@ class RecordsController < ApplicationController
 
   def show
     @record = Record.find(params[:id], params[:search])
+
+    if (@record.present? && @record.attributes[:category] == ['Sets'])
+      search_params = params[:search] ? params[:search].merge(record_id: params[:id]) : nil
+
+      user_set_id = @record.landing_url.split("/").last
+      redirect_to user_set_path(user_set_id, search: search_params)
+    end
+
     @search = search(params[:search])
   end
 
