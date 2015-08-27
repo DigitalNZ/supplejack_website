@@ -22,7 +22,7 @@ module Supplejack
     end
   end
 
-  class Item
+  Item.class_eval do
     include ItemDecorator
   end
 end
