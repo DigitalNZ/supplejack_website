@@ -1,4 +1,4 @@
 <div class="gallery-record">
-	<%= set_item_thumbnail(item, search) %>
+	<%= record_thumbnail(item, search) %>
  	<%= link_to truncate(item.title, length: 20), record_path(item.record_id, search.options) %>
 </div>
