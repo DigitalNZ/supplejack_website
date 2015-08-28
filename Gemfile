@@ -11,10 +11,12 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.1.0'
 gem 'supplejack_client', git: 'git@github.com:DigitalNZ/supplejack_client.git'
 
+gem 'mysql2'
 gem 'json'
 gem 'will_paginate'
 gem 'jquery-rails'
 gem 'activeresource'
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
