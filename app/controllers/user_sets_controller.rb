@@ -7,6 +7,8 @@
 # http://digitalnz.org/supplejack
 
 class UserSetsController < ApplicationController
+  before_action :authenticate_user!
+  
   def show
     @user_set = Supplejack::UserSet.find(params[:id])
     @records = @user_set.items
