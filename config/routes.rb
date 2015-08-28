@@ -7,6 +7,7 @@
 # http://digitalnz.org/supplejack
 
 Demo::Application.routes.draw do
+  devise_for :users
   root to: 'records#home'
   resources :records, only: [:index, :show]
   resources :user_sets, only: [:show]

@@ -10,13 +10,7 @@
 
 <button id="main-menu" class="menu">menu</button>
 <nav class="menu">
-  <div class="menu-inner">
-    <a href="/">Home</a>
-    <!-- <a href="/become_a_partner">Become a Partner</a> -->
-    <a href="/contact">Contact</a>
-    <!-- <a href="/terms">Terms of use</a> -->
-    <a href="/about">About</a>
-  </div>
+
   <div class="language-selector">
 	  <button class="language-btn menu"><span></span></button>
 	  <div class="language-container menu">
@@ -26,4 +20,28 @@
 	  	</ul>
 	  </div>
 	</div>
+
+  <div class="menu-inner">
+    <a href="/">Home</a>
+    <!-- <a href="/become_a_partner">Become a Partner</a> -->
+    <a href="/contact">Contact</a>
+    <!-- <a href="/terms">Terms of use</a> -->
+    <a href="/about">About</a>
+  </div>
+
+	<% if user_signed_in? %>
+	  <div class="language-selector">
+		  <button class="user-btn menu"><%= current_user.email.split('@').first %></button>
+		  <div class="language-container menu">
+		  	<ul>
+		  		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+		  		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+		  	</ul>
+		  </div>
+		</div>
+	<% else %>
+	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+	  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+	<% end %>
+	
 </nav>

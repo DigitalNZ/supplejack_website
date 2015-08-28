@@ -56,8 +56,17 @@ Demo::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 
+  config.action_mailer.delivery_method = :smtp
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.smtp_settings = {
+    :address  => "localhost",
+    :domain  => "demo.dnz0a.digitalnz.org",
+    :port  => 25
+  }
+
+  config.action_mailer.default_url_options = { :host => 'demo.dnz0a.digitalnz.org' }
+
 
   # Enable threaded mode
   # config.threadsafe!
