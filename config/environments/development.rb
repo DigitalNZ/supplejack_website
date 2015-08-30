@@ -48,7 +48,7 @@ Demo::Application.configure do
 
   config.action_mailer.smtp_settings = {
     :address  => "localhost",
-    :domain  => "demo.dnz0a.digitalnz.org/",
+    :domain  => "beta.dnz0a.digitalnz.org/",
     :port  => 25
   }
 
