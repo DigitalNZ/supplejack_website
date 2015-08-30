@@ -61,11 +61,11 @@ Demo::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.smtp_settings = {
     :address  => "localhost",
-    :domain  => "demo.dnz0a.digitalnz.org",
+    :domain  => "beta.dnz0a.digitalnz.org",
     :port  => 25
   }
 
-  config.action_mailer.default_url_options = { :host => 'demo.dnz0a.digitalnz.org' }
+  config.action_mailer.default_url_options = { :host => 'beta.dnz0a.digitalnz.org' }
 
 
   # Enable threaded mode
