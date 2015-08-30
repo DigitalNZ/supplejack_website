@@ -11,4 +11,5 @@
 <div class="gallery-record">
 	<%= record_thumbnail(record, search) %>
  	<%= link_to truncate(record.title, length: 20), record_path(record, search.options) %>
+  <p><%= source_contributor_name(record) %></p>
 </div>
