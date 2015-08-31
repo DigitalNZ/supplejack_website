@@ -38,6 +38,7 @@ group :test, :development do
   gem 'oily_png'
   gem 'minitest'
   gem 'simplecov'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -45,7 +46,7 @@ group :test do
   gem 'factory_girl_rails', "= 1.2.0"
   gem 'spork', '>= 1.0.0rc3'
   gem 'vcr', '2.9.0'
-  gem 'pry'
+  gem 'faker'
 end
 
 group :production do
