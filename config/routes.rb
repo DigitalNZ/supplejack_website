@@ -7,10 +7,11 @@
 # http://digitalnz.org/supplejack
 
 Demo::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations'}
+
   root to: 'records#home'
-  resources :records, only: [:index, :show]
-  resources :user_sets, only: [:show]
+  resources :records,   only: [:index, :show]
+  resources :user_sets, only: [:show, :create]
 
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'

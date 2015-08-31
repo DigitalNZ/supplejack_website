@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
   def search(special_params=nil)
     @search ||= Search.new(special_params || params[:search] || params)
   end
+
+  def current_sj_user(user_id=nil)
+    @current_sj_user ||= begin
+      user = user_id ? User.find(user_id) : current_user
+      Supplejack::User.new({authentication_token: user.api_key}) if user
+    end
+  end
 end

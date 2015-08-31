@@ -7,11 +7,20 @@
 # http://digitalnz.org/supplejack
 
 class UserSetsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   
   def show
     @user_set = Supplejack::UserSet.find(params[:id])
     @records = @user_set.items
     @search = search(params[:search])
+  end
+
+  def create
+    @user_set = current_sj_user.sets.build(params[:user_set])
+    @user_set.records = [{record_id: params[:record_id]}] if params[:record_id]
+    @user_set.save
+    @user_sets = current_user.sets.all
+
+    redirect_to user_sets_path
   end
 end
