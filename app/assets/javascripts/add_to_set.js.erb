@@ -1,0 +1,89 @@
+(function(global) {
+  var handleInitClick = function(e) {
+    var popup = $(this).siblings('.add-to-set-popup');
+    var recordId = $(this).attr('data-record-id');
+
+    popup.show();
+    bindPopupEventHandlers(popup);
+
+    if(popup.hasClass("logged-in"))
+      loadSets(popup, recordId);
+  };
+
+  var loadSets = function($popup, recordId) {
+    var $container = $popup.find('.sets-container');
+    $container.html('<%= image_tag 'spinner.gif' %>');
+
+    $.ajax({url: '/user_sets.js', dataType: 'json', method: 'GET'})
+    .always(function() {
+      $container.html('');
+    })
+    .done(function(data) {
+      data.sets.forEach(function(set) {
+        $container.append(makeSetDom(recordId, set.name, set.id));
+      });
+    })
+    .fail(function(xhr, x, y) {
+      $container.append("<p>Error loading sets</p>");
+    });
+  };
+
+  var makeSetDom = function(recordId, setName, setId) {
+    var setIdData = setId ? 'data-set-id="'+setId+'"' : '';
+    return $('<li><a href="#" class="add-to-set-button" data-record-id="'+recordId+'" '+setIdData+'>'+setName+'</a></li>');
+  };
+
+  var handleAddToSetClick = function() {
+    var setId = $(this).attr('data-set-id');
+    var recordId = $(this).attr('data-record-id');
+  };
+
+  var handleAddToNewSetSubmit = function(e) {
+    e.preventDefault();
+
+    var recordId = $(this).attr('data-record-id');
+    var setNameInput = $(this).parent().find('.add-to-new-set-name');
+    var setName = setNameInput.val();
+    var newSetDom = makeSetDom(recordId, setName);
+
+    $.ajax({
+      method: "POST",
+      url: '/user_sets.js', 
+      data: {user_set: {name: setName}, record_id: recordId}, 
+      dataType: 'json'
+    })
+    .fail(function(xhr, textStatus, errorThrown) {
+      var $container = $(this).closest('.add-to-set-popup');
+      $container.children(':last-child').remove();
+      $container.append('<p>error</p>');
+      setNameInput.val(setName);
+    });
+
+    newSetDom.insertBefore($(this).parent());
+    setNameInput.val('');
+  };
+
+  var bindPopupEventHandlers = function($popup) {
+    $popup.children('.add-to-set-button').on('click', handleAddToSetClick);
+    $popup.find('.add-to-new-set-submit').on('click', handleAddToNewSetSubmit);
+
+    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
+  };
+
+  var checkPopupClick = function($popup, event) {
+    if($(event.target).parents().index($popup) == -1) {
+      $popup.hide();
+      return;
+    }
+
+    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
+  };
+
+  var init = function() {
+    $(".add-to-set").on('click', handleInitClick);
+  };
+
+  global.addToSet = {
+    init: init
+  };
+})(window)
