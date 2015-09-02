@@ -29,23 +29,12 @@ describe UserSetsController do
     end
     
     it 'assigns @records to the sets items' do
+
       expect(assigns(:records)).to eq(set.items)
     end
 
     it 'assigns @search to a new search' do
       expect(assigns(:search)).to eq(controller.search(nil))
-    end
-  end
-
-  describe 'POST create' do
-    login_user
-
-    before do
-      post :create, {record_id: 1, user_set: {name: 'test'}}
-    end
-    
-    it 'passes the user_set params to Supplejack::UserSet#build' do
-      allow(Supplejack::UserSet).to receive(:build).with({user_set: {name: 'test'}})
     end
   end
 end
