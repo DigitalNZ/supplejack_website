@@ -44,7 +44,7 @@
 
     $.ajax({
       method: "POST",
-      url: '/user_set_items',
+      url: '/user_sets/'+ setId +'/set_items',
       data: {
         user_set_id: setId,
         user_set_item: {
