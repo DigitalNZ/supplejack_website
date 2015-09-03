@@ -11,8 +11,9 @@ Demo::Application.routes.draw do
 
   root to: 'records#home'
   resources :records,   only: [:index, :show]
-  resources :user_sets, only: [:show, :create, :index]
-  resources :user_set_items, only: [:create]
+  resources :user_sets, only: [:show, :create, :index] do
+    resources :set_items, only: [:create]
+  end
 
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
