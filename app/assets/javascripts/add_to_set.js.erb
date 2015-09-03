@@ -33,9 +33,31 @@
     return $('<li><a href="#" class="add-to-set-button" data-record-id="'+recordId+'" '+setIdData+'>'+setName+'</a></li>');
   };
 
-  var handleAddToSetClick = function() {
+  var handleAddToSetClick = function(e) {
+    e.preventDefault();
+
     var setId = $(this).attr('data-set-id');
     var recordId = $(this).attr('data-record-id');
+
+    if(setId == undefined)
+      return;
+
+    $.ajax({
+      method: "POST",
+      url: '/user_set_items',
+      data: {
+        user_set_id: setId,
+        user_set_item: {
+          record_id: recordId
+        }
+      }
+    })
+    .done(function() {
+      alert("Added item to set");
+    })
+    .fail(function() {
+      alert("Failed adding item to set");
+    });
   };
 
   var handleAddToNewSetSubmit = function(e) {
@@ -64,7 +86,7 @@
   };
 
   var bindPopupEventHandlers = function($popup) {
-    $popup.children('.add-to-set-button').on('click', handleAddToSetClick);
+    $popup.on('click', '.add-to-set-button', handleAddToSetClick);
     $popup.find('.add-to-new-set-submit').on('click', handleAddToNewSetSubmit);
 
     setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});

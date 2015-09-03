@@ -28,15 +28,18 @@ class UserSetsController < ApplicationController
   end
 
   def create
-    @user_set = current_sj_user.sets.build(params[:user_set])
-    @user_set.records = [{record_id: params[:record_id]}] if params[:record_id]
-    @user_set.save
-    @user_sets = current_sj_user.sets.all
+    if params[:user_set].nil?
+      render nothing: true, status: 500
+    end
+
+    user_set = current_sj_user.sets.build(params[:user_set])
+    user_set.records = [{record_id: params[:record_id]}] if params[:record_id]
+    user_set.save
 
     respond_to do |format|
       format.html {redirect_to user_sets_path}
       format.js do
-        render json: {set_id: @user_set.id}.to_json
+        render json: {set_id: user_set.id}.to_json
       end
     end
   end
