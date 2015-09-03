@@ -1,4 +1,4 @@
-class UserSetItemsController < ApplicationController
+class SetItemsController < ApplicationController
   before_action :authenticate_user!
 
   def create
