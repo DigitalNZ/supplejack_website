@@ -2,6 +2,12 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(user_params)
 
+    # simple workaround for registration field not having name/username fields
+    # should be replace with actual form fields in a later story
+    display_name = resource.email.split('@').first
+    resource.name = display_name
+    resource.username = display_name
+
     if resource.save && resource.create_user_and_default_set
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
