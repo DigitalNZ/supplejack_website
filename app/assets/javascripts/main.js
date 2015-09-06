@@ -17,7 +17,7 @@
       var config = {
          initMasonry: (function() {
             var container = $('.gallery-container');
-
+https://workflowy.com/s/aDm1P3J9Yr
             container.masonry({
                itemSelector: '.gallery-record'
                ,isFitWidth: true
