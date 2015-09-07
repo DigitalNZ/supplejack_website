@@ -8,6 +8,17 @@
 
 source 'https://rubygems.org'
 
+if RUBY_VERSION =~ /2/
+  group :development do
+    gem 'better_errors'
+    gem 'pry-rails'
+  end
+
+  group :development, :test do
+    gem 'pry-byebug'
+  end
+end
+
 gem 'rails', '~> 4.1.0'
 gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
 
@@ -38,7 +49,6 @@ group :test, :development do
   gem 'oily_png'
   gem 'minitest'
   gem 'simplecov'
-  gem 'pry-byebug'
 end
 
 group :test do
