@@ -77,7 +77,6 @@ capybara-*html
 
 #rbenv
 .rbenv-version
-.ruby-version
 
 /config/local_env.rb# Rails
 
