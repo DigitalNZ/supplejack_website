@@ -67,6 +67,10 @@
     var setNameInput = $(this).parent().find('.add-to-new-set-name');
     var setName = setNameInput.val();
     var newSetDom = makeSetDom(recordId, setName);
+    var $container = $(this).parent().siblings('.sets-container');
+
+    if(setNameInput.val() === '')
+      return;
 
     $.ajax({
       method: "POST",
@@ -74,14 +78,16 @@
       data: {user_set: {name: setName}, record_id: recordId}, 
       dataType: 'json'
     })
+    .done(function(data) {
+      newSetDom.children().attr('data-set-id', data.set_id);
+    })
     .fail(function(xhr, textStatus, errorThrown) {
-      var $container = $(this).closest('.add-to-set-popup');
       $container.children(':last-child').remove();
       $container.append('<p>error</p>');
       setNameInput.val(setName);
     });
 
-    newSetDom.insertBefore($(this).parent());
+    $container.append(newSetDom);
     setNameInput.val('');
   };
 
