@@ -1,3 +1,4 @@
 language: ruby
 cache: bundler
 bundler_args: --without production
+sudo: false
