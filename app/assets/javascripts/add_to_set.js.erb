@@ -1,4 +1,8 @@
 (function(global) {
+  var init = function() {
+    $(".gallery-container").on('click', '.add-to-set', handleInitClick);
+  };
+
   var handleInitClick = function(e) {
     var popup = $(this).siblings('.add-to-set-popup');
     var recordId = $(this).attr('data-record-id');
@@ -8,6 +12,22 @@
 
     if(popup.hasClass("logged-in"))
       loadSets(popup, recordId);
+  };
+
+  var bindPopupEventHandlers = function($popup) {
+    $popup.on('click', '.add-to-set-button', handleAddToSetClick);
+    $popup.find('.add-to-new-set-submit').on('click', handleAddToNewSetSubmit);
+
+    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
+  };
+
+  var checkPopupClick = function($popup, event) {
+    if($(event.target).parents().index($popup) == -1) {
+      $popup.hide();
+      return;
+    }
+
+    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
   };
 
   var loadSets = function($popup, recordId) {
@@ -26,11 +46,6 @@
     .fail(function(xhr, x, y) {
       $container.append("<p>Error loading sets</p>");
     });
-  };
-
-  var makeSetDom = function(recordId, setName, setId) {
-    var setIdData = setId ? 'data-set-id="'+setId+'"' : '';
-    return $('<li><a href="#" class="add-to-set-button" data-record-id="'+recordId+'" '+setIdData+'>'+setName+'</a></li>');
   };
 
   var handleAddToSetClick = function(e) {
@@ -91,24 +106,9 @@
     setNameInput.val('');
   };
 
-  var bindPopupEventHandlers = function($popup) {
-    $popup.on('click', '.add-to-set-button', handleAddToSetClick);
-    $popup.find('.add-to-new-set-submit').on('click', handleAddToNewSetSubmit);
-
-    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
-  };
-
-  var checkPopupClick = function($popup, event) {
-    if($(event.target).parents().index($popup) == -1) {
-      $popup.hide();
-      return;
-    }
-
-    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
-  };
-
-  var init = function() {
-    $(".gallery-container").on('click', '.add-to-set', handleInitClick);
+  var makeSetDom = function(recordId, setName, setId) {
+    var setIdData = setId ? 'data-set-id="'+setId+'"' : '';
+    return $('<li><a href="#" class="add-to-set-button" data-record-id="'+recordId+'" '+setIdData+'>'+setName+'</a></li>');
   };
 
   global.addToSet = {
