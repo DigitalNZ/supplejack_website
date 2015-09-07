@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(user_params)
 
-    # simple workaround for registration field not having name/username fields
+    # FIXME simple workaround for registration field not having name/username fields
     # should be replace with actual form fields in a later story
     display_name = resource.email.split('@').first
     resource.name = display_name
