@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.1.2
+before_script:
+  - RAILS_ENV=test rake db:setup
 cache: bundler
 bundler_args: --without production
 sudo: false
