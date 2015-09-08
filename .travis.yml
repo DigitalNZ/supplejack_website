@@ -7,3 +7,7 @@ before_script:
 cache: bundler
 bundler_args: --without production
 sudo: false
+addons:
+  code_climate:
+    repo_token: 
+      secure: "WRu+RLGOnbuoU7xsT3Mv84msGMHXq4mkMld1WU+UNtElbu5T5jjY/2TNA6NrN5rZSHvzAM0+UiDXu5yalXyyDX0Ww5EaLRfYdLmYFxRb89plM71d3h66OxtLRIO0cF/Au5kp9OUOBszeXHd5R7mugl9l53e8DrEjoQC6Vry6E/8="
