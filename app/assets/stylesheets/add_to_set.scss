@@ -1,0 +1,23 @@
+.gallery-record {
+  .add-to-set {
+    float: right;
+    background-color: #777777;
+    color: white;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .add-to-set-popup {
+    position: absolute;
+    z-index: 2;
+    background-color: #020202;
+    border: 1px solid black;
+    width: 300px;
+
+    p {
+      color: white;
+    }
+  }
+}

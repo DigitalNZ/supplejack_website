@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 1.9.3
+- 2.1.2
+before_script:
+- RAILS_ENV=test bundle exec rake db:setup
+cache: bundler
+bundler_args: --without production
+sudo: false
+addons:
+  code_climate:
+    repo_token:
+      secure: WRu+RLGOnbuoU7xsT3Mv84msGMHXq4mkMld1WU+UNtElbu5T5jjY/2TNA6NrN5rZSHvzAM0+UiDXu5yalXyyDX0Ww5EaLRfYdLmYFxRb89plM71d3h66OxtLRIO0cF/Au5kp9OUOBszeXHd5R7mugl9l53e8DrEjoQC6Vry6E/8=
+notifications:
+  slack:
+    secure: i9U1oP2ApD0u4qrLvpauQr+WSlt6fjo5KHI1UOiabGb5i1fKHCcSm71TOvrOmGybFmqP25D15rnBRDL3j4BgOoM1JCtx2Wm1YDCWmLh0Hgvib9P2UPkfqP9/n4UJxkUhLwuoxJjH5vLXAxlP3KguBWrTJOsuo8NA9sCItl0wVL4=

@@ -20,6 +20,7 @@ class RecordsController < ApplicationController
     @records = @search.results
     @facets = @search.facets
     @counts = tab_counts(params.dup)
+    @sets = current_sj_user.try(:sets)
   end
 
   def show

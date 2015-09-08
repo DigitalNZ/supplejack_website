@@ -22,7 +22,5 @@ module Supplejack
     end
   end
 
-  Item.class_eval do
-    include ItemDecorator
-  end
+  Item.send(:include, ItemDecorator)
 end

@@ -1,0 +1,117 @@
+(function(global) {
+  var init = function() {
+    $(".gallery-container").on('click', '.add-to-set', handleInitClick);
+  };
+
+  var handleInitClick = function(e) {
+    var popup = $(this).siblings('.add-to-set-popup');
+    var recordId = $(this).attr('data-record-id');
+
+    popup.show();
+    bindPopupEventHandlers(popup);
+
+    if(popup.hasClass("logged-in"))
+      loadSets(popup, recordId);
+  };
+
+  var bindPopupEventHandlers = function($popup) {
+    $popup.on('click', '.add-to-set-button', handleAddToSetClick);
+    $popup.find('.add-to-new-set-submit').on('click', handleAddToNewSetSubmit);
+
+    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
+  };
+
+  var checkPopupClick = function($popup, event) {
+    if($(event.target).parents().index($popup) == -1) {
+      $popup.hide();
+      return;
+    }
+
+    setTimeout(function() {$('body').one('click', checkPopupClick.bind(null, $popup))});
+  };
+
+  var loadSets = function($popup, recordId) {
+    var $container = $popup.find('.sets-container');
+    $container.html('<%= image_tag 'spinner.gif' %>');
+
+    $.ajax({url: '/user_sets.js', dataType: 'json', method: 'GET'})
+    .always(function() {
+      $container.html('');
+    })
+    .done(function(data) {
+      data.sets.forEach(function(set) {
+        $container.append(makeSetDom(recordId, set.name, set.id));
+      });
+    })
+    .fail(function(xhr, x, y) {
+      $container.append("<p>Error loading sets</p>");
+    });
+  };
+
+  var handleAddToSetClick = function(e) {
+    e.preventDefault();
+
+    var setId = $(this).attr('data-set-id');
+    var recordId = $(this).attr('data-record-id');
+
+    if(setId == undefined)
+      return;
+
+    $.ajax({
+      method: "POST",
+      url: '/user_sets/'+ setId +'/set_items',
+      data: {
+        user_set_id: setId,
+        user_set_item: {
+          record_id: recordId
+        }
+      }
+    })
+    .done(function() {
+      alert("Added item to set");
+    })
+    .fail(function() {
+      alert("Failed adding item to set");
+    });
+  };
+
+  var handleAddToNewSetSubmit = function(e) {
+    e.preventDefault();
+
+    var recordId = $(this).attr('data-record-id');
+    var setNameInput = $(this).parent().find('.add-to-new-set-name');
+    var setName = setNameInput.val();
+    var newSetDom = makeSetDom(recordId, setName);
+    var $container = $(this).parent().siblings('.sets-container');
+
+    if(setNameInput.val() === '')
+      return;
+
+    $.ajax({
+      method: "POST",
+      url: '/user_sets.js', 
+      data: {user_set: {name: setName}, record_id: recordId}, 
+      dataType: 'json'
+    })
+    .done(function(data) {
+      newSetDom.children().attr('data-set-id', data.set_id);
+    })
+    .fail(function(xhr, textStatus, errorThrown) {
+      $container.children(':last-child').remove();
+      $container.append('<p>error</p>');
+      setNameInput.val(setName);
+    });
+
+    $container.append(newSetDom);
+    setNameInput.val('');
+  };
+
+  var makeSetDom = function(recordId, setName, setId) {
+    var setIdData = setId ? 'data-set-id="'+setId+'"' : '';
+    return $('<li><a href="#" class="add-to-set-button" data-record-id="'+recordId+'" '+setIdData+'>'+setName+'</a></li>');
+  };
+
+  global.addToSet = {
+    init: init
+  };
+})(window)
