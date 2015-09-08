@@ -10,11 +10,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  site_title:           "Beta"
+  site_title: "Beta"
 
   home:
-    intro: 'This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources. <a href="/about">Find out more...</a>'
-
+    intro: 'This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources.'
 
   user_sets:
     creator: 'Creator:'

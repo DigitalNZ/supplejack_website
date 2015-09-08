@@ -1,0 +1,23 @@
+/
+  \# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+  \# and is licensed under the GNU General Public License, version 3. Some components are
+  \# third party components that are licensed under the MIT license or other terms.
+  \# See https://github.com/DigitalNZ/supplejack_website for details.
+  \#
+  \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
+  \# http://digitalnz.org/supplejack
+#panel1-1.quick-filters.content.active
+  - filter_facets.each_with_index do |facet, index|
+    %section.large-4.columns
+      = facet[0].capitalize.gsub('_', ' ')
+      %ul.columns
+        - facet[1].each_with_index do |filter, i|
+          - if i < 5
+
+            %li
+              = content_tag :a,                                                                                                        |
+                "#{date_parser_for(filter[0])} <span class='count'>#{number_with_precision(filter[1], delimiter: ',', precision: 0)}</span>".html_safe, |
+                class: filter_class(filter[0]),                                                                                        |
+                data: {facet: facet[0], filter: filter[0]}                                                                             |
+        %li
+          %a.more{:href => "#panel1-#{index + 2}"} More +  

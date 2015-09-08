@@ -1,0 +1,16 @@
+/ # The majority of The Supplejack Website code is Crown copyright (C) 2014,
+/ # New Zealand Government, and is licensed under the GNU General Public License,
+/ #version 3. Some components are third party components that are licensed under
+/ # the MIT license or other terms.
+/ # See https://github.com/DigitalNZ/supplejack_website for details.
+/ #
+/ # Supplejack was created by DigitalNZ at the National Library of NZ and
+/ # the Department of Internal Affairs.
+/ # http://digitalnz.org/supplejack
+%button.menu menu
+%nav.menu
+  .menu-inner
+    / <haml_loud> link_to &quot;Become a Partner&quot;, become_a_partner_path </haml_loud>
+    = link_to "Contact", contact_path
+    / <haml_loud> link_to &quot;Terms of use&quot;, terms_path </haml_loud>
+    = link_to "About", about_path
