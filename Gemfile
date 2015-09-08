@@ -28,6 +28,7 @@ gem 'will_paginate'
 gem 'jquery-rails'
 gem 'activeresource'
 gem 'devise'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
