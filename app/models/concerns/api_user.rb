@@ -27,7 +27,7 @@ module ApiUser
       user.try(:destroy)
       Rails.logger.warn("There was a error when creating the API User and default set for member: #{self.id}. Error: #{e.message}")
       puts ("ERROR: There was a error when creating the API User and default set for member: #{self.id}. Error: #{e.message}")
-      self.errors.add(:base, "There was a problem while saving the user details, please try again")
+      self.errors.add(:base, I18n.t('registration.account_creation_error'))
       return false
     end
   end
