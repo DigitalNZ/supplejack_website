@@ -9,6 +9,7 @@
 VCR.configure do |c|
   c.cassette_library_dir = Rails.root.join('spec', 'vcr')
   c.hook_into :webmock
+  c.ignore_hosts 'api.dnz0a.digitalnz.org', 'codeclimate.com'
 end
 
 RSpec.configure do |c|

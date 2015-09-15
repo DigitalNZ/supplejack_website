@@ -62,3 +62,5 @@ en:
 
     gallery_view:       "Gallery View"
     list_view:          "List View"
+  registration:
+    account_creation_error: "There was a problem while saving the user details, please try again"

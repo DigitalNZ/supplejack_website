@@ -17,7 +17,6 @@
       var config = {
          initMasonry: (function() {
             var container = $('.gallery-container');
-
             container.masonry({
                itemSelector: '.gallery-record'
                ,isFitWidth: true

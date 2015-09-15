@@ -8,8 +8,19 @@
 
 source 'https://rubygems.org'
 
+if RUBY_VERSION =~ /2/
+  group :development do
+    gem 'better_errors'
+    gem 'pry-rails'
+  end
+
+  group :development, :test do
+    gem 'pry-byebug'
+  end
+end
+
 gem 'rails', '~> 4.1.0'
-gem 'supplejack_client', git: 'git@github.com:DigitalNZ/supplejack_client.git'
+gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
 
 gem 'mysql2'
 gem 'json'
@@ -17,6 +28,7 @@ gem 'will_paginate'
 gem 'jquery-rails'
 gem 'activeresource'
 gem 'devise'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
@@ -30,7 +42,6 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
-  gem 'pry-rails'
 end
 
 group :test, :development do
@@ -45,7 +56,7 @@ group :test do
   gem 'factory_girl_rails', "= 1.2.0"
   gem 'spork', '>= 1.0.0rc3'
   gem 'vcr', '2.9.0'
-  gem 'pry'
+  gem 'faker'
 end
 
 group :production do

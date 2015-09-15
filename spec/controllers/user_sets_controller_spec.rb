@@ -29,6 +29,7 @@ describe UserSetsController do
     end
     
     it 'assigns @records to the sets items' do
+
       expect(assigns(:records)).to eq(set.items)
     end
 
