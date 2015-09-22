@@ -178,6 +178,20 @@
             }
           });
 
+          // Open Close filters
+          $('.filter-button').on('click', function(){
+            // button_value = this.innerHTML.trim();
+            // console.log(this.innerHTML.trim());
+            if (this.innerHTML.trim() == "+") {
+              $('.filter-tabs').show();
+              this.innerHTML = "x";
+            } else {
+              $('.filter-tabs').hide();
+              this.innerHTML = "+";
+            }
+
+          });
+
           // Remove the filter on click
           $('.filter-unit').on('click', function(){
             var $filter = $(this),
