@@ -6,31 +6,36 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
-%nav.top-bar{'data-topbar' => true, role: "navigation"}
-  %ul.title-area
-    %li.name
-      %h1= link_to "DigitalNZ", root_url
-    %li.toggle-topbar.menu-icon= link_to "Menu", '#'
+.contain-to-grid.sticky
+  %nav.top-bar{'data-topbar' => true, role: "navigation"}
+    %ul.title-area
+      %li.name
+        %h1= link_to "DigitalNZ", root_url
+      %li.toggle-topbar.menu-icon= link_to "Menu", '#'
 
-  %section.top-bar-section
-    %ul.left
-      %li= link_to 'Home', root_url
-      %li= link_to 'Contact', '/contact'
-      %li= link_to 'About', '/about'
-      - unless current_page? root_url
-        %li.has-form
-          .row.collapse
-            = form_tag records_path, :method => :get, class: 'search' do
-              = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
-              = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
-              = submit_tag "Search", class: "search-button"
-
-    %ul.right
-      - if user_signed_in?
-        %li= current_user.email.split('@').first
-        %li= link_to 'Edit profile', edit_user_registration_path
-        %li= link_to "Logout", destroy_user_session_path, method: :delete
-      - else 
-        %li= link_to "Sign up", new_user_registration_path
-        %li= link_to "Login", new_user_session_path
+    %section.top-bar-section
+      %ul.left
+        %li= link_to 'Home', root_url
+        %li= link_to 'Contact', '/contact'
+        %li= link_to 'About', '/about'
+        - unless current_page? root_url
+          %li.has-form
+            .row.collapse
+              = form_tag records_path, :method => :get, class: 'search' do
+                = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
+                .large-8.small-9.columns
+                  = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
+                .large-4.small-3.columns
+                  = submit_tag "Search", class: "search-button"
+                
+      %ul.right
+        - if user_signed_in?
+          %li.has-dropdown
+            %a= current_user.email.split('@').first
+            %ul.dropdown
+              %li= link_to 'Edit profile', edit_user_registration_path
+              %li= link_to "Logout", destroy_user_session_path, method: :delete      
+        - else 
+          %li= link_to "Sign up", new_user_registration_path
+          %li= link_to "Login", new_user_session_path
 
