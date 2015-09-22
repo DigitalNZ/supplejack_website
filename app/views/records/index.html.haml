@@ -9,11 +9,12 @@
 - content_for(:body_class) {'records'}
 - title @search.text
 = render 'search_tabs'
-.container.results
+.container.results.clearfix
   = render 'filters'
-  .gallery-container
-    %span.gallery-spinner
-    = render @records
+  .large-9.columns
+    .gallery-block
+      %span.gallery-spinner
+        = render @records
     #second-spinner.infinite-spinner
   #navigation
     = will_paginate(@records)

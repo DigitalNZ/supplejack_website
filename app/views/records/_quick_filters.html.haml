@@ -6,10 +6,11 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
-#panel1-1.quick-filters.content.active
+.quick-filters.active
   - filter_facets.each_with_index do |facet, index|
     %section
-      %h2= facet[0].capitalize.gsub('_', ' ')
+      %st> 
+        = facet[0].capitalize.gsub('_', ' ')
       %ul.columns
         - facet[1].each_with_index do |filter, i|
           - if i < 5
@@ -20,3 +21,4 @@
                 data: {facet: facet[0], filter: filter[0]}                                                                             |
         %li
           %a.more{:href => "#panel1-#{index + 2}"} More +
+      %hr    
