@@ -10,8 +10,6 @@ class RecordsController < ApplicationController
 
   def home
     @search = search
-
-    render :layout => "home"
   end
 
   def index

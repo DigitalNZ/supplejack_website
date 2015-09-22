@@ -20,6 +20,10 @@ module RecordsHelper
     content.html_safe
   end
 
+  def source_contributor_name(record)
+    content_tag(:p, record.source_contributor_name.join(', ').html_safe)
+  end
+
   def search_tab
     @search_tab ||= SearchTab.new(params[:tab])
   end
