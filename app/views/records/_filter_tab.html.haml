@@ -10,8 +10,8 @@
   %section
     %ul.columns
       - facet_values.each do |label, count|
-        %li
+        %li.large-3.columns
           = content_tag :a,                                                                                                |
-            "#{label} <span class='count'>#{number_with_precision(count, delimiter: ',', precision: 0)}</span>".html_safe, |
+            "#{date_parser_for(label)} <span class='count'>#{number_with_precision(count, delimiter: ',', precision: 0)}</span>".html_safe, |
             class: filter_class(label),                                                                                    |
             data: {facet: facet, filter: label}                                                                            |
