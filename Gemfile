@@ -30,6 +30,7 @@ gem 'activeresource'
 gem 'devise'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'haml', '~> 4.0.6'
+gem 'rubocop', require: false
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
