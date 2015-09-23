@@ -6,7 +6,7 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
-= form_tag records_path, :method => :get, class: 'search' do
+= form_tag records_path, :method => :get, class: 'search clearfix' do
   = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
   = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
   = submit_tag "Search", class: "search-button"

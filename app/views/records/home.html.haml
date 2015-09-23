@@ -7,10 +7,9 @@
 	\# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 	\# http://digitalnz.org/supplejack
 
-.row
-	.medium-12.columns
+.row.home
+	.centerScreen
 		%h1.logo= t('site_title')
-		= image_tag('logo-dnz.png')
 		= render "shared/search"
 
-		%p= t('home.intro').html_safe
+		%p.introText= t('home.intro').html_safe
