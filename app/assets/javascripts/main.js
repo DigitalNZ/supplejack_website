@@ -16,7 +16,7 @@
    Module = (function() {
       var config = {
          initMasonry: (function() {
-            var container = $('.gallery-container');
+            var container = $('.gallery-block');
             container.masonry({
                itemSelector: '.gallery-record'
                ,isFitWidth: true
@@ -27,7 +27,7 @@
             });
          })
          ,initInfiniteScroll: (function() {
-            var galleryContainer = $('.gallery-container'),
+            var galleryContainer = $('.gallery-block'),
                 notIE = ($('.ie8').length == 0 && $('.ie7').length == 0);
 
             if (notIE) {

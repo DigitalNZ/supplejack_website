@@ -35,8 +35,8 @@ body {
 		&.active {
 			a {
 				background: white;
-				color: $hilite;
-				border-bottom: 3px solid $hilite;
+				color: #FC0000; /*color: $hilite;*/
+				border-bottom: 3px solid #FC0000; /*$hilite; */
 			}
 		}
 	}

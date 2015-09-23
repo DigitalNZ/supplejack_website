@@ -6,7 +6,7 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
-.gallery-record
+.gallery-record.large-4.columns
   = record_thumbnail(record, search)
   = link_to truncate(record.title, length: 20), record_path(record, search.options)
   = render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: record}
