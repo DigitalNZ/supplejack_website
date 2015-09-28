@@ -1,3 +1,4 @@
+# User
 class User < ActiveRecord::Base
   include ApiUser
   # Include default devise modules. Others available are:

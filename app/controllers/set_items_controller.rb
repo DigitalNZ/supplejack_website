@@ -1,3 +1,4 @@
+# SetItemsController deals with sets for a user
 class SetItemsController < ApplicationController
   before_action :authenticate_user!
 
@@ -9,10 +10,6 @@ class SetItemsController < ApplicationController
       success = set_item.save
     end
 
-    if success
-      render nothing: true, status: 200
-    else
-      render nothing: true, status: 500
-    end
+    render success ? { nothing: true, status: 200 } : { nothing: true, status: 500 }
   end
 end
