@@ -35,6 +35,6 @@ module ApplicationHelper
 
   def search_tab_options(options, tab)
     options.delete(:page)
-    options.merge(tab: tab) unless tab == 'All'
+    tab.eql?('All') ? options : options.merge(tab: tab)
   end
 end
