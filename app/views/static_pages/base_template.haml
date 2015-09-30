@@ -1,0 +1,66 @@
+/
+  \# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+  \# and is licensed under the GNU General Public License, version 3. Some components are
+  \# third party components that are licensed under the MIT license or other terms.
+  \# See https://github.com/DigitalNZ/supplejack_website for details.
+  \#
+  \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
+  \# http://digitalnz.org/supplejack
+.container.static
+  %section
+    %h1 Main page title
+    %p.blurb
+      Preamble, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed gravida arcu,
+      eget mollis nunc. Aenean molestie rhoncus ipsum, ac tempor erat molestie eu.
+      Donec tincidunt leo nec enim rutrum pulvinar.
+    %h3 General subtitle
+    %p
+      We aim to make New Zealand digital content more useful. This includes helping people use digital material from libraries, museums, government departments, publicly funded organisations, the private sector, and community groups.
+    %h2 Section title
+    %h3 General subtitle
+    %p
+      We aim to make New Zealand digital content more useful. This includes helping people use digital material from libraries, museums, government departments, publicly funded organisations, the private sector, and community groups.
+    %h3 Example of bulleted list
+    %ul
+      %li
+        %span Number one
+      %li
+        %span Number two
+    %h3 Example of numbered list
+    %ol
+      %li
+        %span Number one
+      %li
+        %span Number two
+    = succeed "." do
+      %a{:href => "#"} I am a link
+    = succeed "." do
+      %a{:href => "#"} and what do you have it I am another link
+  .sidebar
+    %h2 Parent title
+    %ul.secondary-nav
+      %li
+        %a{:href => "/make-it-digital/getting-started-with-digitisation"} Getting Started with Digitisation
+      %li
+        %a{:href => "/make-it-digital/selecting-for-digitisation"} Selecting for Digitisation
+      %li.active
+        %a{:href => "/make-it-digital/creating-digital-content"} Creating Digital Content
+        %ul.children
+          %li#page_79.page
+            %a{:href => "/make-it-digital/creating-digital-content/photography-and-imaging"} Photography and Imaging
+          %li#page_80.page
+            %a{:href => "/make-it-digital/creating-digital-content/creating-digital-text"} Creating Digital Text
+          %li#page_81.page
+            %a{:href => "/make-it-digital/creating-digital-content/creating-digital-audio"} Creating Digital Audio
+          %li#page_82.page
+            %a{:href => "/make-it-digital/creating-digital-content/creating-digital-video"} Creating Digital Video
+          %li#page_83.page
+            %a{:href => "/make-it-digital/creating-digital-content/digitisation-resources"} Digitisation Resources
+      %li
+        %a{:href => "/make-it-digital/describing-digital-content"} Describing Digital Content
+      %li
+        %a{:href => "/make-it-digital/managing-digital-content"} Managing Digital Content
+      %li
+        %a{:href => "/make-it-digital/preserving-digital-content"} Preserving Digital Content
+      %li
+        %a{:href => "/make-it-digital/enabling-use-re-use"} Enabling Use &amp; Re-use

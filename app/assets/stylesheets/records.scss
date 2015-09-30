@@ -12,16 +12,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors.scss';
+@import 'media-ranges.scss';
+
 /**********************
-COLOR VARIABLES
+GALLERY STYLES
 **********************/
 
-$dark-grey: #4a4a47;
-$red: #ff384c;
-$middle-grey: #777;
-$text-red: #ff384c;
-$text-grey: #4b4b51;
-$light-grey: #f7f6f6;
+
+#navigation {
+  display: none;
+}
+.gallery-container {
+  margin: 0;
+  margin-top: 4em;
+  margin-bottom: 100px;
+
+  .gallery-spinner {
+    background: image-url("spinner.gif") no-repeat;
+    position: absolute;
+    top: 100px;
+    left: 454px;
+    height: 32px;
+    width: 32px;
+    z-index: 1;
+  }
+
+  &.masonry {
+    .gallery-spinner { display: none; }
+  }
+}
+.infinite-spinner {
+  position: absolute;
+  bottom: -100px;
+  left: 454px;
+  height: 32px;
+  width: 32px;
+  z-index: 1;
+}
+
+#second-spinner {
+  display: none;
+}
+
 
 /**********************
 RECORDS STYLES
@@ -46,6 +79,11 @@ RECORDS STYLES
 		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.3);
 		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.3);
+		&:hover {
+		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.4);
+		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.4);
+		}
 		.image a:hover, .image a {
 			border-bottom: none;
 		}
@@ -61,7 +99,7 @@ RECORDS STYLES
 			// display: block;
 			// float: left;
 			border-bottom: 1px solid none;
-			color: $text-red;
+			color: $brand-colour;
 			font-weight: 500;
 			letter-spacing: 1px;
 			border-bottom: 1px solid $light-grey;
@@ -75,7 +113,7 @@ RECORDS STYLES
 			margin-bottom: 10px;
 		}
 		a:hover {
-			border-bottom: 1px solid $text-red;
+			border-bottom: 1px solid $brand-colour;
 		}
 	}
 }
@@ -102,7 +140,235 @@ h1 {
 		}
 	}
 }
+.filter-container {
+	position: absolute;
+	background-color: #f0f0f0;
+	width: 100%;
+	z-index: 10;
+	display: none;
+	border: 1px solid $gray;
+	height: 500px;
+	overflow: scroll;
+	margin-top: 0em;
+	opacity: .97;
+	@media only screen and (max-height: 1000px) {
+	-webkit-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+-moz-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+	}
 
+	@media only screen and (min-height: 1000px) {
+		height: auto;
+		overflow: initial;
+	}
+	.tabs-content .content {
+		//text-align: justify;
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+	.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    color: $brand-colour;
+    line-height: 1;
+    font-size: 4em;
+    padding: 0 .5em 0 0;
+	}
+	&.open {
+		display: block;
+	}
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border: inset 0.5em;
+		border-color: transparent transparent $gray transparent;
+		border-bottom-style: solid;
+		position: absolute;
+		top: -1em;
+		left: 3em;
+		z-index: 99;
+	}
+	
+	header {
+		@media only screen and (min-width: 65em) {
+			padding: 0 2em;
+		}
+		border-bottom: 1px solid $gray;
+		li {
+			display: inline-block;
+			&.active {
+				a {
+					color: $brand-colour;
+					border-bottom: 4px solid $brand-colour;
+				}
+			}
+			a {
+				padding: 1.5em 0 1em 0;
+				margin-left: 1em;
+				margin-right: 1em;
+				font-weight: normal;
+				display: block;
+				color: $dark-grey;
+				border-bottom: none;
+				margin-bottom: -2px;
+			}
+		}
+	}
+	.content {
+		@media only screen and (min-width: 65em) {
+			padding: 0 2em;
+		}
+		section {
+			display: inline-block;
+			padding: 2em 1em;
+			/*width: 33%;*/
+			color: $brand-colour;
+			float: left !important;
+			box-sizing: border-box;
+			a, a:hover, .active {
+				padding: 0.5em 0;
+				border-bottom: none;
+				font-weight: normal;
+				display: block;
+				font-size: 0.9em;
+
+				span {
+					color: $brand-colour;
+				}
+			}
+			a {
+				cursor: pointer;
+				color: $dark-grey;
+				&.active {
+					color: $brand-colour;
+				}
+				span {
+					font-size: 0.6em;
+					color: $middle-grey;
+				}
+			}
+		}
+	}
+	
+	ul.columns {
+		width: 100%;
+		padding-left: 0;
+		margin: 1em 0 0 0;
+		li {
+			display: inline-block;
+			min-width: 12em;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+	}
+	li a.more, li a.more:hover {
+		font-size: 0.7em;
+		border-top: 1px solid #ccc;
+		margin-top: 0.5em;
+		padding-top: 1em;
+	}
+	a.disabled {
+		color: $dark-grey;
+		cursor: default;
+
+		&:hover {
+			color: $dark-grey;
+		}
+
+		span, span:hover {
+			color: $dark-grey !important;
+		}
+	}
+}
+.results {
+	padding-top: 2em;
+	position: relative;
+		/*.filters-button {
+			background-color: $brand-colour;
+			color: white;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			&:hover, &:focus {
+				background-color: lighten($brand-colour, 10%);
+				color: white;
+			}
+		}*/
+}
+
+.filter-btn {
+	float: left;
+	border: none;
+	padding: 0.5em 4em 0.5em 1em;
+	background-color: $gray;
+	/*@include border-radius(0);*/
+	color: #000;
+	font-size: 0.8em;
+	position: relative;
+	vertical-align: bottom;
+	&.on {
+		background-color: $brand-colour;
+		color: #000;
+		&:after {
+			content: '-';
+			border-left: 1px solid darken($brand-colour, 10%);
+		}
+	}
+	&:after {
+		content: '+';
+		border-left: 1px solid #aaa;
+		position: absolute;
+		right: 0.2em;
+		top: 0;
+		color: #000;
+		height: 2.2em;
+		width: 2em;
+		line-height: 2.2em;
+		font-size: 1em;
+	}
+	&:hover{
+		background-color: $brand-colour;
+		color: #000;
+	}
+}
+.filter-btn:hover:after {
+	border-left: 1px solid darken($brand-colour, 10%);
+}
+.filter-unit, .filters-button {
+	float: left;
+	border: 1px solid $brand-colour;
+	background-color: #fff;
+	font-size: .8em;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding: 0.4em;
+	color: $brand-colour;
+	margin: 0 0 0 0.1em;
+	vertical-align: bottom;
+	line-height: 1.3em;
+}
+.filter-unit {
+	&:after {
+		content: '×';
+		padding: 0.3em;
+		font-size: 0.9em;
+		line-height: 0.2em;
+		height: 0.9em;
+		width: 0.9em;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		margin: 0 0 0 0.5em;
+		color: tint($brand-colour, 80);
+	}
+	&:hover {
+			background-color: $brand-colour;
+			color: #fff;
+	}
+
+}
 .pullout {
 	padding: 1em;
 	border: 1px solid #efefef;

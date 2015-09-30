@@ -13,5 +13,6 @@
  	<%= link_to truncate(record.title, length: 20), record_path(record, search.options) %>
   <p><%= source_contributor_name(record) %></p>
 
-  <%= render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: record} %>
+  <p><%= source_contributor_name(record) %></p>
 </div>
+

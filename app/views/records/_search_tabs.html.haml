@@ -1,0 +1,18 @@
+/
+  \# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
+  \# and is licensed under the GNU General Public License, version 3. Some components are
+  \# third party components that are licensed under the MIT license or other terms.
+  \# See https://github.com/DigitalNZ/supplejack_website for details.
+  \#
+  \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
+  \# http://digitalnz.org/supplejack
+.filters
+  .container
+    %ul
+      - SearchTab.sorted_counts(@counts).each do |type, count|
+        = content_tag :li, class: ('active' if search_tab.value.downcase == type.downcase) do              |
+            link_to SearchTab.tab_label(type, number_with_precision(count, delimiter: ',', precision: 0)), |
+            records_path(search_tab_options(search.options, type)),                                        |
+            id: "#{type}-tab"                                                                              |
+          end                                                                                              |
+

@@ -24,8 +24,9 @@
 //= require jquery_ujs
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
+//= require foundation
 //= require_tree .
-
 $(function() {
-  window.addToSet.init();
+  $(document).foundation();
+  addToSet.init();
 });
