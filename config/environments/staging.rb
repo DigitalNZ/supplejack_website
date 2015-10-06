@@ -79,7 +79,7 @@ Demo::Application.configure do
   config.active_support.deprecation = :notify
 
   API_HOST = 'http://api.digitalnz.org'
-  API_KEY = 'gV1woMjzQzsbzakmXXpb'
+  API_KEY = 'xun5EUsUikx_1syoKyV9'
   THUMBNAIL_SERVER_URL = 'http://thumbnails.digitalnz.org'
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
