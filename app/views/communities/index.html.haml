@@ -1,0 +1,22 @@
+- title t('communities')
+- content_for(:body_class) {'community'}
+
+.container.community-content
+
+	.row 
+		.medium-12.columns
+			.community-header
+				.row 
+					.medium-8.columns
+						%h1 DigitalNZ Communities
+					.medium-4.columns
+
+	.row.communities
+		.medium-12.columns
+			%ul.medium-block-grid-3
+				- @communities.each do |community|
+					%li
+						.image-frame= link_to image_tag(community.feature_image), community
+						%h4= link_to community, community
+						%p= community.description
+

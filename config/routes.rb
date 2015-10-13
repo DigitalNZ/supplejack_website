@@ -7,6 +7,19 @@
 # http://digitalnz.org/supplejack
 
 Demo::Application.routes.draw do
+  resources :contributed_items
+  resources :stories do
+    member do
+      post 'communities/:community_id', :to => "stories#add_community", :as => :add_community_to
+    end
+  end
+  resources :communities do 
+    resources :stories
+    resources :contributed_items
+    member do
+      get :records, :to => "records#index"
+    end
+  end
   devise_for :users, controllers: { registrations: 'registrations'}
 
   root to: 'records#home'

@@ -1,0 +1,60 @@
+- title @story.name.truncate(40)
+- content_for(:body_class) {'story'}
+
+.container
+
+	.row
+		.medium-12.columns
+			.story-header
+				%h1.best_in_place= @story.name
+	.row
+		.medium-9.columns
+			.freeform{ data: { editable: true, name: 'main' } }
+				%h3= @story.content_output
+		.medium-3.columns.story-metadata
+			%h3 
+				Written by 
+				%br
+				%strong You
+				%br
+				on 
+				= Time.now.strftime('%-d %B %Y')
+			- unless @story.communities.empty?
+				%h3 Part of these communities:
+				- @story.communities.each do |community|
+					.record-badge.record-community
+						%a{ href: community_path(community) }
+							%i.fa.fa-users.fa-2x
+							%span= community
+
+			.record-badge.record-contributed
+				%i.fa.fa-heart.fa-2x
+				%span Contributed by a community member
+
+			/ %h3 Copyright info
+
+			/ Choose a copyright:
+
+
+
+
+
+/ .container
+/ 	.row
+/ 		.medium-12.columns
+
+/ 			%h2 Create a story
+
+/ 			%section#step1.step
+
+/ 				%h3 Step 1: Write a couple of sentences about what you're interested in
+
+/ 				%p We'll try to match you up with some great content.
+
+/ 			%section#step2.step
+
+/ 				%h3 Step 2: Choose some interesting items
+
+/ 			%section#step2.step
+
+/ 				%h3 Step 3: Write your narrative

@@ -1,0 +1,5 @@
+- unless @breadcrumbs.nil?
+	%ul.breadcrumbs
+		%li= link_to 'DigitalNZ Home', root_url
+		- @breadcrumbs.each do |label, link|
+			%li= link_to label, link

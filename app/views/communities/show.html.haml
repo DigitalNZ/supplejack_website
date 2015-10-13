@@ -1,0 +1,107 @@
+- title @community.to_s
+- content_for(:body_class) {'community'}
+
+= render partial: 'communities/community_header'
+
+.container.community-content
+	.row
+		.medium-5.columns
+			.community-search
+				%h4 Search within this community
+
+				= form_tag records_community_path(@community), :method => :get, class: 'search clearfix' do
+					= hidden_field_tag("i[content_partner]", @community.kete_slug)
+					= hidden_field_tag("tab", params[:tab]) if params[:tab].present?
+					.row.collapse
+						.small-10.columns
+							= text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
+						.small-2.columns
+							= submit_tag "Search", class: "search-button button postfix"
+
+
+			=simple_format @community.description
+
+		.medium-7.columns
+			%ul.medium-block-grid-4.dashboard
+				%li
+					%a{ href: records_community_path(@community, 'i[content_partner]' => @community.kete_slug, tab: 'Sets') }
+						%span.dashboard-value= number_with_delimiter(@community.stories.count)
+						%span.dashboard-caption Stories
+				%li
+					%a{ href: records_community_path(@community, 'i[content_partner]' => @community.kete_slug, tab: 'Images')}
+						%span.dashboard-value= number_with_delimiter( @counts['Images'] )
+						%span.dashboard-caption Images
+				%li
+					%a{ href: records_community_path(@community, 'i[content_partner]' => @community.kete_slug, tab: 'Videos') }
+						%span.dashboard-value= number_with_delimiter( @counts['Videos'] )
+						%span.dashboard-caption Videos
+				%li
+					%a{ href: records_community_path(@community, 'i[content_partner]' => @community.kete_slug, tab: 'Audio') }
+						%span.dashboard-value= number_with_delimiter( @counts['Audio'] )
+						%span.dashboard-caption Audio
+
+
+			.call-to-action
+	
+				%h4 Add your contributions
+
+				%ul.medium-block-grid-2
+					%li
+						%a.call-to-action{ href: new_story_path }
+							%i.fa.fa-pencil.fa-2x
+							Write your story
+					%li
+						%a.call-to-action{ href: '#', 'data-reveal-id' => "modal-add-image" }
+							.fa-grouper
+								%i.fa.fa-camera-retro.fa-2x
+								%i.fa.fa-volume-up.fa-2x
+							Add your items
+
+
+	.row 
+		.medium-12.columns
+			%h2 Recently added
+
+			%ul.medium-block-grid-6
+				- @search.results.shuffle[0..5].each do |r|
+					%li= link_to image_tag(r.thumbnail_url), r
+
+			.more
+				= link_to "View more…", '#'
+
+	.row 
+		.medium-12.columns
+			%h2 Most popular
+
+			%ul.medium-block-grid-6
+				- @search.results.shuffle[0..5].each do |r|
+					%li= link_to image_tag(r.thumbnail_url), r
+
+			.more
+				= link_to "View more…", '#'
+
+	.row.stories 
+		.medium-12.columns
+			%h2 Our stories
+
+			- unless @feature_story.nil?
+				.row.hero 
+					.medium-6.columns
+						.hero-image= link_to image_tag(@feature_story.feature_image), @feature_story
+					.medium-6.columns
+						%h6 Featured Story
+						%h3= link_to @feature_story, @feature_story
+						%p= @feature_story.description
+
+
+	.row.stories 
+		.medium-12.columns
+			%ul.medium-block-grid-3
+				- @community.stories.each do |story|
+					%li
+						.story-image-pad= link_to image_tag(story.feature_image), story
+						%h4= link_to story, story
+						%p= truncate(story.description, length: 140)
+
+
+= render partial: 'shared/add_image_modal'

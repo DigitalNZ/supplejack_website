@@ -11,9 +11,15 @@
 	%body{ class: yield(:body_class) }
 		= render "shared/header"
 		- if notice
-			%p.alert.alert-success= notice
+			.container 
+				.alert-box.success.radius{ data: { alert: true } }
+					= notice
+					%a.close{ href: '#' } &times;
 		- if alert
-			%p.alert.alert-danger= alert
+			.container 
+				.alert-box.alert.radius{ data: { alert: true } }
+					= alert
+					%a.close{ href: '#' } &times;
 
 		.main= yield
 

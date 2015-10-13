@@ -16,22 +16,24 @@
     %section.top-bar-section
       %ul.left
         %li= link_to 'Home', root_url
+        %li= link_to 'Communities', communities_path
         %li= link_to 'Contact', '/contact'
         %li= link_to 'About', '/about'
-        - unless current_page? root_url
-          %li.has-form
-            .row.collapse
-              = form_tag records_path, :method => :get, class: 'search' do
-                = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
-                .large-8.small-9.columns
-                  = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
-                .large-4.small-3.columns
-                  = submit_tag "Search", class: "search-button"
+        / - unless current_page? root_url
+        /   %li.has-form
+        /     .row.collapse
+        /       = form_tag records_path, :method => :get, class: 'search' do
+        /         = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
+        /         .large-8.small-9.columns
+        /           = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
+        /         .large-4.small-3.columns
+        /           = submit_tag "Search", class: "button postfix"
                 
       %ul.right
         - if user_signed_in?
           %li.has-dropdown
-            %a= current_user.email.split('@').first
+            %a Harley Couper
+            / %a= current_user.email.split('@').first
             %ul.dropdown
               %li= link_to 'Edit profile', edit_user_registration_path
               %li= link_to "Logout", destroy_user_session_path, method: :delete      

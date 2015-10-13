@@ -1,0 +1,34 @@
+.ct-toolbox {
+	width: 240px !important;
+}
+
+.ct-tool {
+	height: 64px !important;
+	width: 64px !important;
+	font-size: 32px !important;
+}
+
+.ct-tool--unordered-list {
+	display: none !important;
+}
+.ct-tool--ordered-list {
+	display: none !important;
+}
+.ct-tool--table {
+	display: none !important;
+}
+.ct-tool--indent {
+	display: none !important;
+}
+
+.ct-tool--unindent {
+	display: none !important;
+}
+
+.ct-tool--preformatted {
+	display: none !important;
+}
+.ct-tool--line-break {
+	display: none !important;
+}
+

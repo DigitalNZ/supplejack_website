@@ -1,0 +1,9 @@
+.add-to-set{"data-record-id" => record_id} 
+	%i.fa.fa-plus-circle
+	.add-to-set-popup.logged-in{:style => "display: none;"}
+		%ul.sets-container
+		%form
+			%label
+				New set
+			%input.add-to-new-set-name{:type => "text"}/
+			%input.add-to-new-set-submit{"data-record-id" => record_id, :type => "submit", :value => "Create"}/

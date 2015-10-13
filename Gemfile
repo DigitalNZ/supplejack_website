@@ -30,7 +30,11 @@ gem 'activeresource'
 gem 'devise'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'haml', '~> 4.0.6'
+gem 'haml-rails'
 gem 'rubocop', require: false
+
+gem 'highscore'
+gem 'best_in_place', '~> 3.0.1'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
@@ -45,6 +49,7 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
+  gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 end
 
 group :test, :development do

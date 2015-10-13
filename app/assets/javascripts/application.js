@@ -24,9 +24,15 @@
 //= require jquery_ujs
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
+//= require best_in_place
 //= require foundation
 //= require_tree .
 $(function() {
   $(document).foundation();
   addToSet.init();
+});
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
 });

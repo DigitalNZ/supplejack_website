@@ -1,33 +1,24 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  reconnect: false
-  database: supplejack_website_dev
   pool: 5
   username: root
   password:
 
 development:
   <<: *default
-  database: supplejack_website_dev
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  database: dnz_development
+  password: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: supplejack_website_test
-
-staging:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: supplejack_website_beta_staging
-  
-  pool: 5
-  username: digitalnz
-  password: n4tlibby
-  host: localhost
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  database: dnz_test
+  password: root
 
 cucumber:
   <<: *test

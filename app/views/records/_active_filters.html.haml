@@ -7,14 +7,18 @@
 / # Supplejack was created by DigitalNZ at the National Library of NZ and
 / # the Department of Internal Affairs.
 / # http://digitalnz.org/supplejack
+
+
+
+/ #HACK #FIXME - Kete code for presentation only!
 - params['i'].each do |facet, value|
-  = content_tag :button, date_parser_for(value),          |
+  = content_tag :button, date_parser_for(value).gsub('Kete ', 'Community: '),          |
     class: "filter-unit",                |
     id: "target-#{filter_class(value)}", |
     data: {facet: facet, filter: value}  |
 - params['or'].each do |facet, values|
   - values.each do |value|
-    = content_tag :button, date_parser_for(value),          |
+    = content_tag :button, date_parser_for(value).gsub('Kete ', 'Community: '),          |
       class: "filter-unit",                |
       id: "target-#{filter_class(value)}", |
       data: {facet: facet, filter: value}  |

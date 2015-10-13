@@ -1,0 +1,6 @@
+#modal-add-image.reveal-modal{ 'data-reveal' => true, 'aria-labelledby' => "modalTitle", 'aria-hidden' => true,  role: 'dialog'}
+	%h2 Add your own images
+
+	= link_to raw('&#215;'), '#', class: 'close-reveal-modal', 'aria-label' => 'Close'
+
+	= render partial: 'contributed_items/form'
