@@ -35,7 +35,7 @@ class Story < ActiveRecord::Base
 			output = simple_format(self.description.to_s).html_safe
 
 			self.items.each do |item|
-				output += image_tag(item.large_thumbnail_url)
+				output += image_tag(item.thumbnail_url)
 			end
 
 			if self.user_set.id.nil?
