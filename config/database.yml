@@ -22,3 +22,6 @@ test: &test
 
 cucumber:
   <<: *test
+
+production:
+  <<: *default

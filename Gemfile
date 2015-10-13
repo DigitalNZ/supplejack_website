@@ -35,6 +35,7 @@ gem 'rubocop', require: false
 
 gem 'highscore'
 gem 'best_in_place', '~> 3.0.1'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
@@ -49,7 +50,6 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
-  gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 end
 
 group :test, :development do
@@ -70,5 +70,6 @@ end
 
 group :production do
   gem 'therubyracer'
+  gem 'rails_12factor'
 end
 
