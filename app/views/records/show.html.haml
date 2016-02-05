@@ -34,22 +34,7 @@
             %i.fa.fa-heart.fa-2x
             %span Contributed by a community member
 
-      .record-badge.record-add
-        %a.record-add-trigger{ href: '#' }
-          %i.fa.fa-plus-circle.fa-2x
-          %span Add this item to…
-        / .record-add-panel
-        /   - if current_user.present?
-        /     .row
-        /       .medium-6.columns
-        /         %h4 Add to set
-        /       .medium-6.columns
-        /         %h4 Add to community
-        /         %ul
-        /           - Community.order(:name).each do |community|
-        /             %li= community
-        /   - else
-        /     Please #{link_to "sign-in", new_user_session_path} or #{link_to "sign-up", new_user_registration_path} to save items
+      = render partial: 'add_panel'
 
       = attribute(@record, :creator, { delimiter: '; ', label_tag: 'span', label_class: 'field-label', trans_key: 'records.by' })
       = attribute(@record, :display_date, { label_tag: 'span', label_class: 'field-label', trans_key: 'records.date' })

@@ -139,9 +139,6 @@ h1 {
 			background: darken($brand-colour, 10%);
 		}
 	}
-	.record-add {
-		width: 50%;
-	}
 	.record-community {
 		background: $color2;
 		&:hover {
@@ -154,6 +151,54 @@ h1 {
 			background: darken($color3, 10%);
 		}
 	}
+	.record-add {
+		position: relative;
+		.record-add-panel {
+			display: none;
+			position: absolute;
+			left: -4.5rem;
+			top: 3.2rem;
+			z-index: 2;
+			font-size: 1rem;
+			background: lighten($brand-colour, 40%);
+			border: 2px solid #666;
+			width: 30rem;
+			padding: 1rem;
+			color: #000;
+			border-radius: 0.5rem;
+			a, label, h4 {
+				font-size: 1rem;
+				font-weight: 800;
+				color: #000;
+			}
+			a {
+				font-weight: 300;
+				&:hover {
+					text-decoration: underline;
+					color: $brand-colour;
+				}
+			}
+			-webkit-box-shadow: 10px 10px 25px 0px rgba(102,102,102,1);
+			-moz-box-shadow: 10px 10px 25px 0px rgba(102,102,102,1);
+			box-shadow: 10px 10px 25px 0px rgba(102,102,102,1);
+		}
+
+		.record-add-panel:after {
+			bottom: 100%;
+			left: 20%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(2, 2, 2, 0);
+			border-bottom-color: #666;
+			border-width: 15px;
+			margin-left: -15px;
+		}
+	}
+
 }
 
 

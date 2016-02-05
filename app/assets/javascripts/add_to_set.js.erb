@@ -32,7 +32,7 @@
 
   var loadSets = function($popup, recordId) {
     var $container = $popup.find('.sets-container');
-    $container.html('<%= image_tag 'spinner.gif' %>');
+    $container.html('<i class="fa fa-spinner fa-spin fa-2x"></i>');
 
     $.ajax({url: '/user_sets.js', dataType: 'json', method: 'GET'})
     .always(function() {

@@ -185,6 +185,10 @@
             $('.menu.on').removeClass('on');
           });
 
+          $('.record-add-button').on('click', function(){
+            $('.record-add-panel').toggle();
+          });
+
           // Open Close filters
           $('.filter-btn').on('click', function(){
             if ($(this).attr('value') == "0") {

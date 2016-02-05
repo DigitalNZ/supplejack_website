@@ -15,7 +15,8 @@
 			%h3 
 				Written by 
 				%br
-				%strong= @story.user_set.user.try(:name)
+				/ %strong= @story.user_set.user.try(:name)
+				%strong Harley Couper
 				%br
 				on 
 				= @story.created_at.strftime('%-d %B %Y')

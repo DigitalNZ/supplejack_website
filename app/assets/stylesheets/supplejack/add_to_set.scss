@@ -13,9 +13,13 @@
   top: 3rem;
   z-index: 2;
   font-size: 1rem;
-  a {
+  a, label {
     font-size: 1rem;
     font-weight: 800;
+    color: #fff;
+  }
+  i {
+    color: #fff;
   }
   background-color: #020202;
   border: 1px solid black;

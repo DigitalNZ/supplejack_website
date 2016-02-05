@@ -1,0 +1,30 @@
+.record-add
+  .record-badge.record-add-button
+    %a.record-add-trigger{ href: '#' }
+      %i.fa.fa-plus-circle.fa-2x
+      %span Add this item to…
+
+  .record-add-panel
+    - if current_user.present?
+      .row
+        .medium-6.columns
+          %h4 Add to my sets
+          %ul 
+            %li= link_to 'The Q-Ship Helgoland', '#'
+            %li= link_to 'Family History', '#'
+            %li= link_to 'A.D. Blair', '#'
+
+          .row.collapse.postfix-round
+            .small-9.columns
+              = text_field_tag 'x', '', placeholder: 'Create a new story'
+            .small-3.columns
+              %a.button.postfix Add
+
+        .medium-6.columns
+          %h4 Add to my communities
+          %ul
+            %li= link_to 'Tauranga', '#'
+            %li= link_to 'Christchurch', '#'
+            %li= link_to 'Dunedin', '#'
+    - else
+      Please #{link_to "sign-in", new_user_session_path} or #{link_to "sign-up", new_user_registration_path} to save items
