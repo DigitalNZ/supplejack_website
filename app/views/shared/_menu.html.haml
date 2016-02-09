@@ -16,7 +16,6 @@
     %section.top-bar-section
       %ul.left
         %li= link_to 'Home', root_url
-        %li= link_to 'Communities', communities_path
         %li= link_to 'Contact', '/contact'
         %li= link_to 'About', '/about'
         / - unless current_page? root_url
@@ -32,8 +31,8 @@
       %ul.right
         - if user_signed_in?
           %li.has-dropdown
-            / %a= current_user.email.split('@').first
-            %a Harley Couper
+
+            = link_to "Logged in as #{current_user.email.split('@').first}", '#'
             %ul.dropdown
               %li= link_to 'Edit profile', edit_user_registration_path
               %li= link_to "Logout", destroy_user_session_path, method: :delete      

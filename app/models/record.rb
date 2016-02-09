@@ -21,18 +21,18 @@ class Record
       return "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=#{pp_id}&area=1&width=592&color=32&ext=gif&key="
     end
 
+
     if CGI.escape(source_url) == 'Unknown'
       return '/assets/temp-book.png'
     end
 
 
-    # FIXME major hacking to get presentation working
-
-    # if options[:original]
-    #   "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
-    # else
+    if options[:original]
+      "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
+    else
       "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{CGI.escape(source_url)}"
-    # end
+    end
+
   end
 
 end

@@ -7,6 +7,11 @@ a, button, input, textarea {
 body {
 	font-family: 'Raleway';
 }
+
+.button {
+	background: $brand-colour;
+}
+
 .home {
 	height: calc(100vh - 2em);
 	width: 100%;
@@ -105,7 +110,7 @@ body {
 	margin: 1em 0;
 }
 .filters {
-	margin-top: 2em;
+	margin-top: 1em;
 	border-bottom: 1px solid $gray;
 	ul {
 		margin: 0;

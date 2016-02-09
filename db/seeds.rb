@@ -6,31 +6,3 @@
 # Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
 # http://digitalnz.org/supplejack
 
-require 'csv'
-
-Community.delete_all
-Story.delete_all
-
-
-
-CSV.foreach("db/seeds/kete.csv", headers: true) do |kete|
-
-	puts kete['Slug']
-
-	c = Community.create(
-		name: kete['Slug'],
-		description: kete['Description'],
-		slug: kete['Slug'].parameterize,
-		kete_slug: kete['Existing Kete'],
-		feature_image_url: kete['Image ']
-	)
-
-	kete['Sets'].scan(/user_sets\/([0-9a-f]+)/).each do |set|
-		puts set
-		s = Story.find_or_create_by(user_set_id: set.first)
-		s.communities << c
-		s.save
-	end
-
-end
-

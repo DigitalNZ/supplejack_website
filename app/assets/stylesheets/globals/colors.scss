@@ -1,15 +1,16 @@
 // COLORS
 
-$brand-colour: #fe7f2d; /* Change this colour to change the theme of the site */
-$gray: #ccc;
-$dark-grey: #4B4B51;
-$hilite: #ff0;
-$orange: #EE6900;
-$dark-grey: #4a4a47;
-$red: #EE6900;
-$middle-grey: #777;
-$text-red: #ff384c;
-$text-grey: #4b4b51;
-$light-grey: #f7f6f6;
+/* These are the default colours for the Supplejack application */
 
+$brand-colour: #009; 		/* The main theme colour of the site */
+$hilite: #ff0;				/* A bright colour for highlighting text */
+
+$gray: #ccc;				/* Neutral colour */
+$dark-grey: #4B4B51;		/* Dark neutral colour */
+$middle-grey: #777;			/* Medium neutral colour */
+$light-grey: #f7f6f6;		/* Light neutral colour */
+
+$color1: $brand_colour;		/* The primary colour for interface */
+$color2: #AAA197;			/* Complementary colour for interface (bright) */
+$color3: #5C5146;			/* Another complementary colour for interface (less intrusive) */
 
