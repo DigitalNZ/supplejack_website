@@ -67,18 +67,19 @@ RECORDS STYLES
 
 	.gallery-record {
 		padding: 0.5rem;
-		color: $light-grey;
+		color: $dark-grey;
 		width: 24%;
 		margin: 0.5em 1% 0.5rem 0;
 		background-color: $light-grey;
 		border: 1px solid #ddd;
+		line-height: 1.2rem;
 		img {
 			width: 100%;
 			height: auto;
 			margin: 0;
 		}
 		a {
-			font-size: 14px;
+			font-size: 0.9rem;
 			color: $brand-colour;
 			font-weight: 500;
 			letter-spacing: 1px;
@@ -100,6 +101,10 @@ RECORDS STYLES
 		.gallery-record-caption {
 			padding: 0.5rem 2rem 0.5rem 0.5rem;
 		}
+		.gallery-source {
+			font-size: 0.8rem;
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -118,85 +123,12 @@ h1 {
 			margin: 0 auto;
 		}
 	}
-	.record-badge {
-		margin: 1rem 0;
-		padding: 0.5rem;
-		background: $brand-colour;
-		color: white;
-		border-radius: 0.5rem;
-		.fa, span {
-			vertical-align: middle;
-			color: white;
-		}
-		span {
-			font-weight: 800;
-		}
-		.fa {
-			display: inline-block;
-			padding: 0 0.5rem 0 0.2rem;
-		}
-		&:hover {
-			background: darken($brand-colour, 10%);
-		}
-	}
-	.record-community {
-		background: $color2;
-		&:hover {
-			background: darken($color2, 10%);
-		}
-	}
-	.record-contributed {
-		background: $color3;
-		&:hover {
-			background: darken($color3, 10%);
-		}
-	}
-	.record-add {
-		position: relative;
-		.record-add-panel {
-			display: none;
-			position: absolute;
-			left: -4.5rem;
-			top: 3.2rem;
-			z-index: 2;
-			font-size: 1rem;
-			background: white;
-			border: 2px solid #666;
-			width: 30rem;
-			padding: 1rem;
-			color: #000;
-			border-radius: 0.4rem;
-			a, label, h4 {
-				font-size: 1rem;
-				font-weight: 800;
-				color: #000;
-			}
-			a {
-				font-weight: 300;
-				&:hover {
-					text-decoration: underline;
-					color: $brand-colour;
-				}
-			}
-			-webkit-box-shadow: 10px 10px 25px 0px rgba(102,102,102,1);
-			-moz-box-shadow: 10px 10px 25px 0px rgba(102,102,102,1);
-			box-shadow: 10px 10px 25px 0px rgba(102,102,102,1);
-		}
-
-		.record-add-panel:after {
-			bottom: 100%;
-			left: 20%;
-			border: solid transparent;
-			content: " ";
-			height: 0;
-			width: 0;
-			position: absolute;
-			pointer-events: none;
-			border-color: rgba(2, 2, 2, 0);
-			border-bottom-color: #666;
-			border-width: 15px;
-			margin-left: -15px;
-		}
+	.add-to-set {
+		position: relative !important;
+		top: auto !important;
+		bottom: auto !important;
+		left: auto !important;
+		right: auto !important;
 	}
 
 }
@@ -476,16 +408,4 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 }
 .record-add {
 	width: 50%;
-}
-.record-community {
-	background: $color2;
-	&:hover {
-		background: darken($color2, 10%);
-	}
-}
-.record-contributed {
-	background: $color3;
-	&:hover {
-		background: darken($color3, 10%);
-	}
 }

@@ -21,9 +21,6 @@ class RecordsController < ApplicationController
     @facets = @search.facets
     @counts = tab_counts(params.dup)
     @sets = current_sj_user.try(:sets)
-    if (params[:id])
-      @community = Community.find_by_slug(params[:id])
-    end
   end
 
   def show

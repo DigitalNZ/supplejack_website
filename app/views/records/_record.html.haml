@@ -9,6 +9,7 @@
 
 .gallery-record
   = record_thumbnail(record, search)
-  .gallery-record-caption= link_to truncate(record.title, length: 30), record_path(record, search.options)
-  %p= source_contributor_name(record)
+  .gallery-record-caption
+    = link_to truncate(record.title, length: 30), record_path(record, search.options)
+    .gallery-source= record.display_content_partner
   = render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: record}
