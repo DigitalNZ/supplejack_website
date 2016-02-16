@@ -16,6 +16,7 @@ doc/app
 # Public Uploads
 public/system/*
 public/themes/*
+public/uploads/*
 
 # Public Cache
 public/javascripts/cache
