@@ -6,9 +6,7 @@
 # Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
 # http://digitalnz.org/supplejack
 
-require 'spec_helper'
-
-describe UserSetsController do
+RSpec.describe UserSetsController do
   describe 'GET show' do
     let(:set) {
       double(:set, {
@@ -19,7 +17,7 @@ describe UserSetsController do
       })
     }
     before do
-      Supplejack::UserSet.stub(:find) {set}
+      allow(Supplejack::UserSet).to receive(:find) {set}
 
       get :show, id: ''
     end

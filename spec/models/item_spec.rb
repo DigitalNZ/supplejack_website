@@ -7,9 +7,8 @@
 # http://digitalnz.org/supplejack
 
 # encoding: UTF-8
-require 'spec_helper'
 
-describe Supplejack::Item do
+RSpec.describe Supplejack::Item do
 
   describe "#image_url" do
     let(:item) {

@@ -36,10 +36,12 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test, :development do
-  gem "rspec-rails", "2.14"
+  gem "rspec-rails", "~> 3.0"
   gem 'oily_png'
   gem 'minitest'
   gem 'simplecov'
@@ -53,4 +55,5 @@ group :test do
   gem 'spork', '>= 1.0.0rc3'
   gem 'vcr', '2.9.0'
   gem 'faker'
+  gem 'rspec-activemodel-mocks'
 end
