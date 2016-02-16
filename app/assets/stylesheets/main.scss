@@ -1,12 +1,12 @@
 
-@import "globals/foundation_and_overrides.scss";
-@import "globals/media-ranges.scss";
-@import "globals/colors.scss";
+@import "globals/foundation_and_overrides";
+@import "globals/media-ranges";
+@import "globals/colors";
 
-@import "dnz-specific/colors-and-sizes.scss";
+@import "dnz-specific/colors-and-sizes";
 
-@import "supplejack/general.scss";
-@import "supplejack/records.scss";
-@import "supplejack/add_to_set.scss";
+@import "supplejack/general";
+@import "supplejack/records";
+@import "supplejack/add_to_set";
 
-@import "dnz-specific/general.scss";
+@import "dnz-specific/general";

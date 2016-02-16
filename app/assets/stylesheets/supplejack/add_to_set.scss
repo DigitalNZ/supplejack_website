@@ -1,53 +1,59 @@
+$add-to-set-btn-color: #999;
+
 .add-to-set {
-  color: #999;
-  cursor: pointer;
-  position: absolute;
   bottom: 0.5rem;
-  right: 0.5rem;
+  color: $add-to-set-btn-color;
+  cursor: pointer;
   font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
 }
 
 .add-to-set-popup {
-  position: absolute;
-  left: -4.4rem;
-  top: 3rem;
-  z-index: 2;
-  font-size: 1rem;
-  a, label {
-    font-size: 1rem;
-    font-weight: 800;
-    color: #fff;
-  }
-  i {
-    color: #fff;
-  }
   background-color: #020202;
   border: 1px solid black;
-  width: 10rem;
+  color: white;
+  font-size: 1rem;
+  left: -4.4rem;
   padding: 0.5rem;
-  color: #fff;
+  position: absolute;
+  top: 3rem;
+  width: 10rem;
+  z-index: 2;
+
+  a, 
+  label {
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  i {
+    color: white;
+  }
 }
 
-.add-to-set-popup:after {
-  bottom: 100%;
-  left: 50%;
+.add-to-set-popup::after {
   border: solid transparent;
+  border-bottom-color: #020202;
+  border-color: rgba(2, 2, 2, 0);
+  border-width: 15px;
+  bottom: 100%;
   content: " ";
   height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(2, 2, 2, 0);
-  border-bottom-color: #020202;
-  border-width: 15px;
+  left: 50%;
   margin-left: -15px;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
 }
 
 .record-actions {
   padding: 0 3rem 0 0;
   position: relative;
+
   .add-to-set {
-    top: 0;
     bottom: auto;
+    top: 0;
   }
 }
