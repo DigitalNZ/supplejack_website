@@ -3,22 +3,17 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
 
 development:
   <<: *default
-  socket: /Applications/MAMP/tmp/mysql/mysql.sock
-  database: dnz_development
-  password: root
+  database: kereru_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  socket: /Applications/MAMP/tmp/mysql/mysql.sock
-  database: dnz_test
-  password: root
+  database: kereru_test
 
 cucumber:
   <<: *test
