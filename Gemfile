@@ -38,6 +38,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'guard-rspec', require: false
 end
 
 group :test, :development do

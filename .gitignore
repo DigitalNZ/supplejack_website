@@ -98,6 +98,7 @@ capybara-*html
 vendor/extensions/**/spec/dummy
 
 config/local_env.rb
+spec/examples.txt
 
 /dnz.sublime-project
 /dnz.sublime-workspace
