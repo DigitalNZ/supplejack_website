@@ -8,7 +8,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 4.2'
 gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
 
 gem 'mysql2', '~> 0.3.18'
