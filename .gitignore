@@ -77,7 +77,6 @@ capybara-*html
 
 #rbenv
 .rbenv-version
-.ruby-version
 
 /config/local_env.rb# Rails
 
@@ -97,7 +96,7 @@ capybara-*html
 # vendor/extensions dummy applications.
 vendor/extensions/**/spec/dummy
 
-# config/local_env.rb
+config/local_env.rb
 
 /dnz.sublime-project
 /dnz.sublime-workspace

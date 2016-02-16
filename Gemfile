@@ -8,17 +8,6 @@
 
 source 'https://rubygems.org'
 
-if RUBY_VERSION =~ /2/
-  group :development do
-    gem 'better_errors'
-    gem 'pry-rails'
-  end
-
-  group :development, :test do
-    gem 'pry-byebug'
-  end
-end
-
 gem 'rails', '~> 4.1.0'
 gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
 
@@ -32,21 +21,18 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'haml', '~> 4.0.6'
 gem 'haml-rails'
 gem 'rubocop', require: false
-
-gem 'highscore'
-gem 'best_in_place', '~> 3.0.1'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'therubyracer'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
-  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
   gem 'foundation-rails', '~> 5.4.5.0'
   gem 'font-awesome-rails', '~> 4.3.0.0'
 end
 
 group :development do
-  gem "erb2haml"
+  gem 'better_errors'
+  gem 'pry-rails'
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
@@ -58,6 +44,7 @@ group :test, :development do
   gem 'minitest'
   gem 'simplecov'
   gem 'ffaker',   '~> 2.1.0'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -67,9 +54,3 @@ group :test do
   gem 'vcr', '2.9.0'
   gem 'faker'
 end
-
-group :production do
-  gem 'therubyracer'
-  gem 'rails_12factor'
-end
-
