@@ -10,10 +10,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  site_title: "Beta"
+  site_title: "DigitalNZ"
 
   home:
-    intro: 'This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources.'
+    intro: 'Uncover amazing aerial photos, posters, newspapers, artwork, research papers and more. Use DigitalNZ to discover millions of NZ items from the digital stores of libraries, museums, archives, communities, and government.'
 
   user_sets:
     creator: 'Creator:'

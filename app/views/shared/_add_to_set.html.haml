@@ -1,0 +1,11 @@
+.add-to-set{"data-record-id" => record.id} 
+
+	- if @record.nil?
+		= fa_icon('plus-circle')
+	- else
+		.record-badge.record-add-button
+			%a.record-add-trigger{ href: '#' }
+				= fa_icon('plus-circle 2x')
+				%span Add this item to…
+
+	= render partial: "shared/add_to_set_logged_#{logged_in ? 'in' : 'out'}", locals: {record_id: record.id}

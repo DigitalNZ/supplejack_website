@@ -1,0 +1,28 @@
+.container
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .row
+      .medium-12.columns
+        = devise_error_messages!
+        %h2 Sign up to DigitalNZ
+    .row
+      .medium-6.columns
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "Sign up"
+      .medium-6.columns
+        = render "devise/shared/links"

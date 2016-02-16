@@ -7,6 +7,7 @@
 # http://digitalnz.org/supplejack
 
 Demo::Application.routes.draw do
+
   devise_for :users, controllers: { registrations: 'registrations'}
 
   root to: 'records#home'

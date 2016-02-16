@@ -6,9 +6,7 @@
 # Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
 # http://digitalnz.org/supplejack
 
-require 'spec_helper'
-
-describe ApplicationHelper do
+RSpec.describe ApplicationHelper do
 
 	describe '#title' do
 		it 'should return site name if no arguments are passed' do
@@ -39,40 +37,35 @@ describe ApplicationHelper do
 		end
 
 		it "should return site title and yield title if present" do
-			helper.site_title('Lorem').should eq "Lorem"
+			expect(helper.site_title('Lorem')).to eq "Lorem"
 		end
 	end
 
 	describe "#active_scope_filter" do
-		before(:each) do
-			helper.stub(:scope_params) { "nz" }
-			@search = double(:search, params: { tab: "nz"})
-		end
+    let(:search) {double('Search', params: { tab: "nz"})}
 
 		it "sets active class to nil if the options don\'t match search params" do
-			helper.active_scope_filter("All", { tab: "all" }).should match "<li class=\"country-filter\">"
+			expect(helper.active_scope_filter(search, "All", { tab: "all" })).to match "<li class=\"country-filter\">"
 		end
 
 		it "sets active class to active-scope if the options match tab params" do
-			helper.active_scope_filter("New Zealand", { tab: "nz" }).should match "<li class=\"country-filter active-scope\">"
+			expect(helper.active_scope_filter(search, "New Zealand", { tab: "nz" })).to match "<li class=\"country-filter active-scope\">"
 		end
 	end
 
   describe '#search_tab_options' do
-    before {
-      @search = Search.new(text: 'dog', page: 5)
-    }
+    let(:search) {Search.new(text: 'dog', page: 5)}
 
     it 'returns a hash' do
-      helper.search_tab_options(@search.options, 'images').should be_a_kind_of(Hash) 
+      expect(helper.search_tab_options(search.options, 'images')).to be_a_kind_of(Hash) 
     end
 
     it 'removes page' do
-      helper.search_tab_options(@search.options, 'images').values.should_not include(5)  
+      expect(helper.search_tab_options(search.options, 'images').values).not_to include(5)  
     end
 
     it 'merges tab' do
-      helper.search_tab_options(@search.options, 'images').keys.should =~ [:text, :tab]
+      expect(helper.search_tab_options(search.options, 'images').keys).to match_array([:text, :tab])
     end
   end
   

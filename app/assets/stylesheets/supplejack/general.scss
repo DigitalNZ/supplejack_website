@@ -1,6 +1,3 @@
-@import 'colors.scss';
-@import 'media-ranges.scss';
-
 a, button, input, textarea {
 	&:focus {
 		outline: none;
@@ -10,14 +7,11 @@ a, button, input, textarea {
 body {
 	font-family: 'Raleway';
 }
-footer {
-	padding: 4em 0;
-	border-top: 1px solid #eaeaea;
-	a {
-		color: #777;
-		line-height: 2em;
-	}
+
+.button {
+	background: $brand-colour;
 }
+
 .home {
 	height: calc(100vh - 2em);
 	width: 100%;
@@ -99,15 +93,24 @@ footer {
 
 }
 
-.top-bar .name h1 a {
-	font-weight: 800 !important;
-	color: $brand-colour;
+.top-bar {
+	h1 {
+		padding-left: 2rem;
+		background: url(/assets/logo-dnz-sprout.png) 0.7rem 50% no-repeat;
+		background-size: auto 60%;
+		a {
+			font-weight: 800 !important;
+			color: $brand-colour;
+		}
+	}
 }
+
+
 .filters-button {
 	margin: 1em 0;
 }
 .filters {
-	margin-top: 2em;
+	margin-top: 1em;
 	border-bottom: 1px solid $gray;
 	ul {
 		margin: 0;
@@ -140,6 +143,19 @@ footer {
 	}
 }
 
+.quick-filters {
+	ul ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		li {
+			margin: 0.3rem 0 0 0;
+			padding: 0;
+		}
+	}
+}
+
+
 	@media #{$small-only} {
 		.filters {
 			border-bottom: 0px;
@@ -166,4 +182,15 @@ footer {
 	margin: 0 auto;
 	width: 90%;
 	max-width: 60rem;
+}
+
+
+footer {
+	clear: both;
+	padding: 4em 0;
+	border-top: 1px solid #eaeaea;
+	a {
+		color: #777;
+		line-height: 2em;
+	}
 }

@@ -12,9 +12,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'colors.scss';
-@import 'media-ranges.scss';
-
 /**********************
 GALLERY STYLES
 **********************/
@@ -25,7 +22,7 @@ GALLERY STYLES
 }
 .gallery-container {
   margin: 0;
-  margin-top: 4em;
+  margin-top: 1rem;
   margin-bottom: 100px;
 
   .gallery-spinner {
@@ -69,51 +66,44 @@ RECORDS STYLES
 	}
 
 	.gallery-record {
-		padding: 8px 8px 20px 8px !important;
-		color: $light-grey;
-		width: 194px;
-		margin: 0.5em;
-		margin-bottom: 51px;
+		padding: 0.5rem;
+		color: $dark-grey;
+		width: 24%;
+		margin: 0.5em 1% 0.5rem 0;
 		background-color: $light-grey;
 		border: 1px solid #ddd;
-		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.3);
-		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.3);
-		&:hover {
-		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
-		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.4);
-		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.4);
-		}
-		.image a:hover, .image a {
-			border-bottom: none;
-		}
+		line-height: 1.2rem;
 		img {
-			margin: -51px 0 18px 0;	
-			-webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
-			-moz-box-shadow:    0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
-			box-shadow:         0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
+			width: 100%;
+			height: auto;
+			margin: 0;
 		}
 		a {
-			margin-top: 18px;
-			font-size: 14px;
-			// display: block;
-			// float: left;
-			border-bottom: 1px solid none;
+			font-size: 0.9rem;
 			color: $brand-colour;
 			font-weight: 500;
 			letter-spacing: 1px;
-			border-bottom: 1px solid $light-grey;
 			h3 {
 				margin-top: 18px;
 				font-size: 14px;
 			}
 		}
+		a:hover {
+			border-bottom: 1px solid $brand-colour;
+		}
+		.image a:hover, .image a {
+			border-bottom: none;
+		}
 		p {
 			font-size: 12px;
 			margin-bottom: 10px;
 		}
-		a:hover {
-			border-bottom: 1px solid $brand-colour;
+		.gallery-record-caption {
+			padding: 0.5rem 2rem 0.5rem 0.5rem;
+		}
+		.gallery-source {
+			font-size: 0.8rem;
+			text-transform: uppercase;
 		}
 	}
 }
@@ -123,23 +113,27 @@ h1 {
 	color: $dark-grey;
 }
 
-.record {
-	padding-top: 3em;
-	.about, figure {
-		width: 100%;
-		display: block;
-	}
-
-	figure > a {
-		border-bottom: none;
-		&> img {
-			padding: 0.5em;
-			
-			border: 1px solid $light-grey;
+.record-detail {
+	figure {
+		background: #eee;
+		margin: 4rem 0 0 0;
+		padding: 1rem;
+		img {
 			display: block;
+			margin: 0 auto;
 		}
 	}
+	.add-to-set {
+		position: relative !important;
+		top: auto !important;
+		bottom: auto !important;
+		left: auto !important;
+		right: auto !important;
+	}
+
 }
+
+
 .filter-container {
 	position: absolute;
 	background-color: #f0f0f0;
@@ -384,25 +378,34 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	margin: 3em 0;
 }
 
-/*MOBILE STYLING FROM 480px WIDTH*/
 
-@media only screen and (min-width: 481px) {
 
-}
 
-/*DESKTOP STYLING FROM 1000px WIDE*/
-
-@media only screen and (min-width: 1000px) {
-	.record {
-		.about, figure {
-			width: 50%;
-			display: inline-block;
-			vertical-align: top;
-		}
-		.about {
-			width: 49%;
-			padding-left: 2em;
-			margin: 0;
-		}
+.record-badge {
+	margin: 1rem 0;
+	padding: 0.5rem;
+	background: $brand-colour;
+	color: white;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	.fa, span {
+		vertical-align: middle;
+		color: white;
 	}
+	span {
+		font-weight: 800;
+		display: block;
+		margin: 3px 0 0 3rem;
+	}
+	.fa {
+		display: inline-block;
+		padding: 0 0.5rem 0 0.2rem;
+		float: left;
+	}
+	&:hover {
+		background: darken($brand-colour, 10%);
+	}
+}
+.record-add {
+	width: 50%;
 }

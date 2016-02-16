@@ -8,17 +8,6 @@
 
 source 'https://rubygems.org'
 
-if RUBY_VERSION =~ /2/
-  group :development do
-    gem 'better_errors'
-    gem 'pry-rails'
-  end
-
-  group :development, :test do
-    gem 'pry-byebug'
-  end
-end
-
 gem 'rails', '~> 4.1.0'
 gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
 
@@ -30,29 +19,34 @@ gem 'activeresource'
 gem 'devise'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'haml', '~> 4.0.6'
+gem 'haml-rails'
 gem 'rubocop', require: false
+gem 'therubyracer'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
-  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
   gem 'foundation-rails', '~> 5.4.5.0'
   gem 'font-awesome-rails', '~> 4.3.0.0'
 end
 
 group :development do
-  gem "erb2haml"
+  gem 'better_errors'
+  gem 'pry-rails'
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test, :development do
-  gem "rspec-rails", "2.14"
+  gem "rspec-rails", "~> 3.0"
   gem 'oily_png'
   gem 'minitest'
   gem 'simplecov'
   gem 'ffaker',   '~> 2.1.0'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -61,9 +55,5 @@ group :test do
   gem 'spork', '>= 1.0.0rc3'
   gem 'vcr', '2.9.0'
   gem 'faker'
+  gem 'rspec-activemodel-mocks'
 end
-
-group :production do
-  gem 'therubyracer'
-end
-

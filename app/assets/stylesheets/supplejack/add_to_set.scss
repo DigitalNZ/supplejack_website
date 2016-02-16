@@ -1,0 +1,59 @@
+$add-to-set-btn-color: #999;
+
+.add-to-set {
+  bottom: 0.5rem;
+  color: $add-to-set-btn-color;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+}
+
+.add-to-set-popup {
+  background-color: #020202;
+  border: 1px solid black;
+  color: white;
+  font-size: 1rem;
+  left: -4.4rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: 3rem;
+  width: 10rem;
+  z-index: 2;
+
+  a, 
+  label {
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  i {
+    color: white;
+  }
+}
+
+.add-to-set-popup::after {
+  border: solid transparent;
+  border-bottom-color: #020202;
+  border-color: rgba(2, 2, 2, 0);
+  border-width: 15px;
+  bottom: 100%;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -15px;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.record-actions {
+  padding: 0 3rem 0 0;
+  position: relative;
+
+  .add-to-set {
+    bottom: auto;
+    top: 0;
+  }
+}

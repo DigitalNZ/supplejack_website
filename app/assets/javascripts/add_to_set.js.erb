@@ -4,7 +4,7 @@
   };
 
   var handleInitClick = function(e) {
-    var popup = $(this).siblings('.add-to-set-popup');
+    var popup = $(this).find('.add-to-set-popup');
     var recordId = $(this).attr('data-record-id');
 
     popup.show();
@@ -32,7 +32,7 @@
 
   var loadSets = function($popup, recordId) {
     var $container = $popup.find('.sets-container');
-    $container.html('<%= image_tag 'spinner.gif' %>');
+    $container.html('<i class="fa fa-spinner fa-spin fa-2x"></i>');
 
     $.ajax({url: '/user_sets.js', dataType: 'json', method: 'GET'})
     .always(function() {

@@ -21,10 +21,10 @@ module ApplicationHelper
     yield_title.presence || t('site_title')
   end
 
-  def active_scope_filter(title, options={})
+  def active_scope_filter(search, title, options={})
     active_class = 'country-filter'
     scope_options = options[:tab].present? ? options[:tab] : 'all'
-    scope_params = @search.params[:tab].present? ? @search.params[:tab] : 'all'
+    scope_params = search.params[:tab].present? ? search.params[:tab] : 'all'
 
     active_class += ' active-scope' if scope_options == scope_params
 
