@@ -1,0 +1,18 @@
+web:
+  build: .
+  volumes:
+    - .:/app
+  ports:
+    - "3000:3000"
+  environment:
+    - MYSQL_HOST=kereru-db.weave.local
+    - MYSQL_PASSWORD=root
+  container_name: kereru-web
+  restart: always
+db:
+  image: mysql:5.5
+  ports:
+    - "3306:3306"
+  container_name: kereru-db
+  environment:
+    - MYSQL_ROOT_PASSWORD=root

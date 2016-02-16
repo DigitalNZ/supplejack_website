@@ -3,6 +3,8 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
+  host: <%= ENV['MYSQL_HOST'] || 'localhost' %>
+  password: <%= ENV['MYSQL_PASSWORD'] || '' %>
 
 development:
   <<: *default
