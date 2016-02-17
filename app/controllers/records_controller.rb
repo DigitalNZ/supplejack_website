@@ -11,11 +11,9 @@
 # Records controller deals with searching and displaying records
 class RecordsController < ApplicationController
   def home
-    @search = search
   end
 
   def index
-    @search = search(params.dup)
     SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
     @facets = @search.facets
@@ -32,8 +30,6 @@ class RecordsController < ApplicationController
       user_set_id = @record.landing_url.split('/').last
       redirect_to user_set_path(user_set_id, search: search_params)
     end
-
-    @search = search(params[:search])
   end
 
   private
