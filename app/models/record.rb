@@ -10,25 +10,23 @@
 
 class Record
   include Supplejack::Record
+  
+  NO_THUMBNAIL_URL = "Unknown"
 
   def image_url(size: 204, original: false)
-    source_url = self.thumbnail_url.to_s
+    source_url = CGI.escape(self.thumbnail_url.to_s)
+
+    return '/assets/temp-book.png' if source_url == NO_THUMBNAIL_URL
 
     if self.landing_url =~ /paperspast/
       pp_id = self.landing_url.gsub(/^.*d=(.*)$/, '\1')
       return "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=#{pp_id}&area=1&width=592&color=32&ext=gif&key="
     end
 
-
-    if CGI.escape(source_url) == 'Unknown'
-      return '/assets/temp-book.png'
-    end
-
-
     if original
-      "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
+      "#{THUMBNAIL_SERVER_URL}?src=#{source_url}"
     else
-      "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{CGI.escape(source_url)}"
+      "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{source_url}"
     end
 
   end

@@ -36,7 +36,7 @@ RSpec.describe Record do
     end
 
     it "returns a default asset url if the Records source_url is unknown" do
-      record = Record.new(thumbnail_url: 'Unknown', landing_url: 'dummy')
+      record = Record.new(thumbnail_url: Record::NO_THUMBNAIL_URL, landing_url: 'dummy')
 
       expect(record.image_url).to eq('/assets/temp-book.png')
     end
