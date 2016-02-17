@@ -10,14 +10,13 @@ require 'cgi'
 
 module Supplejack
   module ItemDecorator
-    def image_url(options={})
-      size = options[:width] || 204
-      source_url = self.thumbnail_url || ''
+    def image_url(width: 204, original: false)
+      source_url = CGI.escape(self.thumbnail_url.to_s)
 
-      if options[:original]
-        "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
+      if original
+        "#{THUMBNAIL_SERVER_URL}?src=#{source_url}"
       else
-        "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{CGI.escape(source_url)}"
+        "#{THUMBNAIL_SERVER_URL}?resize=#{width}&src=#{source_url}"
       end
     end
   end
