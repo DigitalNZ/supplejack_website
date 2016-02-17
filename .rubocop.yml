@@ -1,3 +1,4 @@
+require: rubocop-rspec
 inherit_from: .rubocop_todo.yml
 AllCops:
   Exclude:
@@ -15,3 +16,6 @@ Metrics/MethodLength:
 # https://github.com/bbatsov/rubocop/issues/1633
 Style/MultilineOperationIndentation:
   Enabled: false
+RSpec/DescribeClass:
+  Exclude: 
+  - 'spec/views/**/*'

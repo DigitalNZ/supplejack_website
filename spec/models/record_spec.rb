@@ -10,7 +10,7 @@
 
 RSpec.describe Record do
   let(:image_url) {'http://test.url'}
-  let(:record) {Record.new(thumbnail_url: image_url, landing_url: 'dummy')}
+  let(:record) {described_class.new(thumbnail_url: image_url, landing_url: 'dummy')}
 
   def test_size(url, expected_size)
     actual_size = url.match(/#{Regexp.escape(THUMBNAIL_SERVER_URL)}\?resize=([0-9]+)&src=.*/).captures.first
@@ -36,13 +36,13 @@ RSpec.describe Record do
     end
 
     it "returns a default asset url if the Records source_url is unknown" do
-      record = Record.new(thumbnail_url: Record::NO_THUMBNAIL_URL, landing_url: 'dummy')
+      record = described_class.new(thumbnail_url: described_class::NO_THUMBNAIL_URL, landing_url: 'dummy')
 
       expect(record.image_url).to eq('/assets/temp-book.png')
     end
 
     context "papers-past" do
-      let(:record){Record.new(landing_url: 'paperspast-d=12345', thumbnail_url: '')}
+      let(:record){described_class.new(landing_url: 'paperspast-d=12345', thumbnail_url: '')}
 
       it "returns the papers-past image url" do
         # *sad face*

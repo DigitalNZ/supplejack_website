@@ -40,6 +40,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
   gem 'yard'
+  gem 'rubocop-rspec'
 end
 
 group :test, :development do

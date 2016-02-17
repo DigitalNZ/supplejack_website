@@ -9,7 +9,7 @@
 RSpec.describe ApplicationHelper do
 
 	describe '#title' do
-		it 'should return site name if no arguments are passed' do
+		it 'returns the site name if no arguments are passed' do
       helper.title
       expect(view.content_for(:title)).to eq(t('site_title'))
     end
@@ -32,11 +32,11 @@ RSpec.describe ApplicationHelper do
 	end
 
 	describe '#site_title' do
-		it 'should return site title if no parameters' do
+		it 'returns the site title if no parameters' do
 			expect(helper.site_title).to eq t('site_title')
 		end
 
-		it "should return site title and yield title if present" do
+		it "returns the site title and yield title if present" do
 			expect(helper.site_title('Lorem')).to eq "Lorem"
 		end
 	end

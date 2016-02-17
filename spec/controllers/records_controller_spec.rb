@@ -26,7 +26,7 @@ RSpec.describe RecordsController do
     let(:search) {Search.new}
     before(:each) {expect(search).to receive(:results) { [mock_record] }}
 
-    it 'should be successful' do
+    it 'is successful' do
       pending("authenticate issue")
       expect(Search).to receive(:new) { search }
 
@@ -35,7 +35,7 @@ RSpec.describe RecordsController do
       expect(response).to be_success
     end
 
-    it 'should assign records as @records' do
+    it 'assigns records as @records' do
       pending("authenticate issue")
       expect(Search).to receive(:new) { search }
 
@@ -44,7 +44,7 @@ RSpec.describe RecordsController do
       expect(assigns(:records)).to be == [mock_record]
     end
 
-    it 'should assign tab_counts' do
+    it 'assigns tab_counts' do
       pending("authenticate issue")
       expect(controller).to receive(:tab_counts).and_return('images' => 16)
 
@@ -60,7 +60,7 @@ RSpec.describe RecordsController do
       allow(Record).to receive(:find) { mock_record }
     end
 
-    it 'should be successful' do
+    it 'is successful' do
       get :show, id: 1
 
       expect(response).to be_success
@@ -76,7 +76,7 @@ RSpec.describe RecordsController do
   end
 
   describe 'tab_counts' do
-    it 'should remove the tab parameter from options' do
+    it 'removes the tab parameter from options' do
       expect(Search).to receive(:new).with({text: 'dog'}) do
         instance_double(Search, categories: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) 
       end

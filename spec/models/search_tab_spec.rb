@@ -8,32 +8,32 @@
 
 RSpec.describe SearchTab do
 
-  let(:st) { SearchTab.new }
+  let(:st) { described_class.new }
   
   describe 'initialize' do
     it 'assigns the tab' do
-      expect(SearchTab.new('images').tab).to eq 'images'
+      expect(described_class.new('images').tab).to eq 'images'
     end
 
     it 'defaults to all' do
-      expect(SearchTab.new(nil).tab).to eq 'All'
+      expect(described_class.new(nil).tab).to eq 'All'
     end
   end
 
   describe 'valid_category_facets' do
     let(:search) {Search.new}
-    before(:each) {allow(SearchTab).to receive(:valid_category_facets) { ['Images']}}
+    before(:each) {allow(described_class).to receive(:valid_category_facets) { ['Images']}}
 
     context 'valid category' do
       it 'adds the category to the search' do
-        SearchTab.add_category_facets(search, 'Images')
+        described_class.add_category_facets(search, 'Images')
         expect(search.and[:category]).to eq 'Images'
       end
     end
 
     context 'invalid category' do
       it 'doesn\'t add invalid categories to the search' do
-        SearchTab.add_category_facets(search, 'INVALID')
+        described_class.add_category_facets(search, 'INVALID')
         expect(search.and[:INVALID]).to eq nil
       end
     end
@@ -46,7 +46,7 @@ RSpec.describe SearchTab do
       expect(Search).to receive(:new).and_return(search)
       expect(search).to receive(:facet_values).with('category')
 
-      SearchTab.valid_category_facets
+      described_class.valid_category_facets
     end
   end
 
@@ -63,17 +63,17 @@ RSpec.describe SearchTab do
     end
     
     it 'returns five categories' do
-      expect(SearchTab.sorted_counts(unsorted_counts).count).to eq 5
+      expect(described_class.sorted_counts(unsorted_counts).count).to eq 5
     end
 
     it 'sorts by count' do
-      expect(SearchTab.sorted_counts(unsorted_counts).shift).to eq ['All', 2448694]
+      expect(described_class.sorted_counts(unsorted_counts).shift).to eq ['All', 2448694]
     end
   end
 
   describe 'tab_label' do
     it 'creates label html with given values' do
-      expect(SearchTab.tab_label('images', '1,234')).to eq(%{Images <span class="count">1,234</span>})
+      expect(described_class.tab_label('images', '1,234')).to eq(%{Images <span class="count">1,234</span>})
     end
   end
 
@@ -84,7 +84,7 @@ RSpec.describe SearchTab do
     end
 
     it 'returns true' do
-      st = SearchTab.new('')
+      st = described_class.new('')
       expect(st.all?).to be true
     end
 
