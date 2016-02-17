@@ -11,10 +11,8 @@
 class Record
   include Supplejack::Record
 
-  def image_url(options={})
-    size = '204'
-    size = "#{options[:width]}" unless options[:width].nil?
-    source_url = self.thumbnail_url || ""
+  def image_url(size: 204, original: false)
+    source_url = self.thumbnail_url.to_s
 
     if self.landing_url =~ /paperspast/
       pp_id = self.landing_url.gsub(/^.*d=(.*)$/, '\1')
@@ -27,7 +25,7 @@ class Record
     end
 
 
-    if options[:original]
+    if original
       "#{THUMBNAIL_SERVER_URL}?src=#{CGI.escape(source_url)}"
     else
       "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{CGI.escape(source_url)}"
