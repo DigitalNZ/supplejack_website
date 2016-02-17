@@ -3,6 +3,9 @@ rvm:
 - 2.3.0
 before_script:
 - RAILS_ENV=test bundle exec rake db:setup
+script:
+  - bundle exec rubocop
+  - bundle exec rspec
 cache: bundler
 bundler_args: --without production
 sudo: false
