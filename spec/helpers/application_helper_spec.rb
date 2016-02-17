@@ -49,7 +49,9 @@ RSpec.describe ApplicationHelper do
 		end
 
 		it "sets active class to active-scope if the options match tab params" do
-			expect(helper.active_scope_filter(search, "New Zealand", { tab: "nz" })).to match "<li class=\"country-filter active-scope\">"
+      actual = helper.active_scope_filter(search, "New Zealand", { tab: "nz" })
+      expected = "<li class=\"country-filter active-scope\">"
+			expect(actual).to match(expected)
 		end
 	end
 

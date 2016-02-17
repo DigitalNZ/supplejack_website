@@ -45,7 +45,11 @@ RSpec.describe Record do
       let(:record){Record.new(landing_url: 'paperspast-d=12345', thumbnail_url: '')}
 
       it "returns the papers-past image url" do
+        # *sad face*
+        # rubocop:disable Metrics/LineLength
         expected_url = "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=12345&area=1&width=592&color=32&ext=gif&key="
+        # rubocop:enable Metrics/LineLength
+        
         expect(record.image_url).to eq(expected_url)
       end
     end

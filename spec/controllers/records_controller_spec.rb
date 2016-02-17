@@ -77,7 +77,9 @@ RSpec.describe RecordsController do
 
   describe 'tab_counts' do
     it 'should remove the tab parameter from options' do
-      expect(Search).to receive(:new).with({text: 'dog'}) { instance_double(Search, categories: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) }
+      expect(Search).to receive(:new).with({text: 'dog'}) do
+        instance_double(Search, categories: {'All' => 20, 'Images' => 10, 'Sets' => 10 } ) 
+      end
 
       controller.send(:tab_counts, {text: 'dog', tab: 'sets'})
     end

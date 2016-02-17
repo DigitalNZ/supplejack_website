@@ -12,8 +12,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :search
-  after_filter :store_location
+  before_action :search
+  after_action :store_location
 
   def store_location
     # store last url

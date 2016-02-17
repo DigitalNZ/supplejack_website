@@ -31,7 +31,6 @@ RSpec.describe RecordsHelper do
   #   context 'the record has an image' do
   #     it 'should render a link with an image' do
   #       record = mock_record(:image_url => 'http://google.com/icon.gif', id: 1, title: 'title')
-  #       helper.record_thumbnail(record, @search).should eq(%{<div>#{link_to image_tag("http://google.com/icon.gif", :alt => "title", :title => "title"), "/records/1"}</div>})
   #     end
   #   end
 

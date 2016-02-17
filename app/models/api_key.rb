@@ -1,5 +1,5 @@
 class ApiKey < ActiveRecord::Base
   belongs_to  :user
 
-  validates_presence_of   :token, :user_id
+  validates :token, :user_id, presence: true
 end

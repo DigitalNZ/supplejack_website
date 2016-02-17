@@ -51,7 +51,16 @@ RSpec.describe SearchTab do
   end
 
   describe 'sorted counts' do
-    let(:unsorted_counts) { { 'Newspapers'=>1346566, 'Images'=>1056473, 'Journals'=>39515, 'Videos'=>7655, 'Audio'=>2553, 'All'=>2448694 } }
+    let(:unsorted_counts) do
+      {
+        'Newspapers' => 1346566, 
+        'Images' => 1056473, 
+        'Journals' => 39515, 
+        'Videos' => 7655, 
+        'Audio' => 2553, 
+        'All' => 2448694
+      }
+    end
     
     it 'returns five categories' do
       expect(SearchTab.sorted_counts(unsorted_counts).count).to eq 5

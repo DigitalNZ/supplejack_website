@@ -26,7 +26,8 @@ class Record
 
     if self.landing_url =~ /paperspast/
       pp_id = self.landing_url.gsub(/^.*d=(.*)$/, '\1')
-      return "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=#{pp_id}&area=1&width=592&color=32&ext=gif&key="
+      return 'http://paperspast.natlib.govt.nz/cgi-bin/imageserver/'\
+             "imageserver.pl?oid=#{pp_id}&area=1&width=592&color=32&ext=gif&key="
     end
 
     if original

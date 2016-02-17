@@ -10,30 +10,36 @@ module ApiUser
     alias_method :api_key, :token
   end
 
-  module ClassMethods
-    def find_by_api_key(api_key)
-      self.joins(:key).where(api_keys: {token: api_key}).first
-    end
-  end
-
   def create_user_and_default_set
     begin
-      user = Supplejack::User.create(email: self.email, name: self.name, username: self.username, encrypted_password: self.encrypted_password, 
-                              sets: [{name: "Favourites", privacy: "hidden", priority: 0}])
+      user = Supplejack::User.create(
+        email: self.email, 
+        name: self.name, 
+        username: self.username,
+        encrypted_password: self.encrypted_password, 
+        sets: [{name: "Favourites", privacy: "hidden", priority: 0}]
+      )
 
       self.create_key(token: user.api_key, terms: false)
       return true
     rescue StandardError => e
+      # rubocop:disable Metrics/LineLength
       user.try(:destroy)
       Rails.logger.warn("There was a error when creating the API User and default set for member: #{self.id}. Error: #{e.message}")
-      puts ("ERROR: There was a error when creating the API User and default set for member: #{self.id}. Error: #{e.message}")
       self.errors.add(:base, I18n.t('registration.account_creation_error'))
       return false
+      # rubocop:enable Metrics/LineLength
     end
   end
 
   def update_api_user
-    Supplejack::User.update(name: self.name, username: self.username, email: self.email, encrypted_password: self.encrypted_password, api_key: self.api_key)
+    Supplejack::User.update(
+      name: self.name, 
+      username: self.username, 
+      email: self.email, 
+      encrypted_password: self.encrypted_password, 
+      api_key: self.api_key
+    )
   end
 
   def user
