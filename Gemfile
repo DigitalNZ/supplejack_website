@@ -39,6 +39,7 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
+  gem 'yard'
 end
 
 group :test, :development do

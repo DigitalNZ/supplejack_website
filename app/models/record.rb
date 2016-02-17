@@ -13,6 +13,12 @@ class Record
   
   NO_THUMBNAIL_URL = "Unknown"
 
+  # Returns the URL to request this Records image from
+  # the Thumbnailer server
+  #
+  # @param size [Integer] the width of the thumbnail to be returned, ignored if `original` is truthy
+  # @param original [Boolean] whether to resize the thumbnail or not
+  # @returns [String] the full URL to retrieve the thumbnailed image from
   def image_url(size: 204, original: false)
     source_url = CGI.escape(self.thumbnail_url.to_s)
 
@@ -28,7 +34,5 @@ class Record
     else
       "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{source_url}"
     end
-
   end
-
 end
