@@ -19,7 +19,7 @@ class Record
   # @param size [Integer] the width of the thumbnail to be returned, ignored if `original` is truthy
   # @param original [Boolean] whether to resize the thumbnail or not
   # @returns [String] the full URL to retrieve the thumbnailed image from
-  def image_url(size: 204, original: false)
+  def image_url(width: 204, original: false)
     source_url = CGI.escape(self.thumbnail_url.to_s)
 
     return '/assets/temp-book.png' if source_url == NO_THUMBNAIL_URL
@@ -33,7 +33,7 @@ class Record
     if original
       "#{THUMBNAIL_SERVER_URL}?src=#{source_url}"
     else
-      "#{THUMBNAIL_SERVER_URL}?resize=#{size}&src=#{source_url}"
+      "#{THUMBNAIL_SERVER_URL}?resize=#{width}&src=#{source_url}"
     end
   end
 end

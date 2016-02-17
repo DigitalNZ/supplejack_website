@@ -27,7 +27,7 @@ RSpec.describe RecordsController do
     before(:each) {expect(search).to receive(:results) { [mock_record] }}
 
     it 'is successful' do
-      pending("authenticate issue")
+      skip("authenticate issue")
       expect(Search).to receive(:new) { search }
 
       get :index
@@ -36,7 +36,7 @@ RSpec.describe RecordsController do
     end
 
     it 'assigns records as @records' do
-      pending("authenticate issue")
+      skip("authenticate issue")
       expect(Search).to receive(:new) { search }
 
       get :index
@@ -45,7 +45,7 @@ RSpec.describe RecordsController do
     end
 
     it 'assigns tab_counts' do
-      pending("authenticate issue")
+      skip("authenticate issue")
       expect(controller).to receive(:tab_counts).and_return('images' => 16)
 
       get :index
@@ -55,23 +55,31 @@ RSpec.describe RecordsController do
   end
 
   describe 'GET show' do
-    before(:each) do
-      allow(mock_record).to receive(:attributes) { {format: 'images'} }
-      allow(Record).to receive(:find) { mock_record }
+    it "finds the correct record" do
+      id = "123"
+      search = {foo: "123"}
+
+      expect(Record).to receive(:find).with(id, search).and_return(nil)
+
+      get :show, id: id, search: search
     end
 
-    it 'is successful' do
-      get :show, id: 1
+    context "user set" do
+      let(:user_set_id) {'123'}
+      let(:record) {Record.new(category: ['Sets'], landing_url: "foo/#{user_set_id}")}
+      before {expect(Record).to receive(:find).and_return(record)}
 
-      expect(response).to be_success
-    end
+      it "redirects you to the user_set show path" do
+        get :show, id: 1
 
-    it 'finds the record and passes any search params' do
-      expect(Record).to receive(:find).with('1', {'i' => {'type' => 'Images'}, 'or' => {}})
+        expect(controller).to redirect_to(user_set_path(user_set_id))
+      end
 
-      get :show, :id => '1', :search => {'i' => {'type' => 'Images'}}
+      it "adds :record_id to the search attribute if the search param is set" do
+        get :show, id: 1, search: {}
 
-      expect(assigns(:record)).to be == mock_record 
+        expect(controller).to redirect_to(user_set_path(user_set_id, search: {record_id: 1}))
+      end
     end
   end
 

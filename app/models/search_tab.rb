@@ -47,5 +47,4 @@ class SearchTab
   def value
     @tab if tab.present?
   end
-
 end

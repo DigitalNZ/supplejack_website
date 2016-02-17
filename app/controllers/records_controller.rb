@@ -24,7 +24,8 @@ class RecordsController < ApplicationController
   def show
     @record = Record.find(params[:id], params[:search])
 
-    if @record.present? && @record.attributes[:category].equal?(['Sets'])
+    # TODO: Check whether this condition should only apply if the only category is 'Sets'
+    if @record.present? && @record.attributes[:category].include?('Sets')
       search_params = params[:search] ? params[:search].merge(record_id: params[:id]) : nil
 
       user_set_id = @record.landing_url.split('/').last
