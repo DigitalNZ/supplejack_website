@@ -28,7 +28,7 @@ RSpec.describe Record do
     end
 
     it "passes the size parameter through to the thumbnailer" do
-      test_size(record.image_url(size: 500), 500)
+      test_size(record.image_url(width: 500), 500)
     end
 
     it "does not resize the image if original parameter is truthy" do
