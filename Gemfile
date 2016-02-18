@@ -59,4 +59,7 @@ group :test do
   gem 'vcr', '2.9.0'
   gem 'faker'
   gem 'rspec-activemodel-mocks'
+  gem 'capybara'
+  gem 'site_prism'
+  gem "capybara-webkit"
 end
