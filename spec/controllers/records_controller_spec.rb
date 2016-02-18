@@ -22,38 +22,6 @@ RSpec.describe RecordsController do
     end
   end
 
-  describe 'GET index', :vcr do
-    let(:search) {Search.new}
-    before(:each) {expect(search).to receive(:results) { [mock_record] }}
-
-    it 'is successful' do
-      skip("authenticate issue")
-      expect(Search).to receive(:new) { search }
-
-      get :index
-
-      expect(response).to be_success
-    end
-
-    it 'assigns records as @records' do
-      skip("authenticate issue")
-      expect(Search).to receive(:new) { search }
-
-      get :index
-
-      expect(assigns(:records)).to be == [mock_record]
-    end
-
-    it 'assigns tab_counts' do
-      skip("authenticate issue")
-      expect(controller).to receive(:tab_counts).and_return('images' => 16)
-
-      get :index
-
-      expect(assigns(:counts)).to eq({'images' => 16})
-    end
-  end
-
   describe 'GET show' do
     it "finds the correct record" do
       id = "123"
