@@ -15,9 +15,9 @@
 
     %section.top-bar-section
       %ul.left
-        %li= link_to 'Home', root_url
-        %li= link_to 'Contact', '/contact'
-        %li= link_to 'About', '/about'
+        %li#home-link= link_to 'Home', root_url
+        %li#contact-link= link_to 'Contact', '/contact'
+        %li#about-link= link_to 'About', '/about'
         / - unless current_page? root_url
         /   %li.has-form
         /     .row.collapse
@@ -32,11 +32,11 @@
         - if user_signed_in?
           %li.has-dropdown
 
-            = link_to "Logged in as #{current_user.email.split('@').first}", '#'
+            = link_to "Logged in as #{current_user.email.split('@').first}", '#', id: 'logged-in-menu'
             %ul.dropdown
-              %li= link_to 'Edit profile', edit_user_registration_path
-              %li= link_to "Logout", destroy_user_session_path, method: :delete      
+              %li= link_to 'Edit profile', edit_user_registration_path, id: 'edit-profile-link'
+              %li= link_to "Logout", destroy_user_session_path, method: :delete, id: 'logout-link'
         - else 
-          %li= link_to "Sign up", new_user_registration_path
-          %li= link_to "Login", new_user_session_path
+          %li= link_to "Sign up", new_user_registration_path, id: 'sign-up-link'
+          %li= link_to "Login", new_user_session_path, id: 'login-link'
 
