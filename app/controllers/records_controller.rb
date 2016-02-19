@@ -11,11 +11,9 @@
 # Records controller deals with searching and displaying records
 class RecordsController < ApplicationController
   def home
-    @search = search
   end
 
   def index
-    @search = search(params.dup)
     SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
     @facets = @search.facets
@@ -26,14 +24,13 @@ class RecordsController < ApplicationController
   def show
     @record = Record.find(params[:id], params[:search])
 
-    if @record.present? && @record.attributes[:category].equal?(['Sets'])
+    # TODO: Check whether this condition should only apply if the only category is 'Sets'
+    if @record.present? && @record.attributes[:category].include?('Sets')
       search_params = params[:search] ? params[:search].merge(record_id: params[:id]) : nil
 
       user_set_id = @record.landing_url.split('/').last
       redirect_to user_set_path(user_set_id, search: search_params)
     end
-
-    @search = search(params[:search])
   end
 
   private

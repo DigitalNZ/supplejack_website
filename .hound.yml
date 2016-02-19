@@ -1,0 +1,3 @@
+# Already using Rubocop..
+ruby:
+  enabled: false

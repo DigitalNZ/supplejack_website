@@ -1,0 +1,21 @@
+require: rubocop-rspec
+inherit_from: .rubocop_todo.yml
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+  DisplayStyleGuide: true
+Rails:
+  Enabled: true
+Metrics/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 25
+# https://github.com/bbatsov/rubocop/issues/1633
+Style/MultilineOperationIndentation:
+  Enabled: false
+RSpec/DescribeClass:
+  Exclude: 
+  - 'spec/views/**/*'

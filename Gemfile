@@ -39,6 +39,8 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
+  gem 'yard'
+  gem 'rubocop-rspec'
 end
 
 group :test, :development do
@@ -52,9 +54,12 @@ end
 
 group :test do
   gem 'webmock'
-  gem 'factory_girl_rails', "= 1.2.0"
-  gem 'spork', '>= 1.0.0rc3'
-  gem 'vcr', '2.9.0'
+  gem 'factory_girl_rails', '~> 4.6'
+  gem 'vcr', '~> 3.0'
   gem 'faker'
   gem 'rspec-activemodel-mocks'
+  gem 'capybara'
+  gem 'site_prism'
+  gem "capybara-webkit"
+  gem "capybara-screenshot"
 end

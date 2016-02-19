@@ -14,7 +14,6 @@ class UserSetsController < ApplicationController
   def show
     @user_set = Supplejack::UserSet.find(params[:id])
     @records = @user_set.items
-    @search = search(params[:search])
   end
 
   def index
@@ -22,20 +21,14 @@ class UserSetsController < ApplicationController
       {name: set.name, id: set.id, items_count: set.count}
     end
 
-    respond_to do |format|
-      format.js do
-        render json: {sets: sets}
-      end
-    end
+    render json: {sets: sets}
   end
 
   def create
-    if params[:user_set].nil?
-      render nothing: true, status: 500
-    end
+    return render nothing: true, status: 500 if params[:user_set].nil?
 
     user_set = current_sj_user.sets.build(params[:user_set])
-    user_set.records = [{record_id: params[:record_id]}] if params[:record_id]
+    user_set.records = [{record_id: params[:record_id]}] if params[:record_id].present?
     user_set.save
 
     respond_to do |format|

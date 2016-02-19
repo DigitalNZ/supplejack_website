@@ -2,7 +2,12 @@ FROM ruby:2.3
 RUN apt-get update -qq && apt-get install -y \
   build-essential \
   npm \
-  g++
+  g++ \
+  qt5-default \
+  libqt5webkit5-dev \
+  gstreamer1.0-plugins-base \
+  gstreamer1.0-tools \
+  gstreamer1.0-x
 
 RUN mkdir /app
 

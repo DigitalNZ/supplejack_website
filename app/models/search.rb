@@ -11,7 +11,7 @@
 class Search < Supplejack::Search
 
   def initialize(params={})
-    params ||= {}
+    params = params.dup
     params[:i] ||= {}
     params[:or] ||= {}
     self.and ||= {}

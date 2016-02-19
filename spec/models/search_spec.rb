@@ -7,6 +7,4 @@
 # http://digitalnz.org/supplejack
 
 RSpec.describe Search do
-  let(:search) { Search.new }
-
 end

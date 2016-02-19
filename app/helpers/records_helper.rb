@@ -18,7 +18,13 @@ module RecordsHelper
     image_options[:alt] ||= record.title
     image_options[:title] ||= image_options[:alt]
 
-    content = content_tag(:div, link_to(image_tag(record.image_url, image_options), record_path(record.id, search: search_options)))
+    content = content_tag(
+      :div, 
+      link_to(
+        image_tag(record.image_url, image_options), 
+        record_path(record.id, search: search_options)
+      )
+    )
     content.html_safe
   end
 
