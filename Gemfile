@@ -62,4 +62,5 @@ group :test do
   gem 'capybara'
   gem 'site_prism'
   gem "capybara-webkit"
+  gem "capybara-screenshot"
 end
