@@ -54,9 +54,8 @@ end
 
 group :test do
   gem 'webmock'
-  gem 'factory_girl_rails', "= 1.2.0"
-  gem 'spork', '>= 1.0.0rc3'
-  gem 'vcr', '2.9.0'
+  gem 'factory_girl_rails', '~> 4.6'
+  gem 'vcr', '~> 3.0'
   gem 'faker'
   gem 'rspec-activemodel-mocks'
   gem 'capybara'
