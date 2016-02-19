@@ -25,9 +25,7 @@ class UserSetsController < ApplicationController
   end
 
   def create
-    if params[:user_set].nil?
-      return render nothing: true, status: 500
-    end
+    return render nothing: true, status: 500 if params[:user_set].nil?
 
     user_set = current_sj_user.sets.build(params[:user_set])
     user_set.records = [{record_id: params[:record_id]}] if params[:record_id].present?
