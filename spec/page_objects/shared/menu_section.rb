@@ -1,4 +1,4 @@
-class MenuSection < SitePrism::Page
+class MenuSection < SitePrism::Section
   simple_element :home_link
   simple_element :contact_link
   simple_element :about_link
