@@ -6,6 +6,8 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
 
-    key {ApiKey.create(token: Faker::Internet.password(8), terms: false)}
+    after :create do |user|
+      ApiKey.create(attributes_for(:api_key).merge(user_id: user.id))
+    end
   end
 end

@@ -1,4 +1,4 @@
-RSpec.feature 'A user registers', focus: true do
+RSpec.feature 'A user registers' do
   let(:kereru) {Kereru.new}
   before do
     kereru.home.load

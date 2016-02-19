@@ -6,4 +6,8 @@ class Kereru
   def sign_up
     @sign_up ||= SignUpPage.new
   end
+
+  def login
+    @login ||= LoginPage.new
+  end
 end
