@@ -17,6 +17,12 @@ test: &test
   <<: *default
   database: kereru_test
 
+staging:
+  <<: *default
+  database: supplejack_website_beta_staging
+  username: digitalnz
+  password: n4tlibby
+
 cucumber:
   <<: *test
 
