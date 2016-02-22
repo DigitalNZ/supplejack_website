@@ -10,7 +10,9 @@ require 'cgi'
 
 module Supplejack
   module ItemDecorator
-    def image_url(width: 204, original: false)
+    def image_url(opts={})
+      width = opts.fetch(:width, 204)
+      original = opts.fetch(:original, false)
       source_url = CGI.escape(self.thumbnail_url.to_s)
 
       if original

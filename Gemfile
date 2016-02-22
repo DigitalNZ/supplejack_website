@@ -31,7 +31,7 @@ group :assets do
 end
 
 group :development do
-  gem 'better_errors'
+  #gem 'better_errors'
   gem 'pry-rails'
   gem 'thin'
   gem 'quiet_assets'
@@ -49,7 +49,7 @@ group :test, :development do
   gem 'minitest'
   gem 'simplecov'
   gem 'ffaker',   '~> 2.1.0'
-  gem 'pry-byebug'
+  #gem 'pry-byebug'
 end
 
 group :test do
