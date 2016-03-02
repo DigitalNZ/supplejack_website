@@ -8,10 +8,10 @@
 # the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
+include FontAwesome::Rails::IconHelper
+
 module ApplicationHelper
 
-  include FontAwesome::Rails::IconHelper
-  
   def title(*args)
     args.delete_if {|e| e.blank? }
     args = args.map {|e| truncate(e, :length => 40)}
