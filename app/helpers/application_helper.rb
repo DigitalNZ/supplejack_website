@@ -8,8 +8,6 @@
 # the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
-include FontAwesome::Rails::IconHelper
-
 module ApplicationHelper
 
   def title(*args)
