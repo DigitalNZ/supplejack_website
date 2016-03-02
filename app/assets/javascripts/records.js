@@ -127,7 +127,7 @@
 
             event.preventDefault();
             return false;
-          });  
+          });            
         })
         /**
          * find menu buttons and make them and their related dropdowns open and close when clicked
@@ -142,6 +142,17 @@
           //   $btn.toggleClass('on');
           //   $menu.toggleClass('open');
           // });
+
+
+          // More button
+          var $moreBtn = $('.more');
+
+          $moreBtn.on('click', function(){
+            var href = $(this).attr('href');
+            var panel = $('a[href$="' + href + '"]')[0];
+            $(panel).parent('li').addClass("active");
+          });
+
 
           // Close button
           var $closeBtn = $('button.close');
