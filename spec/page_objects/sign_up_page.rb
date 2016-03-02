@@ -1,3 +1,5 @@
+require_relative 'shared/layout_page'
+
 class SignUpPage < LayoutPage
   set_url '/users/sign_up'
 
