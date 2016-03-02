@@ -38,8 +38,9 @@ module RecordsHelper
 
   def filter_facets
     # facets that we want to ignore/exclude
-    blacklist = ['type', 'category']
+    blacklist = ['type']
     facets = Hash[ @search.facets.map { |facet| [facet.name.to_s, facet.values] }]
+    
     # Remove empty facets & unwanted facets
     facets = facets.delete_if { |facet, values| values.empty? || blacklist.include?(facet)}
   end
