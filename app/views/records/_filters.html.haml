@@ -8,8 +8,9 @@
         %li.active
           %a{:href => "#panel1-1"} Quick filters
         = render 'filter_tabs'
-    %button.close
-      ×  
+    %button.close-filters.radius.tiny
+      Close
+      %i.fa.fa-close
 
     .tabs-content
       = render 'quick_filters'

@@ -94,6 +94,12 @@
         return clean;
       }
 
+      var makeApplyButton = function() {
+        if ($('.filter-btn').next().length > 0) {
+          $('.close-filters').html('Apply Filters <i class="fa fa-arrow-right close-filter-icon"></i>')
+        }
+      }
+
       var config = {
         init: (function() {
           var self = this;
@@ -155,7 +161,7 @@
 
 
           // Close button
-          var $closeBtn = $('button.close');
+          var $closeBtn = $('button.close-filters');
 
           $closeBtn.on('click', function(){
             $('.menu.open').removeClass('open');
@@ -184,12 +190,13 @@
                 var $newFilterBtn = $('<button id="target-'+facet_class+'" data-filter="'+filter_value+'" data-facet="'+facet+'" class="filter-unit">'+$filter.justtext()+'</button>');
 
                 $filterBtn.after($newFilterBtn);
+                makeApplyButton();
                 // disableFacets(facet);
               }
             }
           });
 
-          $('.close').on('click', function(){
+          $('.close-filters').on('click', function(){
             $('.filter-btn').attr('value', "0");
             $('.filter-container').hide();
             $('.first-tab').addClass('active');

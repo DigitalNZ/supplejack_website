@@ -162,15 +162,19 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 			display: block;
 		}
 	}
-	.close {
+	.close-filters {
+		margin-top: 13px;
+		margin-right: 13px;
     position: absolute;
     right: 0;
     top: 0;
-    background-color: transparent;
-    color: $brand-colour;
-    line-height: 1;
-    font-size: 4em;
-    padding: 0 .5em 0 0;
+    background-color: $brand-colour;
+    color: #000;
+    font-size: 1em;
+		&:hover{
+			background-color: $gray;
+			color: #000;
+		}
 	}
 	&.open {
 		display: block;
@@ -344,6 +348,7 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	line-height: 1.3em;
 }
 .filter-unit {
+	background-color: #fff;
 	&:after {
 		content: '×';
 		padding: 0.3em;
@@ -363,6 +368,31 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	}
 
 }
+
+.apply-filter {
+	float: left;
+	border: none;
+	padding: 0.5em 4em 0.5em 1em;
+	background-color: $brand-colour;
+	/*@include border-radius(0);*/
+	color: #000;
+	font-size: 0.8em;
+	position: relative;
+	vertical-align: bottom;
+/*	&.on {
+		background-color: $brand-colour;
+		color: #000;
+		&:after {
+			content: '-';
+			border-left: 1px solid darken($brand-colour, 10%);
+		}
+	}
+	&:hover{
+		background-color: $brand-colour;
+		color: #000;
+	}*/
+}
+
 .pullout {
 	padding: 1em;
 	border: 1px solid #efefef;
