@@ -21,7 +21,8 @@
         %a{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} 
           More
           %span.count
-            10
+            = fa_icon('list')
+
         %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
           %li
             %a{:href => "#"} This is a link
