@@ -58,7 +58,7 @@ class SearchTab
 
   def blacklist 
     # Categories that we don't want to be included under 'More' tab.
-    [ 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video'] 
+    [ 'Article', 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video'] 
   end
 
   def more_categories(categories)    

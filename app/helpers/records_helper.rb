@@ -53,4 +53,23 @@ module RecordsHelper
     Date.parse string rescue return string
     return Date.parse(string).strftime("%d %b %Y")
   end
+
+  def more_categories_list(categories)
+    list = %{}
+
+    categories.each do |category, count|
+      count = number_with_precision(count, delimiter: ",", precision: 0)
+      label  = %{#{category} <span class="count">#{count}</span>}.html_safe
+      # label  = %{#{category}}.html_safe
+      tab_id = category.downcase.tr_s(" &", "_")
+      
+      link = link_to label, 
+        records_path(search_tab_options(search.options, category)), 
+        id: tab_id
+
+      list << %{<li>#{link}</li><hr>}
+    end
+    p list
+    list.html_safe
+  end  
 end
