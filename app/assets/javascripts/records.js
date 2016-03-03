@@ -94,12 +94,26 @@
         return clean;
       }
 
+      var filtersExist = function() {
+        if ($('.filter-btn').next().length > 0) { return true; }
+        else { return false; }
+      }
+
       var makeApplyButton = function() {
-        if ($('.filter-btn').next().length > 0) {
+        if (filtersExist() === true) {
           $('.close-filters').html('Apply Filters <i class="fa fa-arrow-right close-filter-icon"></i>')
         } else {
           $('.close-filters').html('Close <i class="fa fa-close close-filter-icon"></i>')
         }
+      }
+
+      var closeFilterPanel = function() {
+        $('.menu.open').removeClass('open');
+        $('.menu.on').removeClass('on');
+        $('.filter-btn').attr('value', "0");
+        $('.filter-container').hide();
+        $('.first-tab').addClass('active');
+        $('.menu.on').removeClass('on'); 
       }
 
       var config = {
@@ -152,6 +166,20 @@
           // });
 
 
+          // Close Filter Panle by clicking outside
+          $(".filter-container").on('blur',function(){   
+            closeFilterPanel();        
+            updateFilters();
+          });
+
+          // Close Filter Panle with close/apply button
+          var $closeBtn = $('button.close-filters');
+
+          $closeBtn.on('click', function(){
+            closeFilterPanel();           
+            updateFilters();
+          });
+
           // More button
           var $moreBtn = $('.more');
 
@@ -159,16 +187,6 @@
             var href = $(this).attr('href');
             var panel = $('a[href$="' + href + '"]')[0];
             $(panel).parent('li').addClass("active");
-          });
-
-
-          // Close button
-          var $closeBtn = $('button.close-filters');
-
-          $closeBtn.on('click', function(){
-            $('.menu.open').removeClass('open');
-            $('.menu.on').removeClass('on');
-            updateFilters();
           });
 
           //to add filters the right of the filter button
@@ -198,12 +216,12 @@
             }
           });
 
-          $('.close-filters').on('click', function(){
-            $('.filter-btn').attr('value', "0");
-            $('.filter-container').hide();
-            $('.first-tab').addClass('active');
-            $('.menu.on').removeClass('on');
-          });
+          // $('.close-filters').on('click', function(){
+          //   $('.filter-btn').attr('value', "0");
+          //   $('.filter-container').hide();
+          //   $('.first-tab').addClass('active');
+          //   $('.menu.on').removeClass('on');
+          // });
 
           $('.record-add-button').on('click', function(){
             $('.record-add-panel').toggle();

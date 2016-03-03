@@ -145,6 +145,7 @@ h1 {
 	overflow: scroll;
 	margin-top: 0em;
 	opacity: .97;
+	outline:0;
 	@media only screen and (max-height: 1000px) {
 	-webkit-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 -moz-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);

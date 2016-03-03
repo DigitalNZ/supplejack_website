@@ -2,7 +2,7 @@
   %div.clearfix
     %button.filter-btn.button.menu{value: 0} Filters
     = render 'active_filters'
-  .filter-container.menu.clearfix{style: "display:none"}
+  .filter-container.menu.clearfix{style: "display:none", tabindex: "-1"}
     %header.clearfix
       %ul.tabs{"data-tab" => ""}
         %li.active
