@@ -7,6 +7,17 @@
 # http://digitalnz.org/supplejack
 
 RSpec.describe RecordsHelper do
+
+  describe "#more_categories_list" do
+    before(:each) do
+      @categories = { "Guides & factsheets"=>2058, "Journals"=>41886, "Newspapers"=>34577 }
+    end
+
+    it "creates a link for each category " do
+      expect(helper.more_categories_list(@categories)).to match(/Guides & factsheets <span class="count">2,058<\/span>/)
+    end
+  end
+
   # Unsure what all this testing is doing, just going to comment out until I revist since it
   # needs to be upgraded to RSpec 3 syntax
 

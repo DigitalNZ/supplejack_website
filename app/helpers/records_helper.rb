@@ -69,7 +69,6 @@ module RecordsHelper
 
       list << %{<li>#{link}</li><hr>}
     end
-    p list
     list.html_safe
   end  
 end
