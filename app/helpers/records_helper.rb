@@ -73,7 +73,6 @@ module RecordsHelper
   end
 
   def more_tab_title
-    title = SearchTab::TABS.include?(params[:tab]) ? 'More' : params[:tab]
-    title.nil? ? 'More' : title
+    SearchTab::TABS.include?(params[:tab]) ? 'More' : params[:tab] || 'More'
   end  
 end
