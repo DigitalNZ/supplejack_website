@@ -74,5 +74,13 @@ module RecordsHelper
 
   def more_tab_title
     SearchTab::TABS.include?(params[:tab]) ? 'More' : params[:tab] || 'More'
+  end
+
+  def facet_name(name)
+    if name == 'decade'
+      'Date'
+    else
+      name.capitalize.gsub('_', ' ')
+    end
   end  
 end
