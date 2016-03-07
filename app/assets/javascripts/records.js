@@ -95,12 +95,11 @@
       }
 
       var filtersExist = function() {
-        if ($('.filter-btn').next().length > 0) { return true; }
-        else { return false; }
+        return ($('.filter-btn').next().length > 0)
       }
 
       var makeApplyButton = function() {
-        if (filtersExist() === true) {
+        if (filtersExist()) {
           $('.close-filters').html('Apply Filters <i class="fa fa-arrow-right close-filter-icon"></i>')
         } else {
           $('.close-filters').html('Close <i class="fa fa-close close-filter-icon"></i>')
