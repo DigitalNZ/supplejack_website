@@ -70,5 +70,10 @@ module RecordsHelper
       list << %{<li>#{link}</li><hr>}
     end
     list.html_safe
+  end
+
+  def more_tab_title
+    title = SearchTab::TABS.include?(params[:tab]) ? 'More' : params[:tab]
+    title.nil? ? 'More' : title
   end  
 end
