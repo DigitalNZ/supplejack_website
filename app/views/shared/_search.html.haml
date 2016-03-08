@@ -8,6 +8,7 @@
   \# http://digitalnz.org/supplejack
 = form_tag records_path, :method => :get, class: 'search clearfix' do
   = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
+  = hidden_field_tag("i", params[:i]) if params[:i].present?
   .container
     .row.collapse.postfix-round
       .small-10.columns= text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
