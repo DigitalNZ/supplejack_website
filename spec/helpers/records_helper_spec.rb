@@ -18,7 +18,7 @@ RSpec.describe RecordsHelper do
     end
   end
 
-  describe "#more_tab_title" do
+  describe '#more_tab_title' do
     it 'should return "More" if params has no tabs' do
       expect(more_tab_title).to eq 'More'
     end
@@ -31,6 +31,20 @@ RSpec.describe RecordsHelper do
     it 'should return "Facet name" if tab params is not one of the SearchTab default tabs' do
       allow(controller).to receive(:params) { {tab: 'Books'} }
       expect(more_tab_title).to eq 'Books'
+    end    
+  end
+
+  describe '#facet_name' do
+    it 'should capitalize a word passed to it' do
+      expect(facet_name('videos')).to eq 'Videos'
+    end
+
+    it 'should replace _ with space' do
+      expect(facet_name('god_delusions')).to eq 'God delusions'
+    end
+
+    it 'should replace return date for decade' do
+      expect(facet_name('decade')).to eq 'Date'
     end    
   end
 
