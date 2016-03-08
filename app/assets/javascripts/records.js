@@ -230,7 +230,7 @@
           $('.filter-btn').on('click', function(){
             if ($(this).attr('value') == "0") {
               $('.filter-container').show();
-              $('.filter-container').focus();
+              // $('.filter-container').focus();
               this.setAttribute('value', "1");
             } else {
               $('.filter-container').hide();
