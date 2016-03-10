@@ -11,9 +11,9 @@
     - filter_facets.each_with_index do |facet, index|
       %li
         %section
-          = facet[0].capitalize.gsub('_', ' ')
+          = facet_name(facet[0])
           %ul
-            - facet[1].each_with_index do |filter, i|
+            - Hash[facet[1].sort].each_with_index do |filter, i|
               - if i < 5
 
                 %li

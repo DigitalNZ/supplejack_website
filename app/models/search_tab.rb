@@ -47,4 +47,27 @@ class SearchTab
   def value
     @tab if tab.present?
   end
+
+  def more? 
+    true if !all? && !images? && !sets? && !audio? && !videos? && SearchTab.valid_category_facets.include?(tab)
+  end
+
+  def more_label(count)
+    more? ? %{#{tab.capitalize} <span class="count">#{count}</span><span class="more-arrow"></span>}.html_safe : %{More<span class="more-arrow"></span>}.html_safe
+  end
+
+  def blacklist 
+    # Categories that we don't want to be included under 'More' tab.
+    [ 'Article', 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video'] 
+  end
+
+  def more_categories(categories)    
+    main_tabs  = ['All', 'Images', 'Audio', 'Videos', 'Sets']
+
+    blacklist.concat(main_tabs).each do |key|
+      categories.delete(key)
+    end
+
+    categories
+  end  
 end

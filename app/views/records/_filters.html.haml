@@ -2,14 +2,15 @@
   %div.clearfix
     %button.filter-btn.button.menu{value: 0} Filters
     = render 'active_filters'
-  .filter-container.menu.clearfix{style: "display:none"}
+  .filter-container.menu.clearfix{style: "display:none", tabindex: "-1"}
     %header.clearfix
       %ul.tabs{"data-tab" => ""}
         %li.active
           %a{:href => "#panel1-1"} Quick filters
         = render 'filter_tabs'
-    %button.close
-      ×  
+    %button.close-filters.radius.tiny
+      Close
+      %i.fa.fa-close
 
     .tabs-content
       = render 'quick_filters'

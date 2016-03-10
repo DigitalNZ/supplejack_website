@@ -17,3 +17,12 @@
             id: "#{type}-tab"                                                                              |
           end                                                                                              |
 
+      - more_title = more_tab_title
+      %li{:class => ("active" unless more_title == 'More')}
+        %a{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} 
+          = more_title
+          %span.count
+            = fa_icon('list')
+            = @counts[more_title] unless more_title == 'More'
+        %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+          = more_categories_list(search_tab.more_categories(@counts))
