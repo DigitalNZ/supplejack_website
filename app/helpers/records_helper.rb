@@ -77,7 +77,7 @@ module RecordsHelper
   end
 
   def more_search_count(categories)
-    categories.values.sum
+    number_with_precision(categories.values.sum, delimiter: ',', precision: 0)
   end
 
   def facet_name(name)
