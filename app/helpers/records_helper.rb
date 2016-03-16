@@ -63,8 +63,11 @@ module RecordsHelper
       # label  = %{#{category}}.html_safe
       tab_id = category.downcase.tr_s(" &", "_")
       
+      options = search.params
+      [:tab, :page, :utf8, :commit, :facets, :facets_per_page].each {|param| options.delete(param)}
+
       link = link_to label, 
-        records_path(search_tab_options(search.options, category)), 
+        records_path(search_tab_options(options, category)), 
         id: tab_id
 
       list << %{<li>#{link}</li><hr>}

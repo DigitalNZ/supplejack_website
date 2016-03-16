@@ -34,8 +34,7 @@ module ApplicationHelper
   end
 
   def search_tab_options(options, tab)
-    options.delete(:page)
+    [:tab, :page, :utf8, :commit, :facets, :facets_per_page].each {|param| options.delete(param)}
     tab.eql?('All') ? options : options.merge(tab: tab)
   end
-
 end
