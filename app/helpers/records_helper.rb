@@ -58,7 +58,7 @@ module RecordsHelper
     list = %{}
 
     categories.each do |category, count|
-      count = number_with_precision(count, delimiter: ",", precision: 0)
+      count = number_with_precision(count, precision: 0)
       label  = %{#{category} <span class="count">#{count}</span>}.html_safe
       # label  = %{#{category}}.html_safe
       tab_id = category.downcase.tr_s(" &", "_")
@@ -74,6 +74,10 @@ module RecordsHelper
 
   def more_tab_title
     SearchTab::TABS.include?(params[:tab]) ? 'More' : params[:tab] || 'More'
+  end
+
+  def more_search_count(categories)
+    categories.values.sum
   end
 
   def facet_name(name)
