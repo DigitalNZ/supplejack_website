@@ -14,12 +14,17 @@
    var Module =  {};
 
    Module = (function() {
+
+      var resultWidth = function() {
+         return ($(".gallery-record").length > 3)
+      }
+
       var config = {
          initMasonry: (function() {
             var container = $('.gallery-container');
             container.masonry({
                itemSelector: '.gallery-record'
-               ,isFitWidth: true
+               ,isFitWidth: resultWidth()
             });
 
             container.imagesLoaded(function() {
