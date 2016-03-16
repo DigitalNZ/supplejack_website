@@ -10,7 +10,8 @@
 
 RSpec.describe Record do
   let(:image_url) {'http://test.url'}
-  let(:record) {described_class.new(thumbnail_url: image_url, landing_url: 'dummy')}
+  let(:large_image_url) {'http://large.url'}
+  let(:record) {described_class.new(thumbnail_url: image_url, landing_url: 'dummy', large_thumbnail_url: large_image_url)}
 
   def test_size(url, expected_size)
     actual_size = url.match(/#{Regexp.escape(THUMBNAIL_SERVER_URL)}\?resize=([0-9]+)&src=.*/).captures.first
@@ -20,7 +21,7 @@ RSpec.describe Record do
 
   describe "#image_url" do
     it "returns the thumbnail address for the Records image" do
-      expect(record.image_url).to eq("#{THUMBNAIL_SERVER_URL}?resize=204&src=#{CGI.escape(image_url)}")
+      expect(record.image_url).to eq("#{THUMBNAIL_SERVER_URL}/?resize=204&src=#{CGI.escape(large_image_url)}")
     end
 
     it "sets the size parameter to 204 by default" do
@@ -42,7 +43,7 @@ RSpec.describe Record do
     end
 
     context "papers-past" do
-      let(:record){described_class.new(landing_url: 'paperspast-d=12345', thumbnail_url: '')}
+      let(:record){described_class.new(landing_url: 'paperspast-d=12345', thumbnail_url: '', large_thumbnail_url: nil)}
 
       it "returns the papers-past image url" do
         # *sad face*
