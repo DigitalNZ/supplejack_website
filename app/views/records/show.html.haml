@@ -11,8 +11,17 @@
 .container
   .row 
     .medium-6.columns
-      %figure
-        = link_to(image_tag(@record.image_url(original: true, width: 660), alt: "#{@record.title} - #{@record.display_content_partner}", itemprop: 'image'), @record.source_url)
+      .row
+        .medium-12.columns
+          %figure
+            = link_to(image_tag(@record.image_url(original: true, width: 660), alt: "#{@record.title} - #{@record.display_content_partner}", itemprop: 'image'), @record.source_url)
+      %br
+      .row
+        .medium-12.columns
+          = link_to :back, class: "button radius small" do
+            %i.fa.fa-arrow-left 
+              Back to results
+              
   
     .medium-6.columns.about
 
