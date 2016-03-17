@@ -4,10 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     # FIXME simple workaround for registration field not having name/username fields
     # should be replace with actual form fields in a later story
-    display_name = resource.email.split('@').first
-    resource.name = display_name
-    resource.username = display_name
-
+        
     if resource.save && resource.create_user_and_default_set
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
@@ -26,6 +23,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end

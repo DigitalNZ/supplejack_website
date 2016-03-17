@@ -8,9 +8,13 @@
     .row
       .medium-6.columns
         .field
+          = f.label :username
+          %br/
+          = f.text_field :username, autofocus: true
+        .field
           = f.label :email
           %br/
-          = f.email_field :email, autofocus: true
+          = f.email_field :email
         .field
           = f.label :password
           - if @minimum_password_length
@@ -23,6 +27,6 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "off"
         .actions
-          = f.submit "Sign up"
+          = f.submit "Sign up", class: "button radius small"
       .medium-6.columns
         = render "devise/shared/links"
