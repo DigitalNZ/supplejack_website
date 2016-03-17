@@ -79,8 +79,9 @@ module RecordsHelper
     SearchTab::TABS.include?(params[:tab]) ? 'More' : params[:tab] || 'More'
   end
 
-  def more_search_count(categories)
-    number_with_precision(categories.values.sum, delimiter: ',', precision: 0)
+  def more_tab_count(tab, categories)
+    count = tab == 'More' ? categories.values.sum : categories[tab]
+    number_with_precision(count, delimiter: ',', precision: 0)
   end
 
   def facet_name(name)
