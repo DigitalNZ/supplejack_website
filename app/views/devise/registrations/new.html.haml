@@ -1,5 +1,4 @@
 .container
-
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     .row
       .medium-12.columns
@@ -26,6 +25,11 @@
           = f.label :password_confirmation
           %br/
           = f.password_field :password_confirmation, autocomplete: "off"
+        .field
+          = f.label :terms_of_service do
+            I agree to DigitalNZ's
+            = link_to "terms and conditions", terms_path          
+            = f.check_box :terms_of_service, as: :boolean
         .actions
           = f.submit "Sign up", class: "button radius small"
       .medium-6.columns

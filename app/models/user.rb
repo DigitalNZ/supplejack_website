@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
 
 	validates_uniqueness_of :username, allow_blank: true, if: :username_changed?
+	validates_acceptance_of :terms_of_service
 
   def to_s
   	self.name
