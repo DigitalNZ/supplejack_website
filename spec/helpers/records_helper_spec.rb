@@ -10,7 +10,7 @@ RSpec.describe RecordsHelper do
 
   describe '#more_categories_list' do
     before(:each) do
-      @categories = { "Guides & factsheets"=>2058, "Journals"=>41886, "Newspapers"=>34577 }
+      @categories = { "MoreGuides & factsheets" => 2058, "Journals" => 41886, "Newspapers" => 34577 }
     end
 
     it 'creates a link for each category' do
@@ -46,6 +46,20 @@ RSpec.describe RecordsHelper do
     it 'should replace return date for decade' do
       expect(facet_name('decade')).to eq 'Date'
     end    
+  end
+
+  describe '#more_tab_count' do
+    before(:each) do
+      @categories = { "MoreGuides & factsheets" => 2058, "Journals" => 41886, "Newspapers" => 34577 }
+    end
+
+    it 'returns the sum of all tab counts as string when tab is More' do
+      expect(more_tab_count('More', @categories)).to eq "78,521"
+    end
+
+    it 'returns the counts for newspaper as string when tab is More' do
+      expect(more_tab_count('Newspapers', @categories)).to eq "34,577"
+    end
   end
 
   # Unsure what all this testing is doing, just going to comment out until I revist since it
