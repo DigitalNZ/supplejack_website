@@ -14,7 +14,7 @@ RSpec.describe RecordsHelper do
     end
 
     it 'creates a link for each category' do
-      expect(helper.more_categories_list(@categories)).to match(/Guides & factsheets <span class="count">2,058<\/span>/)
+      expect(helper.more_categories_list(@categories)).to match(/Guides & factsheets <span class="count">2058<\/span>/)
     end
   end
 
