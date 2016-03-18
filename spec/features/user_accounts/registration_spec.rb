@@ -8,8 +8,10 @@ RSpec.feature 'A user registers' do
   scenario 'with valid inputs' do
     within kereru.sign_up.registration_form do
       fill_in "Email", with: "foo@boost.co.nz"
+      fill_in "Username", with: "foobar"
       fill_in "Password", with: "boosting"
       fill_in "Password confirmation", with: "boosting"
+      find(:css, "#user_terms_of_service[value='1']").set(true)
       click_button "Sign up"
     end
 
@@ -20,7 +22,7 @@ RSpec.feature 'A user registers' do
   scenario 'with no information' do
     kereru.sign_up.registration_form.click_button "Sign up"
 
-    expect(page).to have_content("2 errors")
+    expect(page).to have_content("4 errors prohibited this user from being saved")
     expect(User.count).to eq(0)
   end
 
