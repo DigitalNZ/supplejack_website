@@ -11,7 +11,7 @@
     - params[:i].each do |k, v|
       = hidden_field_tag "i[#{k}]", v
 
-  = hidden_field_tag("tab", params[:tab])
+  = hidden_field_tag("tab", params[:tab] || 'More')
 
   .container
     .row.collapse.postfix-round
