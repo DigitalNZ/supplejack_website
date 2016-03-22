@@ -35,19 +35,5 @@ RSpec.describe Record do
     it "does not resize the image if original parameter is truthy" do
       expect(record.image_url(original: true)).not_to match(/size/)
     end
-
-    context "papers-past" do
-      let(:record){described_class.new(landing_url: 'paperspast-id=12345', thumbnail_url: '', large_thumbnail_url: nil, display_collection: "Papers Past", papers_past_id: 1)}
-
-      it "returns the papers-past image url" do
-        # *sad face*
-        # rubocop:disable Metrics/LineLength
-        # expected_url = "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=12345&area=1&width=592&color=32&ext=gif&key="
-        expected_url = "#{THUMBNAIL_SERVER_URL}/?resize=204&src=http%3A%2F%2Fpaperspast.natlib.govt.nz%2Fcgi-bin%2Fimageserver%2Fimageserver.pl%3Foid%3D%26area%3Dall%26width%3D204%26maxheight%3D148%26color%3D32%26ext%3Dgif"
-        # rubocop:enable Metrics/LineLength
-
-        expect(record.image_url).to eq(expected_url)
-      end
-    end
   end
 end
