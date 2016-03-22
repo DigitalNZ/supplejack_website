@@ -20,7 +20,7 @@ module Supplejack
       else
         "#{THUMBNAIL_SERVER_URL}?resize=#{width}&src=#{source_url}"
       end
-    end
+    end  
   end
 
   Item.send(:include, ItemDecorator)

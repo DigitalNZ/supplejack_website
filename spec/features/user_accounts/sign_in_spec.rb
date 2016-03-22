@@ -10,7 +10,7 @@ RSpec.feature 'A user signs in' do
 
   scenario 'with valid credentials' do
     within kereru.login.login_form do
-      fill_in "Email", with: user.email
+      fill_in "Username", with: user.username
       fill_in "Password", with: password
       click_button "Log in"
     end
@@ -20,11 +20,11 @@ RSpec.feature 'A user signs in' do
 
   scenario 'with invalid credentials' do
     within kereru.login.login_form do
-      fill_in "Email", with: user.email
+      fill_in "Username", with: user.username
       fill_in "Password", with: "foo"
       click_button "Log in"
     end
 
-    expect(page).to have_content("Invalid email or password")
+    expect(page).to have_content("Invalid username or password")
   end
 end
