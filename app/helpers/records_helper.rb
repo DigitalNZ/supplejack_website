@@ -31,8 +31,6 @@ module RecordsHelper
   def display_record_graphic(record)
     if image = format_large_image(record)
       image
-    elsif record.text?
-      link_to text_frame(record, class: 'thumbnail'), record.source_url, class: "frame-link" 
     else
       placeholder_image(record)
     end
@@ -47,6 +45,24 @@ module RecordsHelper
   def image_alt_string(record)
     truncate([record.title, record.content_partner].delete_if{|element| element.blank?}.join(' - '), length: 120, separator: '...')
   end
+
+  def placeholder_image(record)
+    search_options = search.options.try(:any?) ? search.options : nil
+
+    image = record.image_url.present? ? image_tag(record.image_url, alt: record.title, class: "image-box") : image_tag("images-no-repeat/bg-no-preview.png", alt: t('records.no_preview'), class: "no-preview")
+    image = content_tag(:div, image.html_safe, class: "image")
+    image = link_to(image, record_path(record.id, search: search_options)) if record.large_thumbnail_url
+    
+    css_class = "placeholder-image"
+    css_class << " image-box" unless request.path.starts_with?(user_sets_path)
+    content_tag(:div, class: css_class) do
+      image + link_for_placeholder(record)
+    end
+  end
+
+  def link_for_placeholder(record)
+    content_tag(:div, "#{t('records.click_to')}#{link_to(t('records.view_external_item'), record.source_url)}".html_safe, class: "link")
+  end    
 
   # def record_thumbnail(record, search=nil, options={}, html_options={})
   #   image_options = html_options[:image_html] || {}
