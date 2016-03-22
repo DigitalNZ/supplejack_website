@@ -18,7 +18,7 @@
 
                 %li
                   = content_tag :a,                                                                                                        |
-                    "#{date_parser_for(filter[0])} <span class='count'>#{number_with_precision(filter[1], delimiter: ',', precision: 0)}</span>".html_safe, |
+                    "#{filter[0]} <span class='count'>#{number_with_precision(filter[1], delimiter: ',', precision: 0)}</span>".html_safe, |
                     class: filter_class(filter[0]),                                                                                        |
                     data: {facet: facet[0], filter: filter[0]}                                                                             |
             %li

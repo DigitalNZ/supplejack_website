@@ -19,23 +19,44 @@ class Record
   # @param size [Integer] the width of the thumbnail to be returned, ignored if `original` is truthy
   # @param original [Boolean] whether to resize the thumbnail or not
   # @returns [String] the full URL to retrieve the thumbnailed image from
-  def image_url(opts={})
-    width = opts.fetch(:width, 204)
-    original = opts.fetch(:original, false)
-    source_url = CGI.escape(self.thumbnail_url.to_s)
+  def image_url(options={})
+      options.reverse_merge!({width: 204, height: nil, large_size: nil, original: false})
 
-    return '/assets/temp-book.png' if source_url == NO_THUMBNAIL_URL
+      thumbnail_endpoint =  options[:large_size] ? 
+      "#{THUMBNAIL_SERVER_URL}/from_large/#{options[:large_size]}/" : 
+      "#{THUMBNAIL_SERVER_URL}/"
 
-    if self.landing_url =~ /paperspast/
-      pp_id = self.landing_url.gsub(/^.*d=(.*)$/, '\1')
-      return 'http://paperspast.natlib.govt.nz/cgi-bin/imageserver/'\
-             "imageserver.pl?oid=#{pp_id}&area=1&width=592&color=32&ext=gif&key="
-    end
+      size = [options[:width]]
+      size << options[:height] if options[:height]
+      size = size.join("x")
 
-    if original
-      "#{THUMBNAIL_SERVER_URL}?src=#{source_url}"
-    else
-      "#{THUMBNAIL_SERVER_URL}?resize=#{width}&src=#{source_url}"
-    end
+      if large_thumbnail_url.present?
+        image_url = large_thumbnail_url
+      elsif thumbnail_url.present? && !thumbnail_url.match(/digitalnz.org\/images\/thumbnails/)
+        image_url = thumbnail_url
+      else
+        image_url = nil
+      end
+
+      if image_url.present?
+        if options[:original] == false
+          "#{thumbnail_endpoint}?resize=#{size}&src=#{CGI.escape(image_url)}"
+        else
+          image_url
+        end
+      elsif papers_past?
+        url = landing_url
+        url.match(/search&d=(.+)$/)
+        options[:height] ||= 148
+        papers_past_id = $1
+        papers_past_thumbnail_url = "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=#{papers_past_id}&area=all&width=#{options[:width].to_s.gsub(/[<>!%]/, '')}&maxheight=#{options[:height].to_s.gsub(/[<>!%]/, '')}&color=32&ext=gif"
+        return "#{thumbnail_endpoint}?resize=#{size}&src=#{CGI.escape(papers_past_thumbnail_url)}"
+      else
+        return nil
+      end    
   end
+
+  def large_image?
+    large_thumbnail_url.present? #|| (papers_past? && image_url.present?)
+  end 
 end
