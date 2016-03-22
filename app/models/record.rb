@@ -44,13 +44,13 @@ class Record
         else
           image_url
         end
-      elsif papers_past?
-        url = landing_url
-        url.match(/search&d=(.+)$/)
-        options[:height] ||= 148
-        papers_past_id = $1
-        papers_past_thumbnail_url = "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=#{papers_past_id}&area=all&width=#{options[:width].to_s.gsub(/[<>!%]/, '')}&maxheight=#{options[:height].to_s.gsub(/[<>!%]/, '')}&color=32&ext=gif"
-        return "#{thumbnail_endpoint}?resize=#{size}&src=#{CGI.escape(papers_past_thumbnail_url)}"
+      # elsif papers_past?
+      #   url = landing_url
+      #   url.match(/search&d=(.+)$/)
+      #   options[:height] ||= 148
+      #   papers_past_id = $1
+      #   papers_past_thumbnail_url = "http://paperspast.natlib.govt.nz/cgi-bin/imageserver/imageserver.pl?oid=#{papers_past_id}&area=all&width=#{options[:width].to_s.gsub(/[<>!%]/, '')}&maxheight=#{options[:height].to_s.gsub(/[<>!%]/, '')}&color=32&ext=gif"
+      #   return "#{thumbnail_endpoint}?resize=#{size}&src=#{CGI.escape(papers_past_thumbnail_url)}"
       else
         return nil
       end    
