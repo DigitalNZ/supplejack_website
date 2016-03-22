@@ -126,10 +126,28 @@ RSpec.describe RecordsHelper do
   end
 
   describe '#image_alt_string' do
-    let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Prtner").as_null_record }
+    let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Partner").as_null_record }
 
     it 'returns a string with record title and content partners' do
-      expect(helper.image_alt_string(record)).to eq "Title - A Prtner"
+      expect(helper.image_alt_string(record)).to eq "Title - A Partner"
     end
   end
+
+  describe '#format_large_image' do
+    let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", image_url: "foo.com").as_null_record }
+
+    it 'returns a string with record title and content partners' do
+      expect(helper.format_large_image(record)).to match('<img alt=\"Title - A Partner\" itemprop=\"image\" class=\"image-box\" src=\"/images/foo.com\" />')
+    end
+  end
+
+  describe '#display_record_graphic' do
+    let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", image_url: "foo.com").as_null_record }
+
+    it 'returns a string with record title and content partners' do
+      expect(helper.display_record_graphic(record)).to match('<img alt=\"Title - A Partner\" itemprop=\"image\" class=\"image-box\" src=\"/images/foo.com\" />')
+    end
+
+    #Not testing other condition like youtube video and text as we are not using them now
+  end   
 end
