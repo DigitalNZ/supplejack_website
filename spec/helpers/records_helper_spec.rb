@@ -141,13 +141,31 @@ RSpec.describe RecordsHelper do
     end
   end
 
-  describe '#display_record_graphic' do
+  describe '#link_for_placeholder' do
     let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", image_url: "foo.com").as_null_record }
 
-    it 'returns a string with record title and content partners' do
+    it 'returns a div with placeholder link' do
+      expect(helper.link_for_placeholder(record)).to match('<div class="link">Click to <a href="\/records\/\d*">view external item<\/a><\/div>')
+    end
+  end
+
+  describe '#placeholder_image' do
+    let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", image_url: "foo.com").as_null_record }
+
+    it 'returns a div with placeholder image' do
+      expect(helper.placeholder_image(record)).to match('<div class="link">Click to <a href="\/records\/\d*">view external item<\/a><\/div>')
+    end
+  end
+
+  describe '#display_record_graphic' do
+    it 'returns a image tag with record title and content partners and image location' do
+      record = mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", image_url: "foo.com").as_null_record
       expect(helper.display_record_graphic(record)).to match('<img alt=\"Title - A Partner\" itemprop=\"image\" class=\"image-box\" src=\"/images/foo.com\" />')
     end
 
-    #Not testing other condition like youtube video and text as we are not using them now
+    it 'returns a image tag with placeholder' do
+      record = mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", large_image?: false, large_thumbnail_url: nil, image_url: "foo.com").as_null_record
+      expect(helper.display_record_graphic(record)).to match('<div class=\"placeholder-image image-box\"><div class=\"image\"><img alt=\"Title\" class=\"image-box\" src=\"/images/foo.com\" /></div><div class=\"link\">Click to <a href=\"/records/\d*\">view external item</a></div></div>')
+    end
   end   
 end

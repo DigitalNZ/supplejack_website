@@ -29,11 +29,7 @@ module RecordsHelper
   end
 
   def display_record_graphic(record)
-    if image = format_large_image(record)
-      image
-    else
-      placeholder_image(record)
-    end
+    format_large_image(record) || placeholder_image(record)    
   end
 
   def format_large_image(record)
