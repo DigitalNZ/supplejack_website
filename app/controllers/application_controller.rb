@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 
   before_action :search
   after_action :store_location
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def store_location
     # store last url
@@ -42,4 +43,10 @@ class ApplicationController < ActionController::Base
                            Supplejack::User.new({ authentication_token: user.api_key }) if user
                          end
   end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :password) }
+  end  
 end

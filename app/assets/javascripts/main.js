@@ -14,12 +14,17 @@
    var Module =  {};
 
    Module = (function() {
+
+      var resultWidth = function() {
+         return ($(".gallery-record").length > 3)
+      }
+
       var config = {
          initMasonry: (function() {
             var container = $('.gallery-container');
             container.masonry({
                itemSelector: '.gallery-record'
-               ,isFitWidth: true
+               ,isFitWidth: resultWidth()
             });
 
             container.imagesLoaded(function() {
@@ -51,14 +56,17 @@
                });
 
                galleryContainer.infinitescroll({
-                  navSelector: '#navigation'                 // selector for the paged navigation
-                  ,nextSelector: '#navigation a[rel=next]'   // selector for the NEXT link (to page 2)
-                  ,itemSelector: '.gallery-record'           // selector for all items you'll retrieve
-                  ,loading: {
-                     speed: 'fast'
-                     ,msg: $('<div id="infscr-loading" class="infinite-spinner"><i class="fa fa-spinner fa-spin fa-4x"></i></div>')
+                  navSelector: '#navigation',                 // selector for the paged navigation
+                  nextSelector: '#navigation a[rel=next]',   // selector for the NEXT link (to page 2)
+                  itemSelector: '.gallery-record',           // selector for all items you'll retrieve
+                  errorCallback: function () { $(".infinite-spinner").hide(); },
+                  loading: {
+                     speed: 'fast',
+                     msg: $('<div id="infscr-loading" class="infinite-spinner"><i class="fa fa-spinner fa-spin fa-4x"></i></div>')
                   }
+
                }, callback);
+
             }
          })
       };
