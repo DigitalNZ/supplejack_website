@@ -55,10 +55,6 @@
                   });
                });
 
-              function checkEnd() {
-                console.log('called update function');
-              }
-
                galleryContainer.infinitescroll({
                   navSelector: '#navigation',                 // selector for the paged navigation
                   nextSelector: '#navigation a[rel=next]',   // selector for the NEXT link (to page 2)
