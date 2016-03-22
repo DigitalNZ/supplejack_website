@@ -56,7 +56,7 @@ class Record
       end    
   end
 
-    def papers_past?
-      display_collection == "Papers Past"
-    end  
+  def large_image?
+    large_thumbnail_url.present? || (papers_past? && image_url.present?)
+  end
 end
