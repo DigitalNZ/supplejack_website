@@ -114,8 +114,6 @@ RSpec.describe RecordsHelper do
 
     it 'should generate a link with no query parameters when there are no search options' do
       record = mock_record(:id => 1)
-
-      # @search.stub(:options) { {} }
       expect(helper.record_thumbnail(record, @search)).to match('<a href="\/records\/1">')
     end
 
@@ -125,6 +123,13 @@ RSpec.describe RecordsHelper do
 
       expect(helper.record_thumbnail(record, @search)).to match('<a href="\/records\/1\?search%5Btext%5D=fish">')
     end
+  end
 
+  describe '#image_alt_string' do
+    let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Prtner").as_null_record }
+
+    it 'returns a string with record title and content partners' do
+      expect(helper.image_alt_string(record)).to eq "Title - A Prtner"
+    end
   end
 end
