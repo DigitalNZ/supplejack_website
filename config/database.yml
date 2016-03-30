@@ -3,25 +3,22 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  host: <%= ENV['MYSQL_HOST'] || 'localhost' %>
-  password: <%= ENV['MYSQL_PASSWORD'] || '' %>
+  password:
 
 development:
   <<: *default
-  database: kereru_development
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  database: dnz_development
+  password: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: kereru_test
-
-staging:
-  <<: *default
-  database: supplejack_website_beta_staging
-  username: digitalnz
-  password: n4tlibby
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  database: dnz_test
+  password: root
 
 cucumber:
   <<: *test

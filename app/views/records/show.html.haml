@@ -9,6 +9,12 @@
 - title @record.title.truncate(40)
 - content_for(:body_class) {'record-detail'}
 .container
+  .row
+    .medium-12.columns
+      = link_to :back, class: "button radius small" do
+        %i.fa.fa-arrow-left 
+        Back to results
+
   .row 
     .medium-6.columns
       .row
@@ -16,28 +22,71 @@
           %figure
             = link_to(display_record_graphic(@record), @record.source_url)
             / link_to(image_tag(@record.image_url(original: true, width: 660), alt: "#{@record.title} - #{@record.display_content_partner}", itemprop: 'image'), @record.source_url)
-      %br
-      .row
-        .medium-12.columns
-          = link_to :back, class: "button radius small" do
-            %i.fa.fa-arrow-left 
-              Back to results
-              
   
     .medium-6.columns.about
 
-      = attribute(@record, :title, label: false, tag: 'h1')
+      %h1= @record.title
 
-      = render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: @record}
+      / = render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: @record}
 
-      = attribute(@record, :creator, { delimiter: '; ', label_tag: 'span', label_class: 'field-label', trans_key: 'records.by' })
-      = attribute(@record, :display_date, { label_tag: 'span', label_class: 'field-label', trans_key: 'records.date' })
-      = attribute(@record, :description, label_tag: 'span', label_class: 'field-label', trans_key: 'records.description', limit: 1000)
-      = attribute(@record, :display_collection, label_tag: 'span', label_class: "field-label", trans_key: "records.source", link: @record.source_url, extra_html: '<span class="external-link"></span>'.html_safe)
-      = attribute(@record, :display_content_partner, { label_tag: 'span', label_class: 'field-label', trans_key: 'records.content_partner' })
-      = attribute(@record, :creator, label_tag: 'span', label_class: 'field-label', delimiter: '; ', trans_key: 'records.credit_line')
-      = attribute(@record, :usage, label_tag: 'span', label_class: 'field-label', delimiter: '; ', trans_key: 'records.usage')
-      = attribute(@record, :subject, label_tag: 'span', label_class: 'field-label', link: records_path(i: {subject_text: truncate('{{value}}', length: 60)}), tag_class: 'subjects')
-      .pullout
-        = attribute(@record, :display_collection, { link: @record.source_url, label_tag: 'span', label_class: 'field-label', trans_key: 'records.view_at', extra_html: '<span class="external-link"></span>'.html_safe })
-        = attribute(@record, :source_contributor_name, { label_tag: 'span', label_class: 'field-label', trans_key: 'records.from' })
+      .detail-values
+
+        - if not @record.display_collection.blank?
+          .row 
+            .medium-4.columns
+              %strong= t('records.display_collection')
+            .medium-8.columns
+              = link_to @record.display_collection, @record. source_url
+
+        - if not @record.display_content_partner.blank?
+          .row 
+            .medium-4.columns
+              %strong= t('records.content_partner')
+            .medium-8.columns
+              - if not @record.contributing_partner.blank?
+                = "#{@record.contributing_partner.join(', ')}, "
+              = @record.display_content_partner
+
+        - if not @record.creator.empty?
+          .row 
+            .medium-4.columns
+              %strong= t('records.by')
+            .medium-8.columns
+              = @record.creator.join(', ')
+
+        - if not @record.display_date.blank?
+          .row 
+            .medium-4.columns
+              %strong= t('records.date')
+            .medium-8.columns
+              = @record.display_date
+
+        - if not @record.description.blank?
+          .row 
+            .medium-4.columns
+              %strong= t('records.description')
+            .medium-8.columns
+              = @record.description.html_safe.truncate(1000)
+
+        - if not @record.usage.empty?
+          .row 
+            .medium-4.columns
+              %strong= t('records.usage')
+            .medium-8.columns
+              = @record.usage.join(', ')
+
+        - if not @record.category.empty?
+          .row 
+            .medium-4.columns
+              %strong= t('records.category')
+            .medium-8.columns
+              = @record.category.join(', ')
+
+        - if not @record.subject.empty?
+          .row 
+            .medium-4.columns
+              %strong= t('records.subject')
+            .medium-8.columns
+              = @record.subject.join(', ')
+
+

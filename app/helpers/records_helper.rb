@@ -160,6 +160,23 @@ module RecordsHelper
   end
 
   def facet_name(name)
-    name == 'decade' ? 'Date' : name.capitalize.gsub('_', ' ')
+    case name 
+    when 'decade'
+      'Date'
+    when 'primary_collection'
+      'Collection'
+    else
+      name.titleize
+    end
   end  
+
+  def facet_list(facet)
+    if facet[0] == 'decade'
+      Hash[facet[1].collect{|k,v| [k,v] if (0..2100) === k.to_i }.compact.sort.reverse]
+      # Hash[facet[1].sort.reverse]
+    else 
+      Hash[facet[1].sort]
+    end
+  end
+
 end
