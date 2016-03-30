@@ -11,6 +11,7 @@
     - params[:or].each do |k, values|
       - values.each do |v|
         = hidden_field_tag "or[#{k}][]", v, class: "search-input-tab"
+
   - if params[:i].present?
     - params[:i].each do |k, v|
       = hidden_field_tag "i[#{k}]", v, class: "search-input-tab"
