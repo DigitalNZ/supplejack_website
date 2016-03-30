@@ -8,10 +8,11 @@
   \# http://digitalnz.org/supplejack
 .content{:id => "panel1-#{index + 2}"}
   %section
-    %ul.columns
-      - Hash[facet_values.sort].each do |label, count|
-        %li.large-3.columns
+    %ul.facet-list{ class: "facet-list-#{facet[0]}"}
+      = debug facet
+      - facet_list(facet).each do |label, count|
+        %li
           = content_tag :a,                                                                                                |
             "#{label} <span class='count'>#{number_with_precision(count, delimiter: ',', precision: 0)}</span>".html_safe, |
             class: filter_class(label),                                                                                    |
-            data: {facet: facet, filter: label}                                                                            |
+            data: {facet: facet[0], filter: label}                                                                            |

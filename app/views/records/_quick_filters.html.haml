@@ -13,7 +13,7 @@
         %section
           = facet_name(facet[0])
           %ul
-            - Hash[facet[1].sort].each_with_index do |filter, i|
+            - facet_list(facet).each_with_index do |filter, i|
               - if i < 5
 
                 %li
