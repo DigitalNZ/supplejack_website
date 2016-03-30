@@ -18,18 +18,39 @@ module RecordsHelper
     image_options[:alt] ||= record.title
     image_options[:title] ||= image_options[:alt]
 
+    if record.thumbnail_url == 'Unknown' or record.thumbnail_url.blank?
+      thumb = record_text_preview(record)
+    else
+      thumb = image_tag(record.image_url, image_options)
+    end
+
     content = content_tag(
       :div, 
       link_to(
-        image_tag(record.image_url, image_options), 
+        thumb, 
         record_path(record.id, search: search_options)
       )
     )
     content.html_safe
   end
 
+  def record_text_preview(record)
+    hed = content_tag(:h3, record.title)
+    txt = record.description || record.fulltext || "DigitalNZ item"
+    body = content_tag(:p, txt.to_s.truncate(200))
+    wrapper = content_tag(:div, hed+body)
+    content = content_tag(:div, wrapper, class: 'record-text-preview')
+    content.html_safe
+  end
+
   def display_record_graphic(record)
-    format_large_image(record) || placeholder_image(record)    
+    if format_large_image(record)
+      format_large_image(record)
+    elsif record.thumbnail_url.blank? or record.thumbnail_url == 'Unknown'
+      record_text_preview(record)
+    else
+      placeholder_image(record)
+    end
   end
 
   def format_large_image(record)
@@ -52,7 +73,7 @@ module RecordsHelper
     css_class = "placeholder-image"
     css_class << " image-box" unless request.path.starts_with?(user_sets_path)
     content_tag(:div, class: css_class) do
-      image + link_for_placeholder(record)
+      image
     end
   end
 
@@ -145,7 +166,7 @@ module RecordsHelper
         records_path(search_tab_options(options, category)), 
         id: tab_id
 
-      list << %{<li>#{link}</li><hr>}
+      list << %{<li>#{link}</li>}
     end
     list.html_safe
   end
@@ -172,7 +193,8 @@ module RecordsHelper
 
   def facet_list(facet)
     if facet[0] == 'decade'
-      Hash[facet[1].collect{|k,v| [k,v] if (0..2100) === k.to_i }.compact.sort.reverse]
+      end_year = Time.now.year
+      Hash[facet[1].collect{|k,v| [k,v] if (1000..end_year) === k.to_i }.compact.sort.reverse]
       # Hash[facet[1].sort.reverse]
     else 
       Hash[facet[1].sort]
