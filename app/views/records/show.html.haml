@@ -10,18 +10,16 @@
 - content_for(:body_class) {'record-detail'}
 .container
   .row
-    .medium-12.columns
-      = link_to :back, class: "button radius small" do
+    .medium-12.columns.record-nav
+      = link_to :back do
         %i.fa.fa-arrow-left 
         Back to results
 
   .row 
     .medium-6.columns
-      .row
-        .medium-12.columns
-          %figure
-            = link_to(display_record_graphic(@record), @record.source_url)
-            / link_to(image_tag(@record.image_url(original: true, width: 660), alt: "#{@record.title} - #{@record.display_content_partner}", itemprop: 'image'), @record.source_url)
+      %figure
+        = link_to(display_record_graphic(@record), @record.source_url, 'data-tooltip' => true, 'aria-haspopup' => true, title: t('records.external_link'), :class => 'has-tip' )
+        / link_to(image_tag(@record.image_url(original: true, width: 660), alt: "#{@record.title} - #{@record.display_content_partner}", itemprop: 'image'), @record.source_url)
   
     .medium-6.columns.about
 
@@ -36,7 +34,8 @@
             .medium-4.columns
               %strong= t('records.display_collection')
             .medium-8.columns
-              = link_to @record.display_collection, @record. source_url
+              = link_to @record.display_collection, @record. source_url, class: 'has-tip', 'data-tooltip' => true, 'aria-haspopup' => true, title: t('records.external_link')
+              = fa_icon('external-link')
 
         - if not @record.display_content_partner.blank?
           .row 
@@ -74,6 +73,9 @@
               %strong= t('records.usage')
             .medium-8.columns
               = @record.usage.join(', ')
+              %span.has-tip{ data: { tooltip: true }, aria: {haspopup: true}, title: t('records.usage_statement') }
+                = fa_icon('exclamation-triangle')
+
 
         - if not @record.category.empty?
           .row 
