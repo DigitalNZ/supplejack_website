@@ -15,6 +15,7 @@ class RecordsController < ApplicationController
 
   def index
     params[:i] = sanitize_hash(params[:i]) if params[:i]
+    params[:or] = sanitize_hash(params[:or]) if params[:or]
 
     SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
@@ -47,6 +48,6 @@ class RecordsController < ApplicationController
   # Params Hash  saved as hidden fields when passed back into
   # the controller needs to be sanitized.
   def sanitize_hash(params_i)
-    eval params_i.to_s.gsub("\"", "'").gsub(":", "=>")
+    eval params_i.to_s.gsub("'", "\\\\'").gsub("\"", "'").gsub(":", "=>")
   end
 end
