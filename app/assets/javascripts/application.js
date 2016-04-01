@@ -25,7 +25,9 @@
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
 //= require foundation
+//= require modernizr
 //= require_tree .
+
 $(function() {
   $(document).foundation();
   addToSet.init();

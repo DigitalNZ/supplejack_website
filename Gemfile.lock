@@ -160,6 +160,7 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    modernizr-rails (2.7.1)
     multi_json (1.11.2)
     mysql2 (0.3.20)
     nenv (0.3.0)
@@ -344,6 +345,7 @@ DEPENDENCIES
   jquery-rails
   json
   minitest
+  modernizr-rails
   mysql2 (~> 0.3.18)
   oily_png
   pry-rails
@@ -368,4 +370,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.11.0
+   1.11.2

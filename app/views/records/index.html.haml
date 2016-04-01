@@ -6,6 +6,14 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
+
+%h4#dropdown-buttons Dropdown Buttons
+/ %ul#search_filter.f-dropdown.content{"data-dropdown-content" => ""}
+/   %li
+/     %a This is a link
+
+%a{:href => '#', "data-dropdown" =>"search_filter", :class =>"button filter-btn button menu"}Dropdown Button
+
 - content_for(:body_class) {'records'}
 - title @search.text
 

@@ -30,6 +30,7 @@ group :assets do
   gem 'foundation-rails', '~> 5.4.5.0'
 end
 
+gem 'modernizr-rails'
 group :development do
   # gem 'better_errors'
   gem 'pry-rails'
