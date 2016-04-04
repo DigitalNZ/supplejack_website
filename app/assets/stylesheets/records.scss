@@ -12,6 +12,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors.scss';
+@import 'media-ranges.scss';
+
 /**********************
 GALLERY STYLES
 **********************/
@@ -22,7 +25,7 @@ GALLERY STYLES
 }
 .gallery-container {
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 4em;
   margin-bottom: 100px;
 
   .gallery-spinner {
@@ -66,44 +69,51 @@ RECORDS STYLES
 	}
 
 	.gallery-record {
-		padding: 0.5rem;
-		color: $dark-grey;
-		width: 24%;
-		margin: 0.5em 1% 0.5rem 0;
+		padding: 8px 8px 20px 8px !important;
+		color: $light-grey;
+		width: 194px;
+		margin: 0.5em;
+		margin-bottom: 51px;
 		background-color: $light-grey;
 		border: 1px solid #ddd;
-		line-height: 1.2rem;
+		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.3);
+		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.3);
+		&:hover {
+		-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.4);
+		box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.4);
+		}
+		.image a:hover, .image a {
+			border-bottom: none;
+		}
 		img {
-			width: 100%;
-			height: auto;
-			margin: 0;
+			margin: -51px 0 18px 0;	
+			-webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
+			-moz-box-shadow:    0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
+			box-shadow:         0px 0px 7px rgba(0, 0, 0, 0.3), 0 19px 8px -16px rgba(0,0,0,.7);
 		}
 		a {
-			font-size: 0.9rem;
+			margin-top: 18px;
+			font-size: 14px;
+			// display: block;
+			// float: left;
+			border-bottom: 1px solid none;
 			color: $brand-colour;
 			font-weight: 500;
 			letter-spacing: 1px;
+			border-bottom: 1px solid $light-grey;
 			h3 {
 				margin-top: 18px;
 				font-size: 14px;
 			}
 		}
-		a:hover {
-			border-bottom: 1px solid $brand-colour;
-		}
-		.image a:hover, .image a {
-			border-bottom: none;
-		}
 		p {
 			font-size: 12px;
 			margin-bottom: 10px;
 		}
-		.gallery-record-caption {
-			padding: 0.5rem 2rem 0.5rem 0.5rem;
-		}
-		.gallery-source {
-			font-size: 0.8rem;
-			text-transform: uppercase;
+		a:hover {
+			border-bottom: 1px solid $brand-colour;
 		}
 	}
 }
@@ -113,27 +123,23 @@ h1 {
 	color: $dark-grey;
 }
 
-.record-detail {
-	figure {
-		background: #eee;
-		margin: 4rem 0 0 0;
-		padding: 1rem;
-		img {
+.record {
+	padding-top: 3em;
+	.about, figure {
+		width: 100%;
+		display: block;
+	}
+
+	figure > a {
+		border-bottom: none;
+		&> img {
+			padding: 0.5em;
+			
+			border: 1px solid $light-grey;
 			display: block;
-			margin: 0 auto;
 		}
 	}
-	.add-to-set {
-		position: relative !important;
-		top: auto !important;
-		bottom: auto !important;
-		left: auto !important;
-		right: auto !important;
-	}
-
 }
-
-
 .filter-container {
 	position: absolute;
 	background-color: #f0f0f0;
@@ -145,7 +151,6 @@ h1 {
 	overflow: scroll;
 	margin-top: 0em;
 	opacity: .97;
-	outline:0;
 	@media only screen and (max-height: 1000px) {
 	-webkit-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 -moz-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
@@ -163,19 +168,15 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 			display: block;
 		}
 	}
-	.close-filters {
-		margin-top: 13px;
-		margin-right: 13px;
+	.close {
     position: absolute;
     right: 0;
     top: 0;
-    background-color: $brand-colour;
-    color: #000;
-    font-size: 1em;
-		&:hover{
-			background-color: $gray;
-			color: #000;
-		}
+    background-color: transparent;
+    color: $brand-colour;
+    line-height: 1;
+    font-size: 4em;
+    padding: 0 .5em 0 0;
 	}
 	&.open {
 		display: block;
@@ -224,8 +225,11 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 			padding: 0 2em;
 		}
 		section {
-			padding: 1em 1em 2em;
+			display: inline-block;
+			padding: 2em 1em;
+			/*width: 33%;*/
 			color: $brand-colour;
+			float: left !important;
 			box-sizing: border-box;
 			a, a:hover, .active {
 				padding: 0.5em 0;
@@ -252,33 +256,15 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 		}
 	}
 	
-	ul.facet-list {
-		width: 100% !important;
-		display: block !important;
+	ul.columns {
+		width: 100%;
 		padding-left: 0;
 		margin: 1em 0 0 0;
-		-webkit-column-count: 4;
-		-moz-column-count: 4;
-		column-count: 4;
-		-webkit-column-width: 25%;
-		-moz-column-width: 25%;
-		column-width: 25%;
-		list-style-type: none;
-   		li {
-   			display: inline-block;
-   			width: 100% !important;
-			padding: 0;
-			margin: 0 0 0.5rem;
-			line-height: 1rem;
+		li {
+			display: inline-block;
+			min-width: 12em;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		}
-	}
-	ul.facet-list-decade {
-		-webkit-column-count: 5 !important;
-		-moz-column-count: 5 !important;
-		column-count: 5 !important;
-		-webkit-column-width: 20% !important;
-		-moz-column-width: 20% !important;
-		column-width: 20% !important;
 	}
 	li a.more, li a.more:hover {
 		font-size: 0.7em;
@@ -323,7 +309,6 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	font-size: 0.8em;
 	position: relative;
 	vertical-align: bottom;
-	margin: 0;
 	&.on {
 		background-color: $brand-colour;
 		color: #000;
@@ -365,7 +350,6 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	line-height: 1.3em;
 }
 .filter-unit {
-	background-color: #fff;
 	&:after {
 		content: '×';
 		padding: 0.3em;
@@ -385,26 +369,6 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	}
 
 }
-ul#more-drop {
-	min-width: 20rem !important;
-    -webkit-column-count: 2 !important;
-   	-moz-column-count: 2 !important;
-   	column-count: 2 !important;
-	li {
-		float: none !important;
-		padding: 0.5rem 1rem;
-		margin: 0;
-		border-bottom: 1px solid $gray;
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid;
-   		a, span {
-			margin: 0;
-			padding: 0;
-		}
-	}
-}
-
 .pullout {
 	padding: 1em;
 	border: 1px solid #efefef;
@@ -420,78 +384,25 @@ ul#more-drop {
 	margin: 3em 0;
 }
 
-.record-badge {
-	margin: 1rem 0;
-	padding: 0.5rem;
-	background: $brand-colour;
-	color: white;
-	border-radius: 0.5rem;
-	overflow: hidden;
-	.fa, span {
-		vertical-align: middle;
-		color: white;
-	}
-	span {
-		font-weight: 800;
-		display: block;
-		margin: 3px 0 0 3rem;
-	}
-	.fa {
-		display: inline-block;
-		padding: 0 0.5rem 0 0.2rem;
-		float: left;
-	}
-	&:hover {
-		background: darken($brand-colour, 10%);
-	}
-}
-.record-add {
-	width: 50%;
+/*MOBILE STYLING FROM 480px WIDTH*/
+
+@media only screen and (min-width: 481px) {
+
 }
 
-.record-nav {
-	height: 1rem;
-	line-height: 1rem;
-	margin: 0;
-	padding: 1rem;
-	a {
-		color: $brand-colour;
-	}	
-}
+/*DESKTOP STYLING FROM 1000px WIDE*/
 
-.record-text-preview {
-	font-size: 2rem;
-	width: 100%;
-	height: 6em;
-	overflow: hidden;
-	background: $brand-colour-light;
-	div {
-		padding: 0.5rem;
-		width: 110%;
-		-ms-transform: rotate(7deg); /* IE 9 */
-		-webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
-		transform: rotate(7deg);
-   		h3 {
-			font-size: 1em !important;
-			line-height: 1em !important;
-			color: $middle-grey !important;
-			margin: 0 !important;
-			padding: 0 !important;
-			font-weight: 700 !important;
+@media only screen and (min-width: 1000px) {
+	.record {
+		.about, figure {
+			width: 50%;
+			display: inline-block;
+			vertical-align: top;
 		}
-		p {
-			color: $middle-grey !important;
-			font-size: 0.8em !important;
-			line-height: 1em !important;
-			margin: 0 !important;
-			padding: 0 !important;
+		.about {
+			width: 49%;
+			padding-left: 2em;
+			margin: 0;
 		}
-	}
-}
-
-body.record-detail {
-	.record-text-preview {
-		font-size: 4rem;
-		height: 4em;
 	}
 }

@@ -1,6 +1,6 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014,
 # New Zealand Government, and is licensed under the GNU General Public License,
-#version 3. Some components are third party components that are licensed under
+# version 3. Some components are third party components that are licensed under
 # the MIT license or other terms.
 # See https://github.com/DigitalNZ/supplejack_website for details.
 #
@@ -8,11 +8,12 @@
 # the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
+# SearchTab
 class SearchTab
   TABS = %w(All Images Audio Videos Sets)
   attr_reader :tab
 
-  def initialize(tab='All')
+  def initialize(tab = 'All')
     @tab = tab.present? ? tab : 'All'
   end
 
@@ -25,7 +26,7 @@ class SearchTab
   end
 
   def self.valid_category_facets
-    Search.new.facet_values("category").keys
+    Search.new.facet_values('category').keys
   end
 
   def self.sorted_counts(counts)
@@ -43,7 +44,7 @@ class SearchTab
   def all?
     tab == 'All'
   end
-  
+
   def value
     @tab if tab.present?
   end

@@ -1,6 +1,6 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014,
 # New Zealand Government, and is licensed under the GNU General Public License,
-#version 3. Some components are third party components that are licensed under
+# version 3. Some components are third party components that are licensed under
 # the MIT license or other terms.
 # See https://github.com/DigitalNZ/supplejack_website for details.
 #
@@ -8,9 +8,9 @@
 # the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
+# Record Helper
 module RecordsHelper
-
-  def record_thumbnail(record, search=nil)
+  def record_thumbnail(record, search = nil)
     image_options = {}
     search ||= Search.new
     search_options = search.options.try(:any?) ? search.options : nil
@@ -18,18 +18,39 @@ module RecordsHelper
     image_options[:alt] ||= record.title
     image_options[:title] ||= image_options[:alt]
 
+    if record.thumbnail_url == 'Unknown' or record.thumbnail_url.blank?
+      thumb = record_text_preview(record)
+    else
+      thumb = image_tag(record.image_url, image_options)
+    end
+
     content = content_tag(
       :div, 
       link_to(
-        image_tag(record.image_url, image_options), 
+        thumb, 
         record_path(record.id, search: search_options)
       )
     )
     content.html_safe
   end
 
+  def record_text_preview(record)
+    hed = content_tag(:h3, record.title)
+    txt = record.description || record.fulltext || "DigitalNZ item"
+    body = content_tag(:p, txt.to_s.truncate(200))
+    wrapper = content_tag(:div, hed+body)
+    content = content_tag(:div, wrapper, class: 'record-text-preview')
+    content.html_safe
+  end
+
   def display_record_graphic(record)
-    format_large_image(record) || placeholder_image(record)    
+    if format_large_image(record)
+      format_large_image(record)
+    elsif record.thumbnail_url.blank? or record.thumbnail_url == 'Unknown'
+      record_text_preview(record)
+    else
+      placeholder_image(record)
+    end
   end
 
   def format_large_image(record)
@@ -52,7 +73,7 @@ module RecordsHelper
     css_class = "placeholder-image"
     css_class << " image-box" unless request.path.starts_with?(user_sets_path)
     content_tag(:div, class: css_class) do
-      image + link_for_placeholder(record)
+      image
     end
   end
 
@@ -115,13 +136,13 @@ module RecordsHelper
     # facets that we want to ignore/exclude
     blacklist = ['type']
     facets = Hash[ @search.facets.map { |facet| [facet.name.to_s, facet.values] }]
-    
+
     # Remove empty facets & unwanted facets
-    facets = facets.delete_if { |facet, values| values.empty? || blacklist.include?(facet)}
+    facets.delete_if { |facet, values| values.empty? || blacklist.include?(facet) }
   end
 
   def filter_class(filter_name)
-    filter_name.strip.gsub(/[^[:alnum:]]/, "").downcase
+    filter_name.strip.gsub(/[^[:alnum:]]/, '').downcase
   end
 
   def date_parser_for(string)
@@ -145,7 +166,7 @@ module RecordsHelper
         records_path(search_tab_options(options, category)), 
         id: tab_id
 
-      list << %{<li>#{link}</li><hr>}
+      list << %{<li>#{link}</li>}
     end
     list.html_safe
   end
@@ -160,6 +181,23 @@ module RecordsHelper
   end
 
   def facet_name(name)
-    name == 'decade' ? 'Date' : name.capitalize.gsub('_', ' ')
+    case name 
+    when 'decade'
+      'Date'
+    when 'primary_collection'
+      'Collection'
+    else
+      name.titleize
+    end
   end  
+
+  def facet_list(facet)
+    if facet[0] == 'decade'
+      end_year = Time.now.year
+      Hash[facet[1].collect{|k,v| [k,v] if (1000..end_year) === k.to_i }.compact.sort.reverse]
+      # Hash[facet[1].sort.reverse]
+    else 
+      Hash[facet[1].sort]
+    end
+  end
 end

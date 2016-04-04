@@ -5,6 +5,11 @@
 	border: 0px;
 }
 
+.has-tip {
+	color: $brand-colour;
+	border-bottom: 0px;
+}
+
 footer {
 	margin: 4rem 0 0 0;
 	background: #666;
@@ -14,3 +19,4 @@ footer {
 		color: white;
 	}
 }
+

@@ -11,5 +11,8 @@
   = record_thumbnail(record, search)
   .gallery-record-caption
     = link_to truncate(record.title, length: 30), record_path(record, search.options)
-    .gallery-source= record.display_content_partner
-  = render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: record}
+    .gallery-source
+      - if not record.contributing_partner.blank?
+        = "#{record.contributing_partner.join(', ')}, "
+      = record.display_content_partner
+  / = render partial: 'shared/add_to_set', locals: {logged_in: current_user.present?, record: record}

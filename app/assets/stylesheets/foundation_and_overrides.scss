@@ -1360,13 +1360,13 @@ $body-font-family: $font-family-sans-serif;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $brand-colour-light;
+// $topbar-bg-color: $oil;
 // $topbar-bg-color: $success-color;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 3rem;
-// $topbar-margin-bottom: 1rem;
+// $topbar-height: 45px;
+// $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
@@ -1382,7 +1382,7 @@ $topbar-bg-color: $brand-colour-light;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #5c5146;
+// $topbar-link-color: $white;
 // $topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
@@ -1441,6 +1441,3 @@ $topbar-sticky-class: ".sticky";
 // $include-accessibility-classes: true;
 
 @import 'foundation';
-
-
-.date select { display: inline !important; }

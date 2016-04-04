@@ -22,17 +22,18 @@ gem 'haml', '~> 4.0.6'
 gem 'haml-rails'
 gem 'rubocop', require: false
 gem 'therubyracer'
-gem 'font-awesome-rails', '~> 4.3.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
   gem 'uglifier', '>= 1.0.3'
   gem 'foundation-rails', '~> 5.4.5.0'
+  gem 'font-awesome-rails', '~> 4.3.0.0'
 end
 
 group :development do
   # gem 'better_errors'
   gem 'pry-rails'
+  gem "erb2haml"  
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
@@ -49,7 +50,7 @@ group :test, :development do
   gem 'minitest'
   gem 'simplecov'
   gem 'ffaker',   '~> 2.1.0'
-  # gem 'pry-byebug'
+  gem 'pry-byebug'
 end
 
 group :test do

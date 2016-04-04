@@ -1,7 +1,8 @@
+# ApiUser
 module ApiUser
   extend ActiveSupport::Concern
 
-  included do 
+  included do
     has_one :key, class_name: ApiKey, dependent: :destroy
 
     # api_key is defined here because user.api_key is used everywhere

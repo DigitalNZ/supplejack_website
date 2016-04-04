@@ -1,5 +1,6 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014,
 # New Zealand Government, and is licensed under the GNU General Public License,
+
 #version 3. Some components are third party components that are licensed under
 # the MIT license or other terms.
 # See https://github.com/DigitalNZ/supplejack_website for details.
@@ -8,9 +9,10 @@
 # the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
+# UserSet Controller
 class UserSetsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  
+
   def show
     @user_set = Supplejack::UserSet.find(params[:id])
     @records = @user_set.items
@@ -18,7 +20,7 @@ class UserSetsController < ApplicationController
 
   def index
     sets = current_sj_user.sets.map do |set|
-      {name: set.name, id: set.id, items_count: set.count}
+      { name: set.name, id: set.id, items_count: set.count }
     end
 
     render json: {sets: sets}
@@ -32,9 +34,9 @@ class UserSetsController < ApplicationController
     user_set.save
 
     respond_to do |format|
-      format.html {redirect_to user_sets_path}
+      format.html { redirect_to user_sets_path }
       format.js do
-        render json: {set_id: user_set.id}.to_json
+        render json: { set_id: user_set.id }.to_json
       end
     end
   end
