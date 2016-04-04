@@ -148,7 +148,7 @@
 
             event.preventDefault();
             return false;
-          });            
+          });
         })
         /**
          * find menu buttons and make them and their related dropdowns open and close when clicked
@@ -159,11 +159,9 @@
           // $menuBtn.on('click', function(){
           //   var $btn = $(this),
           //       $menu = $btn.siblings('.menu');
-
           //   $btn.toggleClass('on');
           //   $menu.toggleClass('open');
           // });
-
 
           // Close Filter Panle by clicking outside
           $(".filter-container").on('blur',function(){   
@@ -231,6 +229,26 @@
             if ($(this).attr('value') == "0") {
               $('.filter-container').show();
               // $('.filter-container').focus();
+              this.setAttribute('value', "1");
+            } else {
+              $('.filter-container').hide();
+              this.setAttribute('value', "0");
+               $(this).blur();
+            }
+            $(this).toggleClass('on');
+          });
+
+          $('.close').on('click', function(){
+            $('.filter-btn').attr('value', "0");
+            $('.filter-container').hide();
+            $('.first-tab').addClass('active');
+            $('.menu.on').removeClass('on');
+          });
+
+          // Open Close filters
+          $('.filter-btn').on('click', function(){
+            if ($(this).attr('value') == "0") {
+              $('.filter-container').show();
               this.setAttribute('value', "1");
             } else {
               $('.filter-container').hide();

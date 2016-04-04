@@ -8,25 +8,13 @@
 	/ <![endif]
 	= render "shared/head"
 
-	%body{ class: yield(:body_class) }
+	%body
 		= render "shared/header"
 		- if notice
-<<<<<<< HEAD
-			.container 
-				.alert-box.success.radius{ data: { alert: true } }
-					= notice
-					%a.close{ href: '#' } &times;
-		- if alert
-			.container 
-				.alert-box.alert.radius{ data: { alert: true } }
-					= alert
-					%a.close{ href: '#' } &times;
-=======
 			%p.alert.alert-success= notice
 		- if alert
 			%p.alert.alert-danger= alert
->>>>>>> master
 
-		.main= yield
+		.story= yield
 
 		= render "shared/footer"

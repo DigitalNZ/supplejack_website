@@ -1,6 +1,6 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014,
 # New Zealand Government, and is licensed under the GNU General Public License,
-#version 3. Some components are third party components that are licensed under
+# version 3. Some components are third party components that are licensed under
 # the MIT license or other terms.
 # See https://github.com/DigitalNZ/supplejack_website for details.
 #
@@ -8,9 +8,9 @@
 # the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
+# Record Helper
 module RecordsHelper
-
-  def record_thumbnail(record, search=nil)
+  def record_thumbnail(record, search = nil)
     image_options = {}
     search ||= Search.new
     search_options = search.options.try(:any?) ? search.options : nil
@@ -136,13 +136,13 @@ module RecordsHelper
     # facets that we want to ignore/exclude
     blacklist = ['type']
     facets = Hash[ @search.facets.map { |facet| [facet.name.to_s, facet.values] }]
-    
+
     # Remove empty facets & unwanted facets
-    facets = facets.delete_if { |facet, values| values.empty? || blacklist.include?(facet)}
+    facets.delete_if { |facet, values| values.empty? || blacklist.include?(facet) }
   end
 
   def filter_class(filter_name)
-    filter_name.strip.gsub(/[^[:alnum:]]/, "").downcase
+    filter_name.strip.gsub(/[^[:alnum:]]/, '').downcase
   end
 
   def date_parser_for(string)
@@ -200,5 +200,4 @@ module RecordsHelper
       Hash[facet[1].sort]
     end
   end
-
 end

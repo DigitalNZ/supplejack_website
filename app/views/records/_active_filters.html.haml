@@ -9,6 +9,7 @@
 / # http://digitalnz.org/supplejack
 
 - (params['i'] || []).each do |facet, value|
+
   = content_tag :button, date_parser_for(value),          |
     class: "filter-unit",                |
     id: "target-#{filter_class(value)}", |
