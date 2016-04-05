@@ -142,6 +142,7 @@ module RecordsHelper
   end
 
   def filter_class(filter_name)
+    # binding.pry
     filter_name.strip.gsub(/[^[:alnum:]]/, "").downcase
   end
 
@@ -191,13 +192,13 @@ module RecordsHelper
     end
   end  
 
-  def facet_list(facet)
-    if facet[0] == 'decade'
+  def facet_list(name, values)
+    if name == 'decade'
       end_year = Time.now.year
-      Hash[facet[1].collect{|k,v| [k,v] if (1000..end_year) === k.to_i }.compact.sort.reverse]
+      Hash[values.collect{|k,v| [k,v] if (1000..end_year) === k.to_i }.compact.sort.reverse]
       # Hash[facet[1].sort.reverse]
     else 
-      Hash[facet[1].sort]
+      Hash[values.sort]
     end
   end
 
