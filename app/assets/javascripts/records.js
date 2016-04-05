@@ -109,6 +109,7 @@
       var clickOnFilter = function() {
          // $('.close-filters').html('Apply Filters <i class="fa fa-arrow-right close-filter-icon"></i>')
             var $filter = $(this),
+                $filterBtn = $('.filter-btn'),
                 facet = $filter.data('facet'),
                 filter_value = $filter.data('filter'),
                 facet_class = $filter.attr('class').split(' ')[0];
@@ -122,7 +123,7 @@
               } else {
                 $('.tabs-content a[data-facet="'+facet+'"][data-filter="'+filter_value+'"]').addClass('active');
                 var $newFilterBtn = $('<button id="target-'+facet_class+'" data-filter="'+filter_value+'" data-facet="'+facet+'" class="filter-unit">'+$filter.justtext()+'</button>');
-
+                debugger;
                 $filterBtn.after($newFilterBtn);
                 // disableFacets(facet);
               }
@@ -131,10 +132,11 @@
       }
 
       var closeFilterPanel = function() {
+        console.log("Close FilterPanel");
         $('.menu.open').removeClass('open');
         $('.menu.on').removeClass('on');
         $('.filter-btn').attr('value', "0");
-        $('.filter-container').hide();
+        // $('.filter-container').hide();
         $('.first-tab').addClass('active');
         $('.menu.on').removeClass('on'); 
       }
@@ -191,7 +193,7 @@
 
           // Close Filter Panle by clicking outside
           $(".filter-container").on('blur',function(){   
-            closeFilterPanel();        
+            closeFilterPanel();
             updateFilters();
           });
 
@@ -230,26 +232,24 @@
             $('.record-add-panel').toggle();
           });
 
-          var clickOnFilter2 = function() {
-            console.log($('.close-filters'));
-          }
-          // Open Close filters
-          $('.filter-btn').on('click', clickOnFilter2);
-          // $('.filter-btn').on('click', function(){
-          //   if ($(this).attr('value') == "0") {
-          //     $('.filter-container').show();
-          //     // $('.filter-container').focus();
-          //     this.setAttribute('value', "1");
-          //   } else {
-          //     $('.filter-container').hide();
-          //     this.setAttribute('value', "0");
-          //      $(this).blur();
-          //   }
-          //   $(this).toggleClass('on');
-          // });
+          // Open Close filters $('.filter-btn').unbind('click');
+          // $('.filter-btn').on('click', clickOnFilter2);
+          $('.filter-btn').on('click', function(){
+            console.log('.click-filters>>>');
+            if ($(this).attr('value') == "0") {
+              $('.filter-container').show();
+              // $('.filter-container').focus();
+              this.setAttribute('value', "1");
+            } else {
+              $('.filter-container').hide();
+              this.setAttribute('value', "0");
+               $(this).blur();
+            }
+            $(this).toggleClass('on');
+          });
 
           $('#search_filter').on('closed', function() { 
-            console.log("closed"); 
+            console.log("closed>>"); 
             closeFilterPanel();
             updateFilters();
 
