@@ -13,9 +13,9 @@
         %section
           = facet_name(facet[0])
           %ul
-            - Hash[facet[1].sort].each_with_index do |filter, i|
-              - if i < 5
-
+            - name, values = facet[0], facet[1]
+            - facet_list(name, values).each_with_index do |filter, count|
+              - if count < 5
                 %li
                   = content_tag :a,                                                                                                        |
                     "#{filter[0]} <span class='count'>#{number_with_precision(filter[1], delimiter: ',', precision: 0)}</span>".html_safe, |
