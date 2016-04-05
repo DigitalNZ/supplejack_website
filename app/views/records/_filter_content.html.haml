@@ -7,4 +7,5 @@
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
 - filter_facets.each_with_index do |facet, index|
-  = render 'filter_tab', facet: facet[0], facet_values: facet[1], index: index if facet[1].size > 1
+  - name, values = facet[0], facet[1]
+  = render 'filter_tab', name: name, values: values, index: index if values.size > 1
