@@ -15,6 +15,7 @@ gem 'mysql2', '~> 0.3.18'
 gem 'json'
 gem 'will_paginate'
 gem 'jquery-rails'
+gem 'lodash-rails'
 gem 'activeresource'
 gem 'devise'
 gem "codeclimate-test-reporter", group: :test, require: nil
@@ -23,6 +24,7 @@ gem 'haml-rails'
 gem 'rubocop', require: false
 gem 'therubyracer'
 gem 'font-awesome-rails', '~> 4.3.0.0'
+gem 'modernizr-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'
@@ -30,7 +32,6 @@ group :assets do
   gem 'foundation-rails', '~> 5.4.5.0'
 end
 
-gem 'modernizr-rails'
 group :development do
   # gem 'better_errors'
   gem 'pry-rails'

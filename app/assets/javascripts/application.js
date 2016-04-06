@@ -26,6 +26,7 @@
 //= require jquery.infinitescroll
 //= require foundation
 //= require modernizr
+//= require lodash
 //= require_tree .
 
 $(function() {

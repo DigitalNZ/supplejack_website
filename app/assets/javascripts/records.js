@@ -34,7 +34,7 @@
             facet, filter, filters;
 
         filters = facetHash();
-        
+        debugger;
         for (var facet in filters) {
           if (filters[facet].length > 1) {
             // Add filters to or.
@@ -47,11 +47,27 @@
           }
         }
 
+        console.log("window.location.href:"+ window.location.href);
+        console.log("href:"+ href);
         if (href != window.location.href) {
-          window.location = href;
-        } 
+          window.location.href = href;
+        }
       }
 
+      var updateSearchTabs = function() {
+        _.forIn(facetHash(), function(values, key) {
+          var $form = $("#search-form");
+          $form.children(".search-input-tab").remove();
+
+          if(values.length > 1) {
+            _.each(values, function(value) {
+              $form.append("<input type='hidden' name='or["+ key + "][]' value='"+ value +"' class='search-input-tab'/>")
+            });
+          } else {
+            $form.append("<input type='hidden' name='i["+ key + "]' value='"+ values +"' class='search-input-tab'/>")
+          }
+        })
+      }
 
       /**
       * Create a Hash of all the current filters.
@@ -106,6 +122,7 @@
         }
       }
 
+
       var clickOnFilter = function() {
          // $('.close-filters').html('Apply Filters <i class="fa fa-arrow-right close-filter-icon"></i>')
             var $filter = $(this),
@@ -128,6 +145,7 @@
                 // disableFacets(facet);
               }
               makeApplyButton();
+              // updateSearchTabs();
             }
       }
 
@@ -201,7 +219,7 @@
           var $closeBtn = $('button.close-filters');
 
           $closeBtn.on('click', function(){
-            closeFilterPanel();           
+            closeFilterPanel();
             updateFilters();
           });
 
