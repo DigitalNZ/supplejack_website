@@ -16,7 +16,7 @@
     - params[:i].each do |k, v|
       = hidden_field_tag "i[#{k}]", v, class: "search-input-tab"
 
-  = hidden_field_tag("tab", params[:tab] || 'More')
+  = hidden_field_tag("tab", params[:tab] || 'More', class: "search-category-filter")
 
   .container
     .row.collapse.postfix-round

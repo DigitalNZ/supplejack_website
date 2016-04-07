@@ -29,12 +29,14 @@
         });
       }
 
-      var updateFilters = function() {
+      var updateFilters = function(skip) {
         var href = cleanHref(),
             facet, filter, filters;
+        // console.log(this);
+        var skip = skip || false;
+        // var status = this.navigate;
 
         filters = facetHash();
-        debugger;
         for (var facet in filters) {
           if (filters[facet].length > 1) {
             // Add filters to or.
@@ -47,27 +49,57 @@
           }
         }
 
-        console.log("window.location.href:"+ window.location.href);
-        console.log("href:"+ href);
-        if (href != window.location.href) {
+        // console.log("window.location.href:"+ window.location.href);
+        // console.log("href:"+ href);
+        if (!skip && href != window.location.href) {
           window.location.href = href;
         }
       }
 
       var updateSearchTabs = function() {
-        _.forIn(facetHash(), function(values, key) {
-          var $form = $("#search-form");
-          $form.children(".search-input-tab").remove();
+        // console.log(facetHash());
+        var $form = $("#search-form");        
+        $form.children(".search-input-tab").remove();
 
+        _.forIn(facetHash(), function(values, key) {
           if(values.length > 1) {
             _.each(values, function(value) {
-              $form.append("<input type='hidden' name='or["+ key + "][]' value='"+ value +"' class='search-input-tab'/>")
+              $form.append("<input type='hidden' name='or["+ key + "][]' value='"+ value +"' class='search-input-tab'/>");
             });
           } else {
-            $form.append("<input type='hidden' name='i["+ key + "]' value='"+ values +"' class='search-input-tab'/>")
+            $form.append("<input type='hidden' name='i["+ key + "]' value='"+ values +"' class='search-input-tab' ></input>");
           }
         })
       }
+
+      var switchFilterUnit = function(evt){
+        evt.stopImmediatePropagation();
+        evt.preventDefault();
+
+        var $filter = $(this),
+            facet = $filter.data('facet'),
+            filter_value = $filter.data('filter');
+        
+        $('.tabs-content a[data-filter="'+filter_value+'"]').removeClass('active');
+        $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
+
+        $filter.remove();
+        var $panel_open_flag = $('#search_filter').hasClass("open");
+        updateFilters($panel_open_flag);
+      };
+
+      $(".search-category-tab").click( function() {
+
+        // console.log($(this).attr("value"));
+        // console.log("<input type='hidden' name='"+ "tab" + "' value='"+ $(this).attr("value") +"' class='search-category-filter' />");
+        $("#search-form").children().remove('.search-category-filter');
+         if( $(this).attr("value") != 'All') {
+          $("#search-form").append("<input type='hidden' name='"+ "tab" + "' value='"+ $(this).attr("value") +"' class='search-category-filter' />");
+         }
+        $('#search-form').trigger('submit');
+        event.preventDefault();
+        return false;
+      });
 
       /**
       * Create a Hash of all the current filters.
@@ -140,17 +172,18 @@
               } else {
                 $('.tabs-content a[data-facet="'+facet+'"][data-filter="'+filter_value+'"]').addClass('active');
                 var $newFilterBtn = $('<button id="target-'+facet_class+'" data-filter="'+filter_value+'" data-facet="'+facet+'" class="filter-unit">'+$filter.justtext()+'</button>');
-                debugger;
+                $newFilterBtn.on('click', switchFilterUnit);
+
                 $filterBtn.after($newFilterBtn);
                 // disableFacets(facet);
               }
               makeApplyButton();
-              // updateSearchTabs();
+              updateSearchTabs();
             }
       }
 
       var closeFilterPanel = function() {
-        console.log("Close FilterPanel");
+        // console.log("Close FilterPanel");
         $('.menu.open').removeClass('open');
         $('.menu.on').removeClass('on');
         $('.filter-btn').attr('value', "0");
@@ -208,7 +241,6 @@
           //   $menu.toggleClass('open');
           // });
 
-
           // Close Filter Panle by clicking outside
           $(".filter-container").on('blur',function(){   
             closeFilterPanel();
@@ -217,7 +249,6 @@
 
           // Close Filter Panle with close/apply button
           var $closeBtn = $('button.close-filters');
-
           $closeBtn.on('click', function(){
             closeFilterPanel();
             updateFilters();
@@ -225,8 +256,7 @@
 
           // More button
           var $moreBtn = $('.more');
-
-          $moreBtn.on('click', function(){
+          $moreBtn.on('click', function(evt){
             var href = $(this).attr('href');
             var panel = $('a[href$="' + href + '"]')[0];
             $(panel).parent('li').addClass("active");
@@ -236,7 +266,6 @@
           var $filterUnit = $('.filter-container .content li a:not(.more)'),
               $filterBtn = $('.filter-btn');
 
-          //$filterUnit.on('click', clickOnFilter);
           $filterUnit.on('click', clickOnFilter);
 
           // $('.close-filters').on('click', function(){
@@ -253,7 +282,7 @@
           // Open Close filters $('.filter-btn').unbind('click');
           // $('.filter-btn').on('click', clickOnFilter2);
           $('.filter-btn').on('click', function(){
-            console.log('.click-filters>>>');
+            // console.log('.click-filters>>>');
             if ($(this).attr('value') == "0") {
               $('.filter-container').show();
               // $('.filter-container').focus();
@@ -267,23 +296,18 @@
           });
 
           $('#search_filter').on('closed', function() { 
-            console.log("closed>>"); 
+            // console.log("closed>>"); 
             closeFilterPanel();
             updateFilters();
 
+            // alert("default");
+            updateSearchTabs();
           });
 
+
           // Remove the filter on click
-          $('.filter-unit').on('click', function(){
-            var $filter = $(this),
-                facet = $filter.data('facet'),
-                filter_value = $filter.data('filter');
-            
-            $('.tabs-content a[data-filter="'+filter_value+'"]').removeClass('active');
-            $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
-            $filter.remove();
-            updateFilters();  
-          });
+          $('.filter-unit').off('click');
+          $('.filter-unit').on('click', switchFilterUnit);
         })
       };
 
