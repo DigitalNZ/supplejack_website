@@ -32,7 +32,6 @@
       var updateFilters = function(skip) {
         var href = cleanHref(),
             facet, filter, filters;
-        // console.log(this);
         var skip = skip || false;
         // var status = this.navigate;
 
@@ -49,15 +48,12 @@
           }
         }
 
-        // console.log("window.location.href:"+ window.location.href);
-        // console.log("href:"+ href);
         if (!skip && href != window.location.href) {
           window.location.href = href;
         }
       }
 
       var updateSearchTabs = function() {
-        // console.log(facetHash());
         var $form = $("#search-form");        
         $form.children(".search-input-tab").remove();
 
@@ -89,9 +85,6 @@
       };
 
       $(".search-category-tab").click( function() {
-
-        // console.log($(this).attr("value"));
-        // console.log("<input type='hidden' name='"+ "tab" + "' value='"+ $(this).attr("value") +"' class='search-category-filter' />");
         $("#search-form").children().remove('.search-category-filter');
          if( $(this).attr("value") != 'All') {
           $("#search-form").append("<input type='hidden' name='"+ "tab" + "' value='"+ $(this).attr("value") +"' class='search-category-filter' />");
@@ -183,7 +176,6 @@
       }
 
       var closeFilterPanel = function() {
-        // console.log("Close FilterPanel");
         $('.menu.open').removeClass('open');
         $('.menu.on').removeClass('on');
         $('.filter-btn').attr('value', "0");
@@ -282,7 +274,6 @@
           // Open Close filters $('.filter-btn').unbind('click');
           // $('.filter-btn').on('click', clickOnFilter2);
           $('.filter-btn').on('click', function(){
-            // console.log('.click-filters>>>');
             if ($(this).attr('value') == "0") {
               $('.filter-container').show();
               // $('.filter-container').focus();
@@ -296,11 +287,8 @@
           });
 
           $('#search_filter').on('closed', function() { 
-            // console.log("closed>>"); 
             closeFilterPanel();
             updateFilters();
-
-            // alert("default");
             updateSearchTabs();
           });
 
