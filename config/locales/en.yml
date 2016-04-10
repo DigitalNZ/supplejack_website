@@ -20,6 +20,9 @@ en:
     tags: 'Tags:'
     description: 'Description'
 
+  usage:
+    check_message: "‘Before copying or reusing any item founds on DigitalNZ, you need to check the terms of user and/or copyright on the item’s web page."
+
   records:
     current_results:    "CURRENT RESULTS: %{count}"
     more_results:       "More results"
@@ -53,9 +56,13 @@ en:
     source:             "Source"
     credit_line:        "Credit line"
     description:        "Description"
+    display_collection: "View at"
+    content_partner:    "From"
+    usage_statement:    "Before copying or reusing any item found on DigitalNZ, you need to check the terms of user and/or copyright on the item’s original web page."
 
     click_to:           "Click to "
     view_external_item: "view external item"
+    external_link:      "This link will leave DigitalNZ. Use your browser's Back button to return here."
     no_preview:         "No preview available"
     creator:            "By"
 
