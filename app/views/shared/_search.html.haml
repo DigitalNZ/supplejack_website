@@ -6,7 +6,7 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
-= form_tag records_path, :method => :get, class: 'search clearfix', id: 'search-form' do
+= form_tag records_path, method: 'get', class: 'search clearfix', id: 'search-form' do
   - if params[:or].present?
     - params[:or].each do |k, values|
       - values.each do |v|
