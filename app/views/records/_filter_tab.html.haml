@@ -13,7 +13,7 @@
         = fa_icon('exclamation-triangle')
         = t('records.usage_statement')
     %ul.facet-list{ class: "facet-list-#{name}"}
-      - facet_list(name, values).each_with_index do |label, count|
+      - facet_list(name, values).each do |label, count|
         %li
           = content_tag :a,                                                                                                |
             "#{label} <span class='count'>#{number_with_precision(count, delimiter: ',', precision: 0)}</span>".html_safe, |
