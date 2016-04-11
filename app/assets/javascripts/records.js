@@ -29,12 +29,13 @@
         });
       }
 
-      var updateFilters = function() {
+      var updateFilters = function(skip) {
         var href = cleanHref(),
             facet, filter, filters;
+        var skip = skip || false;
+        // var status = this.navigate;
 
         filters = facetHash();
-        
         for (var facet in filters) {
           if (filters[facet].length > 1) {
             // Add filters to or.
@@ -47,11 +48,51 @@
           }
         }
 
-        if (href != window.location.href) {
-          window.location = href;
-        } 
+        if (!skip && href != window.location.href) {
+          window.location.href = href;
+        }
       }
 
+      var updateSearchTabs = function() {
+        var $form = $("#search-form");        
+        $form.children(".search-input-tab").remove();
+
+        _.forIn(facetHash(), function(values, key) {
+          if(values.length > 1) {
+            _.each(values, function(value) {
+              $form.append("<input type='hidden' name='or["+ key + "][]' value='"+ value +"' class='search-input-tab'/>");
+            });
+          } else {
+            $form.append("<input type='hidden' name='i["+ key + "]' value='"+ values +"' class='search-input-tab' ></input>");
+          }
+        })
+      }
+
+      var switchFilterUnit = function(evt){
+        evt.stopImmediatePropagation();
+        evt.preventDefault();
+
+        var $filter = $(this),
+            facet = $filter.data('facet'),
+            filter_value = $filter.data('filter');
+        
+        $('.tabs-content a[data-filter="'+filter_value+'"]').removeClass('active');
+        $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
+
+        $filter.remove();
+        var $panel_open_flag = $('#search_filter').hasClass("open");
+        updateFilters($panel_open_flag);
+      };
+
+      $(".search-category-tab").click( function() {
+        $("#search-form").children().remove('.search-category-filter');
+         if( $(this).attr("value") != 'All') {
+          $("#search-form").append("<input type='hidden' name='"+ "tab" + "' value='"+ $(this).attr("value") +"' class='search-category-filter' />");
+         }
+        $('#search-form').trigger('submit');
+        event.preventDefault();
+        return false;
+      });
 
       /**
       * Create a Hash of all the current filters.
@@ -106,11 +147,39 @@
         }
       }
 
+
+      var clickOnFilter = function() {
+         // $('.close-filters').html('Apply Filters <i class="fa fa-arrow-right close-filter-icon"></i>')
+            var $filter = $(this),
+                $filterBtn = $('.filter-btn'),
+                facet = $filter.data('facet'),
+                filter_value = $filter.data('filter'),
+                facet_class = $filter.attr('class').split(' ')[0];
+
+            if (!$filter.hasClass('disabled')) {
+              if($filter.hasClass('active')) {
+                $('#target-' + facet_class).remove();
+                $('.'+facet_class).removeClass('active');
+                $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
+
+              } else {
+                $('.tabs-content a[data-facet="'+facet+'"][data-filter="'+filter_value+'"]').addClass('active');
+                var $newFilterBtn = $('<button id="target-'+facet_class+'" data-filter="'+filter_value+'" data-facet="'+facet+'" class="filter-unit">'+$filter.justtext()+'</button>');
+                $newFilterBtn.on('click', switchFilterUnit);
+
+                $filterBtn.after($newFilterBtn);
+                // disableFacets(facet);
+              }
+              makeApplyButton();
+              updateSearchTabs();
+            }
+      }
+
       var closeFilterPanel = function() {
         $('.menu.open').removeClass('open');
         $('.menu.on').removeClass('on');
         $('.filter-btn').attr('value', "0");
-        $('.filter-container').hide();
+        // $('.filter-container').hide();
         $('.first-tab').addClass('active');
         $('.menu.on').removeClass('on'); 
       }
@@ -164,25 +233,22 @@
           //   $menu.toggleClass('open');
           // });
 
-
           // Close Filter Panle by clicking outside
           $(".filter-container").on('blur',function(){   
-            closeFilterPanel();        
+            closeFilterPanel();
             updateFilters();
           });
 
           // Close Filter Panle with close/apply button
           var $closeBtn = $('button.close-filters');
-
           $closeBtn.on('click', function(){
-            closeFilterPanel();           
+            closeFilterPanel();
             updateFilters();
           });
 
           // More button
           var $moreBtn = $('.more');
-
-          $moreBtn.on('click', function(){
+          $moreBtn.on('click', function(evt){
             var href = $(this).attr('href');
             var panel = $('a[href$="' + href + '"]')[0];
             $(panel).parent('li').addClass("active");
@@ -192,28 +258,7 @@
           var $filterUnit = $('.filter-container .content li a:not(.more)'),
               $filterBtn = $('.filter-btn');
 
-          $filterUnit.on('click', function(){
-            var $filter = $(this),
-                facet = $filter.data('facet'),
-                filter_value = $filter.data('filter'),
-                facet_class = $filter.attr('class').split(' ')[0];
-
-            if (!$filter.hasClass('disabled')) {
-              if($filter.hasClass('active')) {
-                $('#target-' + facet_class).remove();
-                $('.'+facet_class).removeClass('active');
-                $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
-
-              } else {
-                $('.tabs-content a[data-facet="'+facet+'"][data-filter="'+filter_value+'"]').addClass('active');
-                var $newFilterBtn = $('<button id="target-'+facet_class+'" data-filter="'+filter_value+'" data-facet="'+facet+'" class="filter-unit">'+$filter.justtext()+'</button>');
-
-                $filterBtn.after($newFilterBtn);
-                // disableFacets(facet);
-              }
-              makeApplyButton();
-            }
-          });
+          $filterUnit.on('click', clickOnFilter);
 
           // $('.close-filters').on('click', function(){
           //   $('.filter-btn').attr('value', "0");
@@ -226,7 +271,8 @@
             $('.record-add-panel').toggle();
           });
 
-          // Open Close filters
+          // Open Close filters $('.filter-btn').unbind('click');
+          // $('.filter-btn').on('click', clickOnFilter2);
           $('.filter-btn').on('click', function(){
             if ($(this).attr('value') == "0") {
               $('.filter-container').show();
@@ -240,17 +286,16 @@
             $(this).toggleClass('on');
           });
 
-          // Remove the filter on click
-          $('.filter-unit').on('click', function(){
-            var $filter = $(this),
-                facet = $filter.data('facet'),
-                filter_value = $filter.data('filter');
-            
-            $('.tabs-content a[data-filter="'+filter_value+'"]').removeClass('active');
-            $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
-            $filter.remove();
-            updateFilters();  
+          $('#search_filter').on('closed', function() { 
+            closeFilterPanel();
+            updateFilters();
+            updateSearchTabs();
           });
+
+
+          // Remove the filter on click
+          $('.filter-unit').off('click');
+          $('.filter-unit').on('click', switchFilterUnit);
         })
       };
 

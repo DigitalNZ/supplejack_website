@@ -1,8 +1,9 @@
 %body
   %div.clearfix
-    %button.filter-btn.button.menu{value: 0} Filters
+    %a{href:'#', value:0, 'data-dropdown':"search_filter", class:"button filter-btn button menu"}Filters
+
     = render 'active_filters'
-  .filter-container.menu.clearfix{style: "display:none", tabindex: "-1"}
+  #search_filter.filter-container.menu.content{'data-dropdown-content':''}
     %header.clearfix
       %ul.tabs{"data-tab" => ""}
         %li.active

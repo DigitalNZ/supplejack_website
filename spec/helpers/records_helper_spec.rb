@@ -40,7 +40,7 @@ RSpec.describe RecordsHelper do
     end
 
     it 'should replace _ with space' do
-      expect(facet_name('god_delusions')).to eq 'God delusions'
+      expect(facet_name('God_word')).to eq 'God Word'
     end
 
     it 'should replace return date for decade' do
@@ -153,7 +153,7 @@ RSpec.describe RecordsHelper do
     let(:record) { mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", image_url: "foo.com").as_null_record }
 
     it 'returns a div with placeholder image' do
-      expect(helper.placeholder_image(record)).to match('<div class="link">Click to <a href="\/records\/\d*">view external item<\/a><\/div>')
+      expect(helper.placeholder_image(record)).to match('.*<a href="\/records\/\d*">.*')
     end
   end
 
@@ -165,7 +165,7 @@ RSpec.describe RecordsHelper do
 
     it 'returns a image tag with placeholder' do
       record = mock_record(title: 'Title', description: 'Description', content_partner: "A Partner", large_image?: false, large_thumbnail_url: nil, image_url: "foo.com").as_null_record
-      expect(helper.display_record_graphic(record)).to match('<div class=\"placeholder-image image-box\"><div class=\"image\"><img alt=\"Title\" class=\"image-box\" src=\"/images/foo.com\" /></div><div class=\"link\">Click to <a href=\"/records/\d*\">view external item</a></div></div>')
+      expect(helper.display_record_graphic(record)).to match("<div class=\"placeholder-image image-box\"><div class=\"image\"><img alt=\"Title\" class=\"image-box\" src=\"/images/foo.com\" /></div>.*")
     end
   end   
 end
