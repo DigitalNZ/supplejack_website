@@ -33,9 +33,9 @@
         var href = cleanHref(),
             facet, filter, filters;
         var skip = skip || false;
-        // var status = this.navigate;
 
         filters = facetHash();
+
         for (var facet in filters) {
           if (filters[facet].length > 1) {
             // Add filters to or.
@@ -49,13 +49,14 @@
         }
 
         if (!skip && href != window.location.href) {
-          window.location.href = href;
+          $('#search-form').trigger('submit');
         }
       }
 
       var updateSearchTabs = function() {
         var $form = $("#search-form");        
-        $form.children(".search-input-tab").remove();
+        // $form.children(".search-input-tab").remove();
+        $("input.search-input-tab").remove();
 
         _.forIn(facetHash(), function(values, key) {
           if(values.length > 1) {
@@ -79,8 +80,11 @@
         $('.tabs-content a[data-filter="'+filter_value+'"]').removeClass('active');
         $('.tabs-content a[data-facet="'+facet+'"]').removeClass('disabled');
 
+
         $filter.remove();
         var $panel_open_flag = $('#search_filter').hasClass("open");
+        updateSearchTabs();
+        makeApplyButton();
         updateFilters($panel_open_flag);
       };
 
@@ -224,7 +228,7 @@
          */
         ,initFilters: (function() {
           var $menuBtn = $('button.menu');
-          
+
           // $menuBtn.on('click', function(){
           //   var $btn = $(this),
           //       $menu = $btn.siblings('.menu');
@@ -234,10 +238,10 @@
           // });
 
           // Close Filter Panle by clicking outside
-          $(".filter-container").on('blur',function(){   
-            closeFilterPanel();
-            updateFilters();
-          });
+          // $(".filter-container").on('blur',function(){   
+          //   closeFilterPanel();
+          //   updateFilters();
+          // });
 
           // Close Filter Panle with close/apply button
           var $closeBtn = $('button.close-filters');
@@ -284,14 +288,14 @@
                $(this).blur();
             }
             $(this).toggleClass('on');
+            makeApplyButton();
           });
 
-          $('#search_filter').on('closed', function() { 
+          $('#search_filter').on('closed.foundation.dropdown', function(evt) {
             closeFilterPanel();
             updateFilters();
             updateSearchTabs();
           });
-
 
           // Remove the filter on click
           $('.filter-unit').off('click');
