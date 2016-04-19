@@ -127,6 +127,23 @@ footer {
 		}
 }
 
+.top-bar-section {
+	.dropdown{
+		li.title{
+			h5{
+				a{
+					color: #fff;
+				}
+			}
+		}
+		li.parent-link{
+			a{
+				color: #fff;
+			}
+		}
+	}
+}
+
 .filters-button {
 	margin: 1em 0;
 }
