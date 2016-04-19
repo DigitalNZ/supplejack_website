@@ -1,35 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import togglePanel from '../actions/togglePanel';
-import selectTab from '../actions/selectTab'
+import togglePanel from '../../actions/togglePanel';
+import selectTab from '../../actions/selectTab'
 import _ from 'lodash';
-
-class QuickFilterTab extends Component {
-  render() {
-    return null;
-  }
-}
-
-class FilterTab extends Component {
-  render() {
-    const { values } = this.props;
-
-    const tabContent = _.map(values, (count, label) => {
-      return (
-        <a>{label} <span className='count'>{count.toLocaleString()}</span></a>
-      );
-    })
-
-    return (
-      <div className='content active'>
-        <section>
-          <ul className='facet-list'>
-            {tabContent}
-          </ul>
-        </section>
-      </div>
-    );
-  }
-}
+import QuickFilterTab from './quickFilterTab';
+import FilterTab from './filterTab';
 
 export default class SearchPanel extends Component {
   constructor() {
@@ -112,9 +86,15 @@ export default class SearchPanel extends Component {
   }
 
   render() {
+    console.log("RENDERING")
+    const filters = this.props.filters.map(filter => {
+      return <button className='filter-unit'>{filter.value}</button>
+    });
+
     return (
       <div className='clearfix'>
         <a href='#' onClick={this.onToggleClick} className='button filter-btn button menu'>Filters</a>
+        {filters}
 
         {this.renderPanel()}
       </div>
