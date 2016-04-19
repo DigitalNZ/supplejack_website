@@ -1,3 +1,12 @@
+// DO NOT REQUIRE jQuery or jQuery-ujs in this file!
+// DO NOT REQUIRE TREE!
+
+// CRITICAL that vendor-bundle must be BEFORE bootstrap-sprockets and turbolinks
+// since it is exposing jQuery and jQuery-ujs
+
+//= require vendor-bundle
+//= require app-bundle
+
 /*
  * The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
  * and is licensed under the GNU General Public License, version 3. Some components are 
@@ -20,14 +29,14 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+// require jquery
+// require jquery_ujs
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
 //= require foundation
 //= require modernizr
 //= require lodash
-//= require_tree .
+// require_tree .
 
 $(function() {
   $(document).foundation();

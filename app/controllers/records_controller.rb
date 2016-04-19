@@ -10,6 +10,8 @@
 
 # Records controller deals with searching and displaying records
 class RecordsController < ApplicationController
+  include ReactOnRails::Controller
+
   def home
   end
 
@@ -22,6 +24,8 @@ class RecordsController < ApplicationController
     @facets = @search.facets
     @counts = tab_counts(params.dup)
     @sets = current_sj_user.try(:sets)
+
+    @redux_state = SearchPageStorePresenter.new.call(@search)
   end
 
   def show
@@ -49,5 +53,18 @@ class RecordsController < ApplicationController
   # the controller needs to be sanitized.
   def sanitize_hash(params_i)
     eval params_i.to_s.gsub("'", "\\\\'").gsub("\"", "'").gsub(":", "=>")
+  end
+
+  class SearchPageStorePresenter
+    def call(search)
+      {
+        panel: {
+          open: false,
+          facets: search.facets.map {|facet| {facet.name => facet.values}}.reduce(&:merge),
+          tab: 0
+        },
+        searchValue: search.params[:text]
+      }.to_json
+    end
   end
 end
