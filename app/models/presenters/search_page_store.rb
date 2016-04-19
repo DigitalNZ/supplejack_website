@@ -1,9 +1,9 @@
 module Presenters
   class SearchPageStore
     def call(search)
-      i_filters = search.params[:i].map{|facet, v| {facet => v}}
+      i_filters = search.params[:i].map{|facet, v| {facet: facet, value: v}}
       or_filters = search.params[:or].map do |facet, values|
-        values.map{|v| {facet => v}}
+        values.map{|v| {facet: facet, value: v}}
       end.flatten
 
       {

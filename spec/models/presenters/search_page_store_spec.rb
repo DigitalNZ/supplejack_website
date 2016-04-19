@@ -40,11 +40,11 @@ module Presenters
 
     describe ':filters' do
       it 'handles i params' do
-        expect(result[:filters]).to include(usage: 'All Rights Reserved')
+        expect(result[:filters]).to include(facet: 'usage', value: 'All Rights Reserved')
       end
 
       it 'handles or params' do
-        expect(result[:filters]).to include(collection: 'TAPUHI')
+        expect(result[:filters]).to include(facet: 'collection', value: 'TAPUHI')
       end
     end
   end
