@@ -36,6 +36,12 @@ module Presenters
       it 'sets facets to a hash of the facets returned by the search' do
         expect(result[:panel][:facets]).to eq(facet1: 'values')
       end
+
+      it 'sets facets to an empty array if there are no facets in the search' do
+        allow(search).to receive(:facets).and_return(nil)
+
+        expect(result[:panel][:facets]).to eq([])
+      end
     end
 
     describe ':filters' do
