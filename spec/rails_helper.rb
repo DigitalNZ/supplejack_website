@@ -22,6 +22,11 @@ Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
   "screenshot_#{example.description.tr(' ', '-').gsub(%r{^.*\/spec\/}, '')}"
 end
 Capybara::Screenshot.prune_strategy = :keep_last_run
+Capybara.javascript_driver = :webkit
+
+Capybara::Webkit.configure do |config|
+  config.allow_unknown_urls
+end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 Dir[Rails.root.join('spec/page_objects/**/*.rb')].sort{|path| path.include?('shared') ? 0 : 1}

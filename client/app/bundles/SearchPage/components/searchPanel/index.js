@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import togglePanel from '../../actions/togglePanel';
 import selectTab from '../../actions/selectTab'
+import removeFilter from '../../actions/removeFilter';
 import _ from 'lodash';
 import QuickFilterTab from './quickFilterTab';
 import FilterTab from './filterTab';
@@ -16,6 +17,12 @@ export default class SearchPanel extends Component {
     const { dispatch } = this.props;
 
     dispatch(togglePanel())
+  }
+
+  onActiveFilterClick(filter) {
+    const { dispatch } = this.props;
+
+    dispatch(removeFilter(filter))
   }
 
   changeTab(tabIndex) {
@@ -86,13 +93,12 @@ export default class SearchPanel extends Component {
   }
 
   render() {
-    console.log("RENDERING")
     const filters = this.props.filters.map(filter => {
-      return <button className='filter-unit'>{filter.value}</button>
+      return <button className='filter-unit' onClick={this.onActiveFilterClick.bind(this, filter)}>{filter.value}</button>
     });
 
     return (
-      <div className='clearfix'>
+      <div className='clearfix search-panel'>
         <a href='#' onClick={this.onToggleClick} className='button filter-btn button menu'>Filters</a>
         {filters}
 
