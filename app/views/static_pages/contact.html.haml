@@ -8,3 +8,26 @@
   \# http://digitalnz.org/supplejack
 .container.static
   %h1 Contact
+  %p
+    If you have any feedback, questions, gripes, or kind words about
+    = succeed "," do
+      %a{:href => "http://beta.digitalnz.org"} beta.digitalnz.org
+    we’d love to hear from you.
+
+  %p
+    You can send us feedback directly by clicking on the red “Feedback” button on the lower right-hand corner of this page.
+
+  %p
+    You can also email us on
+    = succeed "," do
+      %a{:href => 'mailto:info@digitalnz.org', :target => '_blank'} info@digitalnz.org
+    chat with us on
+    = succeed "," do
+      %a{:href => "https://twitter.com/digitalnz", :target => '_blank'} Twitter
+    or post to our
+    %a{:href => "https://www.facebook.com/digitalnz/", :target => '_blank'} Facebook
+    page. We’ll also be regularly posting on
+    %a{:href => "http://www.digitalnz.org/blog/posts/changes-afoot-in-2016", :target => '_blank'} our blog
+    and in
+    %a{:href => "https://docs.google.com/document/d/1A2OvFy5gLArgQiTt_9JsnR12PGSQUbTqaZpYOIoTvOM/edit?pref=2&pli=1", :target => '_blank'} our release notes
+    about the work we’re doing and the changes we’re making to the site.

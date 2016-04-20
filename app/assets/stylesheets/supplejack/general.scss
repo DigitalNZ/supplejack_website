@@ -7,9 +7,23 @@ a, button, input, textarea {
 body {
 	font-family: 'Raleway';
 }
-
 .button {
 	background: $brand-colour;
+}
+
+footer {
+	padding: 4em 0;
+	border-top: 1px solid #eaeaea;
+	a {
+		color: #777;
+		line-height: 2em;
+		padding: 0 15px;
+	}
+	nav{
+		max-width: 62.5rem;
+		margin: 0 auto;
+		margin-bottom: 0;
+	}
 }
 
 .home {
@@ -105,6 +119,30 @@ body {
 	}
 }
 
+.top-bar-section{
+	ul{
+		li > a{
+				color: #fff;
+					}
+		}
+}
+
+.top-bar-section {
+	.dropdown{
+		li.title{
+			h5{
+				a{
+					color: #fff;
+				}
+			}
+		}
+		li.parent-link{
+			a{
+				color: #fff;
+			}
+		}
+	}
+}
 
 .filters-button {
 	margin: 1em 0;
