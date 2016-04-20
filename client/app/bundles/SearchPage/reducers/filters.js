@@ -17,4 +17,4 @@ export default handleActions({
   [ADD_FILTER]: (state, action) => {
     return [...state, action.payload]
   }
-}, [])
+}, {})

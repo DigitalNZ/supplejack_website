@@ -4,7 +4,7 @@ import loadStateFromPage from '../actions/loadStateFromPage';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
-  return { filters: state.filters, panel: state.panel };
+  return { filters: state.filters, panel: state.panel, hydrated: state.hydrated };
 }
 
 class SearchPanelContainer extends React.Component {
@@ -15,6 +15,8 @@ class SearchPanelContainer extends React.Component {
   }
 
   render() {
+    if(!this.props.hydrated) return null;
+
     return <SearchPanel {...this.props} />
   }
 }

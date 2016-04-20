@@ -13,8 +13,4 @@ export default handleActions({
   [LOAD_STATE_FROM_PAGE]: (state, action) => {
     return action.payload.panel;
   }
-}, {
-  open: false,
-  tab: 0,
-  facets: []
-})
+}, {})
