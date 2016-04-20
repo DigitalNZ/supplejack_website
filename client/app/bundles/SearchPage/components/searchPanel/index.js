@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import togglePanel from '../../actions/togglePanel';
 import selectTab from '../../actions/selectTab'
 import removeFilter from '../../actions/removeFilter';
+import addFilter from '../../actions/addFilter';
 import _ from 'lodash';
 import QuickFilterTab from './quickFilterTab';
 import FilterTab from './filterTab';
@@ -25,6 +26,12 @@ export default class SearchPanel extends Component {
     dispatch(removeFilter(filter))
   }
 
+  onTabFilterClick(facet, value) {
+    const { dispatch } = this.props;
+
+    dispatch(addFilter({facet, value}))
+  }
+
   changeTab(tabIndex) {
     const { dispatch } = this.props;
 
@@ -37,41 +44,46 @@ export default class SearchPanel extends Component {
 
     const tabs = [
       {
+        id: 'quick-filter-tab',
         name: 'Quick Filters',
         component: QuickFilterTab,
         props: {}
       },
       {
+        id: 'content-partner-tab',
         name: 'Content Partner',
         component: FilterTab,
-        props: {values: panel.facets.content_partner}
+        props: {values: panel.facets.content_partner, facet: 'content_partner'}
       },
       {
+        id: 'date-tab',
         name: 'Date',
         component: FilterTab,
-        props: {values: panel.facets.decade}
+        props: {values: panel.facets.decade, facet: 'decade'}
       },
       {
+        id: 'usage-tab',
         name: 'Usage',
         component: FilterTab,
-        props: {values: panel.facets.usage}
+        props: {values: panel.facets.usage, facet: 'usage'}
       },
       {
+        id: 'collection-tab',
         name: 'Collection',
         component: FilterTab,
-        props: {values: panel.facets.primary_collection}
+        props: {values: panel.facets.primary_collection, facet: 'primary_collection'}
       }
     ]
 
     const tabMenus = _.map(tabs, (tab, index) => {
       return (
-        <li key={index} className={panel.tab == index ? 'active' : ''}>
-          <a href='#' onClick={this.changeTab.bind(this, index)}>{tab.name}</a>
+        <li key={tab.id} className={panel.tab == index ? 'active' : ''}>
+          <a href='#' onClick={this.changeTab.bind(this, index)} id={tab.id} >{tab.name}</a>
         </li>
       )
     })
     const activeTab = tabs[panel.tab]
-    const activeTabComponent = <activeTab.component {...activeTab.props} />
+    const activeTabComponent = <activeTab.component {...activeTab.props} dispatch={this.props.dispatch} />
 
     return (
       <div id='search_filter' className='filter-container menu content'>

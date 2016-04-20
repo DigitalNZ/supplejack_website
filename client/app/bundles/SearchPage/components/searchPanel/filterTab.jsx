@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import addFilter from '../../actions/addFilter';
 
 export default class FilterTab extends Component {
+  handleFilterClick(facet, label) {
+    const { dispatch } = this.props;
+
+    dispatch(addFilter({facet, value: label}))
+  }
+
   render() {
-    const { values } = this.props;
+    const { values, facet } = this.props;
 
     const tabContent = _.map(values, (count, label) => {
       return (
-        <a>{label} <span className='count'>{count.toLocaleString()}</span></a>
+        <a onClick={this.handleFilterClick.bind(this, facet, label)}>{label} <span className='count'>{count.toLocaleString()}</span></a>
       );
     })
 
