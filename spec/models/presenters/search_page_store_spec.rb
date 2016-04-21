@@ -33,6 +33,10 @@ module Presenters
         expect(result[:panel][:tab]).to eq(0)
       end
 
+      it "sets panelButtonText to 'Close'" do
+        expect(result[:panel][:buttonText]).to eq('Close')
+      end
+
       it 'sets facets to a hash of the facets returned by the search' do
         expect(result[:panel][:facets]).to eq(facet1: 'values')
       end

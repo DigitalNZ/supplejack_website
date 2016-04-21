@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 20 Apr 2016 22:03:50 GMT
+      - Thu, 21 Apr 2016 01:50:21 GMT
       Server:
       - thin 1.6.2 codename Doc Brown
       X-Frame-Options:
@@ -31,28 +31,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - '"f02224c187fb1145b4a9e9bf43730003"'
+      - '"0479b3ac69ef06b95b1d529d79bd882d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 365afaf3-8d89-4103-8c3e-c9194a68b9fb
+      - b1fa2bfb-f2e3-4f5e-a973-918c074afb53
       X-Runtime:
-      - '0.129693'
+      - '0.409777'
       Via:
       - 1.1 api.digitalnz.org
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"search":{"result_count":2341042,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026page=1\u0026per_page=0\u0026record_type=0","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+      string: '{"search":{"result_count":2341058,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026page=1\u0026per_page=0\u0026record_type=0","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
         Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
         Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates",null],"start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"],"q":"*:*"},"warnings":["The
-        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":1264890,"Articles":229003,"Archives":175869,"Audio":174266,"Reference
-        sources":140914,"Research papers":129456,"Books":93590,"Newspapers":83065,"Manuscripts":38812,"Other":19965,"Videos":15572,"Data":8598,"Sets":4156,"Guides
-        \u0026 factsheets":1826,"Groups":290,"Article":110,"Archive":10,"Community
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":1264894,"Articles":229013,"Archives":175869,"Audio":174266,"Reference
+        sources":140914,"Research papers":129456,"Books":93590,"Newspapers":83065,"Manuscripts":38812,"Other":19965,"Videos":15576,"Data":8598,"Sets":4156,"Guides
+        \u0026 factsheets":1826,"Groups":290,"Article":110,"Archive":12,"Community
         content":8}}}}'
     http_version: 
-  recorded_at: Wed, 20 Apr 2016 22:03:50 GMT
+  recorded_at: Thu, 21 Apr 2016 01:50:21 GMT
 - request:
     method: get
     uri: http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=content_partner,primary_collection,usage,decade&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&or%5Busage%5D%5B0%5D=Modify&page=1&per_page=20&record_type=0&text=wellington
@@ -72,7 +72,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 20 Apr 2016 22:03:50 GMT
+      - Thu, 21 Apr 2016 01:50:21 GMT
       Server:
       - thin 1.6.2 codename Doc Brown
       X-Frame-Options:
@@ -88,9 +88,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8840ca9f-866b-4ce1-8d22-c1ef8639597e
+      - 8e1eacf4-2cf6-490e-a0f1-ec1282e592cc
       X-Runtime:
-      - '0.628493'
+      - '1.015174'
       Via:
       - 1.1 api.digitalnz.org
       Transfer-Encoding:
@@ -885,7 +885,7 @@ http_interactions:
         Turnbull Library":27},"primary_collection":{"TAPUHI":27},"usage":{"Modify":27,"Share":27,"Use
         commercially":27},"decade":{"1910":27}}}}'
     http_version: 
-  recorded_at: Wed, 20 Apr 2016 22:03:51 GMT
+  recorded_at: Thu, 21 Apr 2016 01:50:22 GMT
 - request:
     method: get
     uri: http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&or%5Busage%5D%5B0%5D=Modify&page=1&per_page=0&record_type=0&text=wellington
@@ -905,7 +905,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 20 Apr 2016 22:03:51 GMT
+      - Thu, 21 Apr 2016 01:50:22 GMT
       Server:
       - thin 1.6.2 codename Doc Brown
       X-Frame-Options:
@@ -921,9 +921,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 92385a9f-6b13-4b7c-a16f-e14b8bbf2dea
+      - ffbbd7e3-5231-4464-9fe5-483623da2856
       X-Runtime:
-      - '0.186351'
+      - '0.378356'
       Via:
       - 1.1 api.digitalnz.org
       Transfer-Encoding:
@@ -938,5 +938,5 @@ http_interactions:
         contributor_text publisher_text fulltext_text text subject_text","defType":"edismax","start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"]},"warnings":["The
         facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":27}}}}'
     http_version: 
-  recorded_at: Wed, 20 Apr 2016 22:03:51 GMT
+  recorded_at: Thu, 21 Apr 2016 01:50:23 GMT
 recorded_with: VCR 3.0.1

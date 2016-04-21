@@ -92,8 +92,8 @@ export default class SearchPanel extends Component {
             {tabMenus}
           </ul>
         </header>
-        <button className='close-filters radius tiny'>
-          Close
+        <button className='close-filters radius tiny' onClick={this.onToggleClick}>
+          {panel.buttonText}
           <i className='fa fa-close' />
         </button>
 

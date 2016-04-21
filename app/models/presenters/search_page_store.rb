@@ -10,6 +10,7 @@ module Presenters
       {
         filters: i_filters + or_filters,
         panel: {
+          buttonText: 'Close',
           open: false,
           # reduce(&:merge) returns nil if the array is empty
           facets: facets.map {|facet| {facet.name => facet.values}}.reduce(&:merge) || [],
