@@ -37,6 +37,10 @@ module Presenters
         expect(result[:panel][:buttonText]).to eq('Close')
       end
 
+      it 'sets filtersToApply to false' do
+        expect(result[:panel][:filtersToApply]).to eq(false)
+      end
+
       it 'sets facets to a hash of the facets returned by the search' do
         expect(result[:panel][:facets]).to eq(facet1: 'values')
       end

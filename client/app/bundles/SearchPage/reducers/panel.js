@@ -15,6 +15,6 @@ export default handleActions({
     return action.payload.panel;
   },
   [ADD_FILTER]: (state, action) => {
-    return {...state, buttonText: 'Apply'};
+    return {...state, buttonText: 'Apply', filtersToApply: true};
   }
 }, {})

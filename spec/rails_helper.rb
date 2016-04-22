@@ -22,7 +22,7 @@ Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
   "screenshot_#{example.description.tr(' ', '-').gsub(%r{^.*\/spec\/}, '')}"
 end
 Capybara::Screenshot.prune_strategy = :keep_last_run
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :selenium
 
 Capybara::Webkit.configure do |config|
   config.allow_unknown_urls

@@ -10,6 +10,7 @@ module Presenters
       {
         filters: i_filters + or_filters,
         panel: {
+          filtersToApply: false,
           buttonText: 'Close',
           open: false,
           # reduce(&:merge) returns nil if the array is empty
