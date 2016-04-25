@@ -1,4 +1,4 @@
-RSpec.feature 'A user registers' do
+RSpec.feature 'A user registers', vcr: true do
   let(:kereru) {Kereru.new}
   before do
     kereru.home.load
@@ -7,7 +7,7 @@ RSpec.feature 'A user registers' do
 
   scenario 'with valid inputs' do
     within kereru.sign_up.registration_form do
-      fill_in "Email", with: "foo@boost.co.nz"
+      fill_in "Email", with: "foobar@boost.co.nz"
       fill_in "Username", with: "foobar"
       fill_in "Password", with: "boosting"
       fill_in "Password confirmation", with: "boosting"
