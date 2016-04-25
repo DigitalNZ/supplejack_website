@@ -66,19 +66,17 @@ RSpec.feature 'A user interacts with the search panel filters', js: true, vcr: t
     end
   end
 
-  feature 'Performing a search', focus: true do
+  feature 'Performing a search' do
     it 'loads the search page with the filters applied' do
       search_panel.panel_toggle.click
       search_panel.usage_tab.click
       search_panel.active_tab_elements.last.click
-      binding.pry
       search_panel.close_button.click
      
       # :(
       sleep 5
 
       query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
-      binding.pry
       expect(query_hash.deep_symbolize_keys).to eq({
         text: 'wellington',
         i: {

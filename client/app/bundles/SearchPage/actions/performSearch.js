@@ -16,5 +16,5 @@ export default function performSearch(state) {
     }
   }, baseQueryParams)
 
-  window.location.assign(urlWithoutQueryParams + $.param(fullQueryParams))
+  window.location.assign('http://' + urlWithoutQueryParams + $.param(fullQueryParams))
 }
