@@ -1,9 +1,9 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-# and is licensed under the GNU General Public License, version 3. Some components are 
-# third party components that are licensed under the MIT license or other terms. 
-# See https://github.com/DigitalNZ/supplejack_website for details. 
-# 
-# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# and is licensed under the GNU General Public License, version 3. Some components are
+# third party components that are licensed under the MIT license or other terms.
+# See https://github.com/DigitalNZ/supplejack_website for details.
+#
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
 source 'https://rubygems.org'
@@ -43,6 +43,11 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'yard'
   gem 'rubocop-rspec'
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-bundler', '~> 1.1.4'
+  gem 'capistrano-faster-assets', '~> 1.0'
 end
 
 group :test, :development do
