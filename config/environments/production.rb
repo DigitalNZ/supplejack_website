@@ -73,6 +73,8 @@ Demo::Application.configure do
 
   config.eager_load = true
 
+  config.log_level = :info
+
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
