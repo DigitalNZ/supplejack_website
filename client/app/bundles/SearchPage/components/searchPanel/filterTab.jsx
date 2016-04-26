@@ -13,7 +13,12 @@ export default class FilterTab extends Component {
 
     const tabContent = _.map(values, (count, label) => {
       return (
-        <a onClick={this.handleFilterClick.bind(this, facet, label)}>{label} <span className='count'>{count.toLocaleString()}</span></a>
+        <a 
+          key={label} 
+          onClick={this.handleFilterClick.bind(this, facet, label)}
+          >
+          {label} <span className='count'>{count.toLocaleString()}</span>
+        </a>
       );
     })
 

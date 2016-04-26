@@ -105,8 +105,16 @@ export default class SearchPanel extends Component {
   }
 
   render() {
-    const filters = this.props.filters.map(filter => {
-      return <button className='filter-unit' onClick={this.onActiveFilterClick.bind(this, filter)}>{filter.value}</button>
+    const filters = _.map(this.props.filters, (filter) => {
+      return (
+        <button 
+          key={filter.facet + '-' + filter.value} 
+          className='filter-unit' 
+          onClick={this.onActiveFilterClick.bind(this, filter)}
+          >
+          {filter.value}
+        </button>
+      )
     });
 
     return (
