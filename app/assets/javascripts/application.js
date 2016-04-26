@@ -29,14 +29,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-// require jquery
-// require jquery_ujs
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
 //= require foundation
 //= require modernizr
 //= require lodash
-// require_tree .
+//= require main
+//= require records
+//= require add_to_set
+//= require jquery_set_csrf_for_ajax
 
 $(function() {
   $(document).foundation();
