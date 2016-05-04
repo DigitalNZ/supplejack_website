@@ -17,8 +17,6 @@
 
 = render 'search_tabs'
 .container.results
-  :javascript
-    window.searchPanelState = JSON.parse(#{@redux_state.to_json})
   = react_component("SearchPageApp")
   .gallery-container
     %span.gallery-spinner

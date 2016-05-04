@@ -6,19 +6,9 @@
   \#
   \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
   \# http://digitalnz.org/supplejack
-= form_tag records_path, method: 'get', class: 'search clearfix', id: 'search-form' do
-  - if params[:or].present?
-    - params[:or].each do |k, values|
-      - values.each do |v|
-        = hidden_field_tag "or[#{k}][]", v, class: "search-input-tab"
 
-  - if params[:i].present?
-    - params[:i].each do |k, v|
-      = hidden_field_tag "i[#{k}]", v, class: "search-input-tab"
 
-  = hidden_field_tag("tab", params[:tab] || 'More', class: "search-category-filter")
-
-  .container
-    .row.collapse.postfix-round
-      .small-10.columns= text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
-      .small-2.columns= submit_tag "Search", class: "search-button button postfix"
+:javascript
+  window.searchPanelState = JSON.parse(#{@redux_state.to_json})
+= redux_store("searchPageStore")
+= react_component("SearchInputApp")

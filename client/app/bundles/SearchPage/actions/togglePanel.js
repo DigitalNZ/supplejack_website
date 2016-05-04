@@ -11,6 +11,6 @@ export default function togglePanelAndSearch() {
     if(!getState().panel.filtersToApply) 
       return
 
-    performSearch(getState())
+    dispatch(performSearch())
   }
 }

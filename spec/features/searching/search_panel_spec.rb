@@ -1,4 +1,4 @@
-RSpec.feature 'A user interacts with the search panel filters', js: true, vcr: true, slow: true do
+RSpec.feature 'A user interacts with the search panel', js: true, vcr: true, slow: true do
   let(:kereru) {Kereru.new}
   let(:search_page) {kereru.search}
   let(:search_panel) {search_page.search_panel}
@@ -73,7 +73,7 @@ RSpec.feature 'A user interacts with the search panel filters', js: true, vcr: t
       search_panel.active_tab_elements.last.click
       search_panel.close_button.click
      
-      # :(
+      # :( capybara doesn't appear to have support for waiting for the URL to change
       sleep 5
 
       query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
