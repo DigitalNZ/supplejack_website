@@ -53,7 +53,10 @@ export default class SearchPanel extends Component {
         id: 'quick-filter-tab',
         name: 'Quick Filters',
         component: QuickFilterTab,
-        props: {}
+        props: {
+          filterFacets: panel.facets,
+          activeFilters: filters
+        }
       }],
       _.map(tabMetadata, (metadata) => {
         return {
