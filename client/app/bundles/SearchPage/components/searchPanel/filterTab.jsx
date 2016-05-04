@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import addFilter from '../../actions/addFilter';
+import classNames from 'classnames';
+import _ from 'lodash';
 
 export default class FilterTab extends Component {
   handleFilterClick(facet, label) {
@@ -9,11 +11,13 @@ export default class FilterTab extends Component {
   }
 
   render() {
-    const { values, facet } = this.props;
+    const { values, facet, activeFilters } = this.props;
 
     const tabContent = _.map(values, (count, label) => {
+      const aClass = classNames({active: _.includes(activeFilters, label)})
       return (
         <a 
+          className={aClass}
           key={label} 
           onClick={this.handleFilterClick.bind(this, facet, label)}
           >

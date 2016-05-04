@@ -39,41 +39,38 @@ export default class SearchPanel extends Component {
   }
 
   renderPanel() {
-    const {panel} = this.props;
+    const {panel, filters} = this.props;
     if(!panel.open) return null;
 
-    const tabs = [
-      {
+    const tabMetadata = [
+      {name: 'Content Partner', facet: 'content_partner', id: 'content-partner-tab'},
+      {name: 'Date', facet: 'decade', id: 'date-tab'},
+      {name: 'Usage', facet: 'usage', id: 'usage-tab'},
+      {name: 'Collection', facet: 'primary_collection', id: 'collection-tab'},
+    ]
+    const tabs = _.concat(
+      [{
         id: 'quick-filter-tab',
         name: 'Quick Filters',
         component: QuickFilterTab,
         props: {}
-      },
-      {
-        id: 'content-partner-tab',
-        name: 'Content Partner',
-        component: FilterTab,
-        props: {values: panel.facets.content_partner, facet: 'content_partner'}
-      },
-      {
-        id: 'date-tab',
-        name: 'Date',
-        component: FilterTab,
-        props: {values: panel.facets.decade, facet: 'decade'}
-      },
-      {
-        id: 'usage-tab',
-        name: 'Usage',
-        component: FilterTab,
-        props: {values: panel.facets.usage, facet: 'usage'}
-      },
-      {
-        id: 'collection-tab',
-        name: 'Collection',
-        component: FilterTab,
-        props: {values: panel.facets.primary_collection, facet: 'primary_collection'}
-      }
-    ]
+      }],
+      _.map(tabMetadata, (metadata) => {
+        return {
+          id: metadata.id,
+          name: metadata.name,
+          component: FilterTab,
+          props: {
+            values: panel.facets[metadata.facet],
+            facet: metadata.facet,
+            activeFilters: _.map(
+              _.filter(filters, (filter) => filter.facet == metadata.facet),
+              'value'
+            )
+          }
+        }
+      })
+    )
 
     const tabMenus = _.map(tabs, (tab, index) => {
       return (
