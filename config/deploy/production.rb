@@ -3,7 +3,7 @@ server 'dnz02', user: 'deployer', roles: %w{app db web}
 server 'dnz04', user: 'deployer', roles: %w{app db web}
 
 set :rbenv_ruby, '2.3.0'
-set :branch, 'rm/capistrano'
+set :branch, 'master'
 set :deploy_to, '/data/sites/beta.digitalnz.org/rails'
 set :resque_pool_name, 'beta.digitalnz.org'
 set :gluster_name, 'beta.digitalnz.org'
