@@ -11,16 +11,27 @@
 	%body{ class: yield(:body_class) }
 		= render "shared/header"
 		- if notice
-			.container 
+			.container
 				.alert-box.success.radius{ data: { alert: true } }
 					= notice
 					%a.close{ href: '#' } &times;
 		- if alert
-			.container 
+			.container
 				.alert-box.alert.radius{ data: { alert: true } }
 					= alert
 					%a.close{ href: '#' } &times;
 
 		.main= yield
+
+		:javascript
+			(function() {
+				var s = document.createElement("script");
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = '//api.usersnap.com/load/'+
+				'a22db2d0-84ab-4cd5-9008-920523233ec6.js';
+				var x = document.getElementsByTagName('script')[0];
+				x.parentNode.insertBefore(s, x);
+			})();
 
 		= render "shared/footer"

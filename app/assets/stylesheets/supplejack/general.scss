@@ -61,7 +61,7 @@ footer {
 			box-sizing: border-box;
 		}
 		.search-button {
-			background: url("../assets/search-icon.svg") center center no-repeat;
+			background: image-url("search-icon.svg") center center no-repeat;
 			background-size: 3.5em;
 			width: 4em;
 			height: 4em;
@@ -110,7 +110,7 @@ footer {
 .top-bar {
 	h1 {
 		padding-left: 2rem;
-		background: url(/assets/logo-dnz-sprout.png) 0.7rem 50% no-repeat;
+		background: image-url('logo-dnz-sprout.png') 0.7rem 50% no-repeat;
 		background-size: auto 60%;
 		a {
 			font-weight: 800 !important;
