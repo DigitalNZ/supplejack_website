@@ -4,6 +4,6 @@ staging:
   reconnect: false
   database: supplejack_website_beta_staging
   pool: 5
-  username: digitalnz
-  password: n4tlibby
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
   host: localhost
