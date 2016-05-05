@@ -44,9 +44,9 @@ export default class SearchPanel extends Component {
 
     const tabMetadata = [
       {name: 'Content Partner', facet: 'content_partner', id: 'content-partner-tab'},
-      {name: 'Date', facet: 'decade', id: 'date-tab'},
-      {name: 'Usage', facet: 'usage', id: 'usage-tab'},
       {name: 'Collection', facet: 'primary_collection', id: 'collection-tab'},
+      {name: 'Usage', facet: 'usage', id: 'usage-tab'},
+      {name: 'Date', facet: 'decade', id: 'date-tab'},
     ]
     const tabs = _.concat(
       [{
@@ -55,7 +55,10 @@ export default class SearchPanel extends Component {
         component: QuickFilterTab,
         props: {
           filterFacets: panel.facets,
-          activeFilters: filters
+          activeFilters: _.map(filters, 'value'),
+          facetNameMappings: _.reduce(tabMetadata, (acc, e) => {
+            return _.assign({}, acc, {[e.facet]: e.name})
+          }, {})
         }
       }],
       _.map(tabMetadata, (metadata) => {

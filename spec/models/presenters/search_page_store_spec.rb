@@ -50,6 +50,18 @@ module Presenters
 
         expect(result[:panel][:facets]).to eq([])
       end
+
+      context 'special cases' do
+        it 'limits the decade facet to values between 1000 and current year' do
+          allow(search).to receive(:facets).and_return([
+            OpenStruct.new(name: 'decade', values: {
+              '900' => 1, '1000' => 1, '1990' =>1, '3000' => 1
+              })
+            ])
+
+          expect(result[:panel][:facets]).to eq(decade: {:'1000' => 1, :'1990' => 1})
+        end
+      end
     end
 
     describe ':filters' do

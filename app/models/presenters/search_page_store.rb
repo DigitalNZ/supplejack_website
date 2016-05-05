@@ -14,11 +14,27 @@ module Presenters
           buttonText: 'Close',
           open: false,
           # reduce(&:merge) returns nil if the array is empty
-          facets: facets.map {|facet| {facet.name => facet.values}}.reduce(&:merge) || [],
+          facets: facets.map do |facet| 
+            values = filter_facet_values(facet.name, facet.values)
+            {facet.name => values}
+          end.reduce(&:merge) || [],
           tab: 0
         },
         searchValue: search.params[:text]
       }.to_json
+    end
+
+    private
+
+    def filter_facet_values(name, values)
+      if name == 'decade'
+        Hash[values.select do |year, _|
+          year = year.to_i
+          year >= 1000 && year <= Time.now.year
+        end]
+      else
+        values
+      end
     end
   end
 end
