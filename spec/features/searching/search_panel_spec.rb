@@ -23,10 +23,10 @@ RSpec.feature 'A user interacts with the search panel', js: true, vcr: true, slo
   end
 
   feature 'Adding new filters' do
-    context 'a user adds a new filter' do
+    context 'a user adds a new filter', focus: true do
       background do
         search_panel.panel_toggle.click
-        search_panel.usage_tab.click
+        search_panel.date_tab.click
         search_panel.active_tab_elements.first.click
       end
 
