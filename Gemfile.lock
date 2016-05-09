@@ -65,6 +65,8 @@ GEM
       sshkit (~> 1.2)
     capistrano-faster-assets (1.0.2)
       capistrano (>= 3.1)
+    capistrano-npm (1.0.2)
+      capistrano (>= 3.0.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -372,6 +374,7 @@ DEPENDENCIES
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1.4)
   capistrano-faster-assets (~> 1.0)
+  capistrano-npm (~> 1.0.2)
   capistrano-rails (~> 1.1)
   capistrano-rbenv (~> 2.0)
   capybara
@@ -418,4 +421,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.11.2
+   1.12.2

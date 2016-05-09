@@ -49,6 +49,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-bundler', '~> 1.1.4'
   gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano-npm', '~> 1.0.2'
 end
 
 group :test, :development do
