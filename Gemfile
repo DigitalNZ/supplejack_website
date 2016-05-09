@@ -26,12 +26,9 @@ gem 'therubyracer'
 gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'modernizr-rails'
 gem "react_on_rails", "~> 5"
-
-group :assets do
-  gem 'sass-rails',   '~> 4.0.3'
-  gem 'uglifier', '>= 1.0.3'
-  gem 'foundation-rails', '~> 5.4.5.0'
-end
+gem 'sass-rails',   '~> 4.0.3'
+gem 'uglifier', '>= 1.0.3'
+gem 'foundation-rails', '~> 5.4.5.0'
 
 group :development do
   # gem 'better_errors'
