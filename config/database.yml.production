@@ -1,9 +1,10 @@
-staging:
+production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: supplejack_website_beta_staging
+  database: supplejack_website_beta_production
   pool: 5
   username: <%= ENV['MYSQL_USERNAME'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: localhost
+  host: 192.122.171.251
+  port: 3306

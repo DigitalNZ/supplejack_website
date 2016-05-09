@@ -16,8 +16,10 @@
     %section.top-bar-section
       %ul.left
         %li#home-link= link_to 'Home', root_url
-        %li#contact-link= link_to 'Contact', '/contact'
         %li#about-link= link_to 'About', '/about'
+        %li#contact-link= link_to 'Contact', '/contact'
+        %li#terms-link= link_to 'Terms of Use', '/terms'
+
         / - unless current_page? root_url
         /   %li.has-form
         /     .row.collapse
@@ -27,7 +29,8 @@
         /           = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
         /         .large-4.small-3.columns
         /           = submit_tag "Search", class: "button postfix"
-                
+
+
       %ul.right
         - if user_signed_in?
           %li.has-dropdown
@@ -36,7 +39,6 @@
             %ul.dropdown
               %li= link_to 'Edit profile', edit_user_registration_path, id: 'edit-profile-link'
               %li= link_to "Logout", destroy_user_session_path, method: :delete, id: 'logout-link'
-        - else 
+        - else
           %li= link_to "Sign up", new_user_registration_path, id: 'sign-up-link'
           %li= link_to "Login", new_user_session_path, id: 'login-link'
-

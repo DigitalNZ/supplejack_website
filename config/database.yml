@@ -25,6 +25,3 @@ staging:
 
 cucumber:
   <<: *test
-
-production:
-  <<: *default
