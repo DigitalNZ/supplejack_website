@@ -1,8 +1,7 @@
 import { TOGGLE_PANEL } from '../actions/togglePanel';
 import { SELECT_TAB } from '../actions/selectTab';
 import { LOAD_STATE_FROM_PAGE } from '../actions/loadStateFromPage';
-import { ADD_FILTER } from '../actions/addFilter';
-import { REMOVE_FILTER } from '../actions/removeFilter';
+import { ADD_FILTER, REMOVE_FILTER } from '../actions/filters';
 import { handleActions } from 'redux-actions';
 
 export default handleActions({

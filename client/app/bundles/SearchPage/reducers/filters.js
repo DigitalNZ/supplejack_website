@@ -1,7 +1,6 @@
 import { handleActions } from 'redux-actions';
 import { LOAD_STATE_FROM_PAGE } from '../actions/loadStateFromPage';
-import { REMOVE_FILTER } from '../actions/removeFilter';
-import { ADD_FILTER } from '../actions/addFilter';
+import { REMOVE_FILTER, ADD_FILTER } from '../actions/filters';
 import _ from 'lodash';
 
 export default handleActions({

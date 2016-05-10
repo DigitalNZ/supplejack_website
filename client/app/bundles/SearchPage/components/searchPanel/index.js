@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import togglePanel from '../../actions/togglePanel';
 import selectTab from '../../actions/selectTab'
-import removeFilter from '../../actions/removeFilter';
-import addFilter from '../../actions/addFilter';
+import { removeFilter } from '../../actions/filters';
 import _ from 'lodash';
 import QuickFilterTab from './quickFilterTab';
 import FilterTab from './filterTab';
@@ -24,12 +23,6 @@ export default class SearchPanel extends Component {
     const { dispatch } = this.props;
 
     dispatch(removeFilter(filter))
-  }
-
-  onTabFilterClick(facet, value) {
-    const { dispatch } = this.props;
-
-    dispatch(addFilter({facet, value}))
   }
 
   changeTab(tabIndex) {
