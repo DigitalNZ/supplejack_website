@@ -55,7 +55,7 @@ export default class SearchPanel extends Component {
         component: QuickFilterTab,
         props: {
           filterFacets: panel.facets,
-          activeFilters: _.map(filters, 'value'),
+          activeFilters: filters,
           facetNameMappings: _.reduce(tabMetadata, (acc, e) => {
             return _.assign({}, acc, {[e.facet]: e.name})
           }, {})
@@ -69,10 +69,7 @@ export default class SearchPanel extends Component {
           props: {
             values: panel.facets[metadata.facet],
             facet: metadata.facet,
-            activeFilters: _.map(
-              _.filter(filters, (filter) => filter.facet == metadata.facet),
-              'value'
-            )
+            activeFilters: _.filter(filters, (filter) => filter.facet == metadata.facet),
           }
         }
       })

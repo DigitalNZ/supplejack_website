@@ -12,7 +12,7 @@ export default class FilterItem extends Component {
 
   render() {
     const { label, count, facet, activeFilters } = this.props;
-    const active = _.includes(activeFilters, label)
+    const active = _.some(activeFilters, filter => filter.facet === facet && filter.value === label)
     const aClass = classNames({active})
 
     return (
