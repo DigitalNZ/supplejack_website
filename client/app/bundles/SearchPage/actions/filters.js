@@ -18,12 +18,12 @@ export const removeFilter = createAction(REMOVE_FILTER);
 // whether the filter needs to be applied or removed when clicked, I just dispatch a toggle action
 export default function toggleFilter(filter) {
   return (dispatch, getState) => {
-    const state = getState()
+    const state = getState();
     
-    //_.some is equivalent to Enumerable#any? in Ruby
-    if(_.some(state.filters, (f) => _.isEqual(f, filter)))
-      dispatch(removeFilter(filter))
+    // _.some is equivalent to Enumerable#any? in Ruby
+    if (_.some(state.filters, (f) => _.isEqual(f, filter)))
+      dispatch(removeFilter(filter));
     else
-      dispatch(addFilter(filter))
-  }
+      dispatch(addFilter(filter));
+  };
 }

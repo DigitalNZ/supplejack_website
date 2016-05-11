@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import togglePanel from '../../actions/togglePanel';
-import selectTab from '../../actions/selectTab'
+import selectTab from '../../actions/selectTab';
 import { removeFilter } from '../../actions/filters';
 import _ from 'lodash';
 import classNames from 'classnames';
@@ -9,38 +9,38 @@ import FilterTab from './filterTab';
 
 export default class SearchPanel extends Component {
   constructor() {
-    super()
+    super();
 
-    // This binds the 'this' value of onToggleClick and changeTab 
+    // This binds the 'this' value of onToggleClick and changeTab
     // to be the correct 'this' value in Reacts context
     // If this is not done then 'this' refers to something else and props are not accessible
-    _.bindAll(this, 'onToggleClick', 'changeTab')
+    _.bindAll(this, 'onToggleClick', 'changeTab');
   }
 
-  //The following three functions dispatch actions in response to user input
+  // The following three functions dispatch actions in response to user input
   onToggleClick() {
     const { dispatch } = this.props;
 
-    dispatch(togglePanel())
+    dispatch(togglePanel());
   }
 
   onActiveFilterClick(filter) {
     const { dispatch } = this.props;
 
-    dispatch(removeFilter(filter))
+    dispatch(removeFilter(filter));
   }
 
   changeTab(tabIndex) {
     const { dispatch } = this.props;
 
-    dispatch(selectTab(tabIndex))
+    dispatch(selectTab(tabIndex));
   }
 
   // This renders the panel itself, not including the filter toggle button and the lozenges
   renderPanel() {
     const {panel, filters} = this.props;
-    //Returning null indicates to React that we want to render nothing
-    if(!panel.open) return null;
+    // Returning null indicates to React that we want to render nothing
+    if (!panel.open) return null;
 
     // This is the only unique data for each of the four standard tabs
     const tabMetadata = [
@@ -48,7 +48,7 @@ export default class SearchPanel extends Component {
       {name: 'Collection', facet: 'primary_collection', id: 'collection-tab'},
       {name: 'Usage', facet: 'usage', id: 'usage-tab'},
       {name: 'Date', facet: 'decade', id: 'date-tab'},
-    ]
+    ];
 
     // This generates an array which contains the required data for rendering each of the five tabs
     // And handles the special case that is the Quick Filters tab, to the following code it behaves the same
@@ -65,9 +65,9 @@ export default class SearchPanel extends Component {
           // This generates an object that maps from a facet to the display name of the facet
           // for the headings in the Quick Filters tab. ie facetNameMappings.decade => 'Date'
           facetNameMappings: _.reduce(tabMetadata, (acc, e) => {
-            return _.assign({}, acc, {[e.facet]: e.name})
-          }, {})
-        }
+            return _.assign({}, acc, {[e.facet]: e.name});
+          }, {}),
+        },
       }],
       _.map(tabMetadata, (metadata) => {
         return {
@@ -77,21 +77,21 @@ export default class SearchPanel extends Component {
           props: {
             values: panel.facets[metadata.facet],
             facet: metadata.facet,
-            activeFilters: _.filter(filters, (filter) => filter.facet == metadata.facet),
-          }
-        }
+            activeFilters: _.filter(filters, (filter) => filter.facet === metadata.facet),
+          },
+        };
       })
-    )
+    );
 
     const tabMenus = _.map(tabs, (tab, index) => {
-      const tabClass = classNames({active: panel.tab == index})
+      const tabClass = classNames({active: panel.tab === index});
       return (
         <li key={tab.id} className={tabClass}>
-          <a href='#' onClick={this.changeTab.bind(this, index)} id={tab.id} >{tab.name}</a>
+          <a href="#" onClick={this.changeTab.bind(this, index)} id={tab.id} >{tab.name}</a>
         </li>
-      )
-    })
-    const activeTab = tabs[panel.tab]
+      );
+    });
+    const activeTab = tabs[panel.tab];
     // The {...activeTab.props} uses the spread operator, basically what it does is it takes an object like
     // {foo: 'bar', baz: 'qux'}
     // and gives it to the component as props, so these two operations would be equivalent
@@ -100,26 +100,26 @@ export default class SearchPanel extends Component {
     //
     // This is very useful when passing props to a child component or in this case where I am passing an unknown
     // quantity of props
-    const activeTabComponent = <activeTab.component {...activeTab.props} dispatch={this.props.dispatch} />
+    const activeTabComponent = <activeTab.component {...activeTab.props} dispatch={this.props.dispatch} />;
 
     // Now that we have generated the tabs and the tab menus this stitches that together with the panel markup
     return (
-      <div id='search_filter' className='filter-container menu content'>
-        <header className='clearfix'>
-          <ul className='tabs'>
+      <div id="search_filter" className="filter-container menu content">
+        <header className="clearfix">
+          <ul className="tabs">
             {tabMenus}
           </ul>
         </header>
-        <button className='close-filters radius tiny' onClick={this.onToggleClick}>
+        <button className="close-filters radius tiny" onClick={this.onToggleClick}>
           {panel.buttonText}
-          <i className='fa fa-close' />
+          <i className="fa fa-close" />
         </button>
 
-        <div className='tabs-content'>
+        <div className="tabs-content">
           {activeTabComponent}
         </div>
       </div>
-    )
+    );
   }
 
   render() {
@@ -129,24 +129,24 @@ export default class SearchPanel extends Component {
       // so that it can easily determine if it's re rendering the same elements
       // for optimization purposes. The key needs to be unique for each element
       return (
-        <button 
-          key={filter.facet + '-' + filter.value} 
-          className='filter-unit' 
+        <button
+          key={filter.facet + '-' + filter.value}
+          className="filter-unit"
           onClick={this.onActiveFilterClick.bind(this, filter)}
           >
           {filter.value}
         </button>
-      )
+      );
     });
 
     // This renders the outline of the panel and calls the renderPanel method to render the panel itself
     return (
-      <div className='clearfix search-panel'>
-        <a href='#' onClick={this.onToggleClick} className='button filter-btn button menu'>Filters</a>
+      <div className="clearfix search-panel">
+        <a href="#" onClick={this.onToggleClick} className="button filter-btn button menu">Filters</a>
         {filters}
 
         {this.renderPanel()}
       </div>
-    )
+    );
   }
 }

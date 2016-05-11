@@ -6,18 +6,18 @@ import { handleActions } from 'redux-actions';
 
 export default handleActions({
   [SELECT_TAB]: (state, action) => {
-    return {...state, tab: action.payload}
+    return {...state, tab: action.payload};
   },
-  [TOGGLE_PANEL]: (state, action) => {
-    return {...state, open: !state.open, buttonText: 'Close'}
+  [TOGGLE_PANEL]: (state) => {
+    return {...state, open: !state.open, buttonText: 'Close'};
   },
   [LOAD_STATE_FROM_PAGE]: (state, action) => {
     return action.payload.panel;
   },
-  [ADD_FILTER]: (state, action) => {
+  [ADD_FILTER]: (state) => {
     return {...state, buttonText: 'Apply', filtersToApply: true};
   },
-  [REMOVE_FILTER]: (state, action) => {
+  [REMOVE_FILTER]: (state) => {
     return {...state, filtersToApply: true};
-  }
-}, {})
+  },
+}, {});

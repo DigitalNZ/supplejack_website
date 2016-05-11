@@ -10,10 +10,10 @@ export default handleActions({
   [REMOVE_FILTER]: (state, action) => {
     const { facet, value } = action.payload;
     return _.filter(state, (filter) => {
-      return !(filter.facet == facet && filter.value == value)
-    })
+      return !(filter.facet === facet && filter.value === value);
+    });
   },
   [ADD_FILTER]: (state, action) => {
-    return [...state, action.payload]
-  }
-}, {})
+    return [...state, action.payload];
+  },
+}, {});
