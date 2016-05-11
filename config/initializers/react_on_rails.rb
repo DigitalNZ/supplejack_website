@@ -38,5 +38,5 @@ ReactOnRails.configure do |config|
   config.skip_display_none = false
 
   config.npm_build_production_command = "npm run build:production:client"
-  config.npm_build_test_command = "npm run build:dev:client"
+  config.npm_build_test_command = "npm run build:test"
 end
