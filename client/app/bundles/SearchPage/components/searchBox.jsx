@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import updateSearchValue from '../actions/updateSearchValue';
 import performSearch from '../actions/performSearch';
 
 export default class SearchBox extends Component {
+  static propTypes = {
+    value: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired
+  }
+
   constructor() {
     super()
 
