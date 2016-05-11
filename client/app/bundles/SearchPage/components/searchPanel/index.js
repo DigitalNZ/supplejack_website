@@ -8,6 +8,12 @@ import QuickFilterTab from './quickFilterTab';
 import FilterTab from './filterTab';
 
 export default class SearchPanel extends Component {
+  static propTypes = {
+    panel: PropTypes.object.isRequired,
+    filters: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired,
+  }
+  
   constructor() {
     super();
 
@@ -30,7 +36,7 @@ export default class SearchPanel extends Component {
     dispatch(removeFilter(filter));
   }
 
-  changeTab(tabIndex) {
+  onChangeTab(tabIndex) {
     const { dispatch } = this.props;
 
     dispatch(selectTab(tabIndex));
@@ -87,7 +93,7 @@ export default class SearchPanel extends Component {
       const tabClass = classNames({active: panel.tab === index});
       return (
         <li key={tab.id} className={tabClass}>
-          <a href="#" onClick={this.changeTab.bind(this, index)} id={tab.id} >{tab.name}</a>
+          <a href="#" onClick={this.onChangeTab.bind(this, index)} id={tab.id} >{tab.name}</a>
         </li>
       );
     });
