@@ -1,4 +1,9 @@
 module Presenters
+  # Generates the server side state of the SearchPageStore on the client
+  # The json outputted from here is inserted into the page and the client 
+  # bootstraps the store using it
+  #
+  # It's also the only full description of the store state so it's a useful reference
   class SearchPageStore
     def call(search)
       i_filters = search.params[:i].map{|facet, v| {facet: facet, value: v}}
