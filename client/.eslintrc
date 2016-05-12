@@ -213,6 +213,7 @@
         "componentWillUnmount",
         "/^_?on.+$/",
         "/^_?get.+$/",
+        "/^_?create.+$/",
         "/^_?render.+$/",
         "render"
       ]
