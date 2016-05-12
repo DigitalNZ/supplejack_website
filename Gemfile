@@ -55,7 +55,7 @@ group :test, :development do
   gem 'minitest'
   gem 'simplecov'
   gem 'ffaker',   '~> 2.1.0'
-  # gem 'pry-byebug'
+  gem 'pry-byebug'
 end
 
 group :test do
