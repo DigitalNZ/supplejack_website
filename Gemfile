@@ -31,7 +31,7 @@ gem 'uglifier', '>= 1.0.3'
 gem 'foundation-rails', '~> 5.4.5.0'
 
 group :development do
-  # gem 'better_errors'
+  gem 'better_errors'
   gem 'pry-rails'
   gem 'thin'
   gem 'quiet_assets'
