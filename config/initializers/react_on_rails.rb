@@ -7,7 +7,7 @@ ReactOnRails.configure do |config|
 
   # Define the files for we need to check for webpack compilation when running tests
 
-  config.webpack_generated_files = %w( client-bundle.js )
+  config.webpack_generated_files = %w( vendor-bundle.js )
 
 
   # Server rendering:
@@ -36,4 +36,7 @@ ReactOnRails.configure do |config|
   config.trace = Rails.env.development?
   # Default is false, enable if your content security policy doesn't include `style-src: 'unsafe-inline'`
   config.skip_display_none = false
+
+  config.npm_build_production_command = "npm run build:production:client"
+  config.npm_build_test_command = "npm run build:test"
 end

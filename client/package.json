@@ -6,9 +6,9 @@
     "npm": "3.5.0"
   },
   "scripts": {
-    "build:client": "NODE_ENV=production node_modules/.bin/webpack --config webpack.client.rails.config.js",
-    "build:dev:client": "node_modules/.bin/webpack -w --config webpack.client.rails.config.js",
-    "build:production:client": "NODE_ENV=production node_modules/.bin/webpack --config webpack.client.rails.build.config.js",
+    "build:dev": "node_modules/.bin/webpack -w --config webpack.client.rails.config.js",
+    "build:test": "node_modules/.bin/webpack --config webpack.client.rails.config.js",
+    "build:production": "NODE_ENV=production node_modules/.bin/webpack --config webpack.client.rails.build.config.js",
     "test": "NODE_ENV=test mocha \"app/**/*-test.jsx\" --compilers js:babel-core/register --recursive --watch app/",
     "test:watch": "NODE_ENV=test npm test -- --watch"
   },
@@ -22,7 +22,7 @@
     "lodash": "^4.7.0",
     "react": "^0.14.8 || ^15.0.0",
     "react-dom": "^0.14.8 || ^15.0.0",
-    "react-on-rails": "5.2.0",
+    "react-on-rails": "6.0.0-rc.1",
     "react-redux": "^4.4.1",
     "redux": "^3.3.1",
     "redux-actions": "^0.9.1",
