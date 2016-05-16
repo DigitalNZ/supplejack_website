@@ -1,0 +1,942 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&page=1&per_page=0&record_type=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 Apr 2016 01:50:04 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"0479b3ac69ef06b95b1d529d79bd882d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - efed03af-0069-46e6-b163-03d1033743b7
+      X-Runtime:
+      - '0.421429'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":2341058,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026page=1\u0026per_page=0\u0026record_type=0","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates",null],"start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"],"q":"*:*"},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":1264894,"Articles":229013,"Archives":175869,"Audio":174266,"Reference
+        sources":140914,"Research papers":129456,"Books":93590,"Newspapers":83065,"Manuscripts":38812,"Other":19965,"Videos":15576,"Data":8598,"Sets":4156,"Guides
+        \u0026 factsheets":1826,"Groups":290,"Article":110,"Archive":12,"Community
+        content":8}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 01:50:05 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=content_partner,primary_collection,usage,decade&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&or%5Busage%5D%5B0%5D=Modify&page=1&per_page=20&record_type=0&text=wellington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 Apr 2016 01:50:05 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"148899527965559d36e86932c39d2b70"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c53477ed-8974-46ce-a71f-208e767f3001
+      X-Runtime:
+      - '0.624640'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":27,"results":[{"id":35833426,"updated_at":"2016-01-16T06:32:02.560+13:00","created_at":"2015-12-02T00:46:31.811+13:00","title":"Soldiers
+        of a Wellington Regiment in France","description":"Soldiers of the Taranaki
+        Company? of a Wellington Regiment, 1st Brigade pose for a group portrait in
+        Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nPhotographer''s
+        title on negative - bottom left: H376 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833426/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013010-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:478998","emu:478998","old_tap:1108442","1/2-013010-G","urn:nbn:nz:wtu:1/2-013010-G","iid:72173"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833426","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/478998","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833428,"updated_at":"2016-01-16T06:32:03.818+13:00","created_at":"2015-12-02T00:46:32.281+13:00","title":"Soldiers
+        of a Wellington Regiment pose in France","description":"Soldiers of the Wellington
+        West Coast Company?, Wellington Regiment, 1st Brigade pose for a group portrait
+        in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nPhotographer''s
+        title on negative - bottom left: H380 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833428/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013014-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479001","emu:479001","old_tap:1108451","1/2-013014-G","urn:nbn:nz:wtu:1/2-013014-G","iid:72186"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833428","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479001","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833429,"updated_at":"2016-01-16T06:32:04.490+13:00","created_at":"2015-12-02T00:46:32.360+13:00","title":"Group
+        portrait of a Wellington Regiment in France","description":"Soldiers of the
+        Taranaki Company of a Wellington Regiment, 1st Brigade pose for a group portrait
+        in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nPhotographer''s
+        title on negative - bottom left: H379 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833429/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013013-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479002","emu:479002","old_tap:1108454","1/2-013013-G","urn:nbn:nz:wtu:1/2-013013-G","iid:72176"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833429","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479002","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833813,"updated_at":"2016-01-16T06:33:58.910+13:00","created_at":"2015-12-02T00:47:34.478+13:00","title":"Gas
+        mask inspection of a Wellington Regiment, France","description":"A line of
+        soldiers (from a Wellington Regiment) wearing gas masks await inspection near
+        Colincamps where New Zealand support lines were established during World War
+        I. Photograph taken 15 April 1918 Armytage Sanders. \nOther - An original
+        print from this negative is in album PA1-f-094 \nPhotographer''s title on
+        negative - bottom left: H593 \n - :  \nQuantity: 1 b\u0026w original negative(s).
+        \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833813/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013202-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479386","emu:479386","old_tap:1109217","1/2-013202-G","urn:nbn:nz:wtu:1/2-013202-G","iid:73421"],"display_date":"15
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833813","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479386","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Gas masks","Military training","Colincamps"]},{"id":35833829,"updated_at":"2016-01-16T06:34:02.620+13:00","created_at":"2015-12-02T00:47:37.572+13:00","title":"Gas
+        mask inspection of a Wellington Regiment, France","description":"Soldiers
+        from a Wellington Regiment attend a gas mask inspection in the New Zealand
+        support line near Colincamps in World War I. Photograph taken 15 April 1918
+        Armytage Sanders. \nOther - An original print from this negative is in album
+        PA1-f-094 \nPhotographer''s title on negative - bottom left: H595 \n - :  \nQuantity:
+        1 b\u0026w original negative(s). \nPhysical Description: Dry plate glass negative
+        4.75 x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833829/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013204-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479402","emu:479402","old_tap:1109250","1/2-013204-G","urn:nbn:nz:wtu:1/2-013204-G","iid:73424"],"display_date":"15
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833829","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479402","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Gas masks","Military training","Colincamps"]},{"id":35833425,"updated_at":"2016-01-16T06:32:03.095+13:00","created_at":"2015-12-02T00:46:31.627+13:00","title":"Group
+        portrait of a company of a Wellington Regiment in France","description":"Soldiers
+        from a company of a Wellington Regiment, 1st Brigade pose for a group portrait
+        in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nPhotographer''s
+        title on negative - bottom left: H377 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833425/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013011-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:478999","emu:478999","old_tap:1108446","1/2-013011-G","urn:nbn:nz:wtu:1/2-013011-G","iid:72174"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833425","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/478999","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833427,"updated_at":"2016-01-16T06:32:03.623+13:00","created_at":"2015-12-02T00:46:32.126+13:00","title":"Soldiers
+        of Hawkes Bay Company, the Wellington Regiment in France","description":"Soldiers
+        of the Hawkes Bay Company of a Wellington Regiment, 1st Brigade pose for a
+        group portrait in Bayenghem, France. Photograph taken 8 November 1917 by Henry
+        Armytage Sanders. \nAn original print from this negative is in album PA1-f-091
+        \nPhotographer''s title on negative - bottom right: H378 \n - :  \nQuantity:
+        1 b\u0026w original negative(s). \nPhysical Description: Dry plate glass negative
+        4.75 x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833427/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013012-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479000","emu:479000","old_tap:1108449","1/2-013012-G","urn:nbn:nz:wtu:1/2-013012-G","iid:72175"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833427","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479000","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833430,"updated_at":"2016-01-16T06:32:04.494+13:00","created_at":"2015-12-02T00:46:32.456+13:00","title":"Soldiers
+        of a Wellington Regiment in France, World War I","description":"Soldiers of
+        a company of the Wellington Regiment, 1st Brigade beside their kit on the
+        ground in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage
+        Sanders. \nAn original print from this negative is in album PA1-f-091 \nPhotographer''s
+        title on negative - bottom left: H381 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833430/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013015-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479003","emu:479003","old_tap:1108458","1/2-013015-G","urn:nbn:nz:wtu:1/2-013015-G","iid:72187"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833430","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479003","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833656,"updated_at":"2016-01-16T06:33:21.430+13:00","created_at":"2015-12-02T00:47:06.112+13:00","title":"The
+        Commanding Officer of a Wellington Regiment in his headquarters, France","description":"The
+        CO of a Wellington Regiment sits in a tent; his headquarters at the front.
+        Photograph taken Beaussart 6 April 1918 by Henry Armytage Sanders. \nOther
+        - An original print from this negative is in album PA1-f-091 \nPhotographer''s
+        title on negative - bottom left: H469 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833656/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013088-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479229","emu:479229","old_tap:1108895","1/2-013088-G","urn:nbn:nz:wtu:1/2-013088-G","iid:72648"],"display_date":"6
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833656","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479229","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Trench warfare","Battlefields","Armies","Officers","Beaussart"]},{"id":35836641,"updated_at":"2016-01-16T06:47:27.442+13:00","created_at":"2015-12-02T00:56:25.502+13:00","title":"Officers
+        of a Wellington Regiment in France, World War I","description":"A group of
+        officers from the Wellington Regiment talking on a wet road at Sailly-au-Bois,
+        France in World War I. All are helmeted and most wear overcoats. Photograph
+        taken 6 April 1918 by Henry Armytage Sanders. \nOther - An original print
+        from this negative is in album PA1-f-091\n\n\nCaption - \"The day went well
+        for us. Some officers of the Wellington Regiment. Sailly-au-Bois. 6.4.18\"
+        \nPhotographer''s title on negative - bottom left: H489 \n - :  \nQuantity:
+        1 b\u0026w original negative(s). \nPhysical Description: Dry plate glass negative
+        4.75 x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35836641/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013105-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:482223","emu:482223","old_tap:1116831","1/2-013105-G","urn:nbn:nz:wtu:1/2-013105-G","iid:72721"],"display_date":"6
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35836641","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/482223","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand","Armed
+        Forces","Officers"]},{"id":35835442,"updated_at":"2016-01-16T06:41:48.097+13:00","created_at":"2015-12-02T00:52:27.647+13:00","title":"Wellington
+        soldiers eating a meal in Solesmes, France, World War I","description":"Soldiers
+        from a Wellington Regiment sit eating a meal out of mess tins in the French
+        town of Solesmes during World War I. They use broken pieces of masonry as
+        seats and tables. Photograph taken 9 November 1918 by Henry Armytage Sanders.
+        \nOther - An original print from this negative is at album PA1-f-092.\n\n\nCaption
+        - \"Wellington boys at dinner.\" (Album) \nPhotographer''s title on negative
+        - bottom right: H1106 \n - :  \nIn contrast to the date (9 November) in the
+        official photograph albums, the history of the Wellington Regiment by Cunningham,
+        Treadwell, and Hanna (see page 392, paragraph two) recordes the first two
+        Wellington battalions leaving Villereau for Solesmes on the afternoon of 10
+        November 1918. \nQuantity: 1 b\u0026w original negative(s). \nPhysical Description:
+        Dry plate glass negative 4 x 5 inches","content_partner":["Alexander Turnbull
+        Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835442/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013663-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:481021","emu:481021","old_tap:1113605","1/2-013663-G","urn:nbn:nz:wtu:1/2-013663-G","iid:77662"],"display_date":"9
+        Nov 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835442","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/481021","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Military personnel, New Zealand","France","Military life","Campaigns","Solesmes"]},{"id":35835365,"updated_at":"2016-01-16T06:41:29.799+13:00","created_at":"2015-12-02T00:52:11.562+13:00","title":"A
+        company of a Wellington Regiment at Longsart, France, World War I","description":"A
+        group portrait of a company of a Wellington Regiment in France during World
+        War I. The men are sitting in rows on a bank. Photograph taken Longsart 14
+        October 1918 by Henry Armytage Sanders. \nAn original print from this negative
+        is in album PA1-f-092 \nPhotographer''s title on negative - bottom right:
+        H1084 \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical Description:
+        Dry plate glass negative 4 x 5 inches","content_partner":["Alexander Turnbull
+        Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835365/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013647-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:480942","emu:480942","old_tap:1113292","1/2-013647-G","urn:nbn:nz:wtu:1/2-013647-G","iid:77049"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835365","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/480942","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835368,"updated_at":"2016-01-16T06:41:30.353+13:00","created_at":"2015-12-02T00:52:12.129+13:00","title":"A
+        company of a Wellington Regiment at Longsart, France, World War I","description":"A
+        group portrait of a company of a Wellington Regiment in France during World
+        War I. The men are sitting in rows on a bank. Photograph taken Longsart 14
+        October 1918 by Henry Armytage Sanders. \nAn original print from this negative
+        is in album PA1-f-092 \nPhotographer''s title on negative - bottom right:
+        H1087 \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical Description:
+        Dry plate glass negative 4 x 5 inches","content_partner":["Alexander Turnbull
+        Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835368/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013650-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:480944","emu:480944","old_tap:1113295","1/2-013650-G","urn:nbn:nz:wtu:1/2-013650-G","iid:77055"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835368","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/480944","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835375,"updated_at":"2016-01-16T06:41:32.387+13:00","created_at":"2015-12-02T00:52:13.080+13:00","title":"A
+        company of a Wellington Regiment in World War I at Longsart, France","description":"A
+        group portrait of a company of a Wellington Regiment in France during World
+        War I. The men are sitting in rows on a bank. Photograph taken Longsart 14
+        October 1918 by Henry Armytage Sanders. \nAn original print from this negative
+        is in album PA1-f-092 \nPhotographer''s title on negative - bottom right:
+        H1103 \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical Description:
+        Dry plate glass negative 4 x 5 inches","content_partner":["Alexander Turnbull
+        Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835375/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013661-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:480952","emu:480952","old_tap:1113343","1/2-013661-G","urn:nbn:nz:wtu:1/2-013661-G","iid:77421"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835375","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/480952","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835376,"updated_at":"2016-01-16T06:41:32.645+13:00","created_at":"2015-12-02T00:52:13.088+13:00","title":"A
+        company of a Wellington Regiment in World War I at Longsart, France","description":"A
+        group portrait of a company (not identified) of a Wellington Regiment in France
+        during World War I. The men are sitting in rows on a bank. Photograph taken
+        Longsart 14 October 1918 by Henry Armytage Sanders. \nAn original print from
+        this negative is in album PA1-f-092 \nPhotographer''s title on negative -
+        bottom left: H1085 \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835376/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013648-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:480953","emu:480953","old_tap:1113347","1/2-013648-G","urn:nbn:nz:wtu:1/2-013648-G","iid:77051"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835376","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/480953","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835788,"updated_at":"2016-01-16T06:43:37.982+13:00","created_at":"2015-12-02T00:53:40.731+13:00","title":"A
+        Wellington Regiment''s field kitchen near the front line, World War I","description":"General
+        view of a Wellington Regiment''s field kitchen close to the front line in
+        World War I. Shows a number of field cookers and soldiers working at a table.
+        Photograph taken at Grevillers, France, 24 August 1918 by Henry Armytage Sanders.
+        \nOther - An original print from this negative is in album PA1-f-094\n\n\nCaption
+        - \"A Wellington Regiment''s Field kitchens close up to the front line making
+        hot food for the boys.\" (Album) \nPhotographer''s title on negative - bottom
+        left: H948 \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835788/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013518-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:481368","emu:481368","old_tap:1114684","1/2-013518-G","urn:nbn:nz:wtu:1/2-013518-G","iid:74929"],"display_date":"24
+        Aug 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835788","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/481368","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Cooking for military personnel","Operational
+        rations (Military supplies)"]},{"id":35835823,"updated_at":"2016-01-16T06:43:44.925+13:00","created_at":"2015-12-02T00:53:46.912+13:00","title":"A
+        Wellington Regimental platoon representing New Zealand at a memorial service,
+        World War I","description":"A group portrait of a platoon of a Wellington
+        Regiment selected from the New Zealand Division to represent NZ at the large
+        war memorial service commemorating the fourth anniversary of World War I.
+        Photograph taken Couin 6 August 1918 by Henry Armytage Sanders. \nOther -
+        An original print from this negative is in album PA1-f-092 \nPhotographer''s
+        title on negative - bottom right: H1182 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835823/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013730-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:481403","emu:481403","old_tap:1114746","1/2-013730-G","urn:nbn:nz:wtu:1/2-013730-G","iid:80979"],"display_date":"6
+        Aug 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835823","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/481403","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Military personnel, New Zealand","France","Memorial rites
+        and ceremonies","Couin"]},{"id":35835825,"updated_at":"2016-01-16T06:43:45.597+13:00","created_at":"2015-12-02T00:53:47.107+13:00","title":"A
+        Wellington Regimental platoon representing New Zealand at a memorial service,
+        World War I","description":"A group portrait of a platoon of a Wellington
+        Regiment selected from the New Zealand Division to represent NZ at the large
+        war memorial service commemorating the fourth anniversary of World War I.
+        The platoon is standing at attention. Photograph taken Couin 6 August 1918
+        by Henry Armytage Sanders. \nOther - An original print from this negative
+        is in album PA1-f-092 \nPhotographer''s title on negative - bottom left: H1181
+        \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical Description:
+        Dry plate glass negative 4 x 5 inches","content_partner":["Alexander Turnbull
+        Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835825/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013729-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4 x 5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:481405","emu:481405","old_tap:1114749","1/2-013729-G","urn:nbn:nz:wtu:1/2-013729-G","iid:80978"],"display_date":"6
+        Aug 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835825","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/481405","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Military personnel, New Zealand","France","Memorial rites
+        and ceremonies","Couin"]},{"id":35834194,"updated_at":"2016-01-16T06:35:50.722+13:00","created_at":"2015-12-02T00:48:49.583+13:00","title":"Prime
+        Minister William Massey inspecting a Wellington Regiment during World War
+        I, Louvencourt","description":"Prime Minister Massey inspecting a Wellington
+        Regiment in Louvencourt, France. Sir Joseph Ward stands behind him. Nearby
+        and partially obscured is the Regiment''s canine mascot Paddy. Photograph
+        taken 1 July 1918 by Henry Armytage Sanders. \nOther - An original print from
+        this negative is in album PA1-f-094. \nPhotographer''s title on negative -
+        bottom right: H704 \n - :  \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4.75  x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35834194/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013308-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75  x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479766","emu:479766","old_tap:1110176","1/2-013308-G","urn:nbn:nz:wtu:1/2-013308-G","iid:73820"],"display_date":"1
+        Jul 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35834194","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/479766","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["Massey,
+        William Ferguson (Rt Hon), 1856-1925","Ward, Joseph George (Rt Hon Sir), 1856-1930","World
+        War, 1914-1918","Campaigns","France","Politicians","Prime ministers","Military
+        personnel, New Zealand","Armed Forces","Mascots","Dogs","Louvencourt"]},{"id":35834752,"updated_at":"2016-01-16T06:38:32.023+13:00","created_at":"2015-12-02T00:50:26.677+13:00","title":"Paddy,
+        the canine mascot of the Wellington Regiment, at a troop inspection, World
+        War I","description":"Paddy, wearing a coat with his name and sergeant''s
+        stripes on it, looks around at the inspection of a Wellington Regiment by
+        the Prime Minister William Massey in Vauchelles, France, during World War
+        I. Paddy, on a leash, stands next to his handler whose uniform includes shorts.
+        Photograph taken 30 June 1918 by Henry Armytage Sanders. \nOther - An original
+        print from this negative is in album PA1-f-094\n\n\nCaption - \"Paddy who
+        wears Sergeants stripes and a gold wounds stripe greatly interested the Prime
+        Minister during his inspection of a Wellington Regiment.\" (Album) \nPhotographer''s
+        title on negative - bottom right: H708 \n - :  \nQuantity: 1 b\u0026w original
+        negative(s). \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35834752/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013312-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Single negative","Dry plate glass negative
+        4.75 x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:480328","emu:480328","old_tap:1111635","1/2-013312-G","urn:nbn:nz:wtu:1/2-013312-G","iid:73830"],"display_date":"30
+        Jun 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35834752","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tapuhi.natlib.govt.nz/cgi-bin/spydus/NAV/GLOBAL/OPHDR/1/480328","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military ceremonies, honours, and salutes","Armed
+        Forces","Mascots","Dogs"]}],"per_page":20,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI\u0026api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=content_partner%2Cprimary_collection%2Cusage%2Cdecade\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026or%5Busage%5D%5B%5D=Modify\u0026page=1\u0026per_page=20\u0026record_type=0\u0026text=wellington","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates","primary_collection_sm:TAPUHI","usage_sm:(Modify)"],"q":"wellington","fl":"*
+        score","qf":"title_text description_text additional_description_text collection_text
+        attachment_name_text placename_text contributing_partner_text creator_text
+        contributor_text publisher_text fulltext_text text subject_text","defType":"edismax","start":0,"rows":20,"facet":"true","f.content_partner_sm.facet.limit":150,"f.content_partner_sm.facet.offset":0,"f.content_partner_sm.facet.mincount":1,"facet.field":["content_partner_sm","primary_collection_sm","usage_sm","decade_im"],"f.primary_collection_sm.facet.limit":150,"f.primary_collection_sm.facet.offset":0,"f.primary_collection_sm.facet.mincount":1,"f.usage_sm.facet.limit":150,"f.usage_sm.facet.offset":0,"f.usage_sm.facet.mincount":1,"f.decade_im.facet.limit":150,"f.decade_im.facet.offset":0,"f.decade_im.facet.mincount":1},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"content_partner":{"Alexander
+        Turnbull Library":27},"primary_collection":{"TAPUHI":27},"usage":{"Modify":27,"Share":27,"Use
+        commercially":27},"decade":{"1910":27}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 01:50:06 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&or%5Busage%5D%5B0%5D=Modify&page=1&per_page=0&record_type=0&text=wellington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 Apr 2016 01:50:06 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"57f43c70250c8b5d4742c2f2d4f1f131"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ec02aecf-a245-4a9f-b7f1-3eafe880c63f
+      X-Runtime:
+      - '0.162994'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":27,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI\u0026api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026or%5Busage%5D%5B%5D=Modify\u0026page=1\u0026per_page=0\u0026record_type=0\u0026text=wellington","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates","primary_collection_sm:TAPUHI","usage_sm:(Modify)"],"q":"wellington","fl":"*
+        score","qf":"title_text description_text additional_description_text collection_text
+        attachment_name_text placename_text contributing_partner_text creator_text
+        contributor_text publisher_text fulltext_text text subject_text","defType":"edismax","start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"]},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":27}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 01:50:06 GMT
+recorded_with: VCR 3.0.1

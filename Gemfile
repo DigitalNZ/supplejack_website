@@ -25,9 +25,10 @@ gem 'rubocop', require: false
 gem 'therubyracer'
 gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'modernizr-rails'
-gem 'foundation-rails', '~> 5.4.5.0'
+gem "react_on_rails", "~> 5"
 gem 'sass-rails',   '~> 4.0.3'
 gem 'uglifier', '>= 1.0.3'
+gem 'foundation-rails', '~> 5.4.5.0'
 
 group :development do
   # gem 'better_errors'
@@ -45,6 +46,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-bundler', '~> 1.1.4'
   gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano-npm', '~> 1.0.2'
 end
 
 group :test, :development do
@@ -53,7 +55,7 @@ group :test, :development do
   gem 'minitest'
   gem 'simplecov'
   gem 'ffaker',   '~> 2.1.0'
-  # gem 'pry-byebug'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -65,5 +67,6 @@ group :test do
   gem 'capybara'
   gem 'site_prism'
   gem "capybara-webkit"
+  gem "selenium-webdriver"
   gem "capybara-screenshot"
 end

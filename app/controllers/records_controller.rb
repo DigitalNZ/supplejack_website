@@ -10,6 +10,8 @@
 
 # Records controller deals with searching and displaying records
 class RecordsController < ApplicationController
+  include ReactOnRails::Controller
+
   def home
   end
 
@@ -22,6 +24,8 @@ class RecordsController < ApplicationController
     @facets = @search.facets
     @counts = tab_counts(params.dup)
     @sets = current_sj_user.try(:sets)
+
+    @redux_state = Presenters::SearchPageStore.new.call(@search)
   end
 
   def show

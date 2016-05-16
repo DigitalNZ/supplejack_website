@@ -25,3 +25,6 @@ set :runner, "deployer"
 set :runner_group, "www-data"
 
 set :dnz_component, 'kereru'
+
+set :npm_target_path, -> { release_path.join('client') }
+set :npm_flags, '--silent --no-progress'

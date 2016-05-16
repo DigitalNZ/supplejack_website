@@ -17,7 +17,7 @@
 
 = render 'search_tabs'
 .container.results
-  = render 'filters'
+  = react_component("SearchPageApp")
   .gallery-container
     %span.gallery-spinner
     = render @records

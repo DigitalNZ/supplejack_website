@@ -1,4 +1,4 @@
-guard :rspec, cmd: "bin/rspec" do
+guard :rspec, cmd: "bin/rspec", run_all: {cli: '--tag ~slow'} do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 

@@ -22,6 +22,11 @@ Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
   "screenshot_#{example.description.tr(' ', '-').gsub(%r{^.*\/spec\/}, '')}"
 end
 Capybara::Screenshot.prune_strategy = :keep_last_run
+Capybara.javascript_driver = :webkit
+
+Capybara::Webkit.configure do |config|
+  config.allow_unknown_urls
+end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 Dir[Rails.root.join('spec/page_objects/**/*.rb')].sort{|path| path.include?('shared') ? 0 : 1}
@@ -35,6 +40,10 @@ require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
+  # Ensure that if we are running js tests, we are using latest webpack assets
+  # This will use the defaults of :js and :server_rendering meta tags
+  ReactOnRails::TestHelper.configure_rspec_to_compile_assets(config)
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

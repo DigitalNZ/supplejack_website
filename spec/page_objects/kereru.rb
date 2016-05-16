@@ -10,4 +10,8 @@ class Kereru
   def login
     @login ||= LoginPage.new
   end
+
+  def search
+    @search ||= SearchPage.new
+  end
 end
