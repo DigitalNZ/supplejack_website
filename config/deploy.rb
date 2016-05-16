@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'beta.digitalnz.org'
 set :repo_url, 'https://github.com/DigitalNZ/supplejack_website'
@@ -16,7 +16,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'vendor/bundle',
   'public/system',
   'public/files',
-  'public/assets'
+  'public/assets',
+  'client/node_modules'
 )
 
 set :bundle_binstubs, -> { release_path.join('bin') }
