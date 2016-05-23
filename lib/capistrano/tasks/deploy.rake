@@ -49,6 +49,7 @@ namespace :deploy do
   desc "Performs required linking steps"
   task :link_tasks do
     invoke 'deploy:link_httpdocs'
+    invoke 'deploy:link_application_yml'
   end
 
   desc "Links public folder to httpdocs path"
@@ -59,6 +60,14 @@ namespace :deploy do
       on roles(:web) do
         execute "sudo rm -rf #{httpdocs} && sudo ln -s #{release_path}/public #{httpdocs}"
       end
+    end
+  end
+
+  desc "Links application.yml from conf to config"
+  task :link_application_yml do
+    config_folder = fetch(:config_folder)
+    on roles(:web) do
+      execute "if [ -f \"#{config_folder}/application.yml\" ]; then ln -sf #{config_folder}/application.yml #{release_path}/config/application.yml; fi"
     end
   end
 
