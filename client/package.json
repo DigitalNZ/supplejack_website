@@ -8,7 +8,7 @@
   "scripts": {
     "build:dev": "node_modules/.bin/webpack -w --config webpack.client.rails.config.js",
     "build:test": "node_modules/.bin/webpack --config webpack.client.rails.config.js",
-    "build:production": "NODE_ENV=production node_modules/.bin/webpack --config webpack.client.rails.build.config.js",
+    "build:production": "NODE_ENV=production node_modules/.bin/webpack --config webpack.client.rails.config.js",
     "test": "NODE_ENV=test mocha \"app/**/*-test.jsx\" --compilers js:babel-core/register --recursive --watch app/",
     "test:watch": "NODE_ENV=test npm test -- --watch"
   },

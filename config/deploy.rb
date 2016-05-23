@@ -29,3 +29,5 @@ set :dnz_component, 'kereru'
 
 set :npm_target_path, -> { release_path.join('client') }
 set :npm_flags, '--silent --no-progress'
+
+set :config_folder, '/data/sites/beta.digitalnz.org/conf'

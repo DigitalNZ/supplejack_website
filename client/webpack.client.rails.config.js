@@ -47,7 +47,8 @@ if (devBuild) {
   module.exports.devtool = 'eval-source-map';
 } else {
   config.plugins.push(
-    new webpack.optimize.DedupePlugin()
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   );
   console.log('Webpack production build for Rails'); // eslint-disable-line no-console
 }
