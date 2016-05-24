@@ -30,6 +30,7 @@ gem 'sass-rails',   '~> 4.0.3'
 gem 'uglifier', '>= 1.0.3'
 gem 'foundation-rails', '~> 5.4.5.0'
 gem 'figaro'
+gem 'lograge'
 
 group :development do
   gem 'better_errors'
