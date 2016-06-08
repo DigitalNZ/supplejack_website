@@ -25,7 +25,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.jsx', '.js'],
     alias: {
       lib: path.join(process.cwd(), 'app', 'lib'),
       react: path.resolve('./node_modules/react'),

@@ -8,10 +8,10 @@ GIT
       rest-client (~> 1.6)
 
 GIT
-  remote: https://github.com/ubermouse/react_on_rails.git
-  revision: db19754079e50ddd7ace4b003f06bc626cad1a11
+  remote: https://github.com/shakacode/react_on_rails
+  revision: 3fe05f917145876e62846d9689c4ae82778f8c6b
   specs:
-    react_on_rails (6.0.0.rc.5)
+    react_on_rails (6.0.3)
       addressable
       connection_pool
       execjs (~> 2.5)
@@ -445,4 +445,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.12.2
+   1.12.4

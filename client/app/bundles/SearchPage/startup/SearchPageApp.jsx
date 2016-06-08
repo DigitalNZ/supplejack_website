@@ -8,7 +8,7 @@ import ReactRails from 'react-on-rails';
 export default _ => {
   const searchPageStore = ReactRails.getStore('searchPageStore')
   return (
-    <Provider store={SearchPageStore}>
+    <Provider store={searchPageStore}>
       <SearchPanel />
     </Provider>
   );

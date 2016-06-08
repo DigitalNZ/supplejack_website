@@ -11,7 +11,6 @@ module Presenters
         values.map{|v| {facet: facet, value: v}}
       end.flatten
       facets = search.facets || []
-
       {
         filters: i_filters + or_filters,
         panel: {
@@ -24,6 +23,9 @@ module Presenters
             {facet.name => values}
           end.reduce(&:merge) || [],
           tab: 0
+        },
+        searchTabs: {
+          active: 11,
         },
         searchValue: search.params[:text]
       }.to_json
