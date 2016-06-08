@@ -32,13 +32,14 @@
 
 
       %ul.right
-        - if user_signed_in?
-          %li.has-dropdown
+        / - if user_signed_in?
+        /   %li.has-dropdown
 
-            = link_to "Logged in as #{current_user.username}", '#', id: 'logged-in-menu'
-            %ul.dropdown
-              %li= link_to 'Edit profile', edit_user_registration_path, id: 'edit-profile-link'
-              %li= link_to "Logout", destroy_user_session_path, method: :delete, id: 'logout-link'
-        - else
-          %li= link_to "Sign up", new_user_registration_path, id: 'sign-up-link'
-          %li= link_to "Login", new_user_session_path, id: 'login-link'
+        /     = link_to "Logged in as #{current_user.username}", '#', id: 'logged-in-menu'
+        /     %ul.dropdown
+        /       %li= link_to 'Edit profile', edit_user_registration_path, id: 'edit-profile-link'
+        /       %li= link_to "Logout", destroy_user_session_path, method: :delete, id: 'logout-link'
+        / - else 
+        /   %li= link_to "Sign up", new_user_registration_path, id: 'sign-up-link'
+        /   %li= link_to "Login", new_user_session_path, id: 'login-link'
+
