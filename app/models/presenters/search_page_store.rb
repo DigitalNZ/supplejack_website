@@ -25,7 +25,7 @@ module Presenters
           tab: 0
         },
         searchTabs: {
-          active: 11,
+          active_tab: 'All',
         },
         searchValue: search.params[:text]
       }.to_json

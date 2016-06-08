@@ -3,14 +3,14 @@ import SearchTab from '../components/searchTab';
 import loadStateFromPage from '../actions/loadStateFromPage';
 import { connect } from 'react-redux';
 
+// WIP feature
 function mapStateToProps(state) {
-  return { searchTabs: state.searchTabs };
+  return { active_tab: state.searchTabs.active_tab };
 }
 
 class SearchTabContainer extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props;
-
   }
 
   render() {
