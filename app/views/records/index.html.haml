@@ -18,9 +18,9 @@
 = render 'search_tabs'
 .container.results
   = react_component("SearchPageApp")
-  .gallery-container
-    %span.gallery-spinner
-    = render @records
-    #second-spinner.infinite-spinner
-  #navigation
-    = will_paginate(@records)
+  / .gallery-container
+  /   %span.gallery-spinner
+  /   = render @records
+  /   #second-spinner.infinite-spinner
+  / #navigation
+  /   = will_paginate(@records)
