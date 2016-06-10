@@ -24,9 +24,11 @@ export default class SearchTab extends Component {
   render() {
 
     const menuStyle = {
-      position: 'absolute',
-      left: '437.406px',
-      top: '208px',
+      // position: 'absolute',
+      // left: '437.406px',
+      // top: '208px',
+        float: 'right',
+        position: 'initial',
       };
     // WIP feature, trial and error, shall fix it
     return (
