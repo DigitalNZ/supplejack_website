@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import searchTabs from '../../actions/searchTabs';
+import DropDown from './dropdown';
+
 import _ from 'lodash';
 
 // WIP feature, trial and error
@@ -41,17 +43,7 @@ export default class SearchTab extends Component {
           <li><a onClick={this.onCategoryChange}  href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>
           <li><a onClick={this.onCategoryChange}  href="#" value="Sets" className="search-category-tab" id="Sets-tab">Sets <span className="count">62</span></a></li>
           <li>
-              <a aria-controls="more-drop" aria-expanded="false" >
-              More
-                  <span className="count">
-                  6,928,469
-                  <i className="fa fa-chevron-down"></i>
-                  </span>
-              </a>
-              <ul aria-hidden="false" className="f-dropdown open" data-dropdown-content="" tabindex="-1" style={menuStyle}>
-                      <li><a id="newspapers" href="/records?tab=Newspapers&amp;text=b">Newspapers <span className="count">6,831,867</span></a></li>
-                      <li><a id="archives" href="/records?tab=Archives&amp;text=b">Archives <span className="count">51,988</span></a></li>
-              </ul>
+            <DropDown />
           </li>
 
         </ul>

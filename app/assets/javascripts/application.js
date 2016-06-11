@@ -31,7 +31,6 @@
 //
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
-//= require foundation
 //= require modernizr
 //= require lodash
 //= require main
@@ -40,6 +39,6 @@
 //= require jquery_set_csrf_for_ajax
 
 $(function() {
-  $(document).foundation();
+  // $(document).foundation();
   addToSet.init();
 });
