@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDom from 'react-dom';
 import searchTabs from '../../actions/searchTabs';
 import DropDown from './dropdown';
 import CategoryTab from './categoryTab';
@@ -35,17 +36,17 @@ export default class SearchTab extends Component {
 
   render() {
     const {active_tab, category_stats} = this.props;
-    console.log("SearchTab-Render:>>");
+    console.log("SearchTab-Render:");
     console.dir(category_stats);
 
     const tabMenus = _.map(category_stats, (tab, index) => {
-      console.log(index);
-      console.dir(tab.category);
-      return (
+      console.log(tab);
+      return ReactDom.render(
         <CategoryTab category_name={tab.category}  active_category={active_tab} key={index}/>
       );
     });
 
+    debugger;
     // const menuStyle = {
     //   // position: 'absolute',
     //   // left: '437.406px',
@@ -63,7 +64,10 @@ export default class SearchTab extends Component {
     return (
       <div className="container">
         <ul>
-          {tabMenus}
+          <li><a onClick={this.onCategoryChange} href="#" value="All" className="search-category-tab" id="All-tab">All <span className="count">287,093</span></a></li>
+          <li className="active"><a href="#" value="Images" className="search-category-tab" id="Images-tab">Images <span className="count">111,001</span></a></li>
+          <li><a onClick={this.onCategoryChange}  href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio <span className="count">325</span></a></li>
+          <li><a onClick={this.onCategoryChange}  href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>
           <CategoryTab {...this.categoryProps}  />
           <li>
             <DropDown />
@@ -117,9 +121,5 @@ export default class SearchTab extends Component {
 
 
 
-          // <li><a onClick={this.onCategoryChange} href="#" value="All" className="search-category-tab" id="All-tab">All <span className="count">287,093</span></a></li>
-          // <li className="active"><a href="#" value="Images" className="search-category-tab" id="Images-tab">Images <span className="count">111,001</span></a></li>
-          // <li><a onClick={this.onCategoryChange}  href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio <span className="count">325</span></a></li>
-          // <li><a onClick={this.onCategoryChange}  href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>
 
 
