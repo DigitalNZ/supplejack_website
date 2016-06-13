@@ -10,6 +10,9 @@ module Presenters
       or_filters = search.params[:or].map do |facet, values|
         values.map{|v| {facet: facet, value: v}}
       end.flatten
+
+      search_category = search.and[:category] || search.params[:tab]
+      binding.pry
       facets = search.facets || []
       {
         filters: i_filters + or_filters,
@@ -25,12 +28,13 @@ module Presenters
           tab: 0
         },
         searchTabs: {
-          active_tab: 'All',
+          active_tab: search_category,
           category_stats: [
               {category:'All', count: '287000'},
               {category:'Images', count: '111000'},
-              {category:'All', count: '325'},
-              {category:'All', count: '747'}
+              {category:'Video', count: '325'},
+              {category:'Audio', count: '747'},
+              {category:'Set', count: '99'}
             ]
         },
         searchValue: search.params[:text]

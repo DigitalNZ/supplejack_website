@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDom from 'react-dom';
-import searchTabs from '../../actions/searchTabs';
+
 import DropDown from './dropdown';
 import CategoryTab from './categoryTab';
 
@@ -23,30 +23,24 @@ export default class SearchTab extends Component {
 
   constructor() {
     super()
-    _.bindAll(this, 'onCategoryChange')
+    // _.bindAll(this, 'onCategoryChange')
   }
-
-  onCategoryChange(e) {
-    const { dispatch } = this.props;
-    console.log("clicked: "+e.target);
-    // console.log("clicked: [value]==>" + e.target.value +"[text]==>" + e.target.text)
-    // dispatch(searchTabs(e.target.value));
-  }
-
 
   render() {
-    const {active_tab, category_stats} = this.props;
+    const {active_tab, category_stats, dispatch} = this.props;
     console.log("SearchTab-Render:");
     console.dir(category_stats);
 
     const tabMenus = _.map(category_stats, (tab, index) => {
-      console.log(tab);
-      return ReactDom.render(
-        <CategoryTab category_name={tab.category}  active_category={active_tab} key={index}/>
-      );
+      console.dir(tab);
+      return <CategoryTab category_name={tab.category}
+                          count={tab.count}
+                          active_category={active_tab} 
+                          dispatch={dispatch} 
+                          key={index}/>;
     });
 
-    debugger;
+
     // const menuStyle = {
     //   // position: 'absolute',
     //   // left: '437.406px',
@@ -55,24 +49,19 @@ export default class SearchTab extends Component {
     //     position: 'initial',
     //   };
 
-    this.categoryProps = {
-      category_name: 'category_name',
-      active_category: active_tab,
-      onClickTab: this.onCategoryChange
-    };
+    // this.categoryProps = {
+    //   category_name: 'category_nameXX',
+    //   active_category: active_tab,
+    //   onClickTab: this.onCategoryChange
+    // };
     // WIP feature, trial and error, shall fix it
     return (
       <div className="container">
         <ul>
-          <li><a onClick={this.onCategoryChange} href="#" value="All" className="search-category-tab" id="All-tab">All <span className="count">287,093</span></a></li>
-          <li className="active"><a href="#" value="Images" className="search-category-tab" id="Images-tab">Images <span className="count">111,001</span></a></li>
-          <li><a onClick={this.onCategoryChange}  href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio <span className="count">325</span></a></li>
-          <li><a onClick={this.onCategoryChange}  href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>
-          <CategoryTab {...this.categoryProps}  />
+         {tabMenus}
           <li>
             <DropDown />
           </li>
-
         </ul>
       </div>
     );

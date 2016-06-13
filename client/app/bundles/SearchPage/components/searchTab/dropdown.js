@@ -12,6 +12,12 @@ export default class DropDown extends Component {
 
   static propTypes = {
     id: React.PropTypes.string.isRequired,
+    category_stats: PropTypes.arrayOf(
+                      PropTypes.shape({
+                        category: PropTypes.string.isRequired,
+                        count: PropTypes.string.isRequired
+                      })
+                    ).isRequired,    
   };
 
 
@@ -34,21 +40,25 @@ export default class DropDown extends Component {
     this._hideDropdown = this._hideDropdown.bind(this);
     this._toggleDropdown = this._toggleDropdown.bind(this);
     this._stopPropagation = this._stopPropagation.bind(this);
+    this._adjustPosition = this._adjustPosition.bind(this);
   }
 
+  _adjustPosition() {
+    let vbox = this.refs.more_dropdown_menu.getBoundingClientRect();
+    this.state.menuStyle.top = (vbox.bottom+window.pageYOffset)+'px';
+    this.state.menuStyle.left = (vbox.left+window.pageXOffset)+'px';
+  }
 
   componentDidMount() {
     // Hide dropdown block on click outside the block
     window.addEventListener('click', this._hideDropdown, false);
-    let vbox = this.refs.more_dropdown_menu.getBoundingClientRect();
-    this.state.menuStyle.top = vbox.bottom+'px';
-    this.state.menuStyle.left = vbox.left+'px';
+    this._adjustPosition();
   }
 
-  componentWillMount() {
+  // componentWillMount() {
     // var node = this.getDOMNode();
     // debugger;
-  }
+  // }
 
   componentWillUnmount() {
     // Remove click event listener on component unmount
@@ -57,6 +67,7 @@ export default class DropDown extends Component {
 
 
   _stopPropagation(e) {
+    this._adjustPosition();
     // Stop bubbling of click event on click inside the dropdown content
     this._toggleDropdown();
     e.stopPropagation();
@@ -67,7 +78,7 @@ export default class DropDown extends Component {
   _toggleDropdown() {
     const { dropdownIsVisible, dropdownIsActive } = this.state;
     console.log("togglleDown");
-
+    this._adjustPosition();
     // Toggle dropdown block visibility
     this.setState({ dropdownIsVisible: !dropdownIsVisible });
   }
@@ -97,22 +108,11 @@ export default class DropDown extends Component {
     });
   }
 
-
-  _doSomething() {
-    // Do something on click inside the dropdown block...
-    window.alert('Done something!');
-  }
-
-
   _renderDropdown() {
     const dropdownId = this.props.id;
     const { dropdownIsVisible } = this.state;
-    // const menuStyle = {
 
-    //   left: '437.406px',
-    //   top: '208px',
-    // };
-    console.log("RENDER:"+JSON.stringify(this.state));
+    // console.log("RENDER:"+JSON.stringify(this.state));
 
     return (
               <div>
