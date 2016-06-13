@@ -26,6 +26,12 @@ module Presenters
         },
         searchTabs: {
           active_tab: 'All',
+          category_stats: [
+              {category:'All', count: '287000'},
+              {category:'Images', count: '111000'},
+              {category:'All', count: '325'},
+              {category:'All', count: '747'}
+            ]
         },
         searchValue: search.params[:text]
       }.to_json

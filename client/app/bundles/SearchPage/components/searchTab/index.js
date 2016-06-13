@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import searchTabs from '../../actions/searchTabs';
 import DropDown from './dropdown';
+import CategoryTab from './categoryTab';
 
 import _ from 'lodash';
 
@@ -8,6 +9,13 @@ import _ from 'lodash';
 export default class SearchTab extends Component {
   static propTypes = {
     // categoryStats: PropTypes.object.isRequired,
+    category_stats: PropTypes.arrayOf(
+                      PropTypes.shape({
+                        category: PropTypes.string.isRequired,
+                        count: PropTypes.string.isRequired
+                      })
+                    ).isRequired,
+
     active_tab: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired
   }
@@ -19,29 +27,44 @@ export default class SearchTab extends Component {
 
   onCategoryChange(e) {
     const { dispatch } = this.props;
-    console.log("clicked: [value]==>" + e.target.value +"[text]==>" + e.target.text)
-    dispatch(searchTabs(e.target.value));
+    console.log("clicked: "+e.target);
+    // console.log("clicked: [value]==>" + e.target.value +"[text]==>" + e.target.text)
+    // dispatch(searchTabs(e.target.value));
   }
 
-  render() {
 
-    const menuStyle = {
-      // position: 'absolute',
-      // left: '437.406px',
-      // top: '208px',
-        float: 'right',
-        position: 'initial',
-      };
+  render() {
+    const {active_tab, category_stats} = this.props;
+    console.log("SearchTab-Render:>>");
+    console.dir(category_stats);
+
+    const tabMenus = _.map(category_stats, (tab, index) => {
+      console.log(index);
+      console.dir(tab.category);
+      return (
+        <CategoryTab category_name={tab.category}  active_category={active_tab} key={index}/>
+      );
+    });
+
+    // const menuStyle = {
+    //   // position: 'absolute',
+    //   // left: '437.406px',
+    //   // top: '208px',
+    //     float: 'right',
+    //     position: 'initial',
+    //   };
+
+    this.categoryProps = {
+      category_name: 'category_name',
+      active_category: active_tab,
+      onClickTab: this.onCategoryChange
+    };
     // WIP feature, trial and error, shall fix it
     return (
       <div className="container">
         <ul>
-
-          <li><a onClick={this.onCategoryChange} href="#" value="All" className="search-category-tab" id="All-tab">All <span className="count">287,093</span></a></li>
-          <li className="active"><a href="#" value="Images" className="search-category-tab" id="Images-tab">Images <span className="count">111,001</span></a></li>
-          <li><a onClick={this.onCategoryChange}  href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio <span className="count">325</span></a></li>
-          <li><a onClick={this.onCategoryChange}  href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>
-          <li><a onClick={this.onCategoryChange}  href="#" value="Sets" className="search-category-tab" id="Sets-tab">Sets <span className="count">62</span></a></li>
+          {tabMenus}
+          <CategoryTab {...this.categoryProps}  />
           <li>
             <DropDown />
           </li>
@@ -90,4 +113,13 @@ export default class SearchTab extends Component {
   //     	rows.push("<li>"+item);
   //     }
   //   });
+
+
+
+
+          // <li><a onClick={this.onCategoryChange} href="#" value="All" className="search-category-tab" id="All-tab">All <span className="count">287,093</span></a></li>
+          // <li className="active"><a href="#" value="Images" className="search-category-tab" id="Images-tab">Images <span className="count">111,001</span></a></li>
+          // <li><a onClick={this.onCategoryChange}  href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio <span className="count">325</span></a></li>
+          // <li><a onClick={this.onCategoryChange}  href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>
+
 
