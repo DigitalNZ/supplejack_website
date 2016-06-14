@@ -22,10 +22,12 @@ class RecordsController < ApplicationController
     SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
     @facets = @search.facets
-    @counts = tab_counts(params.dup)
+    counts = tab_counts(params.dup)
     @sets = current_sj_user.try(:sets)
-
-    @redux_state = Presenters::SearchPageStore.new.call(@search)
+    sorted_counts = SearchTab.sorted_counts(counts)
+    
+    @redux_state = Presenters::SearchPageStore.new.call(@search, 
+      sorted_counts.merge(counts))
   end
 
   def show

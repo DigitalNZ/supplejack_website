@@ -32,7 +32,7 @@ export default function performSearch() {
     // This uses the jquery param method to convert an object into properly
     // url encoded query parameters
     const newUrl = 'http://' + urlWithoutQueryParams + $.param(fullQueryParams);
-    debugger;
+    // debugger;
     window.location.assign(newUrl);
   };
 }

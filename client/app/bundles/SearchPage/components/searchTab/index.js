@@ -28,32 +28,35 @@ export default class SearchTab extends Component {
 
   render() {
     const {active_tab, category_stats, dispatch} = this.props;
+
+    const top_categories = ['All', 'Images', 'Audio', 'Videos', 'Sets']
     console.log("SearchTab-Render:");
     console.dir(category_stats);
 
-    const tabMenus = _.map(category_stats, (tab, index) => {
-      console.dir(tab);
-      return <CategoryTab category_name={tab.category}
-                          count={tab.count}
-                          active_category={active_tab} 
-                          dispatch={dispatch} 
-                          key={index}/>;
-    });
+    const tabMenus = _.chain(category_stats)
+                    .filter( e => top_categories.includes(e.category))
+                    .map((tab, index) => 
+                          <CategoryTab 
+                            category_name={tab.category}
+                            count={tab.count}
+                            active_category={active_tab} 
+                            dispatch={dispatch} 
+                            key={index}/>
+                    ).value();
 
+    let moreTabStats= _.chain(category_stats)
+    .reject( e => top_categories.includes(e.category))
+    // .map((tab) => ({
+    //   category: tab.category,
+    // }))
+    .value()
+    debugger;    
 
-    // const menuStyle = {
-    //   // position: 'absolute',
-    //   // left: '437.406px',
-    //   // top: '208px',
-    //     float: 'right',
-    //     position: 'initial',
-    //   };
+    this.categoryProps = {
+      category_name: '<More>',
+      active_category: active_tab,
+    };
 
-    // this.categoryProps = {
-    //   category_name: 'category_nameXX',
-    //   active_category: active_tab,
-    //   onClickTab: this.onCategoryChange
-    // };
     // WIP feature, trial and error, shall fix it
     return (
       <div className="container">
@@ -109,6 +112,22 @@ export default class SearchTab extends Component {
 
 
 
+// let articles = [
+//   { article: 'c',   quantity: 24 },
+//   { article: 'b', quantity: 2  },
+//   { article: 'a',  quantity: 23 }
+//   { article: 'j',  quantity: 24 } 
+// ];
 
+// let matter = ['b', 'a', 'c'];
+
+
+// let result= _.chain(matter)
+// .filter( e => _.some(articles, f=>f.article === e))
+// .map(e => _.find(articles, {'article': e}))
+
+
+     
+// console.log(JSON.stringify(result));
 
 

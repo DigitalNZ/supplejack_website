@@ -12,12 +12,16 @@ export default class DropDown extends Component {
 
   static propTypes = {
     id: React.PropTypes.string.isRequired,
-    category_stats: PropTypes.arrayOf(
-                      PropTypes.shape({
-                        category: PropTypes.string.isRequired,
-                        count: PropTypes.string.isRequired
-                      })
-                    ).isRequired,    
+    // category_stats: PropTypes.arrayOf(
+    //                   PropTypes.shape({
+    //                     category: PropTypes.string.isRequired,
+    //                     count: PropTypes.string.isRequired
+    //                   })
+    //                 ).isRequired,
+    // active_category: PropTypes.string.isRequired,
+    // category_name: PropTypes.string.isRequired,
+    // count: PropTypes.string.isRequired,
+    // dispatch: PropTypes.func.isRequired,                     
   };
 
 

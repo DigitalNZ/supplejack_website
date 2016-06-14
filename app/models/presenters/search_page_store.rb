@@ -5,14 +5,17 @@ module Presenters
   #
   # It's also the only full description of the store state so it's a useful reference
   class SearchPageStore
-    def call(search)
+
+    include ActionView::Helpers::NumberHelper
+
+    def call(search, category_counts)
       i_filters = search.params[:i].map{|facet, v| {facet: facet, value: v}}
       or_filters = search.params[:or].map do |facet, values|
         values.map{|v| {facet: facet, value: v}}
       end.flatten
 
-      search_category = search.and[:category] || search.params[:tab]
-      binding.pry
+      search_category = search.and[:category] || search.params[:tab] || 'All'
+
       facets = search.facets || []
       {
         filters: i_filters + or_filters,
@@ -29,13 +32,7 @@ module Presenters
         },
         searchTabs: {
           active_tab: search_category,
-          category_stats: [
-              {category:'All', count: '287000'},
-              {category:'Images', count: '111000'},
-              {category:'Video', count: '325'},
-              {category:'Audio', count: '747'},
-              {category:'Set', count: '99'}
-            ]
+          category_stats: search_category_values(category_counts)
         },
         searchValue: search.params[:text]
       }.to_json
@@ -51,6 +48,14 @@ module Presenters
         end]
       else
         values
+      end
+    end
+
+    def search_category_values(counts_hash)
+      counts_hash.map do |type, count| 
+        { category: type, 
+          count: number_with_precision(count, delimiter: ',', precision: 0)
+        }
       end
     end
   end
