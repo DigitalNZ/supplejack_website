@@ -46,16 +46,20 @@ export default class SearchTab extends Component {
 
     let moreTabStats= _.chain(category_stats)
     .reject( e => top_categories.includes(e.category))
-    // .map((tab) => ({
-    //   category: tab.category,
-    // }))
+    .map((tab) => ({
+      category: tab.category,
+      count: tab.count,
+    }))
     .value()
-    debugger;    
-
-    this.categoryProps = {
+    debugger;
+    const categoryProps = {
       category_name: '<More>',
       active_category: active_tab,
+      category_stats: moreTabStats,
+      count: '11110',
+      dispatch: dispatch
     };
+
 
     // WIP feature, trial and error, shall fix it
     return (
@@ -63,7 +67,7 @@ export default class SearchTab extends Component {
         <ul>
          {tabMenus}
           <li>
-            <DropDown />
+            <DropDown {...categoryProps} />
           </li>
         </ul>
       </div>

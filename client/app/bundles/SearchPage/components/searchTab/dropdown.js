@@ -12,16 +12,16 @@ export default class DropDown extends Component {
 
   static propTypes = {
     id: React.PropTypes.string.isRequired,
-    // category_stats: PropTypes.arrayOf(
-    //                   PropTypes.shape({
-    //                     category: PropTypes.string.isRequired,
-    //                     count: PropTypes.string.isRequired
-    //                   })
-    //                 ).isRequired,
-    // active_category: PropTypes.string.isRequired,
-    // category_name: PropTypes.string.isRequired,
-    // count: PropTypes.string.isRequired,
-    // dispatch: PropTypes.func.isRequired,                     
+    category_stats: PropTypes.arrayOf(
+                      PropTypes.shape({
+                        category: PropTypes.string.isRequired,
+                        count: PropTypes.string.isRequired
+                      })
+                    ).isRequired,
+    active_category: PropTypes.string.isRequired,
+    category_name: PropTypes.string.isRequired,
+    count: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
 
@@ -37,8 +37,11 @@ export default class DropDown extends Component {
           position: 'absolute',
           top: '0px',
           left: '9999px'
-      }
+      },
+      category_stats: props.category_stats,
     };
+
+    debugger;
 
     // We should bind `this` to click event handler right here
     this._hideDropdown = this._hideDropdown.bind(this);
@@ -114,6 +117,7 @@ export default class DropDown extends Component {
 
   _renderDropdown() {
     const dropdownId = this.props.id;
+    const {category_name, count, category_stats, active_category} = this.props;
     const { dropdownIsVisible } = this.state;
 
     // console.log("RENDER:"+JSON.stringify(this.state));
@@ -125,9 +129,9 @@ export default class DropDown extends Component {
                       onBlur={::this._handleBlur}
                       onClick={::this._stopPropagation}
                       ref="more_dropdown_menu"> 
-                        More
+                        {category_name}
                       <span className="count" >
-                        3,065111
+                        {count}
                         <i className="fa fa-chevron-down"></i>
                       </span>
                      </a>
