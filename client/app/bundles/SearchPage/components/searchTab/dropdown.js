@@ -7,11 +7,12 @@
 
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
+import CategoryTab from './categoryTab';
 
 export default class DropDown extends Component {
 
   static propTypes = {
-    id: React.PropTypes.string.isRequired,
     category_stats: PropTypes.arrayOf(
                       PropTypes.shape({
                         category: PropTypes.string.isRequired,
@@ -24,6 +25,12 @@ export default class DropDown extends Component {
     dispatch: PropTypes.func.isRequired,
   };
 
+  selectedStatus(tab) {
+  const { dropdownIsVisible } = this.state;
+  console.log('dropdownIsVisible>'+dropdownIsVisible);
+   return (!dropdownIsVisible) &&
+      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1
+  }
 
   constructor(props, context) {
     super(props, context);
@@ -40,8 +47,6 @@ export default class DropDown extends Component {
       },
       category_stats: props.category_stats,
     };
-
-    debugger;
 
     // We should bind `this` to click event handler right here
     this._hideDropdown = this._hideDropdown.bind(this);
@@ -115,21 +120,45 @@ export default class DropDown extends Component {
     });
   }
 
+  getMenuName() {
+    const {category_name, active_category} = this.props;
+    if((typeof active_category != 'undefined') 
+      && ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(active_category) == -1)
+      return active_category;
+    else
+      return category_name;
+  }
+
   _renderDropdown() {
     const dropdownId = this.props.id;
-    const {category_name, count, category_stats, active_category} = this.props;
+    const {category_name, count, category_stats, active_category, dispatch} = this.props;
     const { dropdownIsVisible } = this.state;
 
-    // console.log("RENDER:"+JSON.stringify(this.state));
+    const tabClass = classNames({active: this.selectedStatus(active_category)});
+    console.log("RENDER:"+JSON.stringify(this.props));
+    console.log("R-tabClass:"+tabClass);
+    
+    // let menuName = ;
+    // console.log("menuName===" + menuName);
+    // debugger;
+    const tabMenus = _.chain(category_stats)
+                    .map((tab, index) => 
+                          <CategoryTab 
+                            category_name={tab.category}
+                            count={tab.count}
+                            active_category={active_category} 
+                            dispatch={dispatch} 
+                            key={index}/>
+                    ).value();
 
     return (
-              <div>
+              <li className={tabClass}>
                     <a aria-controls="more-drop" aria-expanded="false" className="open"
                       onFocus={::this._handleFocus}
                       onBlur={::this._handleBlur}
                       onClick={::this._stopPropagation}
-                      ref="more_dropdown_menu"> 
-                        {category_name}
+                      ref="more_dropdown_menu">
+                        {this.getMenuName()}
                       <span className="count" >
                         {count}
                         <i className="fa fa-chevron-down"></i>
@@ -137,19 +166,11 @@ export default class DropDown extends Component {
                      </a>
                   {
                     dropdownIsVisible &&
-                      <ul aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
-                          <li><a id="newspapers" href="/records?tab=Newspapers&amp;text=k">Newspapers <span className="count">3,032,412</span></a></li>
-                          <li><a id="archives" href="/records?tab=Archives&amp;text=k">Archives <span className="count">14,614</span></a></li>
-                          <li><a id="research_papers" href="/records?tab=Research+papers&amp;text=k">Research papers <span className="count">8,444</span></a></li>
-                          <li><a id="articles" href="/records?tab=Articles&amp;text=k">Articles <span className="count">3,599</span></a></li>
-                          <li><a id="books" href="/records?tab=Books&amp;text=k">Books <span className="count">3,397</span></a></li>
-                          <li><a id="reference_sources" href="/records?tab=Reference+sources&amp;text=k">Reference sources <span className="count">1,411</span></a></li>
-                          <li><a id="data" href="/records?tab=Data&amp;text=k">Data <span className="count">1,171</span></a></li>
-                          <li><a id="manuscripts" href="/records?tab=Manuscripts&amp;text=k">Manuscripts <span className="count">219</span></a></li>
-                          <li><a id="other" href="/records?tab=Other&amp;text=k">Other <span className="count">172</span></a></li>
-                       </ul>
+                      <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
+                          {tabMenus}
+                      </ul>
                   }
-               </div>
+               </li>
     );
   }
 

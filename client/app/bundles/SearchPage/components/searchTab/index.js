@@ -51,24 +51,21 @@ export default class SearchTab extends Component {
       count: tab.count,
     }))
     .value()
-    debugger;
+
     const categoryProps = {
-      category_name: '<More>',
+      category_name: 'More',
       active_category: active_tab,
       category_stats: moreTabStats,
       count: '11110',
       dispatch: dispatch
     };
 
-
     // WIP feature, trial and error, shall fix it
     return (
       <div className="container">
         <ul>
-         {tabMenus}
-          <li>
+            {tabMenus}
             <DropDown {...categoryProps} />
-          </li>
         </ul>
       </div>
     );
@@ -95,22 +92,22 @@ export default class SearchTab extends Component {
 // <ul>
 // </li>
 
- 	// let rows = [];
+  // let rows = [];
 
- 	// let gdata=[
-	 // 	'<a href="#" value="All" className="search-category-tab" id="All-tab">All(A) <span className="count">287,093</span></a></li>',
-	 //    '<a href="#" value="Images" className="search-category-tab" id="Images-tab">Images(I) <span className="count">111,001</span></a></li>',
-	 //    '<a href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio(A) <span className="count">325</span></a></li>',
-	 //    '<a href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>',
-	 //    '<a href="#" value="Sets" className="search-category-tab" id="Sets-tab">Sets <span className="count">62</span></a></li>'
- 	// ] 
+  // let gdata=[
+   //   '<a href="#" value="All" className="search-category-tab" id="All-tab">All(A) <span className="count">287,093</span></a></li>',
+   //    '<a href="#" value="Images" className="search-category-tab" id="Images-tab">Images(I) <span className="count">111,001</span></a></li>',
+   //    '<a href="#" value="Audio" className="search-category-tab" id="Audio-tab">Audio(A) <span className="count">325</span></a></li>',
+   //    '<a href="#" value="Videos" className="search-category-tab" id="Videos-tab">Videos <span className="count">747</span></a></li>',
+   //    '<a href="#" value="Sets" className="search-category-tab" id="Sets-tab">Sets <span className="count">62</span></a></li>'
+  // ] 
 
- 	// let active_index = 1;
+  // let active_index = 1;
   //   gdata.forEach(function(item, index) {
   //     if(active_index === index) {
-  //     	rows.push("<li className='active'>"+item);
+  //      rows.push("<li className='active'>"+item);
   //     } else {
-  //     	rows.push("<li>"+item);
+  //      rows.push("<li>"+item);
   //     }
   //   });
 
