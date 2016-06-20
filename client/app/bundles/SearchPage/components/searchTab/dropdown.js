@@ -26,10 +26,21 @@ export default class DropDown extends Component {
   };
 
   selectedStatus(tab) {
-  const { dropdownIsVisible } = this.state;
-  console.log('dropdownIsVisible>'+dropdownIsVisible);
-   return (!dropdownIsVisible) &&
-      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1
+    const { dropdownIsVisible } = this.state;
+    console.log('dropdownIsVisible>'+dropdownIsVisible);
+     return (!dropdownIsVisible) &&
+        ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1
+  }
+
+  moreTitleCount(tab) {
+    if( typeof tab == 'undefined')
+      return 0;
+
+    if(['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) > -1)
+      tab = 'More'
+
+    let b = _.find(this.props.category_stats, {category: tab})
+    return b.count;
   }
 
   constructor(props, context) {
@@ -135,13 +146,11 @@ export default class DropDown extends Component {
     const { dropdownIsVisible } = this.state;
 
     const tabClass = classNames({active: this.selectedStatus(active_category)});
-    console.log("RENDER:"+JSON.stringify(this.props));
-    console.log("R-tabClass:"+tabClass);
-    
-    // let menuName = ;
-    // console.log("menuName===" + menuName);
-    // debugger;
+
+    console.log("active_category-COUNT:"+this.moreTitleCount(active_category));
+
     const tabMenus = _.chain(category_stats)
+                    .filter((e) => (e.category != 'More'))
                     .map((tab, index) => 
                           <CategoryTab 
                             category_name={tab.category}
@@ -160,7 +169,7 @@ export default class DropDown extends Component {
                       ref="more_dropdown_menu">
                         {this.getMenuName()}
                       <span className="count" >
-                        {count}
+                        {this.moreTitleCount(active_category)}
                         <i className="fa fa-chevron-down"></i>
                       </span>
                      </a>

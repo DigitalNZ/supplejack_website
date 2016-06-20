@@ -86,7 +86,7 @@ export default class Panel extends Component {
     // This is very useful when passing props to a child component or in this case where I am passing an unknown
     // quantity of props
     const currentTabComponent = <currentTab.component {...currentTab.props} dispatch={dispatch} />;
-
+    console.log("currentTab.props>>"+ JSON.stringify(currentTab.props));
     // Now that we have generated the tabs and the tab menus this stitches that together with the panel markup
     return (
       <div id="search_filter" className="filter-container menu content">
@@ -102,6 +102,8 @@ export default class Panel extends Component {
 
         <div className="tabs-content">
           {currentTabComponent}
+          { (currentTab.props.facet === 'usage') && <div className="tabs-description"> Before copying or reusing any item founds 
+          on DigitalNZ, you need to check the terms of user and/or copyright on the item’s web page. </div> }
         </div>
       </div>
     );

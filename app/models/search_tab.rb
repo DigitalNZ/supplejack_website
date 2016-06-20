@@ -56,7 +56,7 @@ class SearchTab
     more? ? %{#{tab.capitalize} <span class="count">#{count}</span><span class="more-arrow"></span>}.html_safe : %{More<span class="more-arrow"></span>}.html_safe
   end
 
-  def blacklist 
+  def self.blacklist 
     # Categories that we don't want to be included under 'More' tab.
     [ 'Article', 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video'] 
   end
@@ -64,10 +64,19 @@ class SearchTab
   def more_categories(categories)    
     main_tabs  = ['All', 'Images', 'Audio', 'Videos', 'Sets']
 
-    blacklist.concat(main_tabs).each do |key|
+    SearchTab.blacklist.concat(main_tabs).each do |key|
       categories.delete(key)
     end
 
     categories
-  end  
+  end
+
+  def self.more_category_count(category_counts)
+    main_tabs  = ['All', 'Images', 'Audio', 'Videos', 'Sets']
+    blacklist.concat(main_tabs).each do |key|
+      category_counts.delete(key)
+    end
+
+    Hash['More', category_counts.values.sum]
+  end
 end

@@ -14,7 +14,8 @@ module Presenters
         values.map{|v| {facet: facet, value: v}}
       end.flatten
 
-      search_category = search.and[:category] || search.params[:tab] || 'All'
+      search_category = search.and[:category] || search.params[:tab]
+      search_category = 'All' if search_category.nil? || search_category.empty?
 
       facets = search.facets || []
       {
@@ -32,7 +33,7 @@ module Presenters
         },
         searchTabs: {
           active_tab: search_category,
-          category_stats: search_category_values(category_counts)
+          category_stats: category_count_formating(category_counts)
         },
         searchValue: search.params[:text]
       }.to_json
@@ -51,7 +52,17 @@ module Presenters
       end
     end
 
-    def search_category_values(counts_hash)
+    # Converts the hash of each category's count into decimal style string; also giving the key and count 
+    #
+    # == Parameters:
+    # counts_hash::
+    #  {"All"=>2413461, "Images"=>1483736, "Audio"=>6549, "Videos"=>16438}
+    #
+    # == Returns:
+    # [{:category=>"All", :count=>"2,413,461"}, {:category=>"Images", :count=>"1,483,736"}, 
+    # {:category=>"Audio", :count=>"6,549"}, {:category=>"Videos", :count=>"16,438"}]
+    #
+    def category_count_formating(counts_hash)
       counts_hash.map do |type, count| 
         { category: type, 
           count: number_with_precision(count, delimiter: ',', precision: 0)

@@ -46,12 +46,11 @@
                      // show elems now they're ready
                      newElements.animate({ opacity: 1 });
                      spinner.hide();
-
                      newElements.each(function(index, elem) {
                         $(elem).find('a.unknown-height').removeClass('unknown-height');
                      });
 
-                     galleryContainer.masonry('reload');
+                     setTimeout(function() { galleryContainer.masonry('reload'); }, 500);
                   });
                });
 
