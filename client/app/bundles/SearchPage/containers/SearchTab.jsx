@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 
 // WIP feature
 function mapStateToProps(state) {
-	console.log('mapStateToProps:');
-	// console.dir(state);
-  return { active_tab: state.searchTabs.active_tab, category_stats: state.searchTabs.category_stats};
+  return { active_tab: state.searchTabs.active_tab, category_stats: state.searchTabs.category_stats, hydrated: state.hydrated };
 }
 
 class SearchTabContainer extends React.Component {
@@ -16,8 +14,7 @@ class SearchTabContainer extends React.Component {
   }
 
   render() {
-  	console.log('SearchTabCont: render');
-  	console.dir(this.props);
+    if(!this.props.hydrated) return null;
     return <SearchTab {...this.props} />
   }
 }

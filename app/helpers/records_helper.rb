@@ -142,7 +142,6 @@ module RecordsHelper
   end
 
   def filter_class(filter_name)
-    # binding.pry
     filter_name.strip.gsub(/[^[:alnum:]]/, "").downcase
   end
 

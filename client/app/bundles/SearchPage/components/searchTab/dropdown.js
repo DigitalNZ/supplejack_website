@@ -27,17 +27,14 @@ export default class DropDown extends Component {
 
   selectedStatus(tab) {
     const { dropdownIsVisible } = this.state;
-    console.log('dropdownIsVisible>'+dropdownIsVisible);
-     return (!dropdownIsVisible) &&
-        ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1
+    return (!dropdownIsVisible) &&
+      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1
   }
 
   moreTitleCount(tab) {
-    if( typeof tab == 'undefined')
-      return 0;
-
-    if(['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) > -1)
-      tab = 'More'
+    if(['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) > -1) {
+      tab = 'More';
+    }
 
     let b = _.find(this.props.category_stats, {category: tab})
     return b.count;
@@ -78,16 +75,10 @@ export default class DropDown extends Component {
     this._adjustPosition();
   }
 
-  // componentWillMount() {
-    // var node = this.getDOMNode();
-    // debugger;
-  // }
-
   componentWillUnmount() {
     // Remove click event listener on component unmount
     window.removeEventListener('click', this._hideDropdown, false);
   }
-
 
   _stopPropagation(e) {
     this._adjustPosition();
@@ -100,7 +91,6 @@ export default class DropDown extends Component {
 
   _toggleDropdown() {
     const { dropdownIsVisible, dropdownIsActive } = this.state;
-    console.log("togglleDown");
     this._adjustPosition();
     // Toggle dropdown block visibility
     this.setState({ dropdownIsVisible: !dropdownIsVisible });
@@ -146,9 +136,6 @@ export default class DropDown extends Component {
     const { dropdownIsVisible } = this.state;
 
     const tabClass = classNames({active: this.selectedStatus(active_category)});
-
-    console.log("active_category-COUNT:"+this.moreTitleCount(active_category));
-
     const tabMenus = _.chain(category_stats)
                     .filter((e) => (e.category != 'More'))
                     .map((tab, index) => 
@@ -187,7 +174,6 @@ export default class DropDown extends Component {
   render() {
     return (
       <div className="dropdown">
-        {/* Some content */}
         {::this._renderDropdown()}
       </div>
     );
