@@ -37,9 +37,6 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'guard-rspec', require: false
   gem 'yard'
   gem 'rubocop-rspec'
   gem 'capistrano', '~> 3.1'
@@ -51,6 +48,9 @@ group :development do
 end
 
 group :test, :development do
+  gem 'spring-commands-rspec'
+  gem 'spring'
+  gem 'guard-rspec', require: false  
   gem "rspec-rails", "~> 3.0"
   gem 'oily_png'
   gem 'minitest'
