@@ -15,6 +15,13 @@ class RecordsController < ApplicationController
   def home
   end
 
+  # Provide all the subjects for search results page
+  #
+  # @Author: Taylor
+  # @last modified Jeffery
+  # @param params(key :i, :or for facets value, key :tab for category, :text for search term)
+  # @return ActionViewer handler with @records, @facets, @sets, @redux_state
+  # for both views and react rendering
   def index
     params[:i] = sanitize_hash(params[:i]) if params[:i]
     params[:or] = sanitize_hash(params[:or]) if params[:or]
@@ -22,14 +29,14 @@ class RecordsController < ApplicationController
     SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
     @facets = @search.facets
-    counts = tab_counts(params.dup)
-    binding.pry
     @sets = current_sj_user.try(:sets)
 
-    sorted_counts = SearchTab.sorted_counts(counts).merge(SearchTab.more_categories_sum(counts))
-    binding.pry
-    @redux_state = Presenters::SearchPageStore.new.call(@search, 
-      sorted_counts.merge(counts))
+    raw_category_counts = tab_counts(params.dup)
+    full_counts = SearchTab.sorted_counts(raw_category_counts)
+    full_counts.merge!(SearchTab.more_categories_sum(raw_category_counts))
+    full_counts.merge!(raw_category_counts)
+
+    @redux_state = Presenters::SearchPageStore.new.call(@search, full_counts)
   end
 
   def show

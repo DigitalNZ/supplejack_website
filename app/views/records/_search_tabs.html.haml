@@ -9,25 +9,3 @@
 .filters
   = render "shared/search"
   = react_component("SearchTabApp")
-  / .container
-  /   %ul
-  /     - SearchTab.sorted_counts(@counts).each do |type, count|
-  /       = content_tag :li, class: ('active' if search_tab.value.downcase == type.downcase) do              |
-  /           link_to SearchTab.tab_label(type, number_with_precision(count, delimiter: ',', precision: 0)), |
-  /           '#',                                        |
-  /           id: "#{type}-tab", class: 'search-category-tab', value: "#{type}"                                                                              |
-  /         end                                                                                              |
-
-  /     - more_count = more_tab_count(more_tab_title, search_tab.more_categories(@counts))
-  /     %li{:class => ("active" unless more_tab_title == 'More')}
-  /       %a{"aria-controls" => "more-drop", "aria-expanded" => "false", "data-dropdown" => "more-drop"} 
-  /         = more_tab_title
-  /         %span.count
-  /           = more_count
-  /           - if more_count.to_i > 0
-  /             = fa_icon('chevron-down')
-
-
-  /       -if more_count.to_i > 0
-  /         %ul#more-drop.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
-  /           = more_categories_list(search_tab.more_categories(@counts))

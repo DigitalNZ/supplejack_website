@@ -10,14 +10,9 @@ module Presenters
         },
         or: {
           collection: ['95bfm', 'TAPUHI']
-        },
-        # and: {
-        #   category: 'All'
-        # }
+        }
       )
 
-      #SearchTab.add_category_facets(search, 'Images')
-      # binding.pry
       allow(search).to receive(:facets).and_return([OpenStruct.new(name: 'facet1', values: 'values')])
 
       search
@@ -34,10 +29,6 @@ module Presenters
         expect(result[:searchValue]).to eq('a users search')
       end
     end
-        # searchTabs: {
-        #   active_tab: search_category,
-        #   category_stats: category_count_formating(category_counts)
-        # },
 
     describe ':searchCategory' do
       it 'contains the active category that the user is searching with' do

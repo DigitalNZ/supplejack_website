@@ -53,12 +53,12 @@ RSpec.describe SearchTab do
   describe 'sorted counts' do
     let(:unsorted_counts) do
       {
-        # Newspapers: 1346566, 
-        # Images: 1056473, 
-        # Journals: 39515, 
-        # Videos: 7655, 
-        # Audio: 2553, 
-        :All => 2448694
+        'Newspapers' => 1346566, 
+        'Images' => 1056473, 
+        'Journals' => 39515, 
+        'Videos' => 7655, 
+        'Audio' => 2553, 
+        'All' => 2448694
       }
     end
     
@@ -126,24 +126,6 @@ RSpec.describe SearchTab do
     end
   end
 
-  # describe "more_categories" do
-  #   before(:each) do
-  #     @categories = { 'All' => 50, 'Images' => 10, 'Audio' => 10, 'Journals' => 6, 'Videos' => 20, 'Websites' => 5, 'Research Papers' => 5 }
-  #   end
-
-  #   it "removes the main tab values from categories" do
-  #     expect(st.more_categories(@categories)).not_to include('All', 'Images', 'Audio')
-  #   end
-
-  #   it "removes the blacklist values from categories" do
-  #     expect(st.more_categories(@categories)).not_to include('Websites', 'Research Papers')
-  #   end
-
-  #   it "returns the remaining categories" do 
-  #     expect(st.more_categories(@categories)).to include('Journals')
-  #   end
-  # end
-
   describe "value" do
     it "returns the value if view is present" do
       st.instance_variable_set(:@tab, "sets")
@@ -155,26 +137,4 @@ RSpec.describe SearchTab do
       expect(st.value).to be_nil
     end
   end
-
-  # describe "more_label" do 
-    
-  #   before(:each) do
-  #     SearchTab.stub(:valid_category_facets) { ["Images", "Journals"]}
-  #   end
-
-  #   it "returns More if current tab is not more?" do 
-  #     st.stub(:more?) { false } 
-  #     expect(st.more_label(7)).to match(/More/)
-  #   end
-
-  #   it "return the tab name" do 
-  #     st.stub(:tab) { 'Journals' }
-  #     expect(st.more_label(7)).to match(/Journals/)
-  #   end
-
-  #   it "includes the count passed to it as a parameter" do 
-  #     st.stub(:tab) { 'Journals' }
-  #     expect(st.more_label(7)).to match(/7/)
-  #   end
-  # end  
 end

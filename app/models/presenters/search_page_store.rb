@@ -8,6 +8,14 @@ module Presenters
 
     include ActionView::Helpers::NumberHelper
 
+    # Provide all the subjects for search results page
+    #
+    # @Author: Taylor
+    # @last modified Jeffery
+    # @param search reprsents the search-results object 
+    # @param category_counts represent the category statistics {"All"=>2413461, "Images"=>1483736, "Audio"=>6549, "Videos"=>16438}
+    #
+    # @return JSON that has first-level key filters, panel, searchTabs, and searchValue
     def call(search, category_counts)
       i_filters = search.params[:i].map{|facet, v| {facet: facet, value: v}}
       or_filters = search.params[:or].map do |facet, values|

@@ -14,12 +14,10 @@ RSpec.feature 'A user performs a search with the search box', js: true, vcr: tru
 
           # :( capybara doesn't appear to have support for waiting for the URL to change
           sleep 5
-          pwork = Capybara.current_session
-          pwork.driver.save_screenshot 'screenshot1.png'
-          pwork.save_page 'page1.html'  
+
           query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
           expect(query_hash.deep_symbolize_keys).to eq({
-            text: 'Wellington',
+            text: 'Wellington'
           })
         end
       end
@@ -41,6 +39,7 @@ RSpec.feature 'A user performs a search with the search box', js: true, vcr: tru
           query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
           expect(query_hash.deep_symbolize_keys).to eq({
             text: 'Wellington',
+            tab: ''
           })
         end
       end

@@ -15,12 +15,7 @@ RSpec.feature 'A user interacts with the search panel', js: true, vcr: true, slo
   feature 'Removing active filters' do
     context 'a user removes a filter' do
       it 'is removed from the page' do
-        pwork = Capybara.current_session
-        binding.pry
-        pwork.driver.save_screenshot 'screenshot1.png'
-        pwork.save_page 'page1.html'        
         search_panel.active_filters.first.click
-
         expect(search_panel.active_filters.length).to eq(1)
       end
     end

@@ -56,14 +56,17 @@ class SearchTab
     more? ? %{#{tab.capitalize} <span class="count">#{count}</span><span class="more-arrow"></span>}.html_safe : %{More<span class="more-arrow"></span>}.html_safe
   end
 
+  # Provide the summary counts of record in the dropdown categories
+  # @Author: Jeffery
+  # @param: category {"All"=>2413461, "Newspaper"=>1483736, "Images"=>6549, "Books"=>16438} 
+  # @return: A single-key hash in the form of {"More"=> 1483736} 
   def self.more_categories_sum(category_counts)
     main_tabs  = ['All', 'Images', 'Audio', 'Videos', 'Sets']
     blacklist = [ 'Article', 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video'] 
 
-    blacklist.concat(main_tabs).each do |key|
-      category_counts.delete(key)
+    more_categories_sum_value = category_counts.inject(0) do | sum, (k, v) | 
+      blacklist.concat(main_tabs).include?(k) ? sum : sum + v
     end
-
-    Hash['More', category_counts.values.sum]
+    Hash['More', more_categories_sum_value]
   end
 end

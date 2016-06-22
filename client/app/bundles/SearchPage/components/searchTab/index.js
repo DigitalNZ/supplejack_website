@@ -6,7 +6,6 @@ import CategoryTab from './categoryTab';
 
 import _ from 'lodash';
 
-// WIP feature, trial and error
 export default class SearchTab extends Component {
   static propTypes = {
     // categoryStats: PropTypes.object.isRequired,
@@ -23,7 +22,6 @@ export default class SearchTab extends Component {
 
   constructor() {
     super()
-    // _.bindAll(this, 'onCategoryChange')
   }
 
   render() {
@@ -58,7 +56,6 @@ export default class SearchTab extends Component {
       dispatch: dispatch
     };
 
-    // WIP feature, trial and error, shall fix it
     return (
       <div id="search-category-menu" className="container">
         <ul>

@@ -3,7 +3,6 @@ import SearchTab from '../components/searchTab';
 import loadStateFromPage from '../actions/loadStateFromPage';
 import { connect } from 'react-redux';
 
-// WIP feature
 function mapStateToProps(state) {
   return { active_tab: state.searchTabs.active_tab, category_stats: state.searchTabs.category_stats, hydrated: state.hydrated };
 }
