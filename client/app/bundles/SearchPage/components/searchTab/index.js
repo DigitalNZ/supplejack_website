@@ -60,7 +60,7 @@ export default class SearchTab extends Component {
 
     // WIP feature, trial and error, shall fix it
     return (
-      <div className="container">
+      <div id="search-category-menu" className="container">
         <ul>
             {tabMenus}
             <DropDown {...categoryProps} />

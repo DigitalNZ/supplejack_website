@@ -23,10 +23,11 @@ class RecordsController < ApplicationController
     @records = @search.results
     @facets = @search.facets
     counts = tab_counts(params.dup)
+    binding.pry
     @sets = current_sj_user.try(:sets)
 
-    sorted_counts = SearchTab.sorted_counts(counts).merge(SearchTab.more_category_count(counts))
-
+    sorted_counts = SearchTab.sorted_counts(counts).merge(SearchTab.more_categories_sum(counts))
+    binding.pry
     @redux_state = Presenters::SearchPageStore.new.call(@search, 
       sorted_counts.merge(counts))
   end

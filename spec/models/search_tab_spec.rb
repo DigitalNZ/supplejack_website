@@ -53,12 +53,12 @@ RSpec.describe SearchTab do
   describe 'sorted counts' do
     let(:unsorted_counts) do
       {
-        'Newspapers' => 1346566, 
-        'Images' => 1056473, 
-        'Journals' => 39515, 
-        'Videos' => 7655, 
-        'Audio' => 2553, 
-        'All' => 2448694
+        # Newspapers: 1346566, 
+        # Images: 1056473, 
+        # Journals: 39515, 
+        # Videos: 7655, 
+        # Audio: 2553, 
+        :All => 2448694
       }
     end
     
@@ -68,6 +68,26 @@ RSpec.describe SearchTab do
 
     it 'sorts by count' do
       expect(described_class.sorted_counts(unsorted_counts).shift).to eq ['All', 2448694]
+    end
+  end
+
+  describe 'more_categories_sum' do
+    let(:random_category_counts) do
+      {
+       "Manuscripts": 3133,
+       "Other": 1227,
+       "Videos": 284,
+       "Data": 278,
+       "Audio": 159
+     }
+    end
+
+    it 'returns one number about the sum of all records belonging to dropdown menu' do
+      expect(described_class.more_categories_sum(random_category_counts).count).to eq 1
+    end
+
+    it 'returns the correct sumup of all records belonging to dropdown menu' do 
+      expect(described_class.more_categories_sum(random_category_counts).values[0]).to eq 5081
     end
   end
 
@@ -106,23 +126,23 @@ RSpec.describe SearchTab do
     end
   end
 
-  describe "more_categories" do
-    before(:each) do
-      @categories = { 'All' => 50, 'Images' => 10, 'Audio' => 10, 'Journals' => 6, 'Videos' => 20, 'Websites' => 5, 'Research Papers' => 5 }
-    end
+  # describe "more_categories" do
+  #   before(:each) do
+  #     @categories = { 'All' => 50, 'Images' => 10, 'Audio' => 10, 'Journals' => 6, 'Videos' => 20, 'Websites' => 5, 'Research Papers' => 5 }
+  #   end
 
-    it "removes the main tab values from categories" do
-      expect(st.more_categories(@categories)).not_to include('All', 'Images', 'Audio')
-    end
+  #   it "removes the main tab values from categories" do
+  #     expect(st.more_categories(@categories)).not_to include('All', 'Images', 'Audio')
+  #   end
 
-    it "removes the blacklist values from categories" do
-      expect(st.more_categories(@categories)).not_to include('Websites', 'Research Papers')
-    end
+  #   it "removes the blacklist values from categories" do
+  #     expect(st.more_categories(@categories)).not_to include('Websites', 'Research Papers')
+  #   end
 
-    it "returns the remaining categories" do 
-      expect(st.more_categories(@categories)).to include('Journals')
-    end
-  end
+  #   it "returns the remaining categories" do 
+  #     expect(st.more_categories(@categories)).to include('Journals')
+  #   end
+  # end
 
   describe "value" do
     it "returns the value if view is present" do

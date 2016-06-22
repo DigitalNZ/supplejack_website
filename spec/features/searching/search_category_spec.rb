@@ -14,41 +14,16 @@ RSpec.feature 'A user performs a search with the search box', js: true, vcr: tru
     feature 'Search within a category by clicking toplevel categories' do
       context "the user clicks the 'Search' button" do
         it 'performs a search with the users entered input' do
+
           search_page.wait_until_search_category_visible
+          expect(search_category).to have_dropdown_button
 
-          pwork = Capybara.current_session
-          pwork.driver.save_screenshot 'screenshot2.png'
-          pwork.save_and_open_page 'page2.html'
-
-          puts "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
-          puts find(:css, ".dropdown").text
-          puts find(:css, ".dropdown li a").path
-          # puts find(:css, ".dropdown li a:eq(0)").visible?
-          expect(search_page).to have_dropdown_category_btn
-          search_page.dropdown_category_btn.click
-          search_page.toptier_category_btns[1].click
-          # search_category_node = search_page.search_category
-          # puts search_category_node.inspect
-
-          # if search_category.dropdown_button.visible?
-          #   puts "--->"+search_category_node.text
-          # end
-
-          # puts search_category_node.dropdown_button
-          # puts search_category_node.category_tabs
-          puts pwork.current_url
-          expect(page).to have_current_path("/records?text=#{search_term_literal}&tab=Images")
-          puts "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
-
-          # find(:css, ".dropdown li a").click
-          Capybara::Screenshot.screenshot_and_open_image 
-          pwork.driver.save_screenshot 'screenshot3.png'
-          pwork.save_and_open_page 'page3.html'          
+          search_category.dropdown_button.click
+          expect(page).to have_current_path("/records?text=#{search_term_literal}")     
           
           query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
           expect(query_hash.deep_symbolize_keys).to eq({
-            text: search_term_literal,          
-            tab: "Images"
+            text: search_term_literal,
           })
         end
       end
@@ -57,44 +32,21 @@ RSpec.feature 'A user performs a search with the search box', js: true, vcr: tru
     feature 'Search within a category by clicking dropdown-level categories' do
       context "the user clicks the 'Search' button" do
         it 'performs a search with the users entered input' do
+
           search_page.wait_until_search_category_visible
+          expect(search_category).to have_dropdown_button
 
+          # trigger the dropdown menu button
+          search_category.dropdown_button.click
           pwork = Capybara.current_session
-          pwork.driver.save_screenshot 'screenshot2.png'
-          pwork.save_and_open_page 'page2.html'
+            
+          # wait until the dropdown menu items come out
+          expect(search_category).to have_extended_category_btns
 
-          puts "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
-          # puts find(:css, ".dropdown").text
-          # puts find(:css, ".dropdown li a").path
-          # find(:css, ".dropdown li a").click
-        
-          expect(search_page).to have_dropdown_category_btn
-          puts search_page.dropdown_category_btn.path
-          search_page.dropdown_category_btn.click          
-
-          sleep 3
-          pwork.save_and_open_page 'page4.html'  
-          Capybara::Screenshot.screenshot_and_open_image 
-          puts search_page.lowtier_category_btns[0]
-          search_page.lowtier_category_btns[0].click
-          # search_category_node = search_page.search_category
-          # puts search_category_node.inspect
-
-          # if search_category.dropdown_button.visible?
-          #   puts "--->"+search_category_node.text
-          # end
-
-          # puts search_category_node.dropdown_button
-          # puts search_category_node.category_tabs
-          puts pwork.current_url
+          # select the first dropdown menu items
+          search_category.extended_category_btns[0].click
           expect(page).to have_current_path("/records?text=#{search_term_literal}&tab=Books")
-          puts "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
 
-          # find(:css, ".dropdown li a").click
-          Capybara::Screenshot.screenshot_and_open_image 
-          pwork.driver.save_screenshot 'screenshot3.png'
-                   
-          
           query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
           expect(query_hash.deep_symbolize_keys).to eq({
             text: search_term_literal,          
@@ -126,7 +78,7 @@ end
 #           sleep 5
 
 
-#           pwork = Capybara.current_session
+
 #           pwork.driver.save_screenshot 'screenshot2.png'
 #           pwork.save_and_open_page 'page2.html'
         

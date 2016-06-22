@@ -148,7 +148,7 @@ export default class DropDown extends Component {
                     ).value();
 
     return (
-              <li className={tabClass}>
+              <li className={tabClass} id="more-dropdown-menu">
                     <a aria-controls="more-drop" aria-expanded="false" className="open"
                       onFocus={::this._handleFocus}
                       onBlur={::this._handleBlur}

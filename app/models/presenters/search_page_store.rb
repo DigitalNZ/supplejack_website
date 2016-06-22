@@ -33,7 +33,7 @@ module Presenters
         },
         searchTabs: {
           active_tab: search_category,
-          category_stats: category_count_formating(category_counts)
+          category_stats: category_count_formatting(category_counts)
         },
         searchValue: search.params[:text]
       }.to_json
@@ -62,7 +62,7 @@ module Presenters
     # [{:category=>"All", :count=>"2,413,461"}, {:category=>"Images", :count=>"1,483,736"}, 
     # {:category=>"Audio", :count=>"6,549"}, {:category=>"Videos", :count=>"16,438"}]
     #
-    def category_count_formating(counts_hash)
+    def category_count_formatting(counts_hash)
       counts_hash.map do |type, count| 
         { category: type, 
           count: number_with_precision(count, delimiter: ',', precision: 0)

@@ -6,13 +6,8 @@ class SearchPage < LayoutPage
   set_url '/records{?query*}'
 
   section :search_panel, SearchPanelSection, '.search-panel'
-  # section :search_category, SearchCategorySection, 'ul:has(a.search-category-tab)'
-  sections :search_category, SearchCategorySection, '.container[data-reactroot]'
+  section :search_category, SearchCategorySection, '#search-category-menu'
 
   simple_element :search_input
   simple_element :search_button
-  # simple_element :search_category_dropdon
-  element :dropdown_category_btn, 'a[aria-controls="more-drop"]'
-  elements :toptier_category_btns, '.container[data-reactroot]>ul>li'
-  elements :lowtier_category_btns, '#more-drop>li>a'
 end

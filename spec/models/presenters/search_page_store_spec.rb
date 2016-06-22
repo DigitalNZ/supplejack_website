@@ -10,17 +10,43 @@ module Presenters
         },
         or: {
           collection: ['95bfm', 'TAPUHI']
-        }
+        },
+        # and: {
+        #   category: 'All'
+        # }
       )
+
+      #SearchTab.add_category_facets(search, 'Images')
+      # binding.pry
       allow(search).to receive(:facets).and_return([OpenStruct.new(name: 'facet1', values: 'values')])
 
       search
     end
-    let(:result) {JSON.parse(subject.call(search)).deep_symbolize_keys}
+
+    let(:category_stats) do 
+      {All: 10000, Images:99999}
+    end
+
+    let(:result) {JSON.parse(subject.call(search, category_stats)).deep_symbolize_keys}
 
     describe ':searchValue' do
       it 'contains the users search' do
         expect(result[:searchValue]).to eq('a users search')
+      end
+    end
+        # searchTabs: {
+        #   active_tab: search_category,
+        #   category_stats: category_count_formating(category_counts)
+        # },
+
+    describe ':searchCategory' do
+      it 'contains the active category that the user is searching with' do
+        expect(result[:searchTabs][:active_tab]).to eq('All')
+      end
+
+      it "contains the statistics of results in each category" do
+        expect(result[:searchTabs][:category_stats]).to include({:category=>"All", :count=>"10,000"})
+        expect(result[:searchTabs][:category_stats]).to include({:category=>"Images", :count=>"99,999"})
       end
     end
 
@@ -71,6 +97,18 @@ module Presenters
 
       it 'handles or params' do
         expect(result[:filters]).to include(facet: 'collection', value: 'TAPUHI')
+      end
+    end
+
+    describe ':category_count_formatting' do
+      it 'handles empty hash' do
+        search_results = SearchPageStore.new.send(:category_count_formatting, {})
+        expect(search_results).to eq([])
+      end
+
+      it 'handles a hash like' do
+        search_results = SearchPageStore.new.send(:category_count_formatting, {"All"=>2413461, "Images"=>1483736, "Audio"=>6549, "Videos"=>16438})
+        expect(search_results).to include({:category=>"All", :count=>"2,413,461"})
       end
     end
   end
