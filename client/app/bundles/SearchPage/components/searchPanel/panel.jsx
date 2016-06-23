@@ -86,7 +86,7 @@ export default class Panel extends Component {
     // This is very useful when passing props to a child component or in this case where I am passing an unknown
     // quantity of props
     const currentTabComponent = <currentTab.component {...currentTab.props} dispatch={dispatch} />;
-    const usage_tab_description = "Before copying or reusing any item founds on DigitalNZ, you need to check the terms of use and/or copyright on the item’s web page.";
+    const usage_tab_description = "<div className="tabs-description">  Before copying or reusing any item founds on DigitalNZ, you need to check the terms of use and/or copyright on the item’s web page.</div>";
     // Now that we have generated the tabs and the tab menus this stitches that together with the panel markup
     return (
       <div id="search_filter" className="filter-container menu content">
@@ -102,7 +102,7 @@ export default class Panel extends Component {
 
         <div className="tabs-content">
           {currentTabComponent}
-          { (currentTab.props.facet === 'usage') && <div className="tabs-description"> {usage_tab_description} </div> }
+          { (currentTab.props.facet === 'usage') && { usage_tab_description}  }
         </div>
       </div>
     );
