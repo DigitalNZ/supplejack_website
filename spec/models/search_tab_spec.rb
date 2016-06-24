@@ -87,7 +87,7 @@ RSpec.describe SearchTab do
     end
 
     it 'returns the correct sumup of all records belonging to dropdown menu' do 
-      expect(described_class.more_categories_sum(random_category_counts).values[0]).to eq 5081
+      expect(described_class.more_categories_sum(random_category_counts).values.first).to eq 5081
     end
   end
 

@@ -5,38 +5,35 @@
   
 */
 
-import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import classNames from 'classnames';
-import CategoryTab from './categoryTab';
+import React, {Component, PropTypes}  from 'react';
+import classNames                     from 'classnames';
+import CategoryTab                    from './categoryTab';
+import _                              from 'lodash';
 
 export default class DropDown extends Component {
-
   static propTypes = {
-    category_stats: PropTypes.arrayOf(
+    categoryStats: PropTypes.arrayOf(
                       PropTypes.shape({
                         category: PropTypes.string.isRequired,
                         count: PropTypes.string.isRequired
                       })
                     ).isRequired,
-    active_category: PropTypes.string.isRequired,
-    category_name: PropTypes.string.isRequired,
-    count: PropTypes.string.isRequired,
+    activeCategory: PropTypes.string.isRequired,
+    categoryName: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired,
   };
 
   selectedStatus(tab) {
     const { dropdownIsVisible } = this.state;
     return (!dropdownIsVisible) &&
-      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1
+      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1;
   }
 
   moreTitleCount(tab) {
     if(['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) > -1) {
       tab = 'More';
     }
-
-    let b = _.find(this.props.category_stats, {category: tab})
+    let b = _.find(this.props.categoryStats, {category: tab});
     return b.count;
   }
 
@@ -49,18 +46,15 @@ export default class DropDown extends Component {
       dropdownIsActive: false,
       dropdownIsVisible: false,
       menuStyle: {
-          position: 'absolute',
-          top: '0px',
-          left: '9999px'
-      },
-      category_stats: props.category_stats,
+        position: 'absolute',
+        top: '0px',
+        left: '9999px'
+      },      
+      categoryStats: props.categoryStats
     };
 
     // We should bind `this` to click event handler right here
-    this._hideDropdown = this._hideDropdown.bind(this);
-    this._toggleDropdown = this._toggleDropdown.bind(this);
-    this._stopPropagation = this._stopPropagation.bind(this);
-    this._adjustPosition = this._adjustPosition.bind(this);
+    _.bindAll(this, '_hideDropdown', '_toggleDropdown', '_stopPropagation', '_adjustPosition');
   }
 
   _adjustPosition() {
@@ -90,7 +84,7 @@ export default class DropDown extends Component {
 
 
   _toggleDropdown() {
-    const { dropdownIsVisible, dropdownIsActive } = this.state;
+    const { dropdownIsVisible } = this.state;
     this._adjustPosition();
     // Toggle dropdown block visibility
     this.setState({ dropdownIsVisible: !dropdownIsVisible });
@@ -117,32 +111,31 @@ export default class DropDown extends Component {
     // Clean up everything on blur
     this.setState({
       dropdownIsVisible: false,
-      dropdownIsActive: false,
+      dropdownIsActive: false
     });
   }
 
   getMenuName() {
-    const {category_name, active_category} = this.props;
-    if((typeof active_category != 'undefined') 
-      && ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(active_category) == -1)
-      return active_category;
+    const {categoryName, activeCategory} = this.props;
+    if((typeof activeCategory != 'undefined') 
+      && ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(activeCategory) == -1)
+      return activeCategory;
     else
-      return category_name;
+      return categoryName;
   }
 
   _renderDropdown() {
-    const dropdownId = this.props.id;
-    const {category_name, count, category_stats, active_category, dispatch} = this.props;
+    const {categoryStats, activeCategory, dispatch} = this.props;
     const { dropdownIsVisible } = this.state;
 
-    const tabClass = classNames({active: this.selectedStatus(active_category)});
-    const tabMenus = _.chain(category_stats)
+    const tabClass = classNames({active: this.selectedStatus(activeCategory)});
+    const tabMenus = _.chain(categoryStats)
                     .filter((e) => (e.category != 'More'))
                     .map((tab, index) => 
                           <CategoryTab 
-                            category_name={tab.category}
+                            categoryName={tab.category}
                             count={tab.count}
-                            active_category={active_category} 
+                            activeCategory={activeCategory} 
                             dispatch={dispatch} 
                             key={index}/>
                     ).value();
@@ -150,13 +143,13 @@ export default class DropDown extends Component {
     return (
               <li className={tabClass} id="more-dropdown-menu">
                     <a aria-controls="more-drop" aria-expanded="false" className="open"
-                      onFocus={::this._handleFocus}
-                      onBlur={::this._handleBlur}
-                      onClick={::this._stopPropagation}
+                      onFocus={this._handleFocus}
+                      onBlur={this._handleBlur}
+                      onClick={this._stopPropagation}
                       ref="more_dropdown_menu">
                         {this.getMenuName()}
                       <span className="count" >
-                        {this.moreTitleCount(active_category)}
+                        {this.moreTitleCount(activeCategory)}
                         <i className="fa fa-chevron-down"></i>
                       </span>
                      </a>
@@ -174,7 +167,7 @@ export default class DropDown extends Component {
   render() {
     return (
       <div className="dropdown">
-        {::this._renderDropdown()}
+        {this._renderDropdown()}
       </div>
     );
   }

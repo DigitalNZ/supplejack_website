@@ -4,10 +4,10 @@ import SearchTab from '../containers/SearchTab';
 import ReactRails from 'react-on-rails';
 
 export default () => {
-	const searchPageStore = ReactRails.getStore('searchPageStore')
-	return (
-	  <Provider store={searchPageStore}>
-	    <SearchTab/>
-	  </Provider>
-	);
+  const searchPageStore = ReactRails.getStore('searchPageStore');
+  return (
+    <Provider store={searchPageStore}>
+      <SearchTab/>
+    </Provider>
+  );
 };

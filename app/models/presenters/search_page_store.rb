@@ -40,8 +40,8 @@ module Presenters
           tab: 0
         },
         searchTabs: {
-          active_tab: search_category,
-          category_stats: category_count_formatting(category_counts)
+          activeTab: search_category,
+          categoryStats: category_count_formatting(category_counts)
         },
         searchValue: search.params[:text]
       }.to_json

@@ -11,7 +11,7 @@ export default function performSearch() {
 
     let baseQueryParams = {text: state.searchValue, i: {}, or: {}};
     const groupedFacets = _.groupBy(state.filters, 'facet');
-    const searchCategory = {tab: state.searchTabs.active_tab};
+    const searchCategory = {tab: state.searchTabs.activeTab};
 
     if(searchCategory.tab != 'All')
       _.assign(baseQueryParams, searchCategory);

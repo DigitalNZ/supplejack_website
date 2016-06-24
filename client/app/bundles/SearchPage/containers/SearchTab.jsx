@@ -1,20 +1,27 @@
 import React, { PropTypes } from 'react';
-import SearchTab from '../components/searchTab';
-import loadStateFromPage from '../actions/loadStateFromPage';
-import { connect } from 'react-redux';
+import SearchTab            from '../components/searchTab';
+import { connect }          from 'react-redux';
 
 function mapStateToProps(state) {
-  return { active_tab: state.searchTabs.active_tab, category_stats: state.searchTabs.category_stats, hydrated: state.hydrated };
+  return { activeTab: state.searchTabs.activeTab, categoryStats: state.searchTabs.categoryStats, hydrated: state.hydrated };
 }
 
 class SearchTabContainer extends React.Component {
-  componentDidMount() {
-    const { dispatch } = this.props;
+  static propTypes = {
+    categoryStats: PropTypes.arrayOf(
+                      PropTypes.shape({
+                        category: PropTypes.string.isRequired,
+                        count: PropTypes.string.isRequired,
+                      })
+                    ).isRequired,
+    activeTab: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    hydrated: PropTypes.bool.isRequired,
   }
 
   render() {
-    if(!this.props.hydrated) return null;
-    return <SearchTab {...this.props} />
+    if (!this.props.hydrated) return null;
+    return <SearchTab {...this.props} />;
   }
 }
 
