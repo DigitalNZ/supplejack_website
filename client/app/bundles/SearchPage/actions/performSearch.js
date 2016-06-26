@@ -8,8 +8,14 @@ export default function performSearch() {
     // This groups all the filters by what facet they belong to so we can
     // determine whether there are multiple for a facet to determine whether
     // they need to be an 'i' or 'or' parameter
+
+    let baseQueryParams = {text: state.searchValue, i: {}, or: {}};
     const groupedFacets = _.groupBy(state.filters, 'facet');
-    const baseQueryParams = {text: state.searchValue, i: {}, or: {}};
+    const searchCategory = {tab: state.searchTabs.activeTab};
+
+    if(searchCategory.tab != 'All')
+      _.assign(baseQueryParams, searchCategory);
+
     // This reduces the object of grouped facets, which looks like this
     // {content_partner: [{facet: 'content_partner', value: '95bFM'}] ...}
     // into the baseQueryParams object.
@@ -30,7 +36,6 @@ export default function performSearch() {
     // This uses the jquery param method to convert an object into properly
     // url encoded query parameters
     const newUrl = 'http://' + urlWithoutQueryParams + $.param(fullQueryParams);
-
     window.location.assign(newUrl);
   };
 }

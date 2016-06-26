@@ -31,15 +31,12 @@
 //
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
-//= require foundation
 //= require modernizr
 //= require lodash
 //= require main
-//= require records
 //= require add_to_set
 //= require jquery_set_csrf_for_ajax
 
 $(function() {
-  $(document).foundation();
-  addToSet.init();
+	addToSet.init();
 });

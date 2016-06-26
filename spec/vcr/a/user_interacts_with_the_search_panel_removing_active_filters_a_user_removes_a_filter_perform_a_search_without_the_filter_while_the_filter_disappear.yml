@@ -1,0 +1,2197 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&page=1&per_page=0&record_type=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jun 2016 02:48:28 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"8ccaccc12575a5179757351c6b15b002"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cd789a20-c4e8-4cf0-89d6-e6bef0ac105f
+      X-Runtime:
+      - '0.168006'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":2414408,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026page=1\u0026per_page=0\u0026record_type=0","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates",null],"start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"],"q":"*:*"},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":1433079,"Articles":233505,"Archives":176234,"Research
+        papers":141609,"Reference sources":140914,"Books":94019,"Newspapers":84264,"Other":64634,"Manuscripts":39010,"Videos":16460,"Data":9617,"Audio":6572,"Sets":4153,"Guides
+        \u0026 factsheets":1826,"Groups":314,"Article":110,"Archive":12,"Community
+        content":8}}}}'
+    http_version: 
+  recorded_at: Sat, 25 Jun 2016 02:48:28 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=content_partner,primary_collection,usage,decade&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&or%5Busage%5D%5B0%5D=Modify&page=1&per_page=20&record_type=0&text=wellington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jun 2016 02:48:28 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"bd9d7af41c8969863cb08e6653df2857"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c3698c66-77ef-4828-9c88-e2ad4e0bdd83
+      X-Runtime:
+      - '0.614676'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":27,"results":[{"id":35833426,"updated_at":"2016-05-31T16:32:26.609+12:00","created_at":"2015-12-02T00:46:31.811+13:00","title":"Soldiers
+        of a Wellington Regiment in France","description":"Soldiers of the Taranaki
+        Company? of a Wellington Regiment, 1st Brigade pose for a group portrait in
+        Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nInscriptions:
+        Photographer''s title on negative - bottom left: H376 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4.75
+        x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833426/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013010-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:478998","emu:478998","old_tap:1108442","1/2-013010-G","urn:nbn:nz:wtu:1/2-013010-G","iid:72173"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833426","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.478998","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833428,"updated_at":"2016-05-31T16:32:27.300+12:00","created_at":"2015-12-02T00:46:32.281+13:00","title":"Soldiers
+        of a Wellington Regiment pose in France","description":"Soldiers of the Wellington
+        West Coast Company?, Wellington Regiment, 1st Brigade pose for a group portrait
+        in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nInscriptions:
+        Photographer''s title on negative - bottom left: H380 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4.75
+        x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833428/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013014-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479001","emu:479001","old_tap:1108451","1/2-013014-G","urn:nbn:nz:wtu:1/2-013014-G","iid:72186"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833428","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479001","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833429,"updated_at":"2016-05-31T16:32:27.538+12:00","created_at":"2015-12-02T00:46:32.360+13:00","title":"Group
+        portrait of a Wellington Regiment in France","description":"Soldiers of the
+        Taranaki Company of a Wellington Regiment, 1st Brigade pose for a group portrait
+        in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nInscriptions:
+        Photographer''s title on negative - bottom left: H379 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4 x
+        5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833429/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013013-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:479002","emu:479002","old_tap:1108454","1/2-013013-G","urn:nbn:nz:wtu:1/2-013013-G","iid:72176"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833429","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479002","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833813,"updated_at":"2016-05-31T16:33:29.193+12:00","created_at":"2015-12-02T00:47:34.478+13:00","title":"Gas
+        mask inspection of a Wellington Regiment, France","description":"A line of
+        soldiers (from a Wellington Regiment) wearing gas masks await inspection near
+        Colincamps where New Zealand support lines were established during World War
+        I. Photograph taken 15 April 1918 Armytage Sanders. \nOther - An original
+        print from this negative is in album PA1-f-094 \nInscriptions: Photographer''s
+        title on negative - bottom left: H593 \nQuantity: 1 b\u0026w original negative(s).
+        \nPhysical Description: Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833813/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013202-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479386","emu:479386","old_tap:1109217","1/2-013202-G","urn:nbn:nz:wtu:1/2-013202-G","iid:73421"],"display_date":"15
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833813","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479386","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Gas masks","Military training","Colincamps"]},{"id":35833829,"updated_at":"2016-05-31T16:33:30.792+12:00","created_at":"2015-12-02T00:47:37.572+13:00","title":"Gas
+        mask inspection of a Wellington Regiment, France","description":"Soldiers
+        from a Wellington Regiment attend a gas mask inspection in the New Zealand
+        support line near Colincamps in World War I. Photograph taken 15 April 1918
+        Armytage Sanders. \nOther - An original print from this negative is in album
+        PA1-f-094 \nInscriptions: Photographer''s title on negative - bottom left:
+        H595 \nQuantity: 1 b\u0026w original negative(s). \nPhysical Description:
+        Dry plate glass negative 4.75 x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833829/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013204-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479402","emu:479402","old_tap:1109250","1/2-013204-G","urn:nbn:nz:wtu:1/2-013204-G","iid:73424"],"display_date":"15
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833829","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479402","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Gas masks","Military training","Colincamps"]},{"id":35833425,"updated_at":"2016-05-31T16:32:26.247+12:00","created_at":"2015-12-02T00:46:31.627+13:00","title":"Group
+        portrait of a company of a Wellington Regiment in France","description":"Soldiers
+        from a company of a Wellington Regiment, 1st Brigade pose for a group portrait
+        in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage Sanders.
+        \nAn original print from this negative is in album PA1-f-091 \nInscriptions:
+        Photographer''s title on negative - bottom left: H377 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4.75
+        x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833425/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013011-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:478999","emu:478999","old_tap:1108446","1/2-013011-G","urn:nbn:nz:wtu:1/2-013011-G","iid:72174"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833425","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.478999","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833427,"updated_at":"2016-05-31T16:32:27.038+12:00","created_at":"2015-12-02T00:46:32.126+13:00","title":"Soldiers
+        of Hawkes Bay Company, the Wellington Regiment in France","description":"Soldiers
+        of the Hawkes Bay Company of a Wellington Regiment, 1st Brigade pose for a
+        group portrait in Bayenghem, France. Photograph taken 8 November 1917 by Henry
+        Armytage Sanders. \nAn original print from this negative is in album PA1-f-091
+        \nInscriptions: Photographer''s title on negative - bottom right: H378 \nQuantity:
+        1 b\u0026w original negative(s). \nPhysical Description: Dry plate glass negative
+        4.75 x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833427/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013012-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479000","emu:479000","old_tap:1108449","1/2-013012-G","urn:nbn:nz:wtu:1/2-013012-G","iid:72175"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833427","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479000","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833430,"updated_at":"2016-05-31T16:32:27.867+12:00","created_at":"2015-12-02T00:46:32.456+13:00","title":"Soldiers
+        of a Wellington Regiment in France, World War I","description":"Soldiers of
+        a company of the Wellington Regiment, 1st Brigade beside their kit on the
+        ground in Bayenghem, France. Photograph taken 8 November 1917 by Henry Armytage
+        Sanders. \nAn original print from this negative is in album PA1-f-091 \nInscriptions:
+        Photographer''s title on negative - bottom left: H381 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4.75
+        x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1917-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833430/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013015-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479003","emu:479003","old_tap:1108458","1/2-013015-G","urn:nbn:nz:wtu:1/2-013015-G","iid:72187"],"display_date":"8
+        Nov 1917","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833430","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479003","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833656,"updated_at":"2016-05-31T16:33:04.693+12:00","created_at":"2015-12-02T00:47:06.112+13:00","title":"The
+        Commanding Officer of a Wellington Regiment in his headquarters, France","description":"The
+        CO of a Wellington Regiment sits in a tent; his headquarters at the front.
+        Photograph taken Beaussart 6 April 1918 by Henry Armytage Sanders. \nOther
+        - An original print from this negative is in album PA1-f-091 \nInscriptions:
+        Photographer''s title on negative - bottom left: H469 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4.75
+        x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833656/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013088-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479229","emu:479229","old_tap:1108895","1/2-013088-G","urn:nbn:nz:wtu:1/2-013088-G","iid:72648"],"display_date":"6
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833656","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479229","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Trench warfare","Battlefields","Armies","Officers","Beaussart"]},{"id":35836641,"updated_at":"2016-05-31T16:42:01.697+12:00","created_at":"2015-12-02T00:56:25.502+13:00","title":"Officers
+        of a Wellington Regiment in France, World War I","description":"A group of
+        officers from the Wellington Regiment talking on a wet road at Sailly-au-Bois,
+        France in World War I. All are helmeted and most wear overcoats. Photograph
+        taken 6 April 1918 by Henry Armytage Sanders. \nOther - An original print
+        from this negative is in album PA1-f-091\n\n\nCaption - \"The day went well
+        for us. Some officers of the Wellington Regiment. Sailly-au-Bois. 6.4.18\"
+        \nInscriptions: Photographer''s title on negative - bottom left: H489 \nQuantity:
+        1 b\u0026w original negative(s). \nPhysical Description: Dry plate glass negative
+        4.75 x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35836641/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013105-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:482223","emu:482223","old_tap:1116831","1/2-013105-G","urn:nbn:nz:wtu:1/2-013105-G","iid:72721"],"display_date":"6
+        Apr 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35836641","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.482223","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand","Armed
+        Forces","Officers"]},{"id":35835442,"updated_at":"2016-05-31T16:38:06.602+12:00","created_at":"2015-12-02T00:52:27.647+13:00","title":"Wellington
+        soldiers eating a meal in Solesmes, France, World War I","description":"Soldiers
+        from a Wellington Regiment sit eating a meal out of mess tins in the French
+        town of Solesmes during World War I. They use broken pieces of masonry as
+        seats and tables. Photograph taken 9 November 1918 by Henry Armytage Sanders.
+        \nOther - An original print from this negative is at album PA1-f-092.\n\n\nCaption
+        - \"Wellington boys at dinner.\" (Album) \nInscriptions: Photographer''s title
+        on negative - bottom right: H1106 \nIn contrast to the date (9 November) in
+        the official photograph albums, the history of the Wellington Regiment by
+        Cunningham, Treadwell, and Hanna (see page 392, paragraph two) recordes the
+        first two Wellington battalions leaving Villereau for Solesmes on the afternoon
+        of 10 November 1918. \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835442/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013663-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:481021","emu:481021","old_tap:1113605","1/2-013663-G","urn:nbn:nz:wtu:1/2-013663-G","iid:77662"],"display_date":"9
+        Nov 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835442","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.481021","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Military personnel, New Zealand","France","Military life","Campaigns","Solesmes"]},{"id":35835368,"updated_at":"2016-05-31T00:05:57.551+12:00","created_at":"2015-12-02T00:52:12.129+13:00","title":"A
+        company of a Wellington Regiment at Longsart, France, World War I","description":"A
+        group portrait of a company of a Wellington Regiment in France during World
+        War I. The men are sitting in rows on a bank. Photograph taken Longsart 14
+        October 1918 by Henry Armytage Sanders. \nAn original print from this negative
+        is in album PA1-f-092 \nInscriptions: Photographer''s title on negative -
+        bottom right: H1087 \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835368/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013650-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:480944","emu:480944","old_tap:1113295","1/2-013650-G","urn:nbn:nz:wtu:1/2-013650-G","iid:77055"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835368","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.480944","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35833184,"updated_at":"2016-05-31T16:31:37.374+12:00","created_at":"2015-12-02T00:45:56.000+13:00","title":"The
+        pioneers of a Wellington Regiment at work on the transport lines","description":"The
+        pioneers of a Wellington Regiment sawing timber to aid transport near the
+        front line during World War I.   Photograph taken Corin 27 July 1918 by Henry
+        Armytage Sanders. \nAn original print from this negative is in album PA1-f-094
+        \nInscriptions: Photographer''s title on negative - bottom right: H827 \nQuantity:
+        1 b\u0026w original negative(s). \nPhysical Description: Dry plate glass negative
+        4 x 5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35833184/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied  and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013410-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:478756","emu:478756","old_tap:1107747","1/2-013410-G","urn:nbn:nz:wtu:1/2-013410-G"],"display_date":"17
+        July 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35833184","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.478756","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35834194,"updated_at":"2016-05-31T16:34:28.893+12:00","created_at":"2015-12-02T00:48:49.583+13:00","title":"Prime
+        Minister William Massey inspecting a Wellington Regiment during World War
+        I, Louvencourt","description":"Prime Minister Massey inspecting a Wellington
+        Regiment in Louvencourt, France. Sir Joseph Ward stands behind him. Nearby
+        and partially obscured is the Regiment''s canine mascot Paddy. Photograph
+        taken 1 July 1918 by Henry Armytage Sanders. \nOther - An original print from
+        this negative is in album PA1-f-094. \nInscriptions: Photographer''s title
+        on negative - bottom right: H704 \nQuantity: 1 b\u0026w original negative(s).
+        \nPhysical Description: Dry plate glass negative 4.75  x 6.5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35834194/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013308-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75  x
+        6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:479766","emu:479766","old_tap:1110176","1/2-013308-G","urn:nbn:nz:wtu:1/2-013308-G","iid:73820"],"display_date":"1
+        Jul 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35834194","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.479766","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["Massey,
+        William Ferguson (Rt Hon), 1856-1925","Ward, Joseph George (Rt Hon Sir), 1856-1930","World
+        War, 1914-1918","Campaigns","France","Politicians","Prime ministers","Military
+        personnel, New Zealand","Armed Forces","Mascots","Dogs","Louvencourt"]},{"id":35834752,"updated_at":"2016-05-31T16:36:07.883+12:00","created_at":"2015-12-02T00:50:26.677+13:00","title":"Paddy,
+        the canine mascot of the Wellington Regiment, at a troop inspection, World
+        War I","description":"Paddy, wearing a coat with his name and sergeant''s
+        stripes on it, looks around at the inspection of a Wellington Regiment by
+        the Prime Minister William Massey in Vauchelles, France, during World War
+        I. Paddy, on a leash, stands next to his handler whose uniform includes shorts.
+        Photograph taken 30 June 1918 by Henry Armytage Sanders. \nOther - An original
+        print from this negative is in album PA1-f-094\n\n\nCaption - \"Paddy who
+        wears Sergeants stripes and a gold wounds stripe greatly interested the Prime
+        Minister during his inspection of a Wellington Regiment.\" (Album) \nInscriptions:
+        Photographer''s title on negative - bottom right: H708 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4.75
+        x 6.5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35834752/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013312-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4.75
+        x 6.5 inches","Orientation: Horizontal image"],"dc_identifier":["tap:480328","emu:480328","old_tap:1111635","1/2-013312-G","urn:nbn:nz:wtu:1/2-013312-G","iid:73830"],"display_date":"30
+        Jun 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35834752","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.480328","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military ceremonies, honours, and salutes","Armed
+        Forces","Mascots","Dogs"]},{"id":35834967,"updated_at":"2016-05-31T16:36:53.375+12:00","created_at":"2015-12-02T00:51:11.154+13:00","title":"A
+        Wellington Regiment waiting in a trench to enter Bapaume, World War I","description":"A
+        Wellington Regiment waiting in a trench, during the World War I Battle of
+        Bapaume, before entering the town. View from behind the soldiers looking across
+        a field towards Bapaume. Photograph taken 29 August 1918 by Henry Armytage
+        Sanders. \nAn original print from this negative is in album PA1-f-094 \nInscriptions:
+        Photographer''s title on negative - bottom left: H983 \nQuantity: 1 b\u0026w
+        original negative(s). \nPhysical Description: Dry plate glass negative 4 x
+        5 inches","content_partner":["Alexander Turnbull Library"],"category":["Images"],"creator":["Not
+        specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01 12:00:00
+        UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35834967/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013552-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:480543","emu:480543","old_tap:1112237","1/2-013552-G","urn:nbn:nz:wtu:1/2-013552-G","iid:75034"],"display_date":"29
+        Aug 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35834967","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.480543","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Battlefields","Military personnel, New
+        Zealand","Bapaume"]},{"id":35835365,"updated_at":"2016-05-31T16:37:57.386+12:00","created_at":"2015-12-02T00:52:11.562+13:00","title":"A
+        company of a Wellington Regiment at Longsart, France, World War I","description":"A
+        group portrait of a company of a Wellington Regiment in France during World
+        War I. The men are sitting in rows on a bank. Photograph taken Longsart 14
+        October 1918 by Henry Armytage Sanders. \nAn original print from this negative
+        is in album PA1-f-092 \nInscriptions: Photographer''s title on negative -
+        bottom right: H1084 \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835365/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013647-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:480942","emu:480942","old_tap:1113292","1/2-013647-G","urn:nbn:nz:wtu:1/2-013647-G","iid:77049"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835365","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.480942","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835375,"updated_at":"2016-05-31T16:37:58.644+12:00","created_at":"2015-12-02T00:52:13.080+13:00","title":"A
+        company of a Wellington Regiment in World War I at Longsart, France","description":"A
+        group portrait of a company of a Wellington Regiment in France during World
+        War I. The men are sitting in rows on a bank. Photograph taken Longsart 14
+        October 1918 by Henry Armytage Sanders. \nAn original print from this negative
+        is in album PA1-f-092 \nInscriptions: Photographer''s title on negative -
+        bottom right: H1103 \nQuantity: 1 b\u0026w original negative(s). \nPhysical
+        Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835375/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013661-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:480952","emu:480952","old_tap:1113343","1/2-013661-G","urn:nbn:nz:wtu:1/2-013661-G","iid:77421"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835375","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.480952","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835376,"updated_at":"2016-05-31T16:37:58.910+12:00","created_at":"2015-12-02T00:52:13.088+13:00","title":"A
+        company of a Wellington Regiment in World War I at Longsart, France","description":"A
+        group portrait of a company (not identified) of a Wellington Regiment in France
+        during World War I. The men are sitting in rows on a bank. Photograph taken
+        Longsart 14 October 1918 by Henry Armytage Sanders. \nAn original print from
+        this negative is in album PA1-f-092 \nInscriptions: Photographer''s title
+        on negative - bottom left: H1085 \nQuantity: 1 b\u0026w original negative(s).
+        \nPhysical Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835376/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013648-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:480953","emu:480953","old_tap:1113347","1/2-013648-G","urn:nbn:nz:wtu:1/2-013648-G","iid:77051"],"display_date":"14
+        Oct 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835376","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.480953","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Military personnel, New Zealand"]},{"id":35835788,"updated_at":"2016-05-31T16:39:00.532+12:00","created_at":"2015-12-02T00:53:40.731+13:00","title":"A
+        Wellington Regiment''s field kitchen near the front line, World War I","description":"General
+        view of a Wellington Regiment''s field kitchen close to the front line in
+        World War I. Shows a number of field cookers and soldiers working at a table.
+        Photograph taken at Grevillers, France, 24 August 1918 by Henry Armytage Sanders.
+        \nOther - An original print from this negative is in album PA1-f-094\n\n\nCaption
+        - \"A Wellington Regiment''s Field kitchens close up to the front line making
+        hot food for the boys.\" (Album) \nInscriptions: Photographer''s title on
+        negative - bottom left: H948 \nQuantity: 1 b\u0026w original negative(s).
+        \nPhysical Description: Dry plate glass negative 4 x 5 inches","content_partner":["Alexander
+        Turnbull Library"],"category":["Images"],"creator":["Not specified"],"dc_type":["Item"],"dnz_type":"Unknown","date":["1918-01-01
+        12:00:00 UTC"],"source_url":"http://api.dnz0a.digitalnz.org/records/35835788/source","collection":["TAPUHI","Photographic
+        Archive","Royal New Zealand Returned and Services'' Association :New Zealand
+        official negatives, World War 1914-1918","Royal New Zealand Returned and Services''
+        Association New Zealand official negatives, World War 1914-1918: H Series
+        negatives"],"alternate_title":[],"additional_description":[],"display_content_partner":"Alexander
+        Turnbull Library","collection_title":["TAPUHI","Photographic Archive","Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","Royal New Zealand Returned and Services'' Association
+        New Zealand official negatives, World War 1914-1918: H Series negatives"],"display_collection":"TAPUHI","primary_collection":["TAPUHI"],"contributing_partner":[],"contributor":[],"copyright":["No
+        known copyright restrictions"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":"No
+        known copyright restrictions. To the best of the Alexander Turnbull Library''s
+        knowledge, under New Zealand law: there is no copyright or other intellectual
+        property rights in this item in New Zealand; and it may be copied and otherwise
+        re-used in New Zealand without copyright or other intellectual property right
+        related restriction. However the Alexander Turnbull Library requests that
+        the images are used and re-used in a manner that respects their status as
+        documentary heritage and taonga. Alexander Turnbull Library will not be liable
+        to you, on any legal basis (including negligence), for any loss or damage
+        you suffer through your use of this material, except in those cases where
+        the law does not allow us to exclude or limit our liability to you.","usage":["Share","Modify","Use
+        commercially"],"source":[],"tag":["emu_parent_id:780038","emu_ead_level:3"],"thesis_level":null,"holding":[],"library_collection":["Photographic
+        Archive"],"shelf_location":"1/2-013518-G","eprints_type":[],"text":null,"fulltext":null,"format":["1
+        b\u0026w original negative(s)","Negatives","Dry plate glass negative 4 x 5
+        inches","Orientation: Horizontal image"],"dc_identifier":["tap:481368","emu:481368","old_tap:1114684","1/2-013518-G","urn:nbn:nz:wtu:1/2-013518-G","iid:74929"],"display_date":"24
+        Aug 1918","published_date":[],"syndication_date":null,"landing_url":"http://natlib.govt.nz/records/35835788","large_thumbnail_url":null,"rights_url":[],"thumbnail_url":"Unknown","origin_url":"http://tiaki.natlib.govt.nz/#details=ecatalogue.481368","metadata_url":null,"object_url":null,"has_version":[],"license":null,"relation":["Royal
+        New Zealand Returned and Services'' Association :New Zealand official negatives,
+        World War 1914-1918","PA-Group-00051","emu:131527"],"is_part_of":["emu:780038","Royal
+        New Zealand Returned and Services'' Association New Zealand official negatives,
+        World War 1914-1918: H Series negatives","PAColl-5311-3"],"is_replaced_by":null,"replaces":null,"is_required_by":null,"is_version_of":null,"table_of_contents":null,"is_commercial_use":null,"concept_ids":[],"source_contributor_name":[],"subject":["World
+        War, 1914-1918","Campaigns","France","Cooking for military personnel","Operational
+        rations (Military supplies)"]}],"per_page":20,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI\u0026api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=content_partner%2Cprimary_collection%2Cusage%2Cdecade\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026or%5Busage%5D%5B%5D=Modify\u0026page=1\u0026per_page=20\u0026record_type=0\u0026text=wellington","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates","primary_collection_sm:TAPUHI","usage_sm:(Modify)"],"q":"wellington","fl":"*
+        score","qf":"title_text description_text additional_description_text collection_text
+        attachment_name_text placename_text contributing_partner_text creator_text
+        contributor_text publisher_text fulltext_text text subject_text","defType":"edismax","start":0,"rows":20,"facet":"true","f.content_partner_sm.facet.limit":150,"f.content_partner_sm.facet.offset":0,"f.content_partner_sm.facet.mincount":1,"facet.field":["content_partner_sm","primary_collection_sm","usage_sm","decade_im"],"f.primary_collection_sm.facet.limit":150,"f.primary_collection_sm.facet.offset":0,"f.primary_collection_sm.facet.mincount":1,"f.usage_sm.facet.limit":150,"f.usage_sm.facet.offset":0,"f.usage_sm.facet.mincount":1,"f.decade_im.facet.limit":150,"f.decade_im.facet.offset":0,"f.decade_im.facet.mincount":1},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"content_partner":{"Alexander
+        Turnbull Library":27},"primary_collection":{"TAPUHI":27},"usage":{"Modify":27,"Share":27,"Use
+        commercially":27},"decade":{"1910":27}}}}'
+    http_version: 
+  recorded_at: Sat, 25 Jun 2016 02:48:29 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&or%5Busage%5D%5B0%5D=Modify&page=1&per_page=0&record_type=0&text=wellington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jun 2016 02:48:29 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"57f43c70250c8b5d4742c2f2d4f1f131"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 663f9df0-1164-4fab-b99c-0a2c5592e4f7
+      X-Runtime:
+      - '0.038860'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":27,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?and%5Bprimary_collection%5D=TAPUHI\u0026api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026or%5Busage%5D%5B%5D=Modify\u0026page=1\u0026per_page=0\u0026record_type=0\u0026text=wellington","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates","primary_collection_sm:TAPUHI","usage_sm:(Modify)"],"q":"wellington","fl":"*
+        score","qf":"title_text description_text additional_description_text collection_text
+        attachment_name_text placename_text contributing_partner_text creator_text
+        contributor_text publisher_text fulltext_text text subject_text","defType":"edismax","start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"]},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":27}}}}'
+    http_version: 
+  recorded_at: Sat, 25 Jun 2016 02:48:29 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&page=1&per_page=0&record_type=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jun 2016 02:48:31 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"8ccaccc12575a5179757351c6b15b002"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 683395f5-9a55-4c51-bf69-32be0d2bdaa4
+      X-Runtime:
+      - '0.082037'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":2414408,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026page=1\u0026per_page=0\u0026record_type=0","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates",null],"start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"],"q":"*:*"},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Images":1433079,"Articles":233505,"Archives":176234,"Research
+        papers":141609,"Reference sources":140914,"Books":94019,"Newspapers":84264,"Other":64634,"Manuscripts":39010,"Videos":16460,"Data":9617,"Audio":6572,"Sets":4153,"Guides
+        \u0026 factsheets":1826,"Groups":314,"Article":110,"Archive":12,"Community
+        content":8}}}}'
+    http_version: 
+  recorded_at: Sat, 25 Jun 2016 02:48:32 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?and%5Busage%5D=Modify&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=content_partner,primary_collection,usage,decade&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&page=1&per_page=20&record_type=0&text=wellington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jun 2016 02:48:32 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"9f4d8b273c59a62bad1e90fdc417ce95"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f3e57487-780f-4130-9c7d-eb137106c798
+      X-Runtime:
+      - '0.962128'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzZWFyY2giOnsicmVzdWx0X2NvdW50Ijo4MjUwMiwicmVzdWx0cyI6W3si
+        aWQiOjE5MTM0NywidXBkYXRlZF9hdCI6IjIwMTQtMDgtMDZUMTQ6MDQ6MzYu
+        NzI3KzEyOjAwIiwiY3JlYXRlZF9hdCI6IjIwMTItMDQtMjBUMTc6MjY6MjIu
+        MDAwKzEyOjAwIiwidGl0bGUiOiJXZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24i
+        OiJBbnkgdXNlIG9mIHRoaXMgaW1hZ2UgbXVzdCBiZSBhY2NvbXBhbmllZCBi
+        eSB0aGUgY3JlZGl0IFx1MDAyNiM4MjIwO0hvcm93aGVudWEgSGlzdG9yaWNh
+        bCBTb2NpZXR5IEluYy5cdTAwMjYjODIyMTsiLCJjb250ZW50X3BhcnRuZXIi
+        OlsiS2V0ZSBIb3Jvd2hlbnVhIl0sImNhdGVnb3J5IjpbIkltYWdlcyJdLCJj
+        cmVhdG9yIjpbIktldGUgSG9yb3doZW51YSJdLCJkY190eXBlIjpbXSwiZG56
+        X3R5cGUiOiJVbmtub3duIiwiZGF0ZSI6W10sInNvdXJjZV91cmwiOiJodHRw
+        Oi8vYXBpLmRuejBhLmRpZ2l0YWxuei5vcmcvcmVjb3Jkcy8xOTEzNDcvc291
+        cmNlIiwiY29sbGVjdGlvbiI6WyJLZXRlIEhvcm93aGVudWEiXSwiYWx0ZXJu
+        YXRlX3RpdGxlIjpbXSwiYWRkaXRpb25hbF9kZXNjcmlwdGlvbiI6W10sImRp
+        c3BsYXlfY29udGVudF9wYXJ0bmVyIjoiS2V0ZSBIb3Jvd2hlbnVhIiwiY29s
+        bGVjdGlvbl90aXRsZSI6WyJLZXRlIEhvcm93aGVudWEiXSwiZGlzcGxheV9j
+        b2xsZWN0aW9uIjoiS2V0ZSBIb3Jvd2hlbnVhIiwicHJpbWFyeV9jb2xsZWN0
+        aW9uIjpbIktldGUgSG9yb3doZW51YSJdLCJjb250cmlidXRpbmdfcGFydG5l
+        ciI6W10sImNvbnRyaWJ1dG9yIjpbXSwiY29weXJpZ2h0IjpbIlNvbWUgcmln
+        aHRzIHJlc2VydmVkIl0sImNpdGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3Ii
+        Om51bGwsImxhbmd1YWdlIjpbXSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlz
+        aGVyIjpbImhvcm93aGVudWEua2V0ZS5uZXQubnoiXSwicmlnaHRzIjoiaHR0
+        cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnktbmMtc2EvMy4w
+        L256LyIsInVzYWdlIjpbIlNoYXJlIiwiTW9kaWZ5Il0sInNvdXJjZSI6W10s
+        InRhZyI6W10sInRoZXNpc19sZXZlbCI6bnVsbCwiaG9sZGluZyI6W10sImxp
+        YnJhcnlfY29sbGVjdGlvbiI6W10sInNoZWxmX2xvY2F0aW9uIjpudWxsLCJl
+        cHJpbnRzX3R5cGUiOltdLCJ0ZXh0IjpudWxsLCJmdWxsdGV4dCI6bnVsbCwi
+        Zm9ybWF0IjpbImltYWdlL2pwZWciXSwiZGNfaWRlbnRpZmllciI6W10sImRp
+        c3BsYXlfZGF0ZSI6IlVua25vd24iLCJwdWJsaXNoZWRfZGF0ZSI6W10sInN5
+        bmRpY2F0aW9uX2RhdGUiOiIyMDEzLTAzLTI1VDE0OjM0OjMzLjA1NSsxMzow
+        MCIsImxhbmRpbmdfdXJsIjoiaHR0cDovL2hvcm93aGVudWEua2V0ZS5uZXQu
+        bnovc2l0ZS9pbWFnZXMvc2hvdy82ODY0LXdlbGxpbmd0b24iLCJsYXJnZV90
+        aHVtYm5haWxfdXJsIjoiaHR0cDovL2hvcm93aGVudWEua2V0ZS5uZXQubnov
+        aW1hZ2VfZmlsZXMvMzQyNTIvMjAwMi4wMDcuMDA1d19sYXJnZS5qcGciLCJy
+        aWdodHNfdXJsIjpbImh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vu
+        c2VzL2J5LW5jLXNhLzMuMC9uei8iXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6
+        Ly9ob3Jvd2hlbnVhLmtldGUubmV0Lm56L2ltYWdlX2ZpbGVzLzM0MjUyLzIw
+        MDIuMDA3LjAwNXdfbWVkaXVtLmpwZyIsIm9yaWdpbl91cmwiOm51bGwsIm1l
+        dGFkYXRhX3VybCI6bnVsbCwib2JqZWN0X3VybCI6Imh0dHA6Ly9ob3Jvd2hl
+        bnVhLmtldGUubmV0Lm56L2ltYWdlX2ZpbGVzLzM0MjUyLzIwMDIuMDA3LjAw
+        NXcuanBnIiwiaGFzX3ZlcnNpb24iOltdLCJsaWNlbnNlIjpudWxsLCJyZWxh
+        dGlvbiI6WyJodHRwOi8vaG9yb3doZW51YS5rZXRlLm5ldC5uei9zaXRlL3Rv
+        cGljcy9zaG93LzI0NSJdLCJpc19wYXJ0X29mIjpbXSwiaXNfcmVwbGFjZWRf
+        YnkiOm51bGwsInJlcGxhY2VzIjpudWxsLCJpc19yZXF1aXJlZF9ieSI6bnVs
+        bCwiaXNfdmVyc2lvbl9vZiI6bnVsbCwidGFibGVfb2ZfY29udGVudHMiOm51
+        bGwsImlzX2NvbW1lcmNpYWxfdXNlIjp0cnVlLCJjb25jZXB0X2lkcyI6W10s
+        InNvdXJjZV9jb250cmlidXRvcl9uYW1lIjpbXSwic3ViamVjdCI6WyJLaW5n
+        c2J1cnkgQ29sbGVjdGlvbiJdfSx7ImlkIjozMjQ2Mzg1MiwidXBkYXRlZF9h
+        dCI6IjIwMTQtMTAtMTRUMDE6MDI6MzMuMjA0KzEzOjAwIiwiY3JlYXRlZF9h
+        dCI6IjIwMTMtMTEtMDhUMTA6NTg6MTYuNTE0KzEzOjAwIiwidGl0bGUiOiJX
+        ZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOiJBIHN0ZXJlb3Njb3BlIHBob3Rv
+        Z3JhcGggb2YgdGhlIGludGVyc2VjdGlvbiBvZiBNYW5uZXJzIGFuZCBXaWxs
+        aXMgU3RyZWV0cyBpbiBXZWxsaW5ndG9uLCB0YWtlbiBjaXJjYSAxODU4LiBO
+        b3RlIHRoZSB2YXN0IGVtcHR5IGFyZWEgb24gdGhlIG5vcnRoIHNpZGUgb2Yg
+        TWFubmVycyBTdHJlZXQuIEV2YW4ncyB0aGUgc2FkZGxlciBoYXMgYSBzaG9w
+        IGluIHRoZSBmb3JlZ3JvdW5kLiBQaG90b2dyYXBoZXI6IEdlb3JnZSBEYWxy
+        eW1wbGUgTW9udGVpdGguIiwiY29udGVudF9wYXJ0bmVyIjpbIk1URyBIYXdr
+        ZSdzIEJheSJdLCJjYXRlZ29yeSI6WyJJbWFnZXMiXSwiY3JlYXRvciI6WyJH
+        ZW9yZ2UgRGFscnltcGxlIE1vbnRlaXRoIl0sImRjX3R5cGUiOltdLCJkbnpf
+        dHlwZSI6IlVua25vd24iLCJkYXRlIjpbIjE4NTgtMDEtMDEgMTI6MDA6MDAg
+        VVRDIl0sInNvdXJjZV91cmwiOiJodHRwOi8vYXBpLmRuejBhLmRpZ2l0YWxu
+        ei5vcmcvcmVjb3Jkcy8zMjQ2Mzg1Mi9zb3VyY2UiLCJjb2xsZWN0aW9uIjpb
+        XSwiYWx0ZXJuYXRlX3RpdGxlIjpbXSwiYWRkaXRpb25hbF9kZXNjcmlwdGlv
+        biI6W10sImRpc3BsYXlfY29udGVudF9wYXJ0bmVyIjoiTVRHIEhhd2tlJ3Mg
+        QmF5IiwiY29sbGVjdGlvbl90aXRsZSI6W10sImRpc3BsYXlfY29sbGVjdGlv
+        biI6Ik1URyBIYXdrZSdzIEJheSIsInByaW1hcnlfY29sbGVjdGlvbiI6WyJN
+        VEcgSGF3a2UncyBCYXkiXSwiY29udHJpYnV0aW5nX3BhcnRuZXIiOltdLCJj
+        b250cmlidXRvciI6W10sImNvcHlyaWdodCI6WyJTb21lIHJpZ2h0cyByZXNl
+        cnZlZCJdLCJjaXRhdGlvbiI6W10sImNyZWRpdF9jcmVhdG9yIjpudWxsLCJs
+        YW5ndWFnZSI6W10sInByb3ZlbmFuY2UiOm51bGwsInB1Ymxpc2hlciI6W10s
+        InJpZ2h0cyI6Ik91dCBvZiBjb3B5cmlnaHQiLCJ1c2FnZSI6WyJTaGFyZSIs
+        Ik1vZGlmeSJdLCJzb3VyY2UiOltdLCJ0YWciOltdLCJ0aGVzaXNfbGV2ZWwi
+        Om51bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5X2NvbGxlY3Rpb24iOltdLCJz
+        aGVsZl9sb2NhdGlvbiI6bnVsbCwiZXByaW50c190eXBlIjpbXSwidGV4dCI6
+        bnVsbCwiZnVsbHRleHQiOm51bGwsImZvcm1hdCI6WyJQaG90b2dyYXBocywg
+        UGFwZXIgUHJvZHVjdHMsIE1hbi1tYWRlIE1hdGVyaWFscyIsIkNhcmQsIFBh
+        cGVyIFByb2R1Y3RzLCBNYW4tbWFkZSBNYXRlcmlhbHMiXSwiZGNfaWRlbnRp
+        ZmllciI6WyIzNjU2MyJdLCJkaXNwbGF5X2RhdGUiOiJDaXJjYSAxODU4Iiwi
+        cHVibGlzaGVkX2RhdGUiOltdLCJzeW5kaWNhdGlvbl9kYXRlIjoiMjAxMy0x
+        MS0xOFQxNzo1MTozNi40MzQrMTM6MDAiLCJsYW5kaW5nX3VybCI6Imh0dHA6
+        Ly9jb2xsZWN0aW9uLm10Z2hhd2tlc2JheS5jb20vc2VhcmNoLmRvP2RiPW9i
+        amVjdFx1MDAyNnBhZ2U9MVx1MDAyNnZpZXc9ZGV0YWlsXHUwMDI2aWQ9MzY1
+        NjMiLCJsYXJnZV90aHVtYm5haWxfdXJsIjoiaHR0cDovL2NvbGxlY3Rpb24u
+        bXRnaGF3a2VzYmF5LmNvbS9pbWFnZXMvZGlzcGxheS8xMTczOS5qcGciLCJy
+        aWdodHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0
+        aW9uLm10Z2hhd2tlc2JheS5jb20vaW1hZ2VzL3RodW1icy8xMTczOS5qcGci
+        LCJvcmlnaW5fdXJsIjpudWxsLCJtZXRhZGF0YV91cmwiOm51bGwsIm9iamVj
+        dF91cmwiOm51bGwsImhhc192ZXJzaW9uIjpbXSwibGljZW5zZSI6bnVsbCwi
+        cmVsYXRpb24iOltdLCJpc19wYXJ0X29mIjpbXSwiaXNfcmVwbGFjZWRfYnki
+        Om51bGwsInJlcGxhY2VzIjpudWxsLCJpc19yZXF1aXJlZF9ieSI6bnVsbCwi
+        aXNfdmVyc2lvbl9vZiI6bnVsbCwidGFibGVfb2ZfY29udGVudHMiOm51bGws
+        ImlzX2NvbW1lcmNpYWxfdXNlIjpudWxsLCJjb25jZXB0X2lkcyI6W10sInNv
+        dXJjZV9jb250cmlidXRvcl9uYW1lIjpbXSwic3ViamVjdCI6W119LHsiaWQi
+        OjMyOTc4NjQ4LCJ1cGRhdGVkX2F0IjoiMjAxNC0wOS0xNFQwNDo0Njo1NS4z
+        MjMrMTI6MDAiLCJjcmVhdGVkX2F0IjoiMjAxNC0wMS0xM1QxOTo0MjowMy41
+        MDgrMTM6MDAiLCJ0aXRsZSI6IldlbGxpbmd0b24iLCJkZXNjcmlwdGlvbiI6
+        IlZpZXcgb2YgV2VsbGluZ3RvbiwgcG9zc2libHkgdGFrZW4gaW4gdGhlIDE4
+        NjBzLiBTdCBNYXJ5J3MgQ2F0aGVkcmFsIG9uIEhpbGwgU3RyZWV0LCBUaG9y
+        bmRvbiwgaXMgdmlzaWJsZSBvbiB0aGUgbGVmdCBzaWRlIG9mIHRoZSBwaG90
+        b2dyYXBoLiBUaGUgUGFybGlhbWVudCBCdWlsZGluZ3MgYXJlIGxvY2F0ZWQg
+        aW4gdGhlIGNlbnRyZSBvZiB0aGUgaW1hZ2UuIEZyb20gYW4gYWxidW0gdGl0
+        bGVkOiBBIE5ldyBaZWFsYW5kIFNvdXZlbmlyLiBQaG90b2dyYXBoZXIsIEpv
+        aG4gVGVuc2ZlbGQuIiwiY29udGVudF9wYXJ0bmVyIjpbIk1URyBIYXdrZSdz
+        IEJheSJdLCJjYXRlZ29yeSI6WyJJbWFnZXMiXSwiY3JlYXRvciI6WyJKb2hu
+        IFRlbnNmZWxkIl0sImRjX3R5cGUiOltdLCJkbnpfdHlwZSI6IlVua25vd24i
+        LCJkYXRlIjpbXSwic291cmNlX3VybCI6Imh0dHA6Ly9hcGkuZG56MGEuZGln
+        aXRhbG56Lm9yZy9yZWNvcmRzLzMyOTc4NjQ4L3NvdXJjZSIsImNvbGxlY3Rp
+        b24iOltdLCJhbHRlcm5hdGVfdGl0bGUiOltdLCJhZGRpdGlvbmFsX2Rlc2Ny
+        aXB0aW9uIjpbXSwiZGlzcGxheV9jb250ZW50X3BhcnRuZXIiOiJNVEcgSGF3
+        a2UncyBCYXkiLCJjb2xsZWN0aW9uX3RpdGxlIjpbXSwiZGlzcGxheV9jb2xs
+        ZWN0aW9uIjoiTVRHIEhhd2tlJ3MgQmF5IiwicHJpbWFyeV9jb2xsZWN0aW9u
+        IjpbIk1URyBIYXdrZSdzIEJheSJdLCJjb250cmlidXRpbmdfcGFydG5lciI6
+        W10sImNvbnRyaWJ1dG9yIjpbXSwiY29weXJpZ2h0IjpbIlNvbWUgcmlnaHRz
+        IHJlc2VydmVkIl0sImNpdGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51
+        bGwsImxhbmd1YWdlIjpbXSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlzaGVy
+        IjpbXSwicmlnaHRzIjoiT3V0IG9mIGNvcHlyaWdodCIsInVzYWdlIjpbIlNo
+        YXJlIiwiTW9kaWZ5Il0sInNvdXJjZSI6W10sInRhZyI6W10sInRoZXNpc19s
+        ZXZlbCI6bnVsbCwiaG9sZGluZyI6W10sImxpYnJhcnlfY29sbGVjdGlvbiI6
+        W10sInNoZWxmX2xvY2F0aW9uIjpudWxsLCJlcHJpbnRzX3R5cGUiOltdLCJ0
+        ZXh0IjpudWxsLCJmdWxsdGV4dCI6bnVsbCwiZm9ybWF0IjpbIlBob3RvZ3Jh
+        cGhzLCBQYXBlciBQcm9kdWN0cywgTWFuLW1hZGUgTWF0ZXJpYWxzIiwiQ2Fy
+        ZCwgUGFwZXIgUHJvZHVjdHMsIE1hbi1tYWRlIE1hdGVyaWFscyJdLCJkY19p
+        ZGVudGlmaWVyIjpbIjU1NDI0Il0sImRpc3BsYXlfZGF0ZSI6IlVua25vd24i
+        LCJwdWJsaXNoZWRfZGF0ZSI6W10sInN5bmRpY2F0aW9uX2RhdGUiOiIyMDE0
+        LTAxLTEzVDIzOjMxOjUwLjcwNisxMzowMCIsImxhbmRpbmdfdXJsIjoiaHR0
+        cDovL2NvbGxlY3Rpb24ubXRnaGF3a2VzYmF5LmNvbS9zZWFyY2guZG8/ZGI9
+        b2JqZWN0XHUwMDI2cGFnZT0xXHUwMDI2dmlldz1kZXRhaWxcdTAwMjZpZD01
+        NTQyNCIsImxhcmdlX3RodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlv
+        bi5tdGdoYXdrZXNiYXkuY29tL2ltYWdlcy9kaXNwbGF5LzI3NS5qcGciLCJy
+        aWdodHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0
+        aW9uLm10Z2hhd2tlc2JheS5jb20vaW1hZ2VzL3RodW1icy8yNzUuanBnIiwi
+        b3JpZ2luX3VybCI6bnVsbCwibWV0YWRhdGFfdXJsIjpudWxsLCJvYmplY3Rf
+        dXJsIjpudWxsLCJoYXNfdmVyc2lvbiI6W10sImxpY2Vuc2UiOm51bGwsInJl
+        bGF0aW9uIjpbXSwiaXNfcGFydF9vZiI6W10sImlzX3JlcGxhY2VkX2J5Ijpu
+        dWxsLCJyZXBsYWNlcyI6bnVsbCwiaXNfcmVxdWlyZWRfYnkiOm51bGwsImlz
+        X3ZlcnNpb25fb2YiOm51bGwsInRhYmxlX29mX2NvbnRlbnRzIjpudWxsLCJp
+        c19jb21tZXJjaWFsX3VzZSI6bnVsbCwiY29uY2VwdF9pZHMiOltdLCJzb3Vy
+        Y2VfY29udHJpYnV0b3JfbmFtZSI6W10sInN1YmplY3QiOlsiU3QgTWFyeSdz
+        IENhdGhlZHJhbCJdfSx7ImlkIjozNDg5NTQ4OSwidXBkYXRlZF9hdCI6IjIw
+        MTQtMDktMDJUMTY6MTM6NTAuNzQ4KzEyOjAwIiwiY3JlYXRlZF9hdCI6IjIw
+        MTQtMDctMTRUMDk6NDk6NTMuMzY4KzEyOjAwIiwidGl0bGUiOiJXZWxsaW5n
+        dG9uIiwiZGVzY3JpcHRpb24iOiJTaG93cyBzb21lIG9mIHRoZSBjaGlsZHJl
+        biBvZiBKYW1lcyBhbmQgTWFyeSBTdHVja2V5IGluIFdlbGxpbmd0b24sIGJl
+        Zm9yZSB0aGUgZmFtaWx5J3MgZGVwYXJ0dXJlIGZyb20gTmV3IFplYWxhbmQu
+        IFRoZSBleGFjdCBsb2NhdGlvbiBpbiBXZWxsaW5ndG9uIGlzIHVua25vd24u
+        IiwiY29udGVudF9wYXJ0bmVyIjpbIldhaXJhcmFwYSBBcmNoaXZlIl0sImNh
+        dGVnb3J5IjpbIkltYWdlcyJdLCJjcmVhdG9yIjpbXSwiZGNfdHlwZSI6WyJT
+        dGlsbEltYWdlIl0sImRuel90eXBlIjoiVW5rbm93biIsImRhdGUiOlsiMTkw
+        Ny0wMS0wMVQxMjowMDowMFoiXSwic291cmNlX3VybCI6Imh0dHA6Ly9hcGku
+        ZG56MGEuZGlnaXRhbG56Lm9yZy9yZWNvcmRzLzM0ODk1NDg5L3NvdXJjZSIs
+        ImNvbGxlY3Rpb24iOlsiUGljdHVyZSBXYWlyYXJhcGEiLCJNYXRhcGloaSJd
+        LCJhbHRlcm5hdGVfdGl0bGUiOltdLCJhZGRpdGlvbmFsX2Rlc2NyaXB0aW9u
+        IjpbXSwiZGlzcGxheV9jb250ZW50X3BhcnRuZXIiOiJXYWlyYXJhcGEgQXJj
+        aGl2ZSIsImNvbGxlY3Rpb25fdGl0bGUiOlsiUGljdHVyZSBXYWlyYXJhcGEi
+        LCJNYXRhcGloaSJdLCJkaXNwbGF5X2NvbGxlY3Rpb24iOiJQaWN0dXJlIFdh
+        aXJhcmFwYSIsInByaW1hcnlfY29sbGVjdGlvbiI6WyJQaWN0dXJlIFdhaXJh
+        cmFwYSJdLCJjb250cmlidXRpbmdfcGFydG5lciI6W10sImNvbnRyaWJ1dG9y
+        IjpbXSwiY29weXJpZ2h0IjpbIlNvbWUgcmlnaHRzIHJlc2VydmVkIl0sImNp
+        dGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51bGwsImxhbmd1YWdlIjpb
+        XSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlzaGVyIjpbXSwicmlnaHRzIjoi
+        aHR0cDovL21hc3RlcnRvbi5zcHlkdXMuY28ubnovY2dpLWJpbi9zcHlkdXMu
+        ZXhlL01TR1RSTi9PUEFDL0JTRUFSQ0hfUElDP0hPTUVQUk1TPVBJQ1FVSUNL
+        UEFSQU1TIiwidXNhZ2UiOlsiU2hhcmUiLCJNb2RpZnkiLCJVc2UgY29tbWVy
+        Y2lhbGx5Il0sInNvdXJjZSI6W10sInRhZyI6WyJNYXRhcGloaSJdLCJ0aGVz
+        aXNfbGV2ZWwiOm51bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5X2NvbGxlY3Rp
+        b24iOltdLCJzaGVsZl9sb2NhdGlvbiI6bnVsbCwiZXByaW50c190eXBlIjpb
+        XSwidGV4dCI6bnVsbCwiZnVsbHRleHQiOm51bGwsImZvcm1hdCI6WyIxIGRp
+        Z2l0YWwgaW1hZ2VzIl0sImRjX2lkZW50aWZpZXIiOltdLCJkaXNwbGF5X2Rh
+        dGUiOiIxOTA3IiwicHVibGlzaGVkX2RhdGUiOltdLCJzeW5kaWNhdGlvbl9k
+        YXRlIjoiMjAxNC0wOC0yOVQxNToyODozMC40OTgrMTI6MDAiLCJsYW5kaW5n
+        X3VybCI6Imh0dHA6Ly9tYXN0ZXJ0b24uc3B5ZHVzLmNvLm56L2NnaS1iaW4v
+        c3B5ZHVzLmV4ZS9FTlEvT1BBQy9BUkNFTlE/Uk5JPTk3MTU1MCIsImxhcmdl
+        X3RodW1ibmFpbF91cmwiOiJodHRwOi8vbGlicmFyeS50ZWNocy5jby5uei9w
+        aWN0dXJld2FpcmFyYXBhLzEzLTAxOC0wMjMuanBnIiwicmlnaHRzX3VybCI6
+        W10sInRodW1ibmFpbF91cmwiOiJodHRwOi8vbGlicmFyeS50ZWNocy5jby5u
+        ei9waWN0dXJld2FpcmFyYXBhLzEzLTAxOC0wMjN0LmpwZyIsIm9yaWdpbl91
+        cmwiOm51bGwsIm1ldGFkYXRhX3VybCI6bnVsbCwib2JqZWN0X3VybCI6bnVs
+        bCwiaGFzX3ZlcnNpb24iOltdLCJsaWNlbnNlIjpudWxsLCJyZWxhdGlvbiI6
+        W10sImlzX3BhcnRfb2YiOltdLCJpc19yZXBsYWNlZF9ieSI6bnVsbCwicmVw
+        bGFjZXMiOm51bGwsImlzX3JlcXVpcmVkX2J5IjpudWxsLCJpc192ZXJzaW9u
+        X29mIjpudWxsLCJ0YWJsZV9vZl9jb250ZW50cyI6bnVsbCwiaXNfY29tbWVy
+        Y2lhbF91c2UiOm51bGwsImNvbmNlcHRfaWRzIjpbXSwic291cmNlX2NvbnRy
+        aWJ1dG9yX25hbWUiOltdLCJzdWJqZWN0IjpbIlN0dWNrZXkgZmFtaWx5Il19
+        LHsiaWQiOjMyNDYzODQzLCJ1cGRhdGVkX2F0IjoiMjAxNC0xMC0xNFQwMTow
+        MjoyNS4wNDgrMTM6MDAiLCJjcmVhdGVkX2F0IjoiMjAxMy0xMS0wOFQxMDo1
+        ODowNy4zNjkrMTM6MDAiLCJ0aXRsZSI6IldlbGxpbmd0b24iLCJkZXNjcmlw
+        dGlvbiI6IkEgc3RlcmVvc2NvcGUgcGhvdG9ncmFwaCBvZiBhIHZpZXcgZnJv
+        bSB0aGUgdXBzdGFpcnMgd2luZG93IG9mIE1vbnRlaXRoJ3MgaG9tZSBpbiBE
+        aXhvbiBTdHJlZXQsIFdlbGxpbmd0b24uIE5vdGUgdGhlIGJsdXJyeSBuYXR1
+        cmUgb2YgdGhlIGJ1c2ggYmVzaWRlIHRoZSBnYXRlLCBhbiBpbmRpY2F0aW9u
+        IHRoYXQgdGhlIHBob3RvZ3JhcGggd2FzIHRha2VuIG9uIGEgd2luZHkgZGF5
+        LiBUaGUgcGhvdG9ncmFwaCB3YXMgbGlrZWx5IHRha2VuIGluIHRoZSAxODUw
+        cy4gUGhvdG9ncmFwaGVyOiBHZW9yZ2UgRGFscnltcGxlIE1vbnRlaXRoIiwi
+        Y29udGVudF9wYXJ0bmVyIjpbIk1URyBIYXdrZSdzIEJheSJdLCJjYXRlZ29y
+        eSI6WyJJbWFnZXMiXSwiY3JlYXRvciI6WyJHZW9yZ2UgRGFscnltcGxlIE1v
+        bnRlaXRoIl0sImRjX3R5cGUiOltdLCJkbnpfdHlwZSI6IlVua25vd24iLCJk
+        YXRlIjpbXSwic291cmNlX3VybCI6Imh0dHA6Ly9hcGkuZG56MGEuZGlnaXRh
+        bG56Lm9yZy9yZWNvcmRzLzMyNDYzODQzL3NvdXJjZSIsImNvbGxlY3Rpb24i
+        OltdLCJhbHRlcm5hdGVfdGl0bGUiOltdLCJhZGRpdGlvbmFsX2Rlc2NyaXB0
+        aW9uIjpbXSwiZGlzcGxheV9jb250ZW50X3BhcnRuZXIiOiJNVEcgSGF3a2Un
+        cyBCYXkiLCJjb2xsZWN0aW9uX3RpdGxlIjpbXSwiZGlzcGxheV9jb2xsZWN0
+        aW9uIjoiTVRHIEhhd2tlJ3MgQmF5IiwicHJpbWFyeV9jb2xsZWN0aW9uIjpb
+        Ik1URyBIYXdrZSdzIEJheSJdLCJjb250cmlidXRpbmdfcGFydG5lciI6W10s
+        ImNvbnRyaWJ1dG9yIjpbXSwiY29weXJpZ2h0IjpbIlNvbWUgcmlnaHRzIHJl
+        c2VydmVkIl0sImNpdGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51bGws
+        Imxhbmd1YWdlIjpbXSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlzaGVyIjpb
+        XSwicmlnaHRzIjoiT3V0IG9mIGNvcHlyaWdodCIsInVzYWdlIjpbIlNoYXJl
+        IiwiTW9kaWZ5Il0sInNvdXJjZSI6W10sInRhZyI6W10sInRoZXNpc19sZXZl
+        bCI6bnVsbCwiaG9sZGluZyI6W10sImxpYnJhcnlfY29sbGVjdGlvbiI6W10s
+        InNoZWxmX2xvY2F0aW9uIjpudWxsLCJlcHJpbnRzX3R5cGUiOltdLCJ0ZXh0
+        IjpudWxsLCJmdWxsdGV4dCI6bnVsbCwiZm9ybWF0IjpbIlBob3RvZ3JhcGhz
+        LCBQYXBlciBQcm9kdWN0cywgTWFuLW1hZGUgTWF0ZXJpYWxzIiwiQ2FyZCwg
+        UGFwZXIgUHJvZHVjdHMsIE1hbi1tYWRlIE1hdGVyaWFscyJdLCJkY19pZGVu
+        dGlmaWVyIjpbIjM2NTU0Il0sImRpc3BsYXlfZGF0ZSI6IlVua25vd24iLCJw
+        dWJsaXNoZWRfZGF0ZSI6W10sInN5bmRpY2F0aW9uX2RhdGUiOiIyMDEzLTEx
+        LTE4VDE3OjUxOjI2LjcyNSsxMzowMCIsImxhbmRpbmdfdXJsIjoiaHR0cDov
+        L2NvbGxlY3Rpb24ubXRnaGF3a2VzYmF5LmNvbS9zZWFyY2guZG8/ZGI9b2Jq
+        ZWN0XHUwMDI2cGFnZT0xXHUwMDI2dmlldz1kZXRhaWxcdTAwMjZpZD0zNjU1
+        NCIsImxhcmdlX3RodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbi5t
+        dGdoYXdrZXNiYXkuY29tL2ltYWdlcy9kaXNwbGF5LzE0ODUzLmpwZyIsInJp
+        Z2h0c191cmwiOltdLCJ0aHVtYm5haWxfdXJsIjoiaHR0cDovL2NvbGxlY3Rp
+        b24ubXRnaGF3a2VzYmF5LmNvbS9pbWFnZXMvdGh1bWJzLzE0ODUzLmpwZyIs
+        Im9yaWdpbl91cmwiOm51bGwsIm1ldGFkYXRhX3VybCI6bnVsbCwib2JqZWN0
+        X3VybCI6bnVsbCwiaGFzX3ZlcnNpb24iOltdLCJsaWNlbnNlIjpudWxsLCJy
+        ZWxhdGlvbiI6W10sImlzX3BhcnRfb2YiOltdLCJpc19yZXBsYWNlZF9ieSI6
+        bnVsbCwicmVwbGFjZXMiOm51bGwsImlzX3JlcXVpcmVkX2J5IjpudWxsLCJp
+        c192ZXJzaW9uX29mIjpudWxsLCJ0YWJsZV9vZl9jb250ZW50cyI6bnVsbCwi
+        aXNfY29tbWVyY2lhbF91c2UiOm51bGwsImNvbmNlcHRfaWRzIjpbXSwic291
+        cmNlX2NvbnRyaWJ1dG9yX25hbWUiOltdLCJzdWJqZWN0IjpbXX0seyJpZCI6
+        MzE5MzY3NTMsInVwZGF0ZWRfYXQiOiIyMDE1LTA5LTIyVDA5OjU3OjUyLjUy
+        OSsxMjowMCIsImNyZWF0ZWRfYXQiOiIyMDEzLTA0LTMwVDA2OjEwOjI1Ljg4
+        MysxMjowMCIsInRpdGxlIjoiV2VsbGluZ3RvbiIsImRlc2NyaXB0aW9uIjoi
+        V2VsbGluZ3RvbiwgTmV3IFplYWxhbmTigJlzIGNhcGl0YWwsIGlzIGEgaGFy
+        Ym91ciBjaXR5LCBzdXJyb3VuZGVkIGJ5IGhpbGxzLiBUaGUgZG93bnRvd24g
+        YXJlYSBoYXMgZ292ZXJubWVudCBhbmQgY29ycG9yYXRlIG9mZmljZXMsIHdo
+        aWxlIG90aGVyIHBhcnRzIG9mIHRoZSBjaXR5IHByb3ZpZGUgYSByYW5nZSBv
+        ZiByZXN0YXVyYW50IGFuZCBjYWbDqSBvcHRpb25zLCBhcyB3ZWxsIGFzIG11
+        c2V1bXMsIHRoZWF0cmVzIGFuZCBzcG9ydHMgZmFjaWxpdGllcy4iLCJjb250
+        ZW50X3BhcnRuZXIiOlsiTWluaXN0cnkgZm9yIEN1bHR1cmUgYW5kIEhlcml0
+        YWdlIl0sImNhdGVnb3J5IjpbIkltYWdlcyJdLCJjcmVhdG9yIjpbIkhlYXRo
+        IFNhZGxpZXIiLCJOZXcgWmVhbGFuZCBNaW5pc3RyeSBmb3IgQ3VsdHVyZSBh
+        bmQgSGVyaXRhZ2UgVGUgTWFuYXR1IFRhb25nYSJdLCJkY190eXBlIjpbInBo
+        b3RvZ3JhcGgiLCJTdGlsbEltYWdlIl0sImRuel90eXBlIjoiVW5rbm93biIs
+        ImRhdGUiOltdLCJzb3VyY2VfdXJsIjoiaHR0cDovL2FwaS5kbnowYS5kaWdp
+        dGFsbnoub3JnL3JlY29yZHMvMzE5MzY3NTMvc291cmNlIiwiY29sbGVjdGlv
+        biI6WyJUZSBBcmEgLSBUaGUgRW5jeWNsb3BlZGlhIG9mIE5ldyBaZWFsYW5k
+        Il0sImFsdGVybmF0ZV90aXRsZSI6W10sImFkZGl0aW9uYWxfZGVzY3JpcHRp
+        b24iOltdLCJkaXNwbGF5X2NvbnRlbnRfcGFydG5lciI6Ik1pbmlzdHJ5IGZv
+        ciBDdWx0dXJlIGFuZCBIZXJpdGFnZSIsImNvbGxlY3Rpb25fdGl0bGUiOlsi
+        VGUgQXJhIC0gVGhlIEVuY3ljbG9wZWRpYSBvZiBOZXcgWmVhbGFuZCJdLCJk
+        aXNwbGF5X2NvbGxlY3Rpb24iOiJUZSBBcmEgLSBUaGUgRW5jeWNsb3BlZGlh
+        IG9mIE5ldyBaZWFsYW5kIiwicHJpbWFyeV9jb2xsZWN0aW9uIjpbIlRlIEFy
+        YSAtIFRoZSBFbmN5Y2xvcGVkaWEgb2YgTmV3IFplYWxhbmQiXSwiY29udHJp
+        YnV0aW5nX3BhcnRuZXIiOlsiVGUgQXJhIC0gVGhlIEVuY3ljbG9wZWRpYSBv
+        ZiBOZXcgWmVhbGFuZCJdLCJjb250cmlidXRvciI6WyJUZSBBcmEgLSBUaGUg
+        RW5jeWNsb3BlZGlhIG9mIE5ldyBaZWFsYW5kIl0sImNvcHlyaWdodCI6W10s
+        ImNpdGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51bGwsImxhbmd1YWdl
+        IjpbImVuIl0sInByb3ZlbmFuY2UiOm51bGwsInB1Ymxpc2hlciI6WyJNaW5p
+        c3RyeSBmb3IgQ3VsdHVyZSBhbmQgSGVyaXRhZ2UgVGUgTWFuYXR1IFRhb25n
+        YSJdLCJyaWdodHMiOiJUaGlzIGl0ZW0gaXMgbGljZW5zZWQgdW5kZXIgYSBD
+        cmVhdGl2ZSBDb21tb25zIEF0dHJpYnV0aW9uLU5vbkNvbW1lcmNpYWwgMy4w
+        IE5ldyBaZWFsYW5kIExpY2VuY2UiLCJ1c2FnZSI6WyJTaGFyZSIsIk1vZGlm
+        eSJdLCJzb3VyY2UiOltdLCJ0YWciOlsiTWF0YXBpaGkiXSwidGhlc2lzX2xl
+        dmVsIjpudWxsLCJob2xkaW5nIjpbXSwibGlicmFyeV9jb2xsZWN0aW9uIjpb
+        XSwic2hlbGZfbG9jYXRpb24iOm51bGwsImVwcmludHNfdHlwZSI6W10sInRl
+        eHQiOm51bGwsImZ1bGx0ZXh0IjpudWxsLCJmb3JtYXQiOlsiaW1hZ2UvanBl
+        ZyJdLCJkY19pZGVudGlmaWVyIjpbXSwiZGlzcGxheV9kYXRlIjoiVW5rbm93
+        biIsInB1Ymxpc2hlZF9kYXRlIjpbXSwic3luZGljYXRpb25fZGF0ZSI6IjIw
+        MTQtMDgtMjlUMTY6Mzg6MTEuMDcyKzEyOjAwIiwibGFuZGluZ191cmwiOiJo
+        dHRwOi8vd3d3LnRlYXJhLmdvdnQubnovZW4vcGhvdG9ncmFwaC8zNDE0OS93
+        ZWxsaW5ndG9uIiwibGFyZ2VfdGh1bWJuYWlsX3VybCI6Imh0dHA6Ly93d3cu
+        dGVhcmEuZ292dC5uei9maWxlcy8zNDE0OS1lbnouanBnIiwicmlnaHRzX3Vy
+        bCI6WyJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS1u
+        Yy8zLjAvbnoiXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly93d3cudGVhcmEu
+        Z292dC5uei9maWxlcy8zNDE0OS1lbnouanBnIiwib3JpZ2luX3VybCI6bnVs
+        bCwibWV0YWRhdGFfdXJsIjpudWxsLCJvYmplY3RfdXJsIjpudWxsLCJoYXNf
+        dmVyc2lvbiI6W10sImxpY2Vuc2UiOm51bGwsInJlbGF0aW9uIjpbImh0dHA6
+        Ly93d3cudGVhcmEuZ292dC5uei9lbi9jYXBpdGFsLWNpdHkiXSwiaXNfcGFy
+        dF9vZiI6W10sImlzX3JlcGxhY2VkX2J5IjpudWxsLCJyZXBsYWNlcyI6bnVs
+        bCwiaXNfcmVxdWlyZWRfYnkiOm51bGwsImlzX3ZlcnNpb25fb2YiOm51bGws
+        InRhYmxlX29mX2NvbnRlbnRzIjpudWxsLCJpc19jb21tZXJjaWFsX3VzZSI6
+        bnVsbCwiY29uY2VwdF9pZHMiOltdLCJzb3VyY2VfY29udHJpYnV0b3JfbmFt
+        ZSI6W10sInN1YmplY3QiOltdfSx7ImlkIjozNTA4MjIzMSwidXBkYXRlZF9h
+        dCI6IjIwMTYtMDItMjJUMTg6MzM6MjIuNzAzKzEzOjAwIiwiY3JlYXRlZF9h
+        dCI6IjIwMTQtMDgtMTJUMDQ6NDA6MTEuMDc4KzEyOjAwIiwidGl0bGUiOiJX
+        ZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOm51bGwsImNvbnRlbnRfcGFydG5l
+        ciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2Ei
+        XSwiY2F0ZWdvcnkiOlsiSW1hZ2VzIl0sImNyZWF0b3IiOlsiVW5rbm93biJd
+        LCJkY190eXBlIjpbIlN0aWxsIEltYWdlIiwiQ3VsdHVyYWwgT2JqZWN0Iiwi
+        Y2FydGVzLWRlLXZpc2l0ZSIsImFsYnVtZW4gcHJpbnRzIiwicGhvdG9ncmFw
+        aGljIHByaW50cyJdLCJkbnpfdHlwZSI6IlVua25vd24iLCJkYXRlIjpbIjE4
+        NzAtMDEtMDEgMTI6MDA6MDAgVVRDIl0sInNvdXJjZV91cmwiOiJodHRwOi8v
+        YXBpLmRuejBhLmRpZ2l0YWxuei5vcmcvcmVjb3Jkcy8zNTA4MjIzMS9zb3Vy
+        Y2UiLCJjb2xsZWN0aW9uIjpbIlBob3RvZ3JhcGh5IENvbGxlY3Rpb24iLCJU
+        ZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhpIl0sImFsdGVy
+        bmF0ZV90aXRsZSI6W10sImFkZGl0aW9uYWxfZGVzY3JpcHRpb24iOltdLCJk
+        aXNwbGF5X2NvbnRlbnRfcGFydG5lciI6Ik11c2V1bSBvZiBOZXcgWmVhbGFu
+        ZCBUZSBQYXBhIFRvbmdhcmV3YSIsImNvbGxlY3Rpb25fdGl0bGUiOlsiUGhv
+        dG9ncmFwaHkgQ29sbGVjdGlvbiIsIlRlIFBhcGEgQ29sbGVjdGlvbnMgT25s
+        aW5lIiwiTWF0YXBpaGkiXSwiZGlzcGxheV9jb2xsZWN0aW9uIjoiVGUgUGFw
+        YSBDb2xsZWN0aW9ucyBPbmxpbmUiLCJwcmltYXJ5X2NvbGxlY3Rpb24iOlsi
+        VGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiXSwiY29udHJpYnV0aW5nX3Bh
+        cnRuZXIiOltdLCJjb250cmlidXRvciI6W10sImNvcHlyaWdodCI6WyJObyBr
+        bm93biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIl0sImNpdGF0aW9uIjpbXSwi
+        Y3JlZGl0X2NyZWF0b3IiOm51bGwsImxhbmd1YWdlIjpbXSwicHJvdmVuYW5j
+        ZSI6bnVsbCwicHVibGlzaGVyIjpbIk11c2V1bSBvZiBOZXcgWmVhbGFuZCBU
+        ZSBQYXBhIFRvbmdhcmV3YSJdLCJyaWdodHMiOiJObyBrbm93biBjb3B5cmln
+        aHQgcmVzdHJpY3Rpb25zIiwidXNhZ2UiOlsiU2hhcmUiLCJNb2RpZnkiLCJV
+        c2UgY29tbWVyY2lhbGx5Il0sInNvdXJjZSI6W10sInRhZyI6WyJNYXRhcGlo
+        aSJdLCJ0aGVzaXNfbGV2ZWwiOm51bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5
+        X2NvbGxlY3Rpb24iOltdLCJzaGVsZl9sb2NhdGlvbiI6bnVsbCwiZXByaW50
+        c190eXBlIjpbXSwidGV4dCI6bnVsbCwiZnVsbHRleHQiOm51bGwsImZvcm1h
+        dCI6W10sImRjX2lkZW50aWZpZXIiOlsiZW11L2NhdGFsb2d1ZS8yNzQxMDQi
+        LCJPLjAwNTM4NyJdLCJkaXNwbGF5X2RhdGUiOiJjaXJjYSAxODcwIiwicHVi
+        bGlzaGVkX2RhdGUiOltdLCJzeW5kaWNhdGlvbl9kYXRlIjoiMjAxNC0wOC0y
+        OVQxNToyNzo0OC4wNzMrMTI6MDAiLCJsYW5kaW5nX3VybCI6Imh0dHA6Ly9j
+        b2xsZWN0aW9ucy50ZXBhcGEuZ292dC5uei9vYmplY3QvMjc0MTA0IiwibGFy
+        Z2VfdGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEu
+        Z292dC5uei9BUElDb2xsZWN0aW9uL21lZGlhLzMyODM4Mi81MjAiLCJyaWdo
+        dHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9u
+        cy50ZXBhcGEuZ292dC5uei9BUElDb2xsZWN0aW9uL21lZGlhLzMyODM4Mi8y
+        NTAiLCJvcmlnaW5fdXJsIjpudWxsLCJtZXRhZGF0YV91cmwiOm51bGwsIm9i
+        amVjdF91cmwiOm51bGwsImhhc192ZXJzaW9uIjpbXSwibGljZW5zZSI6bnVs
+        bCwicmVsYXRpb24iOltdLCJpc19wYXJ0X29mIjpbXSwiaXNfcmVwbGFjZWRf
+        YnkiOm51bGwsInJlcGxhY2VzIjpudWxsLCJpc19yZXF1aXJlZF9ieSI6bnVs
+        bCwiaXNfdmVyc2lvbl9vZiI6bnVsbCwidGFibGVfb2ZfY29udGVudHMiOm51
+        bGwsImlzX2NvbW1lcmNpYWxfdXNlIjp0cnVlLCJjb25jZXB0X2lkcyI6W10s
+        InNvdXJjZV9jb250cmlidXRvcl9uYW1lIjpbXSwic3ViamVjdCI6WyJQaG90
+        b2dyYXBoeSBDb2xsZWN0aW9uIl19LHsiaWQiOjE4OTg0MywidXBkYXRlZF9h
+        dCI6IjIwMTYtMDItMjJUMTk6Mjk6NDIuMjQ3KzEzOjAwIiwiY3JlYXRlZF9h
+        dCI6IjIwMTItMDQtMjBUMTc6MjU6NTUuMDAwKzEyOjAwIiwidGl0bGUiOiJX
+        ZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOiJIb3VzZXMgYW5kIHJvYWQgbG9j
+        YXRlZCBuZWFyIHRoZSBzZWEgaW4gV2VsbGluZ3RvbiBieSBoaWxsc2lkZS4g
+        KHBvc3NpYmx5IElzbGFuZCBCYXkpIiwiY29udGVudF9wYXJ0bmVyIjpbIk11
+        c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSJdLCJjYXRl
+        Z29yeSI6WyJJbWFnZXMiXSwiY3JlYXRvciI6WyJBZGtpbiwgTGVzbGllIl0s
+        ImRjX3R5cGUiOlsiU3RpbGwgSW1hZ2UiLCJDdWx0dXJhbCBPYmplY3QiLCJn
+        ZWxhdGluIGRyeSBwbGF0ZSBuZWdhdGl2ZXMiLCJibGFjay1hbmQtd2hpdGUg
+        bmVnYXRpdmVzIl0sImRuel90eXBlIjoiQXJ0d29yayIsImRhdGUiOlsiMTkz
+        MC0wMS0wMSAxMjowMDowMCBVVEMiXSwic291cmNlX3VybCI6Imh0dHA6Ly9h
+        cGkuZG56MGEuZGlnaXRhbG56Lm9yZy9yZWNvcmRzLzE4OTg0My9zb3VyY2Ui
+        LCJjb2xsZWN0aW9uIjpbIlBob3RvZ3JhcGh5IENvbGxlY3Rpb24iLCJUZSBQ
+        YXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhpIl0sImFsdGVybmF0
+        ZV90aXRsZSI6W10sImFkZGl0aW9uYWxfZGVzY3JpcHRpb24iOltdLCJkaXNw
+        bGF5X2NvbnRlbnRfcGFydG5lciI6Ik11c2V1bSBvZiBOZXcgWmVhbGFuZCBU
+        ZSBQYXBhIFRvbmdhcmV3YSIsImNvbGxlY3Rpb25fdGl0bGUiOlsiUGhvdG9n
+        cmFwaHkgQ29sbGVjdGlvbiIsIlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5l
+        IiwiTWF0YXBpaGkiXSwiZGlzcGxheV9jb2xsZWN0aW9uIjoiVGUgUGFwYSBD
+        b2xsZWN0aW9ucyBPbmxpbmUiLCJwcmltYXJ5X2NvbGxlY3Rpb24iOlsiVGUg
+        UGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiXSwiY29udHJpYnV0aW5nX3BhcnRu
+        ZXIiOltdLCJjb250cmlidXRvciI6W10sImNvcHlyaWdodCI6WyJObyBrbm93
+        biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIl0sImNpdGF0aW9uIjpbXSwiY3Jl
+        ZGl0X2NyZWF0b3IiOm51bGwsImxhbmd1YWdlIjpbXSwicHJvdmVuYW5jZSI6
+        bnVsbCwicHVibGlzaGVyIjpbIk11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQ
+        YXBhIFRvbmdhcmV3YSJdLCJyaWdodHMiOiJObyBrbm93biBjb3B5cmlnaHQg
+        cmVzdHJpY3Rpb25zIiwidXNhZ2UiOlsiU2hhcmUiLCJNb2RpZnkiLCJVc2Ug
+        Y29tbWVyY2lhbGx5Il0sInNvdXJjZSI6W10sInRhZyI6WyJNYXRhcGloaSJd
+        LCJ0aGVzaXNfbGV2ZWwiOm51bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5X2Nv
+        bGxlY3Rpb24iOltdLCJzaGVsZl9sb2NhdGlvbiI6bnVsbCwiZXByaW50c190
+        eXBlIjpbXSwidGV4dCI6bnVsbCwiZnVsbHRleHQiOm51bGwsImZvcm1hdCI6
+        W10sImRjX2lkZW50aWZpZXIiOlsiZW11L2NhdGFsb2d1ZS8xMjE4MzgiLCJB
+        LjAwNTU1MSJdLCJkaXNwbGF5X2RhdGUiOiIxOTMwcyIsInB1Ymxpc2hlZF9k
+        YXRlIjpbXSwic3luZGljYXRpb25fZGF0ZSI6IjIwMTQtMDgtMjlUMTc6NDE6
+        MTEuNDczKzEyOjAwIiwibGFuZGluZ191cmwiOiJodHRwOi8vY29sbGVjdGlv
+        bnMudGVwYXBhLmdvdnQubnovb2JqZWN0LzEyMTgzOCIsImxhcmdlX3RodW1i
+        bmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnov
+        QVBJQ29sbGVjdGlvbi9tZWRpYS8zMjcxMjUvNTIwIiwicmlnaHRzX3VybCI6
+        W10sInRodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBh
+        LmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRpYS8zMjcxMjUvMjUwIiwib3Jp
+        Z2luX3VybCI6bnVsbCwibWV0YWRhdGFfdXJsIjpudWxsLCJvYmplY3RfdXJs
+        IjpudWxsLCJoYXNfdmVyc2lvbiI6W10sImxpY2Vuc2UiOm51bGwsInJlbGF0
+        aW9uIjpbXSwiaXNfcGFydF9vZiI6W10sImlzX3JlcGxhY2VkX2J5IjpudWxs
+        LCJyZXBsYWNlcyI6bnVsbCwiaXNfcmVxdWlyZWRfYnkiOm51bGwsImlzX3Zl
+        cnNpb25fb2YiOm51bGwsInRhYmxlX29mX2NvbnRlbnRzIjpudWxsLCJpc19j
+        b21tZXJjaWFsX3VzZSI6dHJ1ZSwiY29uY2VwdF9pZHMiOlsxXSwic291cmNl
+        X2NvbnRyaWJ1dG9yX25hbWUiOltdLCJzdWJqZWN0IjpbIlNlYXMiLCJIb3Vz
+        ZXMiLCJSb2FkcyIsIk1vdW50YWlucyIsIlJvY2sgZm9ybWF0aW9ucyIsIlBo
+        b3RvZ3JhcGh5IENvbGxlY3Rpb24iXX0seyJpZCI6MzA2NzU5NTMsInVwZGF0
+        ZWRfYXQiOiIyMDE2LTAyLTIyVDIwOjExOjI3Ljg5NysxMzowMCIsImNyZWF0
+        ZWRfYXQiOiIyMDEyLTA5LTI5VDA0OjQ2OjM2LjMwOCsxMjowMCIsInRpdGxl
+        IjoiV2VsbGluZ3RvbiIsImRlc2NyaXB0aW9uIjpudWxsLCJjb250ZW50X3Bh
+        cnRuZXIiOlsiTXVzZXVtIG9mIE5ldyBaZWFsYW5kIFRlIFBhcGEgVG9uZ2Fy
+        ZXdhIl0sImNhdGVnb3J5IjpbIkltYWdlcyJdLCJjcmVhdG9yIjpbIk11bmR5
+        LCBEYW5pZWwgTG91aXMiLCJNZXNzcnMgRi4gQnJhZGxleSBcdTAwMjYgQ28u
+        LCBQaG90b2dyYXBoaWMgUHVibGlzaGVycyJdLCJkY190eXBlIjpbIlN0aWxs
+        IEltYWdlIiwiQ3VsdHVyYWwgT2JqZWN0IiwicGhvdG9ncmFwaGljIHByaW50
+        cyIsImFsYnVtZW4gcHJpbnRzIiwidmludGFnZSBwcmludHMiLCJibGFjay1h
+        bmQtd2hpdGUgcHJpbnRzIl0sImRuel90eXBlIjoiQXJ0d29yayIsImRhdGUi
+        OlsiMTg2OS0wMS0wMSAxMjowMDowMCBVVEMiLCIxODk3LTAxLTAxIDEyOjAw
+        OjAwIFVUQyJdLCJzb3VyY2VfdXJsIjoiaHR0cDovL2FwaS5kbnowYS5kaWdp
+        dGFsbnoub3JnL3JlY29yZHMvMzA2NzU5NTMvc291cmNlIiwiY29sbGVjdGlv
+        biI6WyJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUgUGFwYSBDb2xsZWN0
+        aW9ucyBPbmxpbmUiLCJNYXRhcGloaSJdLCJhbHRlcm5hdGVfdGl0bGUiOltd
+        LCJhZGRpdGlvbmFsX2Rlc2NyaXB0aW9uIjpbXSwiZGlzcGxheV9jb250ZW50
+        X3BhcnRuZXIiOiJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25n
+        YXJld2EiLCJjb2xsZWN0aW9uX3RpdGxlIjpbIlBob3RvZ3JhcGh5IENvbGxl
+        Y3Rpb24iLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhp
+        Il0sImRpc3BsYXlfY29sbGVjdGlvbiI6IlRlIFBhcGEgQ29sbGVjdGlvbnMg
+        T25saW5lIiwicHJpbWFyeV9jb2xsZWN0aW9uIjpbIlRlIFBhcGEgQ29sbGVj
+        dGlvbnMgT25saW5lIl0sImNvbnRyaWJ1dGluZ19wYXJ0bmVyIjpbXSwiY29u
+        dHJpYnV0b3IiOltdLCJjb3B5cmlnaHQiOlsiTm8ga25vd24gY29weXJpZ2h0
+        IHJlc3RyaWN0aW9ucyJdLCJjaXRhdGlvbiI6W10sImNyZWRpdF9jcmVhdG9y
+        IjpudWxsLCJsYW5ndWFnZSI6W10sInByb3ZlbmFuY2UiOm51bGwsInB1Ymxp
+        c2hlciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJl
+        d2EiXSwicmlnaHRzIjoiTm8ga25vd24gY29weXJpZ2h0IHJlc3RyaWN0aW9u
+        cyIsInVzYWdlIjpbIlNoYXJlIiwiTW9kaWZ5IiwiVXNlIGNvbW1lcmNpYWxs
+        eSJdLCJzb3VyY2UiOltdLCJ0YWciOlsiTWF0YXBpaGkiXSwidGhlc2lzX2xl
+        dmVsIjpudWxsLCJob2xkaW5nIjpbXSwibGlicmFyeV9jb2xsZWN0aW9uIjpb
+        XSwic2hlbGZfbG9jYXRpb24iOm51bGwsImVwcmludHNfdHlwZSI6W10sInRl
+        eHQiOm51bGwsImZ1bGx0ZXh0IjpudWxsLCJmb3JtYXQiOltdLCJkY19pZGVu
+        dGlmaWVyIjpbImVtdS9jYXRhbG9ndWUvNDQwNDQyIiwiTy4wMjA5MTYiXSwi
+        ZGlzcGxheV9kYXRlIjoiMTg2OTsgY2lyY2EgMTg5NyIsInB1Ymxpc2hlZF9k
+        YXRlIjpbXSwic3luZGljYXRpb25fZGF0ZSI6IjIwMTQtMDgtMjlUMTc6NTU6
+        MzAuMTM1KzEyOjAwIiwibGFuZGluZ191cmwiOiJodHRwOi8vY29sbGVjdGlv
+        bnMudGVwYXBhLmdvdnQubnovb2JqZWN0LzQ0MDQ0MiIsImxhcmdlX3RodW1i
+        bmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnov
+        QVBJQ29sbGVjdGlvbi9tZWRpYS8yODkyNDMvNTIwIiwicmlnaHRzX3VybCI6
+        W10sInRodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBh
+        LmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRpYS8yODkyNDMvMjUwIiwib3Jp
+        Z2luX3VybCI6bnVsbCwibWV0YWRhdGFfdXJsIjpudWxsLCJvYmplY3RfdXJs
+        IjpudWxsLCJoYXNfdmVyc2lvbiI6W10sImxpY2Vuc2UiOm51bGwsInJlbGF0
+        aW9uIjpbXSwiaXNfcGFydF9vZiI6W10sImlzX3JlcGxhY2VkX2J5IjpudWxs
+        LCJyZXBsYWNlcyI6bnVsbCwiaXNfcmVxdWlyZWRfYnkiOm51bGwsImlzX3Zl
+        cnNpb25fb2YiOm51bGwsInRhYmxlX29mX2NvbnRlbnRzIjpudWxsLCJpc19j
+        b21tZXJjaWFsX3VzZSI6dHJ1ZSwiY29uY2VwdF9pZHMiOltdLCJzb3VyY2Vf
+        Y29udHJpYnV0b3JfbmFtZSI6W10sInN1YmplY3QiOlsiUGhvdG9ncmFwaHkg
+        Q29sbGVjdGlvbiJdfSx7ImlkIjoxNzM5NDcsInVwZGF0ZWRfYXQiOiIyMDE2
+        LTAyLTIyVDIwOjM2OjA2LjI4OSsxMzowMCIsImNyZWF0ZWRfYXQiOiIyMDEy
+        LTA0LTIwVDE3OjIwOjU1LjAwMCsxMjowMCIsInRpdGxlIjoiV2VsbGluZ3Rv
+        biIsImRlc2NyaXB0aW9uIjoiUGFybGlhbWVudCBCdWlsZGluZ3MuIiwiY29u
+        dGVudF9wYXJ0bmVyIjpbIk11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBh
+        IFRvbmdhcmV3YSJdLCJjYXRlZ29yeSI6WyJJbWFnZXMiXSwiY3JlYXRvciI6
+        WyJNdWlyIFx1MDAyNiBNb29kaWUiXSwiZGNfdHlwZSI6WyJTdGlsbCBJbWFn
+        ZSIsIkN1bHR1cmFsIE9iamVjdCIsImdlbGF0aW4gZHJ5IHBsYXRlIG5lZ2F0
+        aXZlcyIsImJsYWNrLWFuZC13aGl0ZSBuZWdhdGl2ZXMiXSwiZG56X3R5cGUi
+        OiJBcnR3b3JrIiwiZGF0ZSI6WyIxOTAxLTAxLTAxIDEyOjAwOjAwIFVUQyJd
+        LCJzb3VyY2VfdXJsIjoiaHR0cDovL2FwaS5kbnowYS5kaWdpdGFsbnoub3Jn
+        L3JlY29yZHMvMTczOTQ3L3NvdXJjZSIsImNvbGxlY3Rpb24iOlsiUGhvdG9n
+        cmFwaHkgQ29sbGVjdGlvbiIsIlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5l
+        IiwiTWF0YXBpaGkiXSwiYWx0ZXJuYXRlX3RpdGxlIjpbXSwiYWRkaXRpb25h
+        bF9kZXNjcmlwdGlvbiI6W10sImRpc3BsYXlfY29udGVudF9wYXJ0bmVyIjoi
+        TXVzZXVtIG9mIE5ldyBaZWFsYW5kIFRlIFBhcGEgVG9uZ2FyZXdhIiwiY29s
+        bGVjdGlvbl90aXRsZSI6WyJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUg
+        UGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiLCJNYXRhcGloaSJdLCJkaXNwbGF5
+        X2NvbGxlY3Rpb24iOiJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsInBy
+        aW1hcnlfY29sbGVjdGlvbiI6WyJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGlu
+        ZSJdLCJjb250cmlidXRpbmdfcGFydG5lciI6W10sImNvbnRyaWJ1dG9yIjpb
+        XSwiY29weXJpZ2h0IjpbIk5vIGtub3duIGNvcHlyaWdodCByZXN0cmljdGlv
+        bnMiXSwiY2l0YXRpb24iOltdLCJjcmVkaXRfY3JlYXRvciI6bnVsbCwibGFu
+        Z3VhZ2UiOltdLCJwcm92ZW5hbmNlIjpudWxsLCJwdWJsaXNoZXIiOlsiTXVz
+        ZXVtIG9mIE5ldyBaZWFsYW5kIFRlIFBhcGEgVG9uZ2FyZXdhIl0sInJpZ2h0
+        cyI6Ik5vIGtub3duIGNvcHlyaWdodCByZXN0cmljdGlvbnMiLCJ1c2FnZSI6
+        WyJTaGFyZSIsIk1vZGlmeSIsIlVzZSBjb21tZXJjaWFsbHkiXSwic291cmNl
+        IjpbXSwidGFnIjpbIk1hdGFwaWhpIl0sInRoZXNpc19sZXZlbCI6bnVsbCwi
+        aG9sZGluZyI6W10sImxpYnJhcnlfY29sbGVjdGlvbiI6W10sInNoZWxmX2xv
+        Y2F0aW9uIjpudWxsLCJlcHJpbnRzX3R5cGUiOltdLCJ0ZXh0IjpudWxsLCJm
+        dWxsdGV4dCI6bnVsbCwiZm9ybWF0IjpbXSwiZGNfaWRlbnRpZmllciI6WyJl
+        bXUvY2F0YWxvZ3VlLzE5OTE4IiwiQy4wMTcwNjIiXSwiZGlzcGxheV9kYXRl
+        IjoiY2lyY2EgMTkwMSIsInB1Ymxpc2hlZF9kYXRlIjpbXSwic3luZGljYXRp
+        b25fZGF0ZSI6IjIwMTQtMDgtMjlUMTc6NDY6NTguODIyKzEyOjAwIiwibGFu
+        ZGluZ191cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnov
+        b2JqZWN0LzE5OTE4IiwibGFyZ2VfdGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9j
+        b2xsZWN0aW9ucy50ZXBhcGEuZ292dC5uei9BUElDb2xsZWN0aW9uL21lZGlh
+        LzUyNTcvNTIwIiwicmlnaHRzX3VybCI6W10sInRodW1ibmFpbF91cmwiOiJo
+        dHRwOi8vY29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnovQVBJQ29sbGVjdGlv
+        bi9tZWRpYS81MjU3LzI1MCIsIm9yaWdpbl91cmwiOm51bGwsIm1ldGFkYXRh
+        X3VybCI6bnVsbCwib2JqZWN0X3VybCI6bnVsbCwiaGFzX3ZlcnNpb24iOltd
+        LCJsaWNlbnNlIjpudWxsLCJyZWxhdGlvbiI6W10sImlzX3BhcnRfb2YiOltd
+        LCJpc19yZXBsYWNlZF9ieSI6bnVsbCwicmVwbGFjZXMiOm51bGwsImlzX3Jl
+        cXVpcmVkX2J5IjpudWxsLCJpc192ZXJzaW9uX29mIjpudWxsLCJ0YWJsZV9v
+        Zl9jb250ZW50cyI6bnVsbCwiaXNfY29tbWVyY2lhbF91c2UiOnRydWUsImNv
+        bmNlcHRfaWRzIjpbXSwic291cmNlX2NvbnRyaWJ1dG9yX25hbWUiOltdLCJz
+        dWJqZWN0IjpbIkdvdmVybm1lbnQgZmFjaWxpdGllcyIsIkxhd25zIiwiU2N1
+        bHB0dXJlIiwiU3Ryb2xsZXJzIChCYWJ5IGNhcnJpYWdlcykiLCJQaG90b2dy
+        YXBoeSBDb2xsZWN0aW9uIl19LHsiaWQiOjE3MzQ5NCwidXBkYXRlZF9hdCI6
+        IjIwMTYtMDItMjJUMjA6NTI6MzMuOTY0KzEzOjAwIiwiY3JlYXRlZF9hdCI6
+        IjIwMTItMDQtMjBUMTc6MjA6NDkuMDAwKzEyOjAwIiwidGl0bGUiOiJXZWxs
+        aW5ndG9uIiwiZGVzY3JpcHRpb24iOiJWaWV3IG9mIHNoaXBwaW5nIHdoYXJ2
+        ZXMiLCJjb250ZW50X3BhcnRuZXIiOlsiTXVzZXVtIG9mIE5ldyBaZWFsYW5k
+        IFRlIFBhcGEgVG9uZ2FyZXdhIl0sImNhdGVnb3J5IjpbIkltYWdlcyJdLCJj
+        cmVhdG9yIjpbIk11aXIgXHUwMDI2IE1vb2RpZSIsIlVua25vd24iXSwiZGNf
+        dHlwZSI6WyJTdGlsbCBJbWFnZSIsIkN1bHR1cmFsIE9iamVjdCIsImJsYWNr
+        LWFuZC13aGl0ZSBuZWdhdGl2ZXMiLCJnZWxhdGluIGRyeSBwbGF0ZSBuZWdh
+        dGl2ZXMiXSwiZG56X3R5cGUiOiJBcnR3b3JrIiwiZGF0ZSI6W10sInNvdXJj
+        ZV91cmwiOiJodHRwOi8vYXBpLmRuejBhLmRpZ2l0YWxuei5vcmcvcmVjb3Jk
+        cy8xNzM0OTQvc291cmNlIiwiY29sbGVjdGlvbiI6WyJQaG90b2dyYXBoeSBD
+        b2xsZWN0aW9uIiwiVGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiLCJNYXRh
+        cGloaSJdLCJhbHRlcm5hdGVfdGl0bGUiOltdLCJhZGRpdGlvbmFsX2Rlc2Ny
+        aXB0aW9uIjpbXSwiZGlzcGxheV9jb250ZW50X3BhcnRuZXIiOiJNdXNldW0g
+        b2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2EiLCJjb2xsZWN0aW9u
+        X3RpdGxlIjpbIlBob3RvZ3JhcGh5IENvbGxlY3Rpb24iLCJUZSBQYXBhIENv
+        bGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhpIl0sImRpc3BsYXlfY29sbGVj
+        dGlvbiI6IlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5lIiwicHJpbWFyeV9j
+        b2xsZWN0aW9uIjpbIlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5lIl0sImNv
+        bnRyaWJ1dGluZ19wYXJ0bmVyIjpbXSwiY29udHJpYnV0b3IiOltdLCJjb3B5
+        cmlnaHQiOlsiTm8ga25vd24gY29weXJpZ2h0IHJlc3RyaWN0aW9ucyJdLCJj
+        aXRhdGlvbiI6W10sImNyZWRpdF9jcmVhdG9yIjpudWxsLCJsYW5ndWFnZSI6
+        W10sInByb3ZlbmFuY2UiOm51bGwsInB1Ymxpc2hlciI6WyJNdXNldW0gb2Yg
+        TmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2EiXSwicmlnaHRzIjoiTm8g
+        a25vd24gY29weXJpZ2h0IHJlc3RyaWN0aW9ucyIsInVzYWdlIjpbIlNoYXJl
+        IiwiTW9kaWZ5IiwiVXNlIGNvbW1lcmNpYWxseSJdLCJzb3VyY2UiOltdLCJ0
+        YWciOlsiTWF0YXBpaGkiXSwidGhlc2lzX2xldmVsIjpudWxsLCJob2xkaW5n
+        IjpbXSwibGlicmFyeV9jb2xsZWN0aW9uIjpbXSwic2hlbGZfbG9jYXRpb24i
+        Om51bGwsImVwcmludHNfdHlwZSI6W10sInRleHQiOm51bGwsImZ1bGx0ZXh0
+        IjpudWxsLCJmb3JtYXQiOltdLCJkY19pZGVudGlmaWVyIjpbImVtdS9jYXRh
+        bG9ndWUvMjIxNzc4IiwiQy4wMTgyMjAiXSwiZGlzcGxheV9kYXRlIjoiVW5r
+        bm93biIsInB1Ymxpc2hlZF9kYXRlIjpbXSwic3luZGljYXRpb25fZGF0ZSI6
+        IjIwMTQtMDgtMjlUMTc6NDc6MDkuMDc1KzEyOjAwIiwibGFuZGluZ191cmwi
+        OiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnovb2JqZWN0LzIy
+        MTc3OCIsImxhcmdlX3RodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlv
+        bnMudGVwYXBhLmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRpYS8xMjg1My81
+        MjAiLCJyaWdodHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9j
+        b2xsZWN0aW9ucy50ZXBhcGEuZ292dC5uei9BUElDb2xsZWN0aW9uL21lZGlh
+        LzEyODUzLzI1MCIsIm9yaWdpbl91cmwiOm51bGwsIm1ldGFkYXRhX3VybCI6
+        bnVsbCwib2JqZWN0X3VybCI6bnVsbCwiaGFzX3ZlcnNpb24iOltdLCJsaWNl
+        bnNlIjpudWxsLCJyZWxhdGlvbiI6W10sImlzX3BhcnRfb2YiOltdLCJpc19y
+        ZXBsYWNlZF9ieSI6bnVsbCwicmVwbGFjZXMiOm51bGwsImlzX3JlcXVpcmVk
+        X2J5IjpudWxsLCJpc192ZXJzaW9uX29mIjpudWxsLCJ0YWJsZV9vZl9jb250
+        ZW50cyI6bnVsbCwiaXNfY29tbWVyY2lhbF91c2UiOnRydWUsImNvbmNlcHRf
+        aWRzIjpbXSwic291cmNlX2NvbnRyaWJ1dG9yX25hbWUiOltdLCJzdWJqZWN0
+        IjpbIldhdGVyZnJvbnRzIiwiSGFyYm91cnMiLCJQaWVycyBcdTAwMjYgd2hh
+        cnZlcyIsIlNoaXBwaW5nIiwiU2hpcHMiLCJQaG90b2dyYXBoeSBDb2xsZWN0
+        aW9uIl19LHsiaWQiOjE3MzEzOSwidXBkYXRlZF9hdCI6IjIwMTYtMDItMjJU
+        MjA6NTI6NTUuMzA2KzEzOjAwIiwiY3JlYXRlZF9hdCI6IjIwMTItMDQtMjBU
+        MTc6MjA6MzkuMDAwKzEyOjAwIiwidGl0bGUiOiJXZWxsaW5ndG9uIiwiZGVz
+        Y3JpcHRpb24iOm51bGwsImNvbnRlbnRfcGFydG5lciI6WyJNdXNldW0gb2Yg
+        TmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2EiXSwiY2F0ZWdvcnkiOlsi
+        SW1hZ2VzIl0sImNyZWF0b3IiOlsiTXVpciBcdTAwMjYgTW9vZGllIiwiVW5r
+        bm93biJdLCJkY190eXBlIjpbIlN0aWxsIEltYWdlIiwiQ3VsdHVyYWwgT2Jq
+        ZWN0IiwiZ2VsYXRpbiBkcnkgcGxhdGUgbmVnYXRpdmVzIiwiYmxhY2stYW5k
+        LXdoaXRlIG5lZ2F0aXZlcyJdLCJkbnpfdHlwZSI6IkFydHdvcmsiLCJkYXRl
+        IjpbXSwic291cmNlX3VybCI6Imh0dHA6Ly9hcGkuZG56MGEuZGlnaXRhbG56
+        Lm9yZy9yZWNvcmRzLzE3MzEzOS9zb3VyY2UiLCJjb2xsZWN0aW9uIjpbIlBo
+        b3RvZ3JhcGh5IENvbGxlY3Rpb24iLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9u
+        bGluZSIsIk1hdGFwaWhpIl0sImFsdGVybmF0ZV90aXRsZSI6W10sImFkZGl0
+        aW9uYWxfZGVzY3JpcHRpb24iOltdLCJkaXNwbGF5X2NvbnRlbnRfcGFydG5l
+        ciI6Ik11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSIs
+        ImNvbGxlY3Rpb25fdGl0bGUiOlsiUGhvdG9ncmFwaHkgQ29sbGVjdGlvbiIs
+        IlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5lIiwiTWF0YXBpaGkiXSwiZGlz
+        cGxheV9jb2xsZWN0aW9uIjoiVGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUi
+        LCJwcmltYXJ5X2NvbGxlY3Rpb24iOlsiVGUgUGFwYSBDb2xsZWN0aW9ucyBP
+        bmxpbmUiXSwiY29udHJpYnV0aW5nX3BhcnRuZXIiOltdLCJjb250cmlidXRv
+        ciI6W10sImNvcHlyaWdodCI6WyJObyBrbm93biBjb3B5cmlnaHQgcmVzdHJp
+        Y3Rpb25zIl0sImNpdGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51bGws
+        Imxhbmd1YWdlIjpbXSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlzaGVyIjpb
+        Ik11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSJdLCJy
+        aWdodHMiOiJObyBrbm93biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIiwidXNh
+        Z2UiOlsiU2hhcmUiLCJNb2RpZnkiLCJVc2UgY29tbWVyY2lhbGx5Il0sInNv
+        dXJjZSI6W10sInRhZyI6WyJNYXRhcGloaSJdLCJ0aGVzaXNfbGV2ZWwiOm51
+        bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5X2NvbGxlY3Rpb24iOltdLCJzaGVs
+        Zl9sb2NhdGlvbiI6bnVsbCwiZXByaW50c190eXBlIjpbXSwidGV4dCI6bnVs
+        bCwiZnVsbHRleHQiOm51bGwsImZvcm1hdCI6W10sImRjX2lkZW50aWZpZXIi
+        OlsiZW11L2NhdGFsb2d1ZS8xOTcwNyIsIkMuMDE3MDU0Il0sImRpc3BsYXlf
+        ZGF0ZSI6IlVua25vd24iLCJwdWJsaXNoZWRfZGF0ZSI6W10sInN5bmRpY2F0
+        aW9uX2RhdGUiOiIyMDE0LTA4LTI5VDE3OjQ3OjE2LjcwOCsxMjowMCIsImxh
+        bmRpbmdfdXJsIjoiaHR0cDovL2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56
+        L29iamVjdC8xOTcwNyIsImxhcmdlX3RodW1ibmFpbF91cmwiOiJodHRwOi8v
+        Y29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRp
+        YS8xODU1OC81MjAiLCJyaWdodHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6
+        Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEuZ292dC5uei9BUElDb2xsZWN0
+        aW9uL21lZGlhLzE4NTU4LzI1MCIsIm9yaWdpbl91cmwiOm51bGwsIm1ldGFk
+        YXRhX3VybCI6bnVsbCwib2JqZWN0X3VybCI6bnVsbCwiaGFzX3ZlcnNpb24i
+        OltdLCJsaWNlbnNlIjpudWxsLCJyZWxhdGlvbiI6W10sImlzX3BhcnRfb2Yi
+        OltdLCJpc19yZXBsYWNlZF9ieSI6bnVsbCwicmVwbGFjZXMiOm51bGwsImlz
+        X3JlcXVpcmVkX2J5IjpudWxsLCJpc192ZXJzaW9uX29mIjpudWxsLCJ0YWJs
+        ZV9vZl9jb250ZW50cyI6bnVsbCwiaXNfY29tbWVyY2lhbF91c2UiOnRydWUs
+        ImNvbmNlcHRfaWRzIjpbXSwic291cmNlX2NvbnRyaWJ1dG9yX25hbWUiOltd
+        LCJzdWJqZWN0IjpbIkNpdGllcyBcdTAwMjYgdG93bnMiLCJVdGlsaXR5IHBv
+        bGVzIiwiRWxlY3RyaWMgbGluZXMiLCJCdWlsZGluZ3MiLCJQZWRlc3RyaWFu
+        cyIsIlN0cmVldHMiLCJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIl19LHsiaWQi
+        OjE3MzQyNCwidXBkYXRlZF9hdCI6IjIwMTYtMDItMjJUMjA6NTI6NTUuMjgw
+        KzEzOjAwIiwiY3JlYXRlZF9hdCI6IjIwMTItMDQtMjBUMTc6MjA6NDguMDAw
+        KzEyOjAwIiwidGl0bGUiOiJXZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOm51
+        bGwsImNvbnRlbnRfcGFydG5lciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQg
+        VGUgUGFwYSBUb25nYXJld2EiXSwiY2F0ZWdvcnkiOlsiSW1hZ2VzIl0sImNy
+        ZWF0b3IiOlsiTXVpciBcdTAwMjYgTW9vZGllIiwiVW5rbm93biJdLCJkY190
+        eXBlIjpbIlN0aWxsIEltYWdlIiwiQ3VsdHVyYWwgT2JqZWN0IiwiZ2VsYXRp
+        biBkcnkgcGxhdGUgbmVnYXRpdmVzIiwiYmxhY2stYW5kLXdoaXRlIG5lZ2F0
+        aXZlcyJdLCJkbnpfdHlwZSI6IkFydHdvcmsiLCJkYXRlIjpbXSwic291cmNl
+        X3VybCI6Imh0dHA6Ly9hcGkuZG56MGEuZGlnaXRhbG56Lm9yZy9yZWNvcmRz
+        LzE3MzQyNC9zb3VyY2UiLCJjb2xsZWN0aW9uIjpbIlBob3RvZ3JhcGh5IENv
+        bGxlY3Rpb24iLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFw
+        aWhpIl0sImFsdGVybmF0ZV90aXRsZSI6W10sImFkZGl0aW9uYWxfZGVzY3Jp
+        cHRpb24iOltdLCJkaXNwbGF5X2NvbnRlbnRfcGFydG5lciI6Ik11c2V1bSBv
+        ZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSIsImNvbGxlY3Rpb25f
+        dGl0bGUiOlsiUGhvdG9ncmFwaHkgQ29sbGVjdGlvbiIsIlRlIFBhcGEgQ29s
+        bGVjdGlvbnMgT25saW5lIiwiTWF0YXBpaGkiXSwiZGlzcGxheV9jb2xsZWN0
+        aW9uIjoiVGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiLCJwcmltYXJ5X2Nv
+        bGxlY3Rpb24iOlsiVGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiXSwiY29u
+        dHJpYnV0aW5nX3BhcnRuZXIiOltdLCJjb250cmlidXRvciI6W10sImNvcHly
+        aWdodCI6WyJObyBrbm93biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIl0sImNp
+        dGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51bGwsImxhbmd1YWdlIjpb
+        XSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlzaGVyIjpbIk11c2V1bSBvZiBO
+        ZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSJdLCJyaWdodHMiOiJObyBr
+        bm93biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIiwidXNhZ2UiOlsiU2hhcmUi
+        LCJNb2RpZnkiLCJVc2UgY29tbWVyY2lhbGx5Il0sInNvdXJjZSI6W10sInRh
+        ZyI6WyJNYXRhcGloaSJdLCJ0aGVzaXNfbGV2ZWwiOm51bGwsImhvbGRpbmci
+        OltdLCJsaWJyYXJ5X2NvbGxlY3Rpb24iOltdLCJzaGVsZl9sb2NhdGlvbiI6
+        bnVsbCwiZXByaW50c190eXBlIjpbXSwidGV4dCI6bnVsbCwiZnVsbHRleHQi
+        Om51bGwsImZvcm1hdCI6W10sImRjX2lkZW50aWZpZXIiOlsiZW11L2NhdGFs
+        b2d1ZS8xOTU4NCIsIkMuMDE3MDUwIl0sImRpc3BsYXlfZGF0ZSI6IlVua25v
+        d24iLCJwdWJsaXNoZWRfZGF0ZSI6W10sInN5bmRpY2F0aW9uX2RhdGUiOiIy
+        MDE0LTA4LTI5VDE3OjQ3OjEwLjk4NysxMjowMCIsImxhbmRpbmdfdXJsIjoi
+        aHR0cDovL2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56L29iamVjdC8xOTU4
+        NCIsImxhcmdlX3RodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMu
+        dGVwYXBhLmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRpYS8xNDA3NC81MjAi
+        LCJyaWdodHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xs
+        ZWN0aW9ucy50ZXBhcGEuZ292dC5uei9BUElDb2xsZWN0aW9uL21lZGlhLzE0
+        MDc0LzI1MCIsIm9yaWdpbl91cmwiOm51bGwsIm1ldGFkYXRhX3VybCI6bnVs
+        bCwib2JqZWN0X3VybCI6bnVsbCwiaGFzX3ZlcnNpb24iOltdLCJsaWNlbnNl
+        IjpudWxsLCJyZWxhdGlvbiI6W10sImlzX3BhcnRfb2YiOltdLCJpc19yZXBs
+        YWNlZF9ieSI6bnVsbCwicmVwbGFjZXMiOm51bGwsImlzX3JlcXVpcmVkX2J5
+        IjpudWxsLCJpc192ZXJzaW9uX29mIjpudWxsLCJ0YWJsZV9vZl9jb250ZW50
+        cyI6bnVsbCwiaXNfY29tbWVyY2lhbF91c2UiOnRydWUsImNvbmNlcHRfaWRz
+        IjpbXSwic291cmNlX2NvbnRyaWJ1dG9yX25hbWUiOltdLCJzdWJqZWN0Ijpb
+        IkNpdGllcyBcdTAwMjYgdG93bnMiLCJDaXR5IFx1MDAyNiB0b3duIGxpZmUi
+        LCJQZWRlc3RyaWFucyIsIkJ1aWxkaW5ncyIsIlRvd2VycyIsIlN0cmVldHMi
+        LCJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIl19LHsiaWQiOjE3MzU4NiwidXBk
+        YXRlZF9hdCI6IjIwMTYtMDItMjJUMjA6NTI6NTQuNzE1KzEzOjAwIiwiY3Jl
+        YXRlZF9hdCI6IjIwMTItMDQtMjBUMTc6MjA6NTAuMDAwKzEyOjAwIiwidGl0
+        bGUiOiJXZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOm51bGwsImNvbnRlbnRf
+        cGFydG5lciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25n
+        YXJld2EiXSwiY2F0ZWdvcnkiOlsiSW1hZ2VzIl0sImNyZWF0b3IiOlsiTXVp
+        ciBcdTAwMjYgTW9vZGllIiwiVW5rbm93biJdLCJkY190eXBlIjpbIlN0aWxs
+        IEltYWdlIiwiQ3VsdHVyYWwgT2JqZWN0IiwiZ2VsYXRpbiBkcnkgcGxhdGUg
+        bmVnYXRpdmVzIiwiYmxhY2stYW5kLXdoaXRlIG5lZ2F0aXZlcyJdLCJkbnpf
+        dHlwZSI6IkFydHdvcmsiLCJkYXRlIjpbXSwic291cmNlX3VybCI6Imh0dHA6
+        Ly9hcGkuZG56MGEuZGlnaXRhbG56Lm9yZy9yZWNvcmRzLzE3MzU4Ni9zb3Vy
+        Y2UiLCJjb2xsZWN0aW9uIjpbIlBob3RvZ3JhcGh5IENvbGxlY3Rpb24iLCJU
+        ZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhpIl0sImFsdGVy
+        bmF0ZV90aXRsZSI6W10sImFkZGl0aW9uYWxfZGVzY3JpcHRpb24iOltdLCJk
+        aXNwbGF5X2NvbnRlbnRfcGFydG5lciI6Ik11c2V1bSBvZiBOZXcgWmVhbGFu
+        ZCBUZSBQYXBhIFRvbmdhcmV3YSIsImNvbGxlY3Rpb25fdGl0bGUiOlsiUGhv
+        dG9ncmFwaHkgQ29sbGVjdGlvbiIsIlRlIFBhcGEgQ29sbGVjdGlvbnMgT25s
+        aW5lIiwiTWF0YXBpaGkiXSwiZGlzcGxheV9jb2xsZWN0aW9uIjoiVGUgUGFw
+        YSBDb2xsZWN0aW9ucyBPbmxpbmUiLCJwcmltYXJ5X2NvbGxlY3Rpb24iOlsi
+        VGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUiXSwiY29udHJpYnV0aW5nX3Bh
+        cnRuZXIiOltdLCJjb250cmlidXRvciI6W10sImNvcHlyaWdodCI6WyJObyBr
+        bm93biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIl0sImNpdGF0aW9uIjpbXSwi
+        Y3JlZGl0X2NyZWF0b3IiOm51bGwsImxhbmd1YWdlIjpbXSwicHJvdmVuYW5j
+        ZSI6bnVsbCwicHVibGlzaGVyIjpbIk11c2V1bSBvZiBOZXcgWmVhbGFuZCBU
+        ZSBQYXBhIFRvbmdhcmV3YSJdLCJyaWdodHMiOiJObyBrbm93biBjb3B5cmln
+        aHQgcmVzdHJpY3Rpb25zIiwidXNhZ2UiOlsiU2hhcmUiLCJNb2RpZnkiLCJV
+        c2UgY29tbWVyY2lhbGx5Il0sInNvdXJjZSI6W10sInRhZyI6WyJNYXRhcGlo
+        aSJdLCJ0aGVzaXNfbGV2ZWwiOm51bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5
+        X2NvbGxlY3Rpb24iOltdLCJzaGVsZl9sb2NhdGlvbiI6bnVsbCwiZXByaW50
+        c190eXBlIjpbXSwidGV4dCI6bnVsbCwiZnVsbHRleHQiOm51bGwsImZvcm1h
+        dCI6W10sImRjX2lkZW50aWZpZXIiOlsiZW11L2NhdGFsb2d1ZS8xOTczMCIs
+        IkMuMDE3MDU1Il0sImRpc3BsYXlfZGF0ZSI6IlVua25vd24iLCJwdWJsaXNo
+        ZWRfZGF0ZSI6W10sInN5bmRpY2F0aW9uX2RhdGUiOiIyMDE0LTA4LTI5VDE3
+        OjQ3OjA0Ljc0MysxMjowMCIsImxhbmRpbmdfdXJsIjoiaHR0cDovL2NvbGxl
+        Y3Rpb25zLnRlcGFwYS5nb3Z0Lm56L29iamVjdC8xOTczMCIsImxhcmdlX3Ro
+        dW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBhLmdvdnQu
+        bnovQVBJQ29sbGVjdGlvbi9tZWRpYS8xMTEwOS81MjAiLCJyaWdodHNfdXJs
+        IjpbXSwidGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBh
+        cGEuZ292dC5uei9BUElDb2xsZWN0aW9uL21lZGlhLzExMTA5LzI1MCIsIm9y
+        aWdpbl91cmwiOm51bGwsIm1ldGFkYXRhX3VybCI6bnVsbCwib2JqZWN0X3Vy
+        bCI6bnVsbCwiaGFzX3ZlcnNpb24iOltdLCJsaWNlbnNlIjpudWxsLCJyZWxh
+        dGlvbiI6W10sImlzX3BhcnRfb2YiOltdLCJpc19yZXBsYWNlZF9ieSI6bnVs
+        bCwicmVwbGFjZXMiOm51bGwsImlzX3JlcXVpcmVkX2J5IjpudWxsLCJpc192
+        ZXJzaW9uX29mIjpudWxsLCJ0YWJsZV9vZl9jb250ZW50cyI6bnVsbCwiaXNf
+        Y29tbWVyY2lhbF91c2UiOnRydWUsImNvbmNlcHRfaWRzIjpbXSwic291cmNl
+        X2NvbnRyaWJ1dG9yX25hbWUiOltdLCJzdWJqZWN0IjpbIkNpdGllcyBcdTAw
+        MjYgdG93bnMiLCJDaXR5IFx1MDAyNiB0b3duIGxpZmUiLCJDb21tZXJjaWFs
+        IHN0cmVldHMiLCJCdWlsZGluZ3MiLCJVdGlsaXR5IHBvbGVzIiwiRWxlY3Ry
+        aWMgbGluZXMiLCJDbG9jayB0b3dlcnMiLCJQaG90b2dyYXBoeSBDb2xsZWN0
+        aW9uIl19LHsiaWQiOjE3MzgzNywidXBkYXRlZF9hdCI6IjIwMTYtMDItMjJU
+        MjA6NTI6NTQuNjI2KzEzOjAwIiwiY3JlYXRlZF9hdCI6IjIwMTItMDQtMjBU
+        MTc6MjA6NTQuMDAwKzEyOjAwIiwidGl0bGUiOiJXZWxsaW5ndG9uIiwiZGVz
+        Y3JpcHRpb24iOm51bGwsImNvbnRlbnRfcGFydG5lciI6WyJNdXNldW0gb2Yg
+        TmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2EiXSwiY2F0ZWdvcnkiOlsi
+        SW1hZ2VzIl0sImNyZWF0b3IiOlsiTXVpciBcdTAwMjYgTW9vZGllIiwiVW5r
+        bm93biJdLCJkY190eXBlIjpbIlN0aWxsIEltYWdlIiwiQ3VsdHVyYWwgT2Jq
+        ZWN0IiwiZ2VsYXRpbiBkcnkgcGxhdGUgbmVnYXRpdmVzIiwiYmxhY2stYW5k
+        LXdoaXRlIG5lZ2F0aXZlcyJdLCJkbnpfdHlwZSI6IkFydHdvcmsiLCJkYXRl
+        IjpbXSwic291cmNlX3VybCI6Imh0dHA6Ly9hcGkuZG56MGEuZGlnaXRhbG56
+        Lm9yZy9yZWNvcmRzLzE3MzgzNy9zb3VyY2UiLCJjb2xsZWN0aW9uIjpbIlBo
+        b3RvZ3JhcGh5IENvbGxlY3Rpb24iLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9u
+        bGluZSIsIk1hdGFwaWhpIl0sImFsdGVybmF0ZV90aXRsZSI6W10sImFkZGl0
+        aW9uYWxfZGVzY3JpcHRpb24iOltdLCJkaXNwbGF5X2NvbnRlbnRfcGFydG5l
+        ciI6Ik11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSIs
+        ImNvbGxlY3Rpb25fdGl0bGUiOlsiUGhvdG9ncmFwaHkgQ29sbGVjdGlvbiIs
+        IlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5lIiwiTWF0YXBpaGkiXSwiZGlz
+        cGxheV9jb2xsZWN0aW9uIjoiVGUgUGFwYSBDb2xsZWN0aW9ucyBPbmxpbmUi
+        LCJwcmltYXJ5X2NvbGxlY3Rpb24iOlsiVGUgUGFwYSBDb2xsZWN0aW9ucyBP
+        bmxpbmUiXSwiY29udHJpYnV0aW5nX3BhcnRuZXIiOltdLCJjb250cmlidXRv
+        ciI6W10sImNvcHlyaWdodCI6WyJObyBrbm93biBjb3B5cmlnaHQgcmVzdHJp
+        Y3Rpb25zIl0sImNpdGF0aW9uIjpbXSwiY3JlZGl0X2NyZWF0b3IiOm51bGws
+        Imxhbmd1YWdlIjpbXSwicHJvdmVuYW5jZSI6bnVsbCwicHVibGlzaGVyIjpb
+        Ik11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRvbmdhcmV3YSJdLCJy
+        aWdodHMiOiJObyBrbm93biBjb3B5cmlnaHQgcmVzdHJpY3Rpb25zIiwidXNh
+        Z2UiOlsiU2hhcmUiLCJNb2RpZnkiLCJVc2UgY29tbWVyY2lhbGx5Il0sInNv
+        dXJjZSI6W10sInRhZyI6WyJNYXRhcGloaSJdLCJ0aGVzaXNfbGV2ZWwiOm51
+        bGwsImhvbGRpbmciOltdLCJsaWJyYXJ5X2NvbGxlY3Rpb24iOltdLCJzaGVs
+        Zl9sb2NhdGlvbiI6bnVsbCwiZXByaW50c190eXBlIjpbXSwidGV4dCI6bnVs
+        bCwiZnVsbHRleHQiOm51bGwsImZvcm1hdCI6W10sImRjX2lkZW50aWZpZXIi
+        OlsiZW11L2NhdGFsb2d1ZS8xOTgzNCIsIkMuMDE3MDU5Il0sImRpc3BsYXlf
+        ZGF0ZSI6IlVua25vd24iLCJwdWJsaXNoZWRfZGF0ZSI6W10sInN5bmRpY2F0
+        aW9uX2RhdGUiOiIyMDE0LTA4LTI5VDE3OjQ3OjAwLjk2NisxMjowMCIsImxh
+        bmRpbmdfdXJsIjoiaHR0cDovL2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56
+        L29iamVjdC8xOTgzNCIsImxhcmdlX3RodW1ibmFpbF91cmwiOiJodHRwOi8v
+        Y29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRp
+        YS83MDQwLzUyMCIsInJpZ2h0c191cmwiOltdLCJ0aHVtYm5haWxfdXJsIjoi
+        aHR0cDovL2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56L0FQSUNvbGxlY3Rp
+        b24vbWVkaWEvNzA0MC8yNTAiLCJvcmlnaW5fdXJsIjpudWxsLCJtZXRhZGF0
+        YV91cmwiOm51bGwsIm9iamVjdF91cmwiOm51bGwsImhhc192ZXJzaW9uIjpb
+        XSwibGljZW5zZSI6bnVsbCwicmVsYXRpb24iOltdLCJpc19wYXJ0X29mIjpb
+        XSwiaXNfcmVwbGFjZWRfYnkiOm51bGwsInJlcGxhY2VzIjpudWxsLCJpc19y
+        ZXF1aXJlZF9ieSI6bnVsbCwiaXNfdmVyc2lvbl9vZiI6bnVsbCwidGFibGVf
+        b2ZfY29udGVudHMiOm51bGwsImlzX2NvbW1lcmNpYWxfdXNlIjp0cnVlLCJj
+        b25jZXB0X2lkcyI6W10sInNvdXJjZV9jb250cmlidXRvcl9uYW1lIjpbXSwi
+        c3ViamVjdCI6WyJDaGFubmVscyIsIldhdGVyZnJvbnRzIiwiQ2l0aWVzIFx1
+        MDAyNiB0b3ducyIsIkJvYXRzIiwiQnVpbGRpbmdzIiwiUGhvdG9ncmFwaHkg
+        Q29sbGVjdGlvbiJdfSx7ImlkIjoxNzQwMDYsInVwZGF0ZWRfYXQiOiIyMDE2
+        LTAyLTIyVDIwOjUyOjU0Ljg0NisxMzowMCIsImNyZWF0ZWRfYXQiOiIyMDEy
+        LTA0LTIwVDE3OjIwOjU2LjAwMCsxMjowMCIsInRpdGxlIjoiV2VsbGluZ3Rv
+        biIsImRlc2NyaXB0aW9uIjpudWxsLCJjb250ZW50X3BhcnRuZXIiOlsiTXVz
+        ZXVtIG9mIE5ldyBaZWFsYW5kIFRlIFBhcGEgVG9uZ2FyZXdhIl0sImNhdGVn
+        b3J5IjpbIkltYWdlcyJdLCJjcmVhdG9yIjpbIk11aXIgXHUwMDI2IE1vb2Rp
+        ZSIsIlVua25vd24iXSwiZGNfdHlwZSI6WyJTdGlsbCBJbWFnZSIsIkN1bHR1
+        cmFsIE9iamVjdCIsImdlbGF0aW4gZHJ5IHBsYXRlIG5lZ2F0aXZlcyIsImJs
+        YWNrLWFuZC13aGl0ZSBuZWdhdGl2ZXMiXSwiZG56X3R5cGUiOiJBcnR3b3Jr
+        IiwiZGF0ZSI6W10sInNvdXJjZV91cmwiOiJodHRwOi8vYXBpLmRuejBhLmRp
+        Z2l0YWxuei5vcmcvcmVjb3Jkcy8xNzQwMDYvc291cmNlIiwiY29sbGVjdGlv
+        biI6WyJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUgUGFwYSBDb2xsZWN0
+        aW9ucyBPbmxpbmUiLCJNYXRhcGloaSJdLCJhbHRlcm5hdGVfdGl0bGUiOltd
+        LCJhZGRpdGlvbmFsX2Rlc2NyaXB0aW9uIjpbXSwiZGlzcGxheV9jb250ZW50
+        X3BhcnRuZXIiOiJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25n
+        YXJld2EiLCJjb2xsZWN0aW9uX3RpdGxlIjpbIlBob3RvZ3JhcGh5IENvbGxl
+        Y3Rpb24iLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhp
+        Il0sImRpc3BsYXlfY29sbGVjdGlvbiI6IlRlIFBhcGEgQ29sbGVjdGlvbnMg
+        T25saW5lIiwicHJpbWFyeV9jb2xsZWN0aW9uIjpbIlRlIFBhcGEgQ29sbGVj
+        dGlvbnMgT25saW5lIl0sImNvbnRyaWJ1dGluZ19wYXJ0bmVyIjpbXSwiY29u
+        dHJpYnV0b3IiOltdLCJjb3B5cmlnaHQiOlsiTm8ga25vd24gY29weXJpZ2h0
+        IHJlc3RyaWN0aW9ucyJdLCJjaXRhdGlvbiI6W10sImNyZWRpdF9jcmVhdG9y
+        IjpudWxsLCJsYW5ndWFnZSI6W10sInByb3ZlbmFuY2UiOm51bGwsInB1Ymxp
+        c2hlciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJl
+        d2EiXSwicmlnaHRzIjoiTm8ga25vd24gY29weXJpZ2h0IHJlc3RyaWN0aW9u
+        cyIsInVzYWdlIjpbIlNoYXJlIiwiTW9kaWZ5IiwiVXNlIGNvbW1lcmNpYWxs
+        eSJdLCJzb3VyY2UiOltdLCJ0YWciOlsiTWF0YXBpaGkiXSwidGhlc2lzX2xl
+        dmVsIjpudWxsLCJob2xkaW5nIjpbXSwibGlicmFyeV9jb2xsZWN0aW9uIjpb
+        XSwic2hlbGZfbG9jYXRpb24iOm51bGwsImVwcmludHNfdHlwZSI6W10sInRl
+        eHQiOm51bGwsImZ1bGx0ZXh0IjpudWxsLCJmb3JtYXQiOltdLCJkY19pZGVu
+        dGlmaWVyIjpbImVtdS9jYXRhbG9ndWUvMTk3OTMiLCJDLjAxNzA1OCJdLCJk
+        aXNwbGF5X2RhdGUiOiJVbmtub3duIiwicHVibGlzaGVkX2RhdGUiOltdLCJz
+        eW5kaWNhdGlvbl9kYXRlIjoiMjAxNC0wOC0yOVQxNzo0Njo1Ni43MjIrMTI6
+        MDAiLCJsYW5kaW5nX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEu
+        Z292dC5uei9vYmplY3QvMTk3OTMiLCJsYXJnZV90aHVtYm5haWxfdXJsIjoi
+        aHR0cDovL2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56L0FQSUNvbGxlY3Rp
+        b24vbWVkaWEvNDEwNi81MjAiLCJyaWdodHNfdXJsIjpbXSwidGh1bWJuYWls
+        X3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEuZ292dC5uei9BUElD
+        b2xsZWN0aW9uL21lZGlhLzQxMDYvMjUwIiwib3JpZ2luX3VybCI6bnVsbCwi
+        bWV0YWRhdGFfdXJsIjpudWxsLCJvYmplY3RfdXJsIjpudWxsLCJoYXNfdmVy
+        c2lvbiI6W10sImxpY2Vuc2UiOm51bGwsInJlbGF0aW9uIjpbXSwiaXNfcGFy
+        dF9vZiI6W10sImlzX3JlcGxhY2VkX2J5IjpudWxsLCJyZXBsYWNlcyI6bnVs
+        bCwiaXNfcmVxdWlyZWRfYnkiOm51bGwsImlzX3ZlcnNpb25fb2YiOm51bGws
+        InRhYmxlX29mX2NvbnRlbnRzIjpudWxsLCJpc19jb21tZXJjaWFsX3VzZSI6
+        dHJ1ZSwiY29uY2VwdF9pZHMiOltdLCJzb3VyY2VfY29udHJpYnV0b3JfbmFt
+        ZSI6W10sInN1YmplY3QiOlsiQ2l0aWVzIFx1MDAyNiB0b3ducyIsIkNvbW1l
+        cmNpYWwgc3RyZWV0cyIsIkJhbmtzIiwiQXduaW5ncyIsIkNsb2NrIHRvd2Vy
+        cyIsIkxhZGRlcnMiLCJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIl19LHsiaWQi
+        OjE3NDAxMywidXBkYXRlZF9hdCI6IjIwMTYtMDItMjJUMjA6NTI6NTUuMzY2
+        KzEzOjAwIiwiY3JlYXRlZF9hdCI6IjIwMTItMDQtMjBUMTc6MjA6NTYuMDAw
+        KzEyOjAwIiwidGl0bGUiOiJXZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOm51
+        bGwsImNvbnRlbnRfcGFydG5lciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQg
+        VGUgUGFwYSBUb25nYXJld2EiXSwiY2F0ZWdvcnkiOlsiSW1hZ2VzIl0sImNy
+        ZWF0b3IiOlsiTXVpciBcdTAwMjYgTW9vZGllIiwiVW5rbm93biJdLCJkY190
+        eXBlIjpbIlN0aWxsIEltYWdlIiwiQ3VsdHVyYWwgT2JqZWN0IiwiZ2VsYXRp
+        biBkcnkgcGxhdGUgbmVnYXRpdmVzIiwiYmxhY2stYW5kLXdoaXRlIG5lZ2F0
+        aXZlcyIsImNpdHlzY2FwZXMiXSwiZG56X3R5cGUiOiJBcnR3b3JrIiwiZGF0
+        ZSI6W10sInNvdXJjZV91cmwiOiJodHRwOi8vYXBpLmRuejBhLmRpZ2l0YWxu
+        ei5vcmcvcmVjb3Jkcy8xNzQwMTMvc291cmNlIiwiY29sbGVjdGlvbiI6WyJQ
+        aG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUgUGFwYSBDb2xsZWN0aW9ucyBP
+        bmxpbmUiLCJNYXRhcGloaSJdLCJhbHRlcm5hdGVfdGl0bGUiOltdLCJhZGRp
+        dGlvbmFsX2Rlc2NyaXB0aW9uIjpbXSwiZGlzcGxheV9jb250ZW50X3BhcnRu
+        ZXIiOiJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2Ei
+        LCJjb2xsZWN0aW9uX3RpdGxlIjpbIlBob3RvZ3JhcGh5IENvbGxlY3Rpb24i
+        LCJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIsIk1hdGFwaWhpIl0sImRp
+        c3BsYXlfY29sbGVjdGlvbiI6IlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5l
+        IiwicHJpbWFyeV9jb2xsZWN0aW9uIjpbIlRlIFBhcGEgQ29sbGVjdGlvbnMg
+        T25saW5lIl0sImNvbnRyaWJ1dGluZ19wYXJ0bmVyIjpbXSwiY29udHJpYnV0
+        b3IiOltdLCJjb3B5cmlnaHQiOlsiTm8ga25vd24gY29weXJpZ2h0IHJlc3Ry
+        aWN0aW9ucyJdLCJjaXRhdGlvbiI6W10sImNyZWRpdF9jcmVhdG9yIjpudWxs
+        LCJsYW5ndWFnZSI6W10sInByb3ZlbmFuY2UiOm51bGwsInB1Ymxpc2hlciI6
+        WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25nYXJld2EiXSwi
+        cmlnaHRzIjoiTm8ga25vd24gY29weXJpZ2h0IHJlc3RyaWN0aW9ucyIsInVz
+        YWdlIjpbIlNoYXJlIiwiTW9kaWZ5IiwiVXNlIGNvbW1lcmNpYWxseSJdLCJz
+        b3VyY2UiOltdLCJ0YWciOlsiTWF0YXBpaGkiXSwidGhlc2lzX2xldmVsIjpu
+        dWxsLCJob2xkaW5nIjpbXSwibGlicmFyeV9jb2xsZWN0aW9uIjpbXSwic2hl
+        bGZfbG9jYXRpb24iOm51bGwsImVwcmludHNfdHlwZSI6W10sInRleHQiOm51
+        bGwsImZ1bGx0ZXh0IjpudWxsLCJmb3JtYXQiOltdLCJkY19pZGVudGlmaWVy
+        IjpbImVtdS9jYXRhbG9ndWUvMTk1NTciLCJDLjAxNzA0OSJdLCJkaXNwbGF5
+        X2RhdGUiOiJVbmtub3duIiwicHVibGlzaGVkX2RhdGUiOltdLCJzeW5kaWNh
+        dGlvbl9kYXRlIjoiMjAxNC0wOC0yOVQxNzo0Njo1Ny4xMDYrMTI6MDAiLCJs
+        YW5kaW5nX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEuZ292dC5u
+        ei9vYmplY3QvMTk1NTciLCJsYXJnZV90aHVtYm5haWxfdXJsIjoiaHR0cDov
+        L2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56L0FQSUNvbGxlY3Rpb24vbWVk
+        aWEvNDAzOC81MjAiLCJyaWdodHNfdXJsIjpbXSwidGh1bWJuYWlsX3VybCI6
+        Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEuZ292dC5uei9BUElDb2xsZWN0
+        aW9uL21lZGlhLzQwMzgvMjUwIiwib3JpZ2luX3VybCI6bnVsbCwibWV0YWRh
+        dGFfdXJsIjpudWxsLCJvYmplY3RfdXJsIjpudWxsLCJoYXNfdmVyc2lvbiI6
+        W10sImxpY2Vuc2UiOm51bGwsInJlbGF0aW9uIjpbXSwiaXNfcGFydF9vZiI6
+        W10sImlzX3JlcGxhY2VkX2J5IjpudWxsLCJyZXBsYWNlcyI6bnVsbCwiaXNf
+        cmVxdWlyZWRfYnkiOm51bGwsImlzX3ZlcnNpb25fb2YiOm51bGwsInRhYmxl
+        X29mX2NvbnRlbnRzIjpudWxsLCJpc19jb21tZXJjaWFsX3VzZSI6dHJ1ZSwi
+        Y29uY2VwdF9pZHMiOltdLCJzb3VyY2VfY29udHJpYnV0b3JfbmFtZSI6W10s
+        InN1YmplY3QiOlsiSG91c2VzIiwiQnVpbGRpbmdzIiwiTW91bnRhaW5zIiwi
+        SGFyYm91cnMiLCJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIl19LHsiaWQiOjE3
+        MjczNSwidXBkYXRlZF9hdCI6IjIwMTYtMDItMjJUMjA6NTY6MzAuOTU4KzEz
+        OjAwIiwiY3JlYXRlZF9hdCI6IjIwMTItMDQtMjBUMTc6MjA6MzQuMDAwKzEy
+        OjAwIiwidGl0bGUiOiJXZWxsaW5ndG9uIiwiZGVzY3JpcHRpb24iOm51bGws
+        ImNvbnRlbnRfcGFydG5lciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUg
+        UGFwYSBUb25nYXJld2EiXSwiY2F0ZWdvcnkiOlsiSW1hZ2VzIl0sImNyZWF0
+        b3IiOlsiTXVpciBcdTAwMjYgTW9vZGllIiwiVW5rbm93biJdLCJkY190eXBl
+        IjpbIlN0aWxsIEltYWdlIiwiQ3VsdHVyYWwgT2JqZWN0IiwiZ2VsYXRpbiBk
+        cnkgcGxhdGUgbmVnYXRpdmVzIiwiYmxhY2stYW5kLXdoaXRlIG5lZ2F0aXZl
+        cyIsImNpdHlzY2FwZXMiXSwiZG56X3R5cGUiOiJBcnR3b3JrIiwiZGF0ZSI6
+        WyIxOTA1LTAxLTAxIDEyOjAwOjAwIFVUQyJdLCJzb3VyY2VfdXJsIjoiaHR0
+        cDovL2FwaS5kbnowYS5kaWdpdGFsbnoub3JnL3JlY29yZHMvMTcyNzM1L3Nv
+        dXJjZSIsImNvbGxlY3Rpb24iOlsiUGhvdG9ncmFwaHkgQ29sbGVjdGlvbiIs
+        IlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5lIiwiTWF0YXBpaGkiXSwiYWx0
+        ZXJuYXRlX3RpdGxlIjpbXSwiYWRkaXRpb25hbF9kZXNjcmlwdGlvbiI6W10s
+        ImRpc3BsYXlfY29udGVudF9wYXJ0bmVyIjoiTXVzZXVtIG9mIE5ldyBaZWFs
+        YW5kIFRlIFBhcGEgVG9uZ2FyZXdhIiwiY29sbGVjdGlvbl90aXRsZSI6WyJQ
+        aG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUgUGFwYSBDb2xsZWN0aW9ucyBP
+        bmxpbmUiLCJNYXRhcGloaSJdLCJkaXNwbGF5X2NvbGxlY3Rpb24iOiJUZSBQ
+        YXBhIENvbGxlY3Rpb25zIE9ubGluZSIsInByaW1hcnlfY29sbGVjdGlvbiI6
+        WyJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSJdLCJjb250cmlidXRpbmdf
+        cGFydG5lciI6W10sImNvbnRyaWJ1dG9yIjpbXSwiY29weXJpZ2h0IjpbIk5v
+        IGtub3duIGNvcHlyaWdodCByZXN0cmljdGlvbnMiXSwiY2l0YXRpb24iOltd
+        LCJjcmVkaXRfY3JlYXRvciI6bnVsbCwibGFuZ3VhZ2UiOltdLCJwcm92ZW5h
+        bmNlIjpudWxsLCJwdWJsaXNoZXIiOlsiTXVzZXVtIG9mIE5ldyBaZWFsYW5k
+        IFRlIFBhcGEgVG9uZ2FyZXdhIl0sInJpZ2h0cyI6Ik5vIGtub3duIGNvcHly
+        aWdodCByZXN0cmljdGlvbnMiLCJ1c2FnZSI6WyJTaGFyZSIsIk1vZGlmeSIs
+        IlVzZSBjb21tZXJjaWFsbHkiXSwic291cmNlIjpbXSwidGFnIjpbIk1hdGFw
+        aWhpIl0sInRoZXNpc19sZXZlbCI6bnVsbCwiaG9sZGluZyI6W10sImxpYnJh
+        cnlfY29sbGVjdGlvbiI6W10sInNoZWxmX2xvY2F0aW9uIjpudWxsLCJlcHJp
+        bnRzX3R5cGUiOltdLCJ0ZXh0IjpudWxsLCJmdWxsdGV4dCI6bnVsbCwiZm9y
+        bWF0IjpbXSwiZGNfaWRlbnRpZmllciI6WyJlbXUvY2F0YWxvZ3VlLzE5NDU1
+        IiwiQy4wMTEzMzkiXSwiZGlzcGxheV9kYXRlIjoiY2lyY2EgMTkwNSIsInB1
+        Ymxpc2hlZF9kYXRlIjpbXSwic3luZGljYXRpb25fZGF0ZSI6IjIwMTQtMDgt
+        MjlUMTc6NDc6MzAuMzUyKzEyOjAwIiwibGFuZGluZ191cmwiOiJodHRwOi8v
+        Y29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnovb2JqZWN0LzE5NDU1IiwibGFy
+        Z2VfdGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEu
+        Z292dC5uei9BUElDb2xsZWN0aW9uL21lZGlhLzI0OTQ5LzUyMCIsInJpZ2h0
+        c191cmwiOltdLCJ0aHVtYm5haWxfdXJsIjoiaHR0cDovL2NvbGxlY3Rpb25z
+        LnRlcGFwYS5nb3Z0Lm56L0FQSUNvbGxlY3Rpb24vbWVkaWEvMjQ5NDkvMjUw
+        Iiwib3JpZ2luX3VybCI6bnVsbCwibWV0YWRhdGFfdXJsIjpudWxsLCJvYmpl
+        Y3RfdXJsIjpudWxsLCJoYXNfdmVyc2lvbiI6W10sImxpY2Vuc2UiOm51bGws
+        InJlbGF0aW9uIjpbXSwiaXNfcGFydF9vZiI6W10sImlzX3JlcGxhY2VkX2J5
+        IjpudWxsLCJyZXBsYWNlcyI6bnVsbCwiaXNfcmVxdWlyZWRfYnkiOm51bGws
+        ImlzX3ZlcnNpb25fb2YiOm51bGwsInRhYmxlX29mX2NvbnRlbnRzIjpudWxs
+        LCJpc19jb21tZXJjaWFsX3VzZSI6dHJ1ZSwiY29uY2VwdF9pZHMiOltdLCJz
+        b3VyY2VfY29udHJpYnV0b3JfbmFtZSI6W10sInN1YmplY3QiOlsiQ2l0aWVz
+        IFx1MDAyNiB0b3ducyIsIkJ1aWxkaW5ncyIsIlN0cmVldHMiLCJSYWlscm9h
+        ZCBsb2NvbW90aXZlcyIsIkhpbGxzIiwiUGhvdG9ncmFwaHkgQ29sbGVjdGlv
+        biJdfSx7ImlkIjoxNzMwMDIsInVwZGF0ZWRfYXQiOiIyMDE2LTAyLTIyVDIw
+        OjU2OjMxLjczMSsxMzowMCIsImNyZWF0ZWRfYXQiOiIyMDEyLTA0LTIwVDE3
+        OjIwOjM4LjAwMCsxMjowMCIsInRpdGxlIjoiV2VsbGluZ3RvbiIsImRlc2Ny
+        aXB0aW9uIjpudWxsLCJjb250ZW50X3BhcnRuZXIiOlsiTXVzZXVtIG9mIE5l
+        dyBaZWFsYW5kIFRlIFBhcGEgVG9uZ2FyZXdhIl0sImNhdGVnb3J5IjpbIklt
+        YWdlcyJdLCJjcmVhdG9yIjpbIk11aXIgXHUwMDI2IE1vb2RpZSIsIlVua25v
+        d24iXSwiZGNfdHlwZSI6WyJTdGlsbCBJbWFnZSIsIkN1bHR1cmFsIE9iamVj
+        dCIsImdlbGF0aW4gZHJ5IHBsYXRlIG5lZ2F0aXZlcyIsImJsYWNrLWFuZC13
+        aGl0ZSBuZWdhdGl2ZXMiXSwiZG56X3R5cGUiOiJBcnR3b3JrIiwiZGF0ZSI6
+        WyIxOTAzLTAxLTAxIDEyOjAwOjAwIFVUQyJdLCJzb3VyY2VfdXJsIjoiaHR0
+        cDovL2FwaS5kbnowYS5kaWdpdGFsbnoub3JnL3JlY29yZHMvMTczMDAyL3Nv
+        dXJjZSIsImNvbGxlY3Rpb24iOlsiUGhvdG9ncmFwaHkgQ29sbGVjdGlvbiIs
+        IlRlIFBhcGEgQ29sbGVjdGlvbnMgT25saW5lIiwiTWF0YXBpaGkiXSwiYWx0
+        ZXJuYXRlX3RpdGxlIjpbXSwiYWRkaXRpb25hbF9kZXNjcmlwdGlvbiI6W10s
+        ImRpc3BsYXlfY29udGVudF9wYXJ0bmVyIjoiTXVzZXVtIG9mIE5ldyBaZWFs
+        YW5kIFRlIFBhcGEgVG9uZ2FyZXdhIiwiY29sbGVjdGlvbl90aXRsZSI6WyJQ
+        aG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUgUGFwYSBDb2xsZWN0aW9ucyBP
+        bmxpbmUiLCJNYXRhcGloaSJdLCJkaXNwbGF5X2NvbGxlY3Rpb24iOiJUZSBQ
+        YXBhIENvbGxlY3Rpb25zIE9ubGluZSIsInByaW1hcnlfY29sbGVjdGlvbiI6
+        WyJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSJdLCJjb250cmlidXRpbmdf
+        cGFydG5lciI6W10sImNvbnRyaWJ1dG9yIjpbXSwiY29weXJpZ2h0IjpbIk5v
+        IGtub3duIGNvcHlyaWdodCByZXN0cmljdGlvbnMiXSwiY2l0YXRpb24iOltd
+        LCJjcmVkaXRfY3JlYXRvciI6bnVsbCwibGFuZ3VhZ2UiOltdLCJwcm92ZW5h
+        bmNlIjpudWxsLCJwdWJsaXNoZXIiOlsiTXVzZXVtIG9mIE5ldyBaZWFsYW5k
+        IFRlIFBhcGEgVG9uZ2FyZXdhIl0sInJpZ2h0cyI6Ik5vIGtub3duIGNvcHly
+        aWdodCByZXN0cmljdGlvbnMiLCJ1c2FnZSI6WyJTaGFyZSIsIk1vZGlmeSIs
+        IlVzZSBjb21tZXJjaWFsbHkiXSwic291cmNlIjpbXSwidGFnIjpbIk1hdGFw
+        aWhpIl0sInRoZXNpc19sZXZlbCI6bnVsbCwiaG9sZGluZyI6W10sImxpYnJh
+        cnlfY29sbGVjdGlvbiI6W10sInNoZWxmX2xvY2F0aW9uIjpudWxsLCJlcHJp
+        bnRzX3R5cGUiOltdLCJ0ZXh0IjpudWxsLCJmdWxsdGV4dCI6bnVsbCwiZm9y
+        bWF0IjpbXSwiZGNfaWRlbnRpZmllciI6WyJlbXUvY2F0YWxvZ3VlLzE3NzYx
+        IiwiQy4wMTEyNzQiXSwiZGlzcGxheV9kYXRlIjoiY2lyY2EgMTkwMyIsInB1
+        Ymxpc2hlZF9kYXRlIjpbXSwic3luZGljYXRpb25fZGF0ZSI6IjIwMTQtMDgt
+        MjlUMTc6NDc6MjUuMjc3KzEyOjAwIiwibGFuZGluZ191cmwiOiJodHRwOi8v
+        Y29sbGVjdGlvbnMudGVwYXBhLmdvdnQubnovb2JqZWN0LzE3NzYxIiwibGFy
+        Z2VfdGh1bWJuYWlsX3VybCI6Imh0dHA6Ly9jb2xsZWN0aW9ucy50ZXBhcGEu
+        Z292dC5uei9BUElDb2xsZWN0aW9uL21lZGlhLzIxMDIzLzUyMCIsInJpZ2h0
+        c191cmwiOltdLCJ0aHVtYm5haWxfdXJsIjoiaHR0cDovL2NvbGxlY3Rpb25z
+        LnRlcGFwYS5nb3Z0Lm56L0FQSUNvbGxlY3Rpb24vbWVkaWEvMjEwMjMvMjUw
+        Iiwib3JpZ2luX3VybCI6bnVsbCwibWV0YWRhdGFfdXJsIjpudWxsLCJvYmpl
+        Y3RfdXJsIjpudWxsLCJoYXNfdmVyc2lvbiI6W10sImxpY2Vuc2UiOm51bGws
+        InJlbGF0aW9uIjpbXSwiaXNfcGFydF9vZiI6W10sImlzX3JlcGxhY2VkX2J5
+        IjpudWxsLCJyZXBsYWNlcyI6bnVsbCwiaXNfcmVxdWlyZWRfYnkiOm51bGws
+        ImlzX3ZlcnNpb25fb2YiOm51bGwsInRhYmxlX29mX2NvbnRlbnRzIjpudWxs
+        LCJpc19jb21tZXJjaWFsX3VzZSI6dHJ1ZSwiY29uY2VwdF9pZHMiOltdLCJz
+        b3VyY2VfY29udHJpYnV0b3JfbmFtZSI6W10sInN1YmplY3QiOlsiQ2l0aWVz
+        IFx1MDAyNiB0b3ducyIsIkNvbW1lcmNpYWwgc3RyZWV0cyIsIkJ1aWxkaW5n
+        cyIsIlBob3RvZ3JhcGh5IENvbGxlY3Rpb24iXX0seyJpZCI6MTczNTA2LCJ1
+        cGRhdGVkX2F0IjoiMjAxNi0wMi0yMlQyMDo1NjoyOC45NTUrMTM6MDAiLCJj
+        cmVhdGVkX2F0IjoiMjAxMi0wNC0yMFQxNzoyMDo0OS4wMDArMTI6MDAiLCJ0
+        aXRsZSI6IldlbGxpbmd0b24iLCJkZXNjcmlwdGlvbiI6bnVsbCwiY29udGVu
+        dF9wYXJ0bmVyIjpbIk11c2V1bSBvZiBOZXcgWmVhbGFuZCBUZSBQYXBhIFRv
+        bmdhcmV3YSJdLCJjYXRlZ29yeSI6WyJJbWFnZXMiXSwiY3JlYXRvciI6WyJN
+        dWlyIFx1MDAyNiBNb29kaWUiLCJVbmtub3duIl0sImRjX3R5cGUiOlsiU3Rp
+        bGwgSW1hZ2UiLCJDdWx0dXJhbCBPYmplY3QiLCJnZWxhdGluIGRyeSBwbGF0
+        ZSBuZWdhdGl2ZXMiLCJibGFjay1hbmQtd2hpdGUgbmVnYXRpdmVzIiwiY2l0
+        eXNjYXBlcyJdLCJkbnpfdHlwZSI6IkFydHdvcmsiLCJkYXRlIjpbIjE5MDUt
+        MDEtMDEgMTI6MDA6MDAgVVRDIl0sInNvdXJjZV91cmwiOiJodHRwOi8vYXBp
+        LmRuejBhLmRpZ2l0YWxuei5vcmcvcmVjb3Jkcy8xNzM1MDYvc291cmNlIiwi
+        Y29sbGVjdGlvbiI6WyJQaG90b2dyYXBoeSBDb2xsZWN0aW9uIiwiVGUgUGFw
+        YSBDb2xsZWN0aW9ucyBPbmxpbmUiLCJNYXRhcGloaSJdLCJhbHRlcm5hdGVf
+        dGl0bGUiOltdLCJhZGRpdGlvbmFsX2Rlc2NyaXB0aW9uIjpbXSwiZGlzcGxh
+        eV9jb250ZW50X3BhcnRuZXIiOiJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUg
+        UGFwYSBUb25nYXJld2EiLCJjb2xsZWN0aW9uX3RpdGxlIjpbIlBob3RvZ3Jh
+        cGh5IENvbGxlY3Rpb24iLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSIs
+        Ik1hdGFwaWhpIl0sImRpc3BsYXlfY29sbGVjdGlvbiI6IlRlIFBhcGEgQ29s
+        bGVjdGlvbnMgT25saW5lIiwicHJpbWFyeV9jb2xsZWN0aW9uIjpbIlRlIFBh
+        cGEgQ29sbGVjdGlvbnMgT25saW5lIl0sImNvbnRyaWJ1dGluZ19wYXJ0bmVy
+        IjpbXSwiY29udHJpYnV0b3IiOltdLCJjb3B5cmlnaHQiOlsiTm8ga25vd24g
+        Y29weXJpZ2h0IHJlc3RyaWN0aW9ucyJdLCJjaXRhdGlvbiI6W10sImNyZWRp
+        dF9jcmVhdG9yIjpudWxsLCJsYW5ndWFnZSI6W10sInByb3ZlbmFuY2UiOm51
+        bGwsInB1Ymxpc2hlciI6WyJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFw
+        YSBUb25nYXJld2EiXSwicmlnaHRzIjoiTm8ga25vd24gY29weXJpZ2h0IHJl
+        c3RyaWN0aW9ucyIsInVzYWdlIjpbIlNoYXJlIiwiTW9kaWZ5IiwiVXNlIGNv
+        bW1lcmNpYWxseSJdLCJzb3VyY2UiOltdLCJ0YWciOlsiTWF0YXBpaGkiXSwi
+        dGhlc2lzX2xldmVsIjpudWxsLCJob2xkaW5nIjpbXSwibGlicmFyeV9jb2xs
+        ZWN0aW9uIjpbXSwic2hlbGZfbG9jYXRpb24iOm51bGwsImVwcmludHNfdHlw
+        ZSI6W10sInRleHQiOm51bGwsImZ1bGx0ZXh0IjpudWxsLCJmb3JtYXQiOltd
+        LCJkY19pZGVudGlmaWVyIjpbImVtdS9jYXRhbG9ndWUvMjA0NDIiLCJDLjAx
+        MTM3NiJdLCJkaXNwbGF5X2RhdGUiOiJjaXJjYSAxOTA1IiwicHVibGlzaGVk
+        X2RhdGUiOltdLCJzeW5kaWNhdGlvbl9kYXRlIjoiMjAxNC0wOC0yOVQxNzo0
+        NzowOC44MTYrMTI6MDAiLCJsYW5kaW5nX3VybCI6Imh0dHA6Ly9jb2xsZWN0
+        aW9ucy50ZXBhcGEuZ292dC5uei9vYmplY3QvMjA0NDIiLCJsYXJnZV90aHVt
+        Ym5haWxfdXJsIjoiaHR0cDovL2NvbGxlY3Rpb25zLnRlcGFwYS5nb3Z0Lm56
+        L0FQSUNvbGxlY3Rpb24vbWVkaWEvMTI1NTcvNTIwIiwicmlnaHRzX3VybCI6
+        W10sInRodW1ibmFpbF91cmwiOiJodHRwOi8vY29sbGVjdGlvbnMudGVwYXBh
+        LmdvdnQubnovQVBJQ29sbGVjdGlvbi9tZWRpYS8xMjU1Ny8yNTAiLCJvcmln
+        aW5fdXJsIjpudWxsLCJtZXRhZGF0YV91cmwiOm51bGwsIm9iamVjdF91cmwi
+        Om51bGwsImhhc192ZXJzaW9uIjpbXSwibGljZW5zZSI6bnVsbCwicmVsYXRp
+        b24iOltdLCJpc19wYXJ0X29mIjpbXSwiaXNfcmVwbGFjZWRfYnkiOm51bGws
+        InJlcGxhY2VzIjpudWxsLCJpc19yZXF1aXJlZF9ieSI6bnVsbCwiaXNfdmVy
+        c2lvbl9vZiI6bnVsbCwidGFibGVfb2ZfY29udGVudHMiOm51bGwsImlzX2Nv
+        bW1lcmNpYWxfdXNlIjp0cnVlLCJjb25jZXB0X2lkcyI6W10sInNvdXJjZV9j
+        b250cmlidXRvcl9uYW1lIjpbXSwic3ViamVjdCI6WyJDaXRpZXMgXHUwMDI2
+        IHRvd25zIiwiQnVpbGRpbmdzIiwiU3RyZWV0cyIsIkhpbGxzIiwiQ2xvdWRz
+        IiwiUGhvdG9ncmFwaHkgQ29sbGVjdGlvbiJdfV0sInBlcl9wYWdlIjoyMCwi
+        cGFnZSI6MSwicmVxdWVzdF91cmwiOiJodHRwOi8vYXBpLmRuejBhLmRpZ2l0
+        YWxuei5vcmcvcmVjb3Jkcy5qc29uP2FuZCU1QnVzYWdlJTVEPU1vZGlmeVx1
+        MDAyNmFwaV9rZXk9Mzg3ZDE2Yzc1OTZjOWNmZmYxOTBkMTRhODFlYzE4OWFc
+        dTAwMjZkZWJ1Zz10cnVlXHUwMDI2ZmFjZXRzPWNvbnRlbnRfcGFydG5lciUy
+        Q3ByaW1hcnlfY29sbGVjdGlvbiUyQ3VzYWdlJTJDZGVjYWRlXHUwMDI2ZmFj
+        ZXRzX3Blcl9wYWdlPTI1MFx1MDAyNmZpZWxkcz1kZWZhdWx0JTJDc291cmNl
+        X2NvbnRyaWJ1dG9yX25hbWUlMkNkaXNwbGF5X2NvbGxlY3Rpb24lMkNkaXNw
+        bGF5X2NvbnRlbnRfcGFydG5lciUyQ3NvdXJjZV91cmwlMkN0aHVtYm5haWxf
+        dXJsJTJDZGlzcGxheV9kYXRlJTJDY3JlYXRvciUyQ2NhdGVnb3J5JTJDc3Vi
+        amVjdFx1MDAyNnBhZ2U9MVx1MDAyNnBlcl9wYWdlPTIwXHUwMDI2cmVjb3Jk
+        X3R5cGU9MFx1MDAyNnRleHQ9d2VsbGluZ3RvbiIsInNvbHJfcmVxdWVzdF9w
+        YXJhbXMiOnsiZnEiOlsidHlwZTpSZWNvcmQiLCJyZWNvcmRfdHlwZV9pOjAi
+        LCItaXNfY2F0YWxvZ19yZWNvcmRfYjp0cnVlIiwiLWNvbnRlbnRfcGFydG5l
+        cl9zbTooTmF0aW9uYWxcXCBMaWJyYXJ5XFwgU2luZ2Fwb3JlKSIsIi1wcmlt
+        YXJ5X2NvbGxlY3Rpb25fc206KE5hdGlvbmFsXFwgTGlicmFyeVxcIG9mXFwg
+        TmV3XFwgWmVhbGFuZFxcIENhdGFsb2d1ZSBPUiBJbmRleFxcIE5ld1xcIFpl
+        YWxhbmQgT1IgZmluZE5aYXJ0aWNsZXMpIiwiLXNvdXJjZV9pZF9zOmNlbm90
+        YXBoIiwiLXNvdXJjZV9pZF9zOnRhcHVoaVxcLWF1dGhvcml0aWVzIiwiLXNv
+        dXJjZV9pZF9zOnRhcHVoaSIsIi1zb3VyY2VfaWRfczp0YXB1aGlcXC1zZXJp
+        ZXMiLCItc291cmNlX2lkX3M6bWluaXN0cnlfZW52aXJvbm1lbnRfa29vcmRp
+        bmF0ZXMiLCJ1c2FnZV9zbTpNb2RpZnkiLG51bGxdLCJxIjoid2VsbGluZ3Rv
+        biIsImZsIjoiKiBzY29yZSIsInFmIjoidGl0bGVfdGV4dCBkZXNjcmlwdGlv
+        bl90ZXh0IGFkZGl0aW9uYWxfZGVzY3JpcHRpb25fdGV4dCBjb2xsZWN0aW9u
+        X3RleHQgYXR0YWNobWVudF9uYW1lX3RleHQgcGxhY2VuYW1lX3RleHQgY29u
+        dHJpYnV0aW5nX3BhcnRuZXJfdGV4dCBjcmVhdG9yX3RleHQgY29udHJpYnV0
+        b3JfdGV4dCBwdWJsaXNoZXJfdGV4dCBmdWxsdGV4dF90ZXh0IHRleHQgc3Vi
+        amVjdF90ZXh0IiwiZGVmVHlwZSI6ImVkaXNtYXgiLCJzdGFydCI6MCwicm93
+        cyI6MjAsImZhY2V0IjoidHJ1ZSIsImYuY29udGVudF9wYXJ0bmVyX3NtLmZh
+        Y2V0LmxpbWl0IjoxNTAsImYuY29udGVudF9wYXJ0bmVyX3NtLmZhY2V0Lm9m
+        ZnNldCI6MCwiZi5jb250ZW50X3BhcnRuZXJfc20uZmFjZXQubWluY291bnQi
+        OjEsImZhY2V0LmZpZWxkIjpbImNvbnRlbnRfcGFydG5lcl9zbSIsInByaW1h
+        cnlfY29sbGVjdGlvbl9zbSIsInVzYWdlX3NtIiwiZGVjYWRlX2ltIl0sImYu
+        cHJpbWFyeV9jb2xsZWN0aW9uX3NtLmZhY2V0LmxpbWl0IjoxNTAsImYucHJp
+        bWFyeV9jb2xsZWN0aW9uX3NtLmZhY2V0Lm9mZnNldCI6MCwiZi5wcmltYXJ5
+        X2NvbGxlY3Rpb25fc20uZmFjZXQubWluY291bnQiOjEsImYudXNhZ2Vfc20u
+        ZmFjZXQubGltaXQiOjE1MCwiZi51c2FnZV9zbS5mYWNldC5vZmZzZXQiOjAs
+        ImYudXNhZ2Vfc20uZmFjZXQubWluY291bnQiOjEsImYuZGVjYWRlX2ltLmZh
+        Y2V0LmxpbWl0IjoxNTAsImYuZGVjYWRlX2ltLmZhY2V0Lm9mZnNldCI6MCwi
+        Zi5kZWNhZGVfaW0uZmFjZXQubWluY291bnQiOjF9LCJ3YXJuaW5ncyI6WyJU
+        aGUgZmFjZXRzX3Blcl9wYWdlIHBhcmFtZXRlciBjYW4gbm90IGV4Y2VlZCAx
+        NTAiXSwiZmFjZXRzIjp7ImNvbnRlbnRfcGFydG5lciI6eyJWaWN0b3JpYSBV
+        bml2ZXJzaXR5IG9mIFdlbGxpbmd0b24iOjUzNzQxLCJOYXR1cmVXYXRjaCBO
+        WiI6MTIzNDksIk1pbmlzdHJ5IGZvciBDdWx0dXJlIGFuZCBIZXJpdGFnZSI6
+        MzM5MCwiQXVja2xhbmQgTGlicmFyaWVzIjoyOTE5LCJJbnRlcm5ldCBBcmNo
+        aXZlIjoyNDk0LCJNdXNldW0gb2YgTmV3IFplYWxhbmQgVGUgUGFwYSBUb25n
+        YXJld2EiOjExODYsIkRlcGFydG1lbnQgb2YgSW50ZXJuYWwgQWZmYWlycyI6
+        MTE2MiwiVXBwZXIgSHV0dCBDaXR5IExpYnJhcnkiOjY3NiwiS2V0ZSBIb3Jv
+        d2hlbnVhIjo2MzUsIkFyY2hpdmVzIE5ldyBaZWFsYW5kIFRlIFJ1YSBNYWhh
+        cmEgbyB0ZSBLxIF3YW5hdGFuZ2EiOjUwMiwiQ2hyaXN0Y2h1cmNoIENpdHkg
+        TGlicmFyaWVzIjo0ODYsIldhaXJhcmFwYSBBcmNoaXZlIjo0NDUsIlVDIFF1
+        YWtlU3R1ZGllcyI6MjM2LCJNVEcgSGF3a2UncyBCYXkiOjIwMiwiVGhlIFVu
+        aXZlcnNpdHkgb2YgQXVja2xhbmQgTGlicmFyeSI6MTk2LCJBbGV4YW5kZXIg
+        VHVybmJ1bGwgTGlicmFyeSI6MTgyLCJUaGUgQnJpdGlzaCBMaWJyYXJ5Ijox
+        NjQsIktldGUgVGF1cG8iOjE0NywiV2lraW1lZGlhIENvbW1vbnMiOjEwNiwi
+        QXVja2xhbmQgV2FyIE1lbW9yaWFsIE11c2V1bSBUYW1ha2kgUGFlbmdhIEhp
+        cmEiOjk1LCJkYXRhLmdvdnQubnoiOjkyLCJOYXRpb25hbCBMaWJyYXJ5IG9m
+        IE5ldyBaZWFsYW5kIjo4OSwiVGF1cmFuZ2EgQ2l0eSBMaWJyYXJpZXMiOjgw
+        LCJLZXRlIE1hc3RlcnRvbiI6NzcsIktldGUgVGFzbWFuIjo3NSwiTXVzZXVt
+        IFZpY3RvcmlhIjo3MCwiQXVkaW9DdWx0dXJlIjo2NywiVi5DLiBCcm93bmUg
+        XHUwMDI2IFNvbiI6NjIsIkF1Y2tsYW5kIEFydCBHYWxsZXJ5IFRvaSBvIFTE
+        gW1ha2kiOjQ5LCJQYWxtZXJzdG9uIE5vcnRoIENpdHkgTGlicmFyeSI6NDks
+        Ikh1dHQgQ2l0eSBMaWJyYXJpZXMiOjM0LCJLZXRlIFJvdG9ydWEiOjMzLCJO
+        YXR1cmVXYXRjaE5aIjozMiwiS29vcmRpbmF0ZXMiOjI1LCJIYW1pbHRvbiBD
+        aXR5IExpYnJhcmllcyI6MjMsIkxhbmRjYXJlIFJlc2VhcmNoIjoyMiwiVHJv
+        dmUiOjIyLCJGaWdTaGFyZSI6MjEsIk5aIE9uIFNjcmVlbiI6MjAsIkRpcmVj
+        dG9yeSBvZiBPcGVuIEFjY2VzcyBKb3VybmFscyI6MTksIlNVUEVSVSI6MTks
+        IlVuaXZlcnNpdHkgb2YgV2Fpa2F0byI6MTksIkRpZ2l0YWwgUHVibGljIExp
+        YnJhcnkgb2YgQW1lcmljYSI6MTcsIkZyZWVzb3VuZCI6MTYsIlRoZSBOZXcg
+        WmVhbGFuZCBOdXJzaW5nIEVkdWNhdGlvbiBhbmQgUmVzZWFyY2ggRm91bmRh
+        dGlvbiI6MTYsIktldGUgU2Vsd3luIjoxNSwiTmV3IFplYWxhbmQgRnJlZSBQ
+        aG90b3MiOjE1LCJTdGF0ZSBMaWJyYXJ5IG9mIFZpY3RvcmlhIjoxNCwiSHV0
+        dCBDaXR5IENvdW5jaWwiOjExLCJXYWltYXRlIEhpc3RvcmljYWwgTXVzZXVt
+        IGFuZCBBcmNoaXZlcyI6MTEsIk5ldyBaZWFsYW5kIEZhc2hpb24gTXVzZXVt
+        Ijo5LCJEZXV0c2NoZSBEaWdpdGFsZSBCaWJsaW90aGVrIjo4LCJGaWd1cmUu
+        TloiOjgsIktldGUgQ2hyaXN0Y2h1cmNoIjo3LCJCdWxsZXIsIEdyZXkgYW5k
+        IFdlc3RsYW5kIERpc3RyaWN0IExpYnJhcmllcyI6NiwiTGluY29sbiBVbml2
+        ZXJzaXR5Ijo2LCJOSVdBIjo1LCJDYXJ0ZXJ0b24gRGlzdHJpY3QgTGlicmFy
+        eSI6MywiRGVwYXJ0bWVudCBvZiBDb25zZXJ2YXRpb24gVGUgUGFwYSBBdGF3
+        aGFpIjozLCJEb3duIHRvIHRoZSBXaXJlIjozLCJTdGF0ZSBMaWJyYXJ5IG9m
+        IE5ldyBTb3V0aCBXYWxlcyI6MywiS2V0ZSBUYXJhcnVhIjoyLCJOWkVJIFRl
+        IFJpdSBSb2EgKE5ldyBaZWFsYW5kIEVkdWNhdGlvbmFsIEluc3RpdHV0ZSki
+        OjIsImVxbnouY2hjaC4yMDEwIjoyLCJBdXN0cmFsaWFuIE5hdGlvbmFsIE1h
+        cml0aW1lIE11c2V1bSI6MSwiS2V0ZSBDZW50cmFsIEhhd2tlJ3MgQmF5Ijox
+        LCJLZXRlIEhhdXJha2kgQ29yb21hbmRlbCI6MSwiS2V0ZSBLaW5nIENvdW50
+        cnkiOjEsIktldGUgTmV3IFBseW1vdXRoIjoxLCJNaXggXHUwMDI2IE1hc2gg
+        MjAxMSI6MSwiTmdhIE1hbnUgTmF0dXJlIFJlc2VydmUiOjEsIlRoZSBOYXRp
+        b25hbCBBcmNoaXZlcyBVSyI6MX0sInByaW1hcnlfY29sbGVjdGlvbiI6eyJO
+        ZXcgWmVhbGFuZCBFbGVjdHJvbmljIFRleHQgQ29sbGVjdGlvbiI6NTM3MDEs
+        Ik5hdHVyZVdhdGNoIE5aIjoxMjM0OSwiRmxpY2tyIjozNjQ0LCJBdWNrbGFu
+        ZCBMaWJyYXJpZXMgSGVyaXRhZ2UgSW1hZ2VzIENvbGxlY3Rpb24iOjIzNzIs
+        Ik5aSGlzdG9yeSAtIFN1ZmZyYWdlIHBldGl0aW9uIHNpZ25hdG9yaWVzIjox
+        MjcyLCJUZSBQYXBhIENvbGxlY3Rpb25zIE9ubGluZSI6MTE4NiwiVGhlIE5l
+        dyBaZWFsYW5kIEdhemV0dGUiOjEwMzQsIk5aSGlzdG9yeSAtIFNvdXRoIEFm
+        cmljYW4gV2FyIHNvbGRpZXJzIjo5NjksIlVwcGVyIEh1dHQgQ2l0eSBMaWJy
+        YXJ5IEhlcml0YWdlIENvbGxlY3Rpb25zIjo2NzYsIktldGUgSG9yb3doZW51
+        YSI6NjM1LCJOWiBDaGluZXNlIEpvdXJuYWxz5YWI6amF6ICF5LmL6IGyIjo1
+        NDcsIlBpY3R1cmUgV2FpcmFyYXBhIjo0NDUsIlRoZSBFbmN5Y2xvcGVkaWEg
+        b2YgTmV3IFplYWxhbmQgMTk2NiI6Mzg0LCJUZSBBcmEgLSBUaGUgRW5jeWNs
+        b3BlZGlhIG9mIE5ldyBaZWFsYW5kIjozMTcsIlF1YWtlU3R1ZGllcyBSZXBv
+        c2l0b3J5IjoyMzYsIk1URyBIYXdrZSdzIEJheSI6MjAyLCJFYXJseSBOZXcg
+        WmVhbGFuZCBTdGF0dXRlcyI6MTkwLCJOWkhpc3RvcnkiOjE5MCwiRGljdGlv
+        bmFyeSBvZiBOZXcgWmVhbGFuZCBCaW9ncmFwaHkiOjE3NiwiS2V0ZSBUYXVw
+        byI6MTQ3LCJOZXcgWmVhbGFuZCBHYXpldHRlIjoxMjgsIllvdVR1YmUiOjEx
+        MiwiV2lraW1lZGlhIENvbW1vbnMiOjEwNiwiQXVja2xhbmQgTXVzZXVtIENv
+        bGxlY3Rpb25zIjo5NSwiZGF0YS5nb3Z0Lm56Ijo5MiwiQXJjaHdheSI6ODcs
+        IkF0b0pzT25saW5lIjo4NSwiVGF1cmFuZ2EgTWVtb3JpZXMiOjgwLCJLZXRl
+        IE1hc3RlcnRvbiI6NzcsIktldGUgVGFzbWFuIjo3NSwiTXVzZXVtIFZpY3Rv
+        cmlhIjo3MCwiQXVkaW9DdWx0dXJlIjo2NywiVi5DLiBCcm93bmUgXHUwMDI2
+        IFNvbiBOWiBBZXJpYWwgUGhvdG9ncmFwaCBDb2xsZWN0aW9uIjo2MiwiQXVj
+        a2xhbmQgQXJ0IEdhbGxlcnkgVG9pIG8gVMSBbWFraSI6NDksIlDEgXRha2Eg
+        SXB1cmFuZ2kgLSBNYW5hd2F0dSBNZW1vcnkgT25saW5lIjo0OSwiUXVha2VT
+        dG9yaWVzIjo0MiwiVlVXIFJlc2VhcmNoQXJjaGl2ZSI6NDAsIlRoZSBIdXR0
+        IENpdHkgTGlicmFyaWVzIE9ubGluZSBIZXJpdGFnZSBDb2xsZWN0aW9uIjoz
+        NCwiS2V0ZSBSb3RvcnVhIjozMywiTmF0dXJlV2F0Y2hOWiI6MzIsIlRBUFVI
+        SSI6MjcsIktvb3JkaW5hdGVzIjoyNSwiS2V0ZSBIYW1pbHRvbiI6MjMsIlRy
+        b3ZlIjoyMiwiRmlnU2hhcmUiOjIxLCJOWiBPbiBTY3JlZW4iOjIwLCJEaXJl
+        Y3Rvcnkgb2YgT3BlbiBBY2Nlc3MgSm91cm5hbHMiOjE5LCJMYW5kY2FyZSBS
+        ZXNlYXJjaCBEaWdpdGFsIExpYnJhcnkiOjE5LCJUaGUgSHViIFNVUEVSVSI6
+        MTksIk3EgW9yaSBBcnQ6IENhbm9lcyI6MTgsIkRpZ2l0YWwgUHVibGljIExp
+        YnJhcnkgb2YgQW1lcmljYSI6MTcsIkZyZWVzb3VuZCI6MTYsIk51cnNpbmcg
+        RWR1Y2F0aW9uIGFuZCBSZXNlYXJjaCBGb3VuZGF0aW9uIC0gTnVyc2luZyBP
+        cmFsIEhpc3RvcmllcyBpbiBOWiI6MTYsIktldGUgU2Vsd3luIjoxNSwiTmV3
+        IFplYWxhbmQgRnJlZSBQaG90b3MiOjE1LCJBcmNoaXZlcyBOZXcgWmVhbGFu
+        ZCBIaXN0b3JpY2FsIEZpbG0gRm9vdGFnZSI6MTQsIlN0YXRlIExpYnJhcnkg
+        b2YgVmljdG9yaWEiOjE0LCJIdXR0IENpdHkgQ291bmNpbCBBcmNoaXZlcyI6
+        MTEsIk5aTXVzZXVtcyI6MTEsIk5ldyBaZWFsYW5kIEZhc2hpb24gTXVzZXVt
+        Ijo5LCJEZXV0c2NoZSBEaWdpdGFsZSBCaWJsaW90aGVrIjo4LCJGaWd1cmUu
+        TloiOjgsIktldGUgQ2hyaXN0Y2h1cmNoIjo3LCJLZXRlIFdlc3QgQ29hc3Qi
+        OjYsIkxpbmNvbG4gVW5pdmVyc2l0eSBMaXZpbmcgSGVyaXRhZ2U6IFRpa2Fr
+        YSBUxY1rdSBJaG8iOjYsIlJlc2VhcmNoU3BhY2VAQXVja2xhbmQiOjYsIkNh
+        cnRlcnRvbiBLZXRlIjozLCJEb3duIHRvIHRoZSBXaXJlIjozLCJOWkZVTkdJ
+        IjozLCJJbnRlcm5ldCBBcmNoaXZlIjoyLCJLZXRlIFRhcmFydWEiOjIsIk5a
+        RUkgSGVyaXRhZ2UiOjIsIktldGUgQ2VudHJhbCBIYXdrZSdzIEJheSI6MSwi
+        S2V0ZSBIYXVyYWtpIENvcm9tYW5kZWwiOjEsIktldGUgS2luZyBDb3VudHJ5
+        IjoxLCJLZXRlIE5ldyBQbHltb3V0aCI6MSwiTWl4IFx1MDAyNiBNYXNoIExp
+        dGVyYWN5IENhdGVnb3J5IENvbnRlbnQiOjEsIk5nYSBNYW51IEltYWdlcyI6
+        MSwiUmVzZWFyY2hDb21tb25zQFdhaWthdG8iOjEsIlNoYXJlZCBSZXBvc2l0
+        b3J5IjoxfSwidXNhZ2UiOnsiTW9kaWZ5Ijo4MjUwMiwiU2hhcmUiOjgyNTAy
+        LCJVc2UgY29tbWVyY2lhbGx5Ijo2Nzk4NX0sImRlY2FkZSI6eyIyMDEwIjox
+        MzU5NSwiMTkwMCI6MTI3OTYsIjE4OTAiOjY3NTUsIjE4NzAiOjYxODgsIjE4
+        ODAiOjUwMDQsIjE5MjAiOjIzMTQsIjE5ODAiOjE4NTMsIjE5MTAiOjE1OTcs
+        IjE4NjAiOjE0NTksIjIwMDAiOjEzNTgsIjE5MzAiOjEyNjgsIjE5NDAiOjgy
+        MCwiMTk5MCI6NzUxLCIxOTcwIjo3MzQsIjE5NTAiOjU0MiwiMTg1MCI6NDY4
+        LCIxOTYwIjo0NTUsIjE4MjAiOjEwNCwiMTg0MCI6OTIsIjE4MzAiOjY1LCIx
+        NzcwIjoxOCwiMTgwMCI6NywiLTEwIjo0LCIxNzUwIjo0LCI3ODUwIjoyLCIx
+        MzMwIjoxLCIyNzMwIjoxLCI1MTcwIjoxLCI2MzMwIjoxfX19fQ==
+    http_version: 
+  recorded_at: Sat, 25 Jun 2016 02:48:33 GMT
+- request:
+    method: get
+    uri: http://api.dnz0a.digitalnz.org/records.json?and%5Busage%5D=Modify&api_key=387d16c7596c9cfff190d14a81ec189a&debug=true&facets=category&facets_per_page=250&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject&page=1&per_page=0&record_type=0&text=wellington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jun 2016 02:48:33 GMT
+      Server:
+      - thin 1.6.2 codename Doc Brown
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"7fa93380d28ed0c170f574902093fd34"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1d7f4a25-4923-4048-9b1d-d55ca4c706c5
+      X-Runtime:
+      - '0.138615'
+      Via:
+      - 1.1 api.digitalnz.org
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"search":{"result_count":82502,"results":[],"per_page":0,"page":1,"request_url":"http://api.dnz0a.digitalnz.org/records.json?and%5Busage%5D=Modify\u0026api_key=387d16c7596c9cfff190d14a81ec189a\u0026debug=true\u0026facets=category\u0026facets_per_page=250\u0026fields=default%2Csource_contributor_name%2Cdisplay_collection%2Cdisplay_content_partner%2Csource_url%2Cthumbnail_url%2Cdisplay_date%2Ccreator%2Ccategory%2Csubject\u0026page=1\u0026per_page=0\u0026record_type=0\u0026text=wellington","solr_request_params":{"fq":["type:Record","record_type_i:0","-is_catalog_record_b:true","-content_partner_sm:(National\\
+        Library\\ Singapore)","-primary_collection_sm:(National\\ Library\\ of\\ New\\
+        Zealand\\ Catalogue OR Index\\ New\\ Zealand OR findNZarticles)","-source_id_s:cenotaph","-source_id_s:tapuhi\\-authorities","-source_id_s:tapuhi","-source_id_s:tapuhi\\-series","-source_id_s:ministry_environment_koordinates","usage_sm:Modify",null],"q":"wellington","fl":"*
+        score","qf":"title_text description_text additional_description_text collection_text
+        attachment_name_text placename_text contributing_partner_text creator_text
+        contributor_text publisher_text fulltext_text text subject_text","defType":"edismax","start":0,"rows":0,"facet":"true","f.category_sm.facet.limit":150,"f.category_sm.facet.offset":0,"f.category_sm.facet.mincount":1,"facet.field":["category_sm"]},"warnings":["The
+        facets_per_page parameter can not exceed 150"],"facets":{"category":{"Books":52614,"Images":23518,"Archives":3593,"Articles":1901,"Videos":190,"Other":182,"Data":139,"Research
+        papers":109,"Reference sources":87,"Newspapers":85,"Audio":37}}}}'
+    http_version: 
+  recorded_at: Sat, 25 Jun 2016 02:48:33 GMT
+recorded_with: VCR 3.0.1

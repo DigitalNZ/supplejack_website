@@ -25,7 +25,7 @@ gem 'rubocop', require: false
 gem 'therubyracer'
 gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'modernizr-rails'
-gem "react_on_rails", git: 'https://github.com/ubermouse/react_on_rails.git'
+gem "react_on_rails", git: 'https://github.com/shakacode/react_on_rails'
 gem 'sass-rails',   '~> 4.0.3'
 gem 'uglifier', '>= 1.0.3'
 gem 'foundation-rails', '~> 5.4.5.0'
@@ -39,9 +39,6 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'binding_of_caller'
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'guard-rspec', require: false
   gem 'yard'
   gem 'rubocop-rspec'
   gem 'capistrano', '~> 3.1'
@@ -53,6 +50,9 @@ group :development do
 end
 
 group :test, :development do
+  gem 'spring-commands-rspec'
+  gem 'spring'
+  gem 'guard-rspec', require: false  
   gem "rspec-rails", "~> 3.0"
   gem 'oily_png'
   gem 'minitest'

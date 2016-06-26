@@ -16,8 +16,22 @@ RSpec.feature 'A user interacts with the search panel', js: true, vcr: true, slo
     context 'a user removes a filter' do
       it 'is removed from the page' do
         search_panel.active_filters.first.click
-
         expect(search_panel.active_filters.length).to eq(1)
+      end
+
+      it 'perform a search without the filter while the filter disappear' do
+      # :( capybara doesn't appear to have support for waiting for the URL to change
+        search_panel.active_filters.first.click
+        # Async waiting for page reload new search results
+        expect(page).to have_current_path("/records?text=wellington&i%5Busage%5D=Modify")
+
+        query_hash = Rack::Utils.parse_nested_query(URI.parse(page.current_url).query)
+        expect(query_hash.deep_symbolize_keys).to eq({
+          text: 'wellington',
+          i: {
+            :usage=>"Modify",
+          }
+        })
       end
     end
   end

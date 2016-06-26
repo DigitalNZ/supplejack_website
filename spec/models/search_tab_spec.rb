@@ -71,6 +71,26 @@ RSpec.describe SearchTab do
     end
   end
 
+  describe 'more_categories_sum' do
+    let(:random_category_counts) do
+      {
+       "Manuscripts": 3133,
+       "Other": 1227,
+       "Videos": 284,
+       "Data": 278,
+       "Audio": 159
+     }
+    end
+
+    it 'returns one number about the sum of all records belonging to dropdown menu' do
+      expect(described_class.more_categories_sum(random_category_counts).count).to eq 1
+    end
+
+    it 'returns the correct sumup of all records belonging to dropdown menu' do 
+      expect(described_class.more_categories_sum(random_category_counts).values.first).to eq 5081
+    end
+  end
+
   describe 'tab_label' do
     it 'creates label html with given values' do
       expect(described_class.tab_label('images', '1,234')).to eq(%{Images <span class="count">1,234</span>})
@@ -106,24 +126,6 @@ RSpec.describe SearchTab do
     end
   end
 
-  describe "more_categories" do
-    before(:each) do
-      @categories = { 'All' => 50, 'Images' => 10, 'Audio' => 10, 'Journals' => 6, 'Videos' => 20, 'Websites' => 5, 'Research Papers' => 5 }
-    end
-
-    it "removes the main tab values from categories" do
-      expect(st.more_categories(@categories)).not_to include('All', 'Images', 'Audio')
-    end
-
-    it "removes the blacklist values from categories" do
-      expect(st.more_categories(@categories)).not_to include('Websites', 'Research Papers')
-    end
-
-    it "returns the remaining categories" do 
-      expect(st.more_categories(@categories)).to include('Journals')
-    end
-  end
-
   describe "value" do
     it "returns the value if view is present" do
       st.instance_variable_set(:@tab, "sets")
@@ -135,26 +137,4 @@ RSpec.describe SearchTab do
       expect(st.value).to be_nil
     end
   end
-
-  # describe "more_label" do 
-    
-  #   before(:each) do
-  #     SearchTab.stub(:valid_category_facets) { ["Images", "Journals"]}
-  #   end
-
-  #   it "returns More if current tab is not more?" do 
-  #     st.stub(:more?) { false } 
-  #     expect(st.more_label(7)).to match(/More/)
-  #   end
-
-  #   it "return the tab name" do 
-  #     st.stub(:tab) { 'Journals' }
-  #     expect(st.more_label(7)).to match(/Journals/)
-  #   end
-
-  #   it "includes the count passed to it as a parameter" do 
-  #     st.stub(:tab) { 'Journals' }
-  #     expect(st.more_label(7)).to match(/7/)
-  #   end
-  # end  
 end

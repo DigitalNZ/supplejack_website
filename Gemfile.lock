@@ -8,10 +8,10 @@ GIT
       rest-client (~> 1.6)
 
 GIT
-  remote: https://github.com/ubermouse/react_on_rails.git
-  revision: db19754079e50ddd7ace4b003f06bc626cad1a11
+  remote: https://github.com/shakacode/react_on_rails
+  revision: 3fe05f917145876e62846d9689c4ae82778f8c6b
   specs:
-    react_on_rails (6.0.0.rc.5)
+    react_on_rails (6.0.3)
       addressable
       connection_pool
       execjs (~> 2.5)
@@ -98,7 +98,7 @@ GEM
     capistrano-rbenv (2.0.4)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
-    capybara (2.6.2)
+    capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -108,8 +108,8 @@ GEM
     capybara-screenshot (1.0.11)
       capybara (>= 1.0, < 3)
       launchy
-    capybara-webkit (1.8.0)
-      capybara (>= 2.3.0, < 2.7.0)
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
       json
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
@@ -213,7 +213,7 @@ GEM
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (2.99.2)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
     modernizr-rails (2.7.1)
     multi_json (1.12.1)
@@ -223,8 +223,9 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (3.1.1)
     netrc (0.11.0)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -233,6 +234,7 @@ GEM
     orm_adapter (0.5.0)
     parser (2.3.0.6)
       ast (~> 2.2)
+    pkg-config (1.1.7)
     powerpack (0.1.1)
     pry (0.10.3)
       coderay (~> 1.1.0)
