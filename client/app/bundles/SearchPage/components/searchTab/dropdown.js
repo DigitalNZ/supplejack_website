@@ -2,12 +2,13 @@
   Heavily inspired by: http://alexfedoseev.com/post/64/react-dropdown (@Alex Fedoseev)
    https://github.com/zippyui/react-dropdown-button/blob/master/src/index.jsx (@Zippy Tech)
   Author: Jeffery
-  
+
 */
 
 import React, {Component, PropTypes}  from 'react';
 import classNames                     from 'classnames';
 import CategoryTab                    from './categoryTab';
+import {PRIMARY_FILTERS}              from '../../constants';
 import _                              from 'lodash';
 
 export default class DropDown extends Component {
@@ -26,11 +27,11 @@ export default class DropDown extends Component {
   selectedStatus(tab) {
     const { dropdownIsVisible } = this.state;
     return (!dropdownIsVisible) &&
-      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1;
+      !_.includes(PRIMARY_FILTERS, tab)
   }
 
   moreTitleCount(tab) {
-    if(['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) > -1) {
+    if(_.includes(PRIMARY_FILTERS, tab)) {
       tab = 'More';
     }
     let b = _.find(this.props.categoryStats, {category: tab});
@@ -49,7 +50,7 @@ export default class DropDown extends Component {
         position: 'absolute',
         top: '0px',
         left: '9999px'
-      },      
+      },
       categoryStats: props.categoryStats
     };
 
@@ -117,7 +118,7 @@ export default class DropDown extends Component {
 
   getMenuName() {
     const {categoryName, activeCategory} = this.props;
-    if((typeof activeCategory != 'undefined') 
+    if((typeof activeCategory != 'undefined')
       && ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(activeCategory) == -1)
       return activeCategory;
     else
@@ -131,12 +132,12 @@ export default class DropDown extends Component {
     const tabClass = classNames({active: this.selectedStatus(activeCategory)});
     const tabMenus = _.chain(categoryStats)
                     .filter((e) => (e.category != 'More'))
-                    .map((tab, index) => 
-                          <CategoryTab 
+                    .map((tab, index) =>
+                          <CategoryTab
                             categoryName={tab.category}
                             count={tab.count}
-                            activeCategory={activeCategory} 
-                            dispatch={dispatch} 
+                            activeCategory={activeCategory}
+                            dispatch={dispatch}
                             key={index}/>
                     ).value();
 
