@@ -26,8 +26,13 @@ export default class categoryTab extends Component {
   render() {
     const { categoryName, count, activeCategory } = this.props;
     let activeTag = (categoryName === activeCategory) ? 'active': '';
-    return <li className={activeTag} onClick={this.onCategoryChange}><a href='#' value={categoryName} 
-      className='search-category-tab' id={categoryName+'-tab'}>{categoryName} 
-      <span className="count">{count}</span></a></li>;
+    return (
+      <li className={activeTag} onClick={this.onCategoryChange}>
+        <a href='#' value={categoryName} className='search-category-tab' id={categoryName+'-tab'}>
+          {categoryName}
+          <span className="count">{count}</span>
+        </a>
+      </li>
+    );
   }
 }
