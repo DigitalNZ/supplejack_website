@@ -1,6 +1,6 @@
 module Presenters
   # Generates the server side state of the SearchPageStore on the client
-  # The json outputted from here is inserted into the page and the client 
+  # The json outputted from here is inserted into the page and the client
   # bootstraps the store using it
   #
   # It's also the only full description of the store state so it's a useful reference
@@ -12,7 +12,7 @@ module Presenters
     #
     # @Author: Taylor
     # @last modified Jeffery
-    # @param search reprsents the search-results object 
+    # @param search reprsents the search-results object
     # @param category_counts represent the category statistics {"All"=>2413461, "Images"=>1483736, "Audio"=>6549, "Videos"=>16438}
     #
     # @return JSON that has first-level key filters, panel, searchTabs, and searchValue
@@ -33,7 +33,7 @@ module Presenters
           buttonText: 'Close',
           open: false,
           # reduce(&:merge) returns nil if the array is empty
-          facets: facets.map do |facet| 
+          facets: facets.map do |facet|
             values = filter_facet_values(facet.name, facet.values)
             {facet.name => values}
           end.reduce(&:merge) || [],
@@ -60,19 +60,15 @@ module Presenters
       end
     end
 
-    # Converts the hash of each category's count into decimal style string; also giving the key and count 
+    # Converts the hash of each category's count into decimal style string; also giving the key and count
     #
-    # == Parameters:
-    # counts_hash::
-    #  {"All"=>2413461, "Images"=>1483736, "Audio"=>6549, "Videos"=>16438}
-    #
-    # == Returns:
-    # [{:category=>"All", :count=>"2,413,461"}, {:category=>"Images", :count=>"1,483,736"}, 
+    # @author Jeffery
+    # @param format [Hash] {"All"=>2413461, "Images"=>1483736, "Audio"=>6549, "Videos"=>16438}
+    # @return [Array] [{:category=>"All", :count=>"2,413,461"}, {:category=>"Images", :count=>"1,483,736"},
     # {:category=>"Audio", :count=>"6,549"}, {:category=>"Videos", :count=>"16,438"}]
-    #
     def category_count_formatting(counts_hash)
-      counts_hash.map do |type, count| 
-        { category: type, 
+      counts_hash.map do |type, count|
+        { category: type,
           count: number_with_precision(count, delimiter: ',', precision: 0)
         }
       end
