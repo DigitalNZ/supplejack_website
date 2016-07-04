@@ -93,12 +93,7 @@ export default class DropDown extends Component {
 
 
   _hideDropdown() {
-    const { dropdownIsActive } = this.state;
-
-    // Hide dropdown block if it's not active
-    if (!dropdownIsActive) {
-      this.setState({ dropdownIsVisible: false });
-    }
+    this.setState({ dropdownIsVisible: false });
   }
 
 
