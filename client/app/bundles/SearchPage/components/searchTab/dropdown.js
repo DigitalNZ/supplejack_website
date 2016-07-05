@@ -113,11 +113,12 @@ export default class DropDown extends Component {
 
   getMenuName() {
     const {categoryName, activeCategory} = this.props;
-    if((typeof activeCategory != 'undefined')
-      && ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(activeCategory) == -1)
+
+    if(!_.isUndefined(activeCategory) && !_.includes(PRIMARY_FILTERS, activeCategory))
       return activeCategory;
     else
       return categoryName;
+
   }
 
   _renderDropdown() {
