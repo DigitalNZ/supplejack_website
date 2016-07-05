@@ -1,6 +1,7 @@
 import React, { Component, PropTypes }  from 'react';
 import ReactDom                         from 'react-dom';
 import DropDown                         from './dropdown';
+import {PRIMARY_TABS}                   from '../../constants';
 import CategoryTab                      from './categoryTab';
 
 import _ from 'lodash';
@@ -23,12 +24,12 @@ export default class SearchTab extends Component {
 
     const tabMenus = _.chain(categoryStats)
                     .filter( e => topCategories.includes(e.category))
-                    .map((tab, index) => 
-                          <CategoryTab 
+                    .map((tab, index) =>
+                          <CategoryTab
                             categoryName={tab.category}
                             count={tab.count}
-                            activeCategory={activeTab} 
-                            dispatch={dispatch} 
+                            activeCategory={activeTab}
+                            dispatch={dispatch}
                             key={index}/>
                     ).value();
 
@@ -39,7 +40,7 @@ export default class SearchTab extends Component {
       count: tab.count,
     }))
     .value();
-    
+
     const categoryProps = {
       categoryName: 'More',
       activeCategory: activeTab,
@@ -57,5 +58,3 @@ export default class SearchTab extends Component {
     );
   }
 }
-
-

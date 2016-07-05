@@ -8,7 +8,7 @@
 import React, {Component, PropTypes}  from 'react';
 import classNames                     from 'classnames';
 import CategoryTab                    from './categoryTab';
-import {PRIMARY_FILTERS}              from '../../constants';
+import {PRIMARY_TABS}              from '../../constants';
 import _                              from 'lodash';
 
 export default class DropDown extends Component {
@@ -27,11 +27,11 @@ export default class DropDown extends Component {
   selectedStatus(tab) {
     const { dropdownIsVisible } = this.state;
     return (!dropdownIsVisible) &&
-      !_.includes(PRIMARY_FILTERS, tab)
+      !_.includes(PRIMARY_TABS, tab)
   }
 
   moreTitleCount(tab) {
-    if(_.includes(PRIMARY_FILTERS, tab)) {
+    if(_.includes(PRIMARY_TABS, tab)) {
       tab = 'More';
     }
     let b = _.find(this.props.categoryStats, {category: tab});
@@ -114,7 +114,7 @@ export default class DropDown extends Component {
   getMenuName() {
     const {categoryName, activeCategory} = this.props;
 
-    if(!_.isUndefined(activeCategory) && !_.includes(PRIMARY_FILTERS, activeCategory))
+    if(!_.isUndefined(activeCategory) && !_.includes(PRIMARY_TABS, activeCategory))
       return activeCategory;
     else
       return categoryName;
