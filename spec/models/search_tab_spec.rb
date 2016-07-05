@@ -82,11 +82,7 @@ RSpec.describe SearchTab do
      }
     end
 
-    it 'returns one number about the sum of all records belonging to dropdown menu' do
-      expect(described_class.more_categories_sum(random_category_counts).count).to eq 1
-    end
-
-    it 'returns the correct sumup of all records belonging to dropdown menu' do
+    it 'returns the sum of records that are not in the black list' do
       expect(described_class.more_categories_sum(random_category_counts).values.first).to eq 4638
     end
   end
