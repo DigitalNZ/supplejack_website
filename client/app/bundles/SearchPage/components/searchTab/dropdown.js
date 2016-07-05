@@ -121,7 +121,7 @@ export default class DropDown extends Component {
 
   }
 
-  _renderDropdown() {
+  render() {
     const {categoryStats, activeCategory, dispatch} = this.props;
     const { dropdownIsVisible } = this.state;
 
@@ -137,34 +137,30 @@ export default class DropDown extends Component {
                             key={index}/>
                     ).value();
 
-    return (
-              <li className={tabClass} id="more-dropdown-menu">
-                    <a aria-controls="more-drop" aria-expanded="false" className="open"
-                      onFocus={this._handleFocus}
-                      onBlur={this._handleBlur}
-                      onClick={this._stopPropagation}
-                      ref="more_dropdown_menu">
-                        {this.getMenuName()}
-                      <span className="count" >
-                        {this.moreTitleCount(activeCategory)}
-                        <i className="fa fa-chevron-down"></i>
-                      </span>
-                     </a>
-                  {
-                    dropdownIsVisible &&
-                      <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
-                          {tabMenus}
-                      </ul>
-                  }
-               </li>
-    );
-  }
+    let dropdown;
+    if (dropdownIsVisible)
+      dropdown = <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
+        {tabMenus}
+      </ul>
+    else
+      dropdown = null
 
-
-  render() {
     return (
       <div className="dropdown">
-        {this._renderDropdown()}
+        <li className={tabClass} id="more-dropdown-menu">
+          <a aria-controls="more-drop" aria-expanded="false" className="open"
+            onFocus={this._handleFocus}
+            onBlur={this._handleBlur}
+            onClick={this._stopPropagation}
+            ref="more_dropdown_menu">
+              {this.getMenuName()}
+            <span className="count" >
+              {this.moreTitleCount(activeCategory)}
+              <i className="fa fa-chevron-down"></i>
+            </span>
+           </a>
+          {dropdown}
+         </li>
       </div>
     );
   }
