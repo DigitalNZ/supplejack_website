@@ -2,12 +2,13 @@
   Heavily inspired by: http://alexfedoseev.com/post/64/react-dropdown (@Alex Fedoseev)
    https://github.com/zippyui/react-dropdown-button/blob/master/src/index.jsx (@Zippy Tech)
   Author: Jeffery
-  
+
 */
 
 import React, {Component, PropTypes}  from 'react';
 import classNames                     from 'classnames';
 import CategoryTab                    from './categoryTab';
+import {PRIMARY_TABS}              from '../../constants';
 import _                              from 'lodash';
 
 export default class DropDown extends Component {
@@ -26,11 +27,11 @@ export default class DropDown extends Component {
   selectedStatus(tab) {
     const { dropdownIsVisible } = this.state;
     return (!dropdownIsVisible) &&
-      ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) === -1;
+      !_.includes(PRIMARY_TABS, tab)
   }
 
   moreTitleCount(tab) {
-    if(['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(tab) > -1) {
+    if(_.includes(PRIMARY_TABS, tab)) {
       tab = 'More';
     }
     let b = _.find(this.props.categoryStats, {category: tab});
@@ -49,7 +50,7 @@ export default class DropDown extends Component {
         position: 'absolute',
         top: '0px',
         left: '9999px'
-      },      
+      },
       categoryStats: props.categoryStats
     };
 
@@ -92,12 +93,7 @@ export default class DropDown extends Component {
 
 
   _hideDropdown() {
-    const { dropdownIsActive } = this.state;
-
-    // Hide dropdown block if it's not active
-    if (!dropdownIsActive) {
-      this.setState({ dropdownIsVisible: false });
-    }
+    this.setState({ dropdownIsVisible: false });
   }
 
 
@@ -117,57 +113,54 @@ export default class DropDown extends Component {
 
   getMenuName() {
     const {categoryName, activeCategory} = this.props;
-    if((typeof activeCategory != 'undefined') 
-      && ['All', 'Images', 'Audio', 'Videos', 'Sets'].indexOf(activeCategory) == -1)
+
+    if(!_.isUndefined(activeCategory) && !_.includes(PRIMARY_TABS, activeCategory))
       return activeCategory;
     else
       return categoryName;
+
   }
 
-  _renderDropdown() {
+  render() {
     const {categoryStats, activeCategory, dispatch} = this.props;
     const { dropdownIsVisible } = this.state;
 
     const tabClass = classNames({active: this.selectedStatus(activeCategory)});
     const tabMenus = _.chain(categoryStats)
                     .filter((e) => (e.category != 'More'))
-                    .map((tab, index) => 
-                          <CategoryTab 
+                    .map((tab, index) =>
+                          <CategoryTab
                             categoryName={tab.category}
                             count={tab.count}
-                            activeCategory={activeCategory} 
-                            dispatch={dispatch} 
+                            activeCategory={activeCategory}
+                            dispatch={dispatch}
                             key={index}/>
                     ).value();
 
-    return (
-              <li className={tabClass} id="more-dropdown-menu">
-                    <a aria-controls="more-drop" aria-expanded="false" className="open"
-                      onFocus={this._handleFocus}
-                      onBlur={this._handleBlur}
-                      onClick={this._stopPropagation}
-                      ref="more_dropdown_menu">
-                        {this.getMenuName()}
-                      <span className="count" >
-                        {this.moreTitleCount(activeCategory)}
-                        <i className="fa fa-chevron-down"></i>
-                      </span>
-                     </a>
-                  {
-                    dropdownIsVisible &&
-                      <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
-                          {tabMenus}
-                      </ul>
-                  }
-               </li>
-    );
-  }
+    let dropdown;
+    if (dropdownIsVisible)
+      dropdown = <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
+        {tabMenus}
+      </ul>
+    else
+      dropdown = null
 
-
-  render() {
     return (
       <div className="dropdown">
-        {this._renderDropdown()}
+        <li className={tabClass} id="more-dropdown-menu">
+          <a aria-controls="more-drop" aria-expanded="false" className="open"
+            onFocus={this._handleFocus}
+            onBlur={this._handleBlur}
+            onClick={this._stopPropagation}
+            ref="more_dropdown_menu">
+              {this.getMenuName()}
+            <span className="count" >
+              {this.moreTitleCount(activeCategory)}
+              <i className="fa fa-chevron-down"></i>
+            </span>
+           </a>
+          {dropdown}
+         </li>
       </div>
     );
   }

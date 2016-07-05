@@ -43,12 +43,12 @@ class SearchTab
   def all?
     tab == 'All'
   end
-  
+
   def value
     @tab if tab.present?
   end
 
-  def more? 
+  def more?
     true if !all? && !images? && !sets? && !audio? && !videos? && SearchTab.valid_category_facets.include?(tab)
   end
 
@@ -57,16 +57,18 @@ class SearchTab
   end
 
   # Provide the summary counts of record in the dropdown categories
-  # @Author: Jeffery
-  # @param: category {"All"=>2413461, "Newspaper"=>1483736, "Images"=>6549, "Books"=>16438} 
-  # @return: A single-key hash in the form of {"More"=> 1483736} 
+  # @author Jeffery
+  # @param category {"All"=>2413461, "Newspaper"=>1483736, "Images"=>6549, "Books"=>16438}
+  # @return A single-key hash in the form of {"More"=> 1483736}
   def self.more_categories_sum(category_counts)
     main_tabs  = ['All', 'Images', 'Audio', 'Videos', 'Sets']
-    blacklist = [ 'Article', 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video'] 
+    blacklist = [ 'Article', 'Music Score', 'Groups', 'Items', 'Websites', 'Research Papers', 'Magazines and Journals', 'Pieces', 'Unknown', 'Interactive', 'Video']
+    full_blacklist = blacklist + main_tabs
 
-    more_categories_sum_value = category_counts.inject(0) do | sum, (k, v) | 
-      blacklist.concat(main_tabs).include?(k) ? sum : sum + v
-    end
+    more_categories_sum_value = category_counts.select do |k, v|
+      !full_blacklist.include?(k.to_s)
+    end.values.sum
+
     Hash['More', more_categories_sum_value]
   end
 end

@@ -1,15 +1,15 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-# and is licensed under the GNU General Public License, version 3. Some components are 
-# third party components that are licensed under the MIT license or other terms. 
-# See https://github.com/DigitalNZ/supplejack_website for details. 
-# 
-# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# and is licensed under the GNU General Public License, version 3. Some components are
+# third party components that are licensed under the MIT license or other terms.
+# See https://github.com/DigitalNZ/supplejack_website for details.
+#
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
 RSpec.describe SearchTab do
 
   let(:st) { described_class.new }
-  
+
   describe 'initialize' do
     it 'assigns the tab' do
       expect(described_class.new('images').tab).to eq 'images'
@@ -41,7 +41,7 @@ RSpec.describe SearchTab do
 
   describe 'valid_category_facets' do
     let(:search) { instance_double('Search', :facet_values => {}) }
-    
+
     it 'returns the valid type facets' do
       expect(Search).to receive(:new).and_return(search)
       expect(search).to receive(:facet_values).with('category')
@@ -53,15 +53,15 @@ RSpec.describe SearchTab do
   describe 'sorted counts' do
     let(:unsorted_counts) do
       {
-        'Newspapers' => 1346566, 
-        'Images' => 1056473, 
-        'Journals' => 39515, 
-        'Videos' => 7655, 
-        'Audio' => 2553, 
+        'Newspapers' => 1346566,
+        'Images' => 1056473,
+        'Journals' => 39515,
+        'Videos' => 7655,
+        'Audio' => 2553,
         'All' => 2448694
       }
     end
-    
+
     it 'returns five categories' do
       expect(described_class.sorted_counts(unsorted_counts).count).to eq 5
     end
@@ -82,12 +82,8 @@ RSpec.describe SearchTab do
      }
     end
 
-    it 'returns one number about the sum of all records belonging to dropdown menu' do
-      expect(described_class.more_categories_sum(random_category_counts).count).to eq 1
-    end
-
-    it 'returns the correct sumup of all records belonging to dropdown menu' do 
-      expect(described_class.more_categories_sum(random_category_counts).values.first).to eq 5081
+    it 'returns the sum of records that are not in the black list' do
+      expect(described_class.more_categories_sum(random_category_counts).values.first).to eq 4638
     end
   end
 

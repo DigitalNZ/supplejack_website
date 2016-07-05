@@ -9,7 +9,7 @@ export default function performSearch() {
     // determine whether there are multiple for a facet to determine whether
     // they need to be an 'i' or 'or' parameter
 
-    let baseQueryParams = {text: state.searchValue, i: {}, or: {}};
+    const baseQueryParams = {text: state.searchValue, i: {}, or: {}};
     const groupedFacets = _.groupBy(state.filters, 'facet');
     const searchCategory = {tab: state.searchTabs.activeTab};
 
