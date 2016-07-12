@@ -4,8 +4,10 @@ RSpec.feature 'A user signs in' do
   let(:user) {create(:user, password: password, password_confirmation: password)}
 
   before do
-    kereru.home.load
-    kereru.home.menu.login_link.click
+    kereru.login.load
+    # Once the Login link is readded this should be uncommented and the above line deleted
+    # kereru.home.load
+    # kereru.home.menu.login_link.click
   end
 
   scenario 'with valid credentials' do

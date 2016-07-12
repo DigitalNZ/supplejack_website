@@ -1,7 +1,7 @@
 require 'json'
 
 module Presenters
-  RSpec.describe SearchPageStore do
+  RSpec.describe SearchPageStore, focus: true do
     let(:search) do
       search = Search.new(
         text: 'a users search',
@@ -19,7 +19,7 @@ module Presenters
     end
 
     let(:category_stats) do 
-      {All: 10000, Images:99999}
+      {All: 10000, Images: 99999}
     end
 
     let(:result) {JSON.parse(subject.call(search, category_stats)).deep_symbolize_keys}
@@ -32,12 +32,12 @@ module Presenters
 
     describe ':searchCategory' do
       it 'contains the active category that the user is searching with' do
-        expect(result[:searchTabs][:active_tab]).to eq('All')
+        expect(result[:searchTabs][:activeTab]).to eq('All')
       end
 
       it "contains the statistics of results in each category" do
-        expect(result[:searchTabs][:category_stats]).to include({:category=>"All", :count=>"10,000"})
-        expect(result[:searchTabs][:category_stats]).to include({:category=>"Images", :count=>"99,999"})
+        expect(result[:searchTabs][:categoryStats]).to include({:category=>"All", :count=>"10,000"})
+        expect(result[:searchTabs][:categoryStats]).to include({:category=>"Images", :count=>"99,999"})
       end
     end
 

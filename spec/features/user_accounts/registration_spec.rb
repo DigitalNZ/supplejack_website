@@ -1,8 +1,10 @@
 RSpec.feature 'A user registers', vcr: true do
   let(:kereru) {Kereru.new}
   before do
-    kereru.home.load
-    kereru.home.menu.sign_up_link.click
+    kereru.sign_up.load
+    # Once Sign Up link exists again this should be uncommented and the above line removed
+    # kereru.sign_up.load
+    # kereru.home.menu.sign_up_link.click
   end
 
   scenario 'with valid inputs' do
