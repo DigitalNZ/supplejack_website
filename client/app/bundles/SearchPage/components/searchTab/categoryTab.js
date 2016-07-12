@@ -17,18 +17,20 @@ export default class categoryTab extends Component {
   }
 
   onCategoryChange(e) {
-    const { dispatch, categoryName } = this.props;
     e.preventDefault();
+    const { dispatch, categoryName } = this.props;
+
     dispatch(searchTabs(categoryName));
     dispatch(performSearch());
   }
 
   render() {
     const { categoryName, count, activeCategory } = this.props;
-    let activeTag = (categoryName === activeCategory) ? 'active': '';
+    const activeTag = (categoryName === activeCategory) ? 'active' : '';
+
     return (
       <li className={activeTag} onClick={this.onCategoryChange}>
-        <a href='#' value={categoryName} className='search-category-tab' id={categoryName+'-tab'}>
+        <a href="#" value={categoryName} className="search-category-tab" id={`${categoryName}-tab`}>
           {categoryName}
           <span className="count">{count}</span>
         </a>

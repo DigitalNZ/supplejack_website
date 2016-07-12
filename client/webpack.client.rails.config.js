@@ -11,6 +11,7 @@ const devBuild = process.env.NODE_ENV !== 'production';
 config.output = {
   filename: '[name]-bundle.js',
   path: '../app/assets/webpack',
+  devtoolModuleFilenameTemplate: '[absolute-resource-path]',
 };
 
 // You can add entry points specific to rails here
@@ -44,7 +45,7 @@ module.exports = config;
 
 if (devBuild) {
   console.log('Webpack dev build for Rails'); // eslint-disable-line no-console
-  module.exports.devtool = 'eval-source-map';
+  module.exports.devtool = 'inline-eval-cheap-source-map';
 } else {
   config.plugins.push(
     new webpack.optimize.DedupePlugin(),

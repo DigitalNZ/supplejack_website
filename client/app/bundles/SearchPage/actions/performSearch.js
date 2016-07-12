@@ -13,7 +13,7 @@ export default function performSearch() {
     const groupedFacets = _.groupBy(state.filters, 'facet');
     const searchCategory = {tab: state.searchTabs.activeTab};
 
-    if(searchCategory.tab != 'All')
+    if (searchCategory.tab !== 'All')
       _.assign(baseQueryParams, searchCategory);
 
     // This reduces the object of grouped facets, which looks like this

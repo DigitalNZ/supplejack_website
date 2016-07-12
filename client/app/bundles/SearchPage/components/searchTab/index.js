@@ -1,7 +1,6 @@
 import React, { Component, PropTypes }  from 'react';
-import ReactDom                         from 'react-dom';
 import DropDown                         from './dropdown';
-import {PRIMARY_TABS}                   from '../../constants';
+import { PRIMARY_TABS }                 from '../../constants';
 import CategoryTab                      from './categoryTab';
 
 import _ from 'lodash';
@@ -11,11 +10,11 @@ export default class SearchTab extends Component {
     categoryStats: PropTypes.arrayOf(
                       PropTypes.shape({
                         category: PropTypes.string.isRequired,
-                        count: PropTypes.string.isRequired
+                        count: PropTypes.string.isRequired,
                       })
                     ).isRequired,
     activeTab: PropTypes.string.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
   }
 
   render() {
@@ -32,9 +31,9 @@ export default class SearchTab extends Component {
                             key={index}/>
                     ).value();
 
-    let moreTabStats= _.chain(categoryStats)
+    const moreTabStats = _.chain(categoryStats)
                       .reject( e => PRIMARY_TABS.includes(e.category))
-                      .map((tab) => ({
+                      .map(tab => ({
                         category: tab.category,
                         count: tab.count,
                       })).value();
@@ -43,7 +42,7 @@ export default class SearchTab extends Component {
       categoryName: 'More',
       activeCategory: activeTab,
       categoryStats: moreTabStats,
-      dispatch: dispatch
+      dispatch: dispatch,
     };
 
     return (

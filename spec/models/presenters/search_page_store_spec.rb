@@ -1,7 +1,7 @@
 require 'json'
 
 module Presenters
-  RSpec.describe SearchPageStore, focus: true do
+  RSpec.describe SearchPageStore do
     let(:search) do
       search = Search.new(
         text: 'a users search',

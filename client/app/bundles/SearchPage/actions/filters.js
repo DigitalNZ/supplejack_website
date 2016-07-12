@@ -9,10 +9,10 @@ export const REMOVE_FILTER = 'REMOVE_FILTER';
 const removeFilterAction = createAction(REMOVE_FILTER);
 
 export function removeFilter(filter) {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(removeFilterAction(filter));
     dispatch(performSearch());
-  }
+  };
 }
 
 // This is a custom action function, it takes as an argument the filter to be toggled

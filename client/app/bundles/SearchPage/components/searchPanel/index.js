@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import togglePanel from '../../actions/togglePanel';
 import { removeFilter } from '../../actions/filters';
-import performSearch from '../../actions/performSearch';
 import _ from 'lodash';
 import Panel from './panel';
 

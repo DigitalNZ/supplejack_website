@@ -16,7 +16,7 @@ export default class DropDown extends Component {
     categoryStats: PropTypes.arrayOf(
                       PropTypes.shape({
                         category: PropTypes.string.isRequired,
-                        count: PropTypes.string.isRequired
+                        count: PropTypes.string.isRequired,
                       })
                     ).isRequired,
     activeCategory: PropTypes.string.isRequired,
@@ -24,19 +24,6 @@ export default class DropDown extends Component {
     dispatch: PropTypes.func.isRequired,
   };
 
-  selectedStatus(tab) {
-    const { dropdownIsVisible } = this.state;
-    return (!dropdownIsVisible) &&
-      !_.includes(PRIMARY_TABS, tab)
-  }
-
-  moreTitleCount(tab) {
-    if(_.includes(PRIMARY_TABS, tab)) {
-      tab = 'More';
-    }
-    let b = _.find(this.props.categoryStats, {category: tab});
-    return b.count;
-  }
 
   constructor(props, context) {
     super(props, context);
@@ -49,76 +36,85 @@ export default class DropDown extends Component {
       menuStyle: {
         position: 'absolute',
         top: '0px',
-        left: '9999px'
+        left: '9999px',
       },
-      categoryStats: props.categoryStats
+      categoryStats: props.categoryStats,
     };
 
-    // We should bind `this` to click event handler right here
-    _.bindAll(this, '_hideDropdown', '_toggleDropdown', '_stopPropagation', '_adjustPosition');
+    _.bindAll(this, 'hideDropdown', 'toggleDropdown', 'handleClick', 'adjustPosition');
   }
 
-  _adjustPosition() {
-    let vbox = this.refs.more_dropdown_menu.getBoundingClientRect();
-    this.state.menuStyle.top = (vbox.bottom+window.pageYOffset)+'px';
-    this.state.menuStyle.left = (vbox.left+window.pageXOffset)+'px';
-  }
 
   componentDidMount() {
-    // Hide dropdown block on click outside the block
-    window.addEventListener('click', this._hideDropdown, false);
-    this._adjustPosition();
+    window.addEventListener('click', this.hideDropdown, false);
+
+    this.adjustPosition();
   }
 
   componentWillUnmount() {
-    // Remove click event listener on component unmount
-    window.removeEventListener('click', this._hideDropdown, false);
+    window.removeEventListener('click', this.hideDropdown, false);
   }
 
-  _stopPropagation(e) {
-    this._adjustPosition();
-    // Stop bubbling of click event on click inside the dropdown content
-    this._toggleDropdown();
+  selectedStatus(tab) {
+    const { dropdownIsVisible } = this.state;
+
+    return !dropdownIsVisible && !_.includes(PRIMARY_TABS, tab);
+  }
+
+  moreTitleCount(tab) {
+    let tabName = tab;
+    if (_.includes(PRIMARY_TABS, tab))
+      tabName = 'More';
+
+    return _.find(this.props.categoryStats, {category: tabName}).count;
+  }
+
+  adjustPosition() {
+    const vbox = this.refs.more_dropdown_menu.getBoundingClientRect();
+
+    this.state.menuStyle.top = `${vbox.bottom + window.pageYOffset}px`;
+    this.state.menuStyle.left = `${vbox.left + window.pageXOffset}px`;
+  }
+
+  toggleDropdown() {
+    const { dropdownIsVisible } = this.state;
+
+    this.adjustPosition();
+
+    this.setState({ dropdownIsVisible: !dropdownIsVisible });
+  }
+
+  handleClick(e) {
+    this.adjustPosition();
+    this.toggleDropdown();
+
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
   }
 
-
-  _toggleDropdown() {
-    const { dropdownIsVisible } = this.state;
-    this._adjustPosition();
-    // Toggle dropdown block visibility
-    this.setState({ dropdownIsVisible: !dropdownIsVisible });
-  }
-
-
-  _hideDropdown() {
+  hideDropdown() {
     this.setState({ dropdownIsVisible: false });
   }
 
 
-  _handleFocus() {
-    // Make active on focus
+  handleFocus() {
     this.setState({ dropdownIsActive: true });
   }
 
-
-  _handleBlur() {
-    // Clean up everything on blur
+  handleBlur() {
     this.setState({
       dropdownIsVisible: false,
-      dropdownIsActive: false
+      dropdownIsActive: false,
     });
   }
 
   getMenuName() {
     const {categoryName, activeCategory} = this.props;
 
-    if(!_.isUndefined(activeCategory) && !_.includes(PRIMARY_TABS, activeCategory))
+    if (!_.isUndefined(activeCategory) && !_.includes(PRIMARY_TABS, activeCategory))
       return activeCategory;
     else
       return categoryName;
-
   }
 
   render() {
@@ -127,7 +123,7 @@ export default class DropDown extends Component {
 
     const tabClass = classNames({active: this.selectedStatus(activeCategory)});
     const tabMenus = _.chain(categoryStats)
-                    .filter((e) => (e.category != 'More'))
+                    .filter((e) => e.category !== 'More')
                     .map((tab, index) =>
                           <CategoryTab
                             categoryName={tab.category}
@@ -138,20 +134,22 @@ export default class DropDown extends Component {
                     ).value();
 
     let dropdown;
-    if (dropdownIsVisible)
-      dropdown = <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
-        {tabMenus}
-      </ul>
-    else
-      dropdown = null
+    if (dropdownIsVisible) {
+      dropdown = (
+        <ul id="more-drop" aria-hidden="true" className="f-dropdown" style={this.state.menuStyle} >
+          {tabMenus}
+        </ul>
+      );
+    } else
+      dropdown = null;
 
     return (
       <div className="dropdown">
         <li className={tabClass} id="more-dropdown-menu">
           <a aria-controls="more-drop" aria-expanded="false" className="open"
-            onFocus={this._handleFocus}
-            onBlur={this._handleBlur}
-            onClick={this._stopPropagation}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            onClick={this.handleClick}
             ref="more_dropdown_menu">
               {this.getMenuName()}
             <span className="count" >
