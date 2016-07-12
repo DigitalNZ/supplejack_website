@@ -1,11 +1,19 @@
 import { createAction } from 'redux-actions';
+import performSearch from './performSearch';
 import _ from 'lodash';
 
 export const ADD_FILTER = 'ADD_FILTER';
 export const addFilter = createAction(ADD_FILTER);
 
 export const REMOVE_FILTER = 'REMOVE_FILTER';
-export const removeFilter = createAction(REMOVE_FILTER);
+const removeFilterAction = createAction(REMOVE_FILTER);
+
+export function removeFilter(filter) {
+  return (dispatch, getState) => {
+    dispatch(removeFilterAction(filter));
+    dispatch(performSearch());
+  }
+}
 
 // This is a custom action function, it takes as an argument the filter to be toggled
 // And returns a function which accepts two arguments, dispatch and getState
@@ -22,7 +30,7 @@ export default function toggleFilter(filter) {
     
     // _.some is equivalent to Enumerable#any? in Ruby
     if (_.some(state.filters, (f) => _.isEqual(f, filter)))
-      dispatch(removeFilter(filter));
+      dispatch(removeFilterAction(filter));
     else
       dispatch(addFilter(filter));
   };
