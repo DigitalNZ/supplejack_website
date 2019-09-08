@@ -23,13 +23,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-
+# custom gems
 gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
 gem 'json'
 gem 'will_paginate'
 gem 'activeresource'
 gem 'devise'
-
 gem 'haml-rails'
 
 # Assets
@@ -68,3 +67,6 @@ group :test do
   gem 'vcr'
   gem 'faker'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
