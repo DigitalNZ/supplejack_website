@@ -1,4 +1,3 @@
-# SetItemsController deals with sets for a user
 class SetItemsController < ApplicationController
   before_action :authenticate_user!
 

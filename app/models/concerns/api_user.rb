@@ -1,4 +1,3 @@
-# ApiUser
 module ApiUser
   extend ActiveSupport::Concern
 
