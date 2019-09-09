@@ -3,7 +3,7 @@ module ApiUser
   extend ActiveSupport::Concern
 
   included do
-    has_one :key, class_name: ApiKey, dependent: :destroy
+    has_one :key, class_name: 'ApiKey', dependent: :destroy
 
     # api_key is defined here because user.api_key is used everywhere
     # from when api_keys was a has_many
@@ -18,17 +18,13 @@ module ApiUser
     end
   end
 
-  def create_user_and_default_set
-    user = Supplejack::User.create(email: self.email, name: self.name, username: self.username, encrypted_password: self.encrypted_password, 
-                            sets: [{ name: "Favourites", privacy: "hidden", priority: 0 }])
-
-    self.create_key(token: user.api_key, terms: false)
-    return true
-  rescue StandardError => e
-    user.try(:destroy)
-    Rails.logger.warn("There was a error when creating the API User and default set for member: #{self.id}. Error: #{e.message}")
-    self.errors.add(:base, I18n.t('registration.account_creation_error'))
-    return false
+  def create_supplejack_record
+    record = UserRecord.create(supplejack_record_params, user.api_key)
+    update_attribute(:record_id, record.record_id)
+  rescue RestClient::Exception => e
+    Rails.logger.error(e.message)
+    Rails.logger.error(e.backtrace)
+    raise ActiveRecord::Rollback
   end
 
   def update_api_user
