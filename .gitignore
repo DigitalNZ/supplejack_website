@@ -1,37 +1,27 @@
 # Rails
-.bundle
-db/*.sqlite3
-db/*.sqlite3-journal
-*.log
-tmp
-tmp/**/*
-coverage/
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/public/assets
+.byebug_history
+/config/master.key
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
 
-# Documentation
-doc/api
-doc/app
-.yardoc
-.yardopts
+spec/examples.txt
 
-# Public Uploads
-public/system/*
-public/themes/*
-
-# Public Cache
-public/javascripts/cache
-public/stylesheets/cache
-
-# Vendor Cache
-vendor/cache
-
-# Acts as Indexed
-index/**/*
-
-# Refinery Specific
-*.tmproj
-*.autobackupbyrefinery.*
-refinerycms-*.gem
-.autotest
+# simplecov
+coverage
 
 # Mac
 .DS_Store
@@ -77,7 +67,6 @@ capybara-*html
 
 #rbenv
 .rbenv-version
-.ruby-version
 
 /config/local_env.rb# Rails
 
@@ -99,5 +88,6 @@ vendor/extensions/**/spec/dummy
 
 config/local_env.rb
 
-/dnz.sublime-project
-/dnz.sublime-workspace
+# Sublime Text project files
+/*.sublime-project
+/*.sublime-workspace
