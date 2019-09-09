@@ -60,15 +60,10 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.delivery_method = :smtp
-
-  config.action_mailer.smtp_settings = {
-    :address  => "localhost",
-    :domain  => "beta.dnz0a.digitalnz.org/",
-    :port  => 25
-  }
-
   # For Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-end
 
+  API_HOST = ENV['API_HOST']
+  API_KEY = ENV['API_KEY']
+  THUMBNAIL_SERVER_URL = ENV['THUMBNAIL_SERVER_URL']
+end

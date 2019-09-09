@@ -38,11 +38,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Mount Action Cable outside main process or domain.
-  # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
@@ -110,14 +105,16 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
+  # See documentation on action mailer: https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration
   config.action_mailer.smtp_settings = {
-    :address  => "mailhostprivate.natlib.govt.nz",
-    :port  => 25
+    address: ENV['SMTP_SERVER_ADDRESS'],
+    port: ENV['SMTP_PORT'],
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD']
   }
+  config.action_mailer.default_url_options = { :host => ENV['ACTION_MAILER_DEFAULT_HOST'] }
 
-  config.action_mailer.default_url_options = { :host => 'www.digitalnz.org' }
-
-  API_HOST = 'http://api.digitalnz.org'
-  API_KEY = 'gV1woMjzQzsbzakmXXpb'
-  THUMBNAIL_SERVER_URL = 'http://thumbnails.digitalnz.org'
+  API_HOST = ENV['API_HOST']
+  API_KEY = ENV['API_KEY']
+  THUMBNAIL_SERVER_URL = ENV['THUMBNAIL_SERVER_URL']
 end
