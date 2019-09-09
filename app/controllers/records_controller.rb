@@ -24,7 +24,7 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id], params[:search])
+    @record = Record.find(params[:id])
 
     if @record.present? && @record.attributes[:category].equal?(['Sets'])
       search_params = params[:search] ? params[:search].merge(record_id: params[:id]) : nil
