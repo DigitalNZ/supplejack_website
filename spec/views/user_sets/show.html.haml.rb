@@ -1,19 +1,19 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-# and is licensed under the GNU General Public License, version 3. Some components are 
-# third party components that are licensed under the MIT license or other terms. 
-# See https://github.com/DigitalNZ/supplejack_website for details. 
-# 
-# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# and is licensed under the GNU General Public License, version 3. Some components are
+# third party components that are licensed under the MIT license or other terms.
+# See https://github.com/DigitalNZ/supplejack_website for details.
+#
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
-require 'spec_helper'
+require 'rails_helper'
 
-describe "user_sets/show.html.haml" do
+RSpec.describe "user_sets/show.html.haml" do
   let(:set) {
     double(:set, {
-      name: 'test set, this is a very long title so that I can test the title being truncated at 40 characters', 
-      user: double(:user, name: 'test_user'), 
-      tags: ['tag1', 'tag2'], 
+      name: 'test set, this is a very long title so that I can test the title being truncated at 40 characters',
+      user: double(:user, name: 'test_user'),
+      tags: ['tag1', 'tag2'],
       description: 'test description',
       items: [
         stub_model(Supplejack::Item, title: 'Record 1', thumbnail_url: 'http://lorempixel.com/250/250', record_id: 1),

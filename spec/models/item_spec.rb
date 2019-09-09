@@ -1,15 +1,15 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-# and is licensed under the GNU General Public License, version 3. Some components are 
-# third party components that are licensed under the MIT license or other terms. 
-# See https://github.com/DigitalNZ/supplejack_website for details. 
-# 
-# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# and is licensed under the GNU General Public License, version 3. Some components are
+# third party components that are licensed under the MIT license or other terms.
+# See https://github.com/DigitalNZ/supplejack_website for details.
+#
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
 # encoding: UTF-8
-require 'spec_helper'
+require 'rails_helper'
 
-describe Supplejack::Item do
+RSpec.describe Supplejack::Item do
 
   describe "#image_url" do
     let(:item) {
@@ -17,7 +17,7 @@ describe Supplejack::Item do
         thumbnail_url: 'http://test.com/img.png'
       })
     }
-    
+
     it 'returns a url to serve a resized image' do
       expect(item.image_url).to eq("#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Ftest.com%2Fimg.png")
     end
