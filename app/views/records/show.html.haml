@@ -1,11 +1,3 @@
-/
-  \# The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-  \# and is licensed under the GNU General Public License, version 3. Some components are
-  \# third party components that are licensed under the MIT license or other terms.
-  \# See https://github.com/DigitalNZ/supplejack_website for details.
-  \#
-  \# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
-  \# http://digitalnz.org/supplejack
 - title @record.title.truncate(40)
 - content_for(:body_class) {'record'}
 .container.record
@@ -14,7 +6,7 @@
     .pullout
       = attribute(@record, :display_collection, { link: @record.source_url, label_tag: 'span', label_class: 'field-label', trans_key: 'records.view_at', extra_html: '<span class="external-link"></span>'.html_safe })
       = attribute(@record, :source_contributor_name, { label_tag: 'span', label_class: 'field-label', trans_key: 'records.from' })
-  
+
   .about
     = attribute(@record, :title, label: false, tag: 'h1')
     = attribute(@record, :creator, { delimiter: '; ', label_tag: 'span', label_class: 'field-label', trans_key: 'records.by' })
