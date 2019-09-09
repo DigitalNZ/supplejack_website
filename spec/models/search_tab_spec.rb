@@ -1,17 +1,17 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-# and is licensed under the GNU General Public License, version 3. Some components are 
-# third party components that are licensed under the MIT license or other terms. 
-# See https://github.com/DigitalNZ/supplejack_website for details. 
-# 
-# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# and is licensed under the GNU General Public License, version 3. Some components are
+# third party components that are licensed under the MIT license or other terms.
+# See https://github.com/DigitalNZ/supplejack_website for details.
+#
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
-require 'spec_helper'
+require 'rails_helper'
 
-describe SearchTab do
+RSpec.describe SearchTab do
 
   let(:st) { SearchTab.new }
-  
+
   describe 'initialize' do
     it 'assigns the tab' do
       SearchTab.new('images').tab.should eq 'images'
@@ -23,7 +23,7 @@ describe SearchTab do
   end
 
   describe 'valid_category_facets' do
-    before(:each) do 
+    before(:each) do
       @search = Search.new
       SearchTab.stub(:valid_category_facets) { ['Images']}
     end
@@ -31,7 +31,7 @@ describe SearchTab do
     it 'gets the valid category facets' do
       SearchTab.should_receive(:valid_category_facets)
       SearchTab.add_category_facets(@search, 'Images')
-    end 
+    end
 
     context 'valid category' do
       it 'adds the category to the search' do
@@ -50,7 +50,7 @@ describe SearchTab do
 
   describe 'valid_category_facets' do
     let(:search) { double('search', :facet_values => {}) }
-    
+
     it 'returns the valid type facets' do
       Search.stub(:new) { search }
       search.should_receive(:facet_values).with('category')
@@ -60,7 +60,7 @@ describe SearchTab do
 
   describe 'sorted counts' do
     let(:unsorted_counts) { { 'Newspapers'=>1346566, 'Images'=>1056473, 'Journals'=>39515, 'Videos'=>7655, 'Audio'=>2553, 'All'=>2448694 } }
-    
+
     it 'returns five categories' do
       SearchTab.sorted_counts(unsorted_counts).count.should eq 5
     end

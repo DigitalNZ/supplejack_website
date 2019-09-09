@@ -1,14 +1,14 @@
 # The majority of The Supplejack Website code is Crown copyright (C) 2014, New Zealand Government,
-# and is licensed under the GNU General Public License, version 3. Some components are 
-# third party components that are licensed under the MIT license or other terms. 
-# See https://github.com/DigitalNZ/supplejack_website for details. 
-# 
-# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs. 
+# and is licensed under the GNU General Public License, version 3. Some components are
+# third party components that are licensed under the MIT license or other terms.
+# See https://github.com/DigitalNZ/supplejack_website for details.
+#
+# Supplejack was created by DigitalNZ at the National Library of NZ and the Department of Internal Affairs.
 # http://digitalnz.org/supplejack
 
-require 'spec_helper'
+require 'rails_helper'
 
-describe ApplicationHelper do
+RSpec.describe ApplicationHelper do
 
 	describe '#title' do
 		it 'should return site name if no arguments are passed' do
@@ -29,7 +29,7 @@ describe ApplicationHelper do
 
     it 'joins the arguments and the site name with a pipe (|)' do
       helper.title('arg1', 'arg2', 'arg3')
-      expect(view.content_for(:title)).to eq("arg1 | arg2 | arg3 | #{t("site_title")}") 
+      expect(view.content_for(:title)).to eq("arg1 | arg2 | arg3 | #{t("site_title")}")
     end
 	end
 
@@ -64,16 +64,16 @@ describe ApplicationHelper do
     }
 
     it 'returns a hash' do
-      helper.search_tab_options(@search.options, 'images').should be_a_kind_of(Hash) 
+      helper.search_tab_options(@search.options, 'images').should be_a_kind_of(Hash)
     end
 
     it 'removes page' do
-      helper.search_tab_options(@search.options, 'images').values.should_not include(5)  
+      helper.search_tab_options(@search.options, 'images').values.should_not include(5)
     end
 
     it 'merges tab' do
       helper.search_tab_options(@search.options, 'images').keys.should =~ [:text, :tab]
     end
   end
-  
+
 end

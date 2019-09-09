@@ -25,6 +25,3 @@ staging:
   username: root
   password:
   host: localhost
-
-cucumber:
-  <<: *test
