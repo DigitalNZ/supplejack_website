@@ -1,36 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Record do
-  before(:each) do
-    @record = ::Record.new
-    @mock_subject = double(:date_subject).as_null_object
-  end
 
   describe '#image_url' do
-    before(:each) do
-      @record.stub(:thumbnail_url) { 'https://picasa.com/image.png' }
-      @record.stub(:display_collection) { nil }
-      @record.stub(:landing_url) { nil }
-    end
-
     it 'should tell the thumbailer the specified width' do
-      @record.image_url(:width => 300).should eq "#{THUMBNAIL_SERVER_URL}?resize=300&src=https%3A%2F%2Fpicasa.com%2Fimage.png"
+      record = Record.new(thumbnail_url: 'https://picasa.com/image.png')
+      expect(record.image_url(width: 300)).to eq("#{THUMBNAIL_SERVER_URL}?resize=300&src=https%3A%2F%2Fpicasa.com%2Fimage.png")
     end
 
     it 'should resize the thumbnail_url through the thumbnailer' do
-      @record.stub(:thumbnail_url) { 'http://picasa.com/small_image.png' }
-      @record.image_url.should eq "#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Fpicasa.com%2Fsmall_image.png"
+      record = Record.new(thumbnail_url: 'http://picasa.com/small_image.png')
+      expect(record.image_url).to eq("#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Fpicasa.com%2Fsmall_image.png")
     end
 
     it 'should use thumbnail_url if thumbnail_url is not present' do
-      @record.stub(:thumbnail_url) { nil }
-      @record.stub(:thumbnail_url) { 'http://picasa.com/regular_image.png' }
-      @record.image_url.should eq "#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Fpicasa.com%2Fregular_image.png"
+      record = Record.new(thumbnail_url: 'http://picasa.com/regular_image.png')
+      expect(record.image_url).to eq("#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Fpicasa.com%2Fregular_image.png")
     end
 
     it 'should tell the thumbnailer to get the original size' do
-      @record.stub(:thumbnail_url) { 'https://picasa.com/image.png' }
-      @record.image_url(original: true).should eq "#{THUMBNAIL_SERVER_URL}?src=https%3A%2F%2Fpicasa.com%2Fimage.png"
+      record = Record.new(thumbnail_url: 'https://picasa.com/image.png')
+      expect(record.image_url(original: true)).to eq("#{THUMBNAIL_SERVER_URL}?src=https%3A%2F%2Fpicasa.com%2Fimage.png")
     end
   end
 end
