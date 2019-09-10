@@ -64,8 +64,4 @@ Rails.application.configure do
 
   # For Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-  API_HOST = ENV['API_HOST']
-  API_KEY = ENV['API_KEY']
-  THUMBNAIL_SERVER_URL = ENV['THUMBNAIL_SERVER_URL']
 end

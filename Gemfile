@@ -20,6 +20,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # custom gems
 gem 'activeresource'
 gem 'devise'
+gem 'figaro'
 gem 'haml-rails'
 gem 'json'
 gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'

@@ -49,7 +49,4 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   HOST = 'http://host.test'
-  API_HOST = ENV['API_HOST']
-  API_KEY = ENV['API_KEY']
-  THUMBNAIL_SERVER_URL = ENV['THUMBNAIL_SERVER_URL']
 end
