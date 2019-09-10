@@ -2,19 +2,14 @@ require 'rails_helper'
 
 RSpec.describe RecordsController do
 
-  def mock_record(stubs={})
-    @mock_record ||= mock_model(Record, stubs).as_null_object
-  end
+  # def mock_record(stubs={})
+  #   @mock_record ||= mock_model(Record, stubs).as_null_object
+  # end
 
   describe 'GET home' do
-    before(:each) do
-      @search = double(:search).as_null_object
-      Search.stub(:new) { @search }
-    end
-
     it 'initializes a new search object' do
       get :home
-      assigns(:search).should eq @search
+      expect(assigns(:search)).to eq(Search.new)
     end
   end
 

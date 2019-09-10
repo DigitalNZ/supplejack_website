@@ -3,11 +3,7 @@ require 'rails_helper'
 RSpec.describe Supplejack::Item do
 
   describe "#image_url" do
-    let(:item) {
-      Supplejack::Item.new({
-        thumbnail_url: 'http://test.com/img.png'
-      })
-    }
+    let(:item) { Supplejack::Item.new({thumbnail_url: 'http://test.com/img.png'}) }
 
     it 'returns a url to serve a resized image' do
       expect(item.image_url).to eq("#{THUMBNAIL_SERVER_URL}?resize=204&src=http%3A%2F%2Ftest.com%2Fimg.png")
