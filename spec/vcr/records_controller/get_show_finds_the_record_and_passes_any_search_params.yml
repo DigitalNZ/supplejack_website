@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.staging.digitalnz.org//records/34870516.json?api_key=PrGwM6mEZ5hoKydzsy9N&debug=true&fields=default,source_contributor_name,display_collection,display_content_partner,source_url,thumbnail_url,display_date,creator,category,subject
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin18.6.0 x86_64) ruby/2.6.3p62
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.staging.digitalnz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 10 Sep 2019 05:41:05 GMT
+      Etag:
+      - W/"c969efeb0c0e75796e0360ee8a74b167"
+      Server:
+      - openresty/1.15.8.1
+      Server-Timing:
+      - Middleware; dur=1.55; ,Router; dur=1.47; ,Controller; dur=61.27; ,Total; dur=64.3;
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Request-Id:
+      - 8cf4c96d3e88353a46da2ead24322f2b
+      X-Runtime:
+      - '0.063803'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"record":{"id":34870516,"title":"Cat","alternate_title":[],"description":"A
+        cat is perched in the tree in front of the Central Library, Gloucester Street.
+        Thursday 21 October 2010.\nFile Reference: CCL-2010-CatinTree-DSC05238\n\nFrom
+        the collection of Christchurch City Libraries","additional_description":[],"content_partner":["Christchurch
+        City Libraries"],"display_content_partner":"Christchurch City Libraries","collection_title":["Flickr"],"display_collection":"Flickr","primary_collection":["Flickr"],"contributing_partner":[],"category":["Images"],"creator":["Christchurch
+        City Libraries"],"contributor":["Christchurch City Libraries"],"copyright":["Some
+        rights reserved"],"citation":[],"credit_creator":null,"language":[],"provenance":null,"publisher":[],"rights":null,"usage":["Share","Modify"],"source":[],"tag":[],"thesis_level":null,"holding":[],"library_collection":[],"shelf_location":null,"eprints_type":[],"fulltext":null,"text":null,"has_version":[],"license":null,"relation":[],"is_part_of":[],"is_replaced_by":"Unknown","replaces":"Unknown","is_required_by":null,"is_version_of":null,"table_of_contents":null,"dc_type":[],"dnz_type":"Unknown","display_date":"2010-10-21","format":[],"dc_identifier":["5100683545","flickr_place_id:rtRp0t5TWrxL11nEkw"],"is_commercial_use":null,"date":["2010-10-21
+        12:00:00 UTC"],"syndication_date":"2014-07-01T07:41:45.733+12:00","published_date":[],"landing_url":"https://www.flickr.com/photos/christchurchcitylibraries/5100683545","rights_url":["http://creativecommons.org/licenses/by-nc-sa/2.0/"],"origin_url":null,"metadata_url":null,"object_url":"https://farm2.staticflickr.com/1345/5100683545_218eb93b4d_o.jpg","subject":["christchurch","cats","cat","centrallibrary","ccl"],"thumbnail_url":"https://farm2.staticflickr.com/1345/5100683545_0d86105aa0.jpg","large_thumbnail_url":"https://farm2.staticflickr.com/1345/5100683545_0d86105aa0_z.jpg","source_contributor_name":[],"source_url":"http://api.staging.digitalnz.org/records/34870516/source"}}'
+    http_version: 
+  recorded_at: Tue, 10 Sep 2019 05:41:05 GMT
+recorded_with: VCR 5.0.0

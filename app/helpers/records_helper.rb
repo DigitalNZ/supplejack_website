@@ -2,7 +2,7 @@ module RecordsHelper
   def record_thumbnail(record, search = nil)
     image_options = {}
     search ||= Search.new
-    search_options = search.options.try(:any?) ? search.options : nil
+    search_options = search.options&.any? ? search.options : nil
 
     image_options[:alt] ||= record.title
     image_options[:title] ||= image_options[:alt]
