@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApiUser
   extend ActiveSupport::Concern
 
@@ -13,7 +15,7 @@ module ApiUser
   # ClassMethod
   module ClassMethods
     def find_by_api_key(api_key)
-      self.joins(:key).where(api_keys: { token: api_key }).first
+      joins(:key).where(api_keys: { token: api_key }).first
     end
   end
 
@@ -27,29 +29,34 @@ module ApiUser
   end
 
   def update_api_user
-    Supplejack::User.update(name: self.name, username: self.username, email: self.email, encrypted_password: self.encrypted_password, api_key: self.api_key)
+    Supplejack::User.update(name: name, username: username, email: email, encrypted_password: encrypted_password, api_key: api_key)
   end
 
   def user
-    @user ||= Supplejack::User.find(self.token)
+    @user ||= Supplejack::User.find(token)
   end
 
   def regenerate_key!
     user.regenerate_api_key = true
     user.save
-    self.create_key(token: user.api_key, terms: false)
+    create_key(token: user.api_key, terms: false)
     @user = nil
   end
 
   def latest_sets
     return @latest_sets if @latest_sets
-    @latest_sets = dnz_user.sets.order(:updated_at) rescue nil
+
+    @latest_sets = begin
+                     dnz_user.sets.order(:updated_at)
+                   rescue StandardError
+                     nil
+                   end
     @latest_sets ||= []
     @latest_sets = @latest_sets[0..4] if @latest_sets.try(:any?)
     @latest_sets
   end
 
   def accepted_terms?
-    !!self.key.try(:terms)
+    key&.terms
   end
 end

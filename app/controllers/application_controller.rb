@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
@@ -28,7 +30,7 @@ class ApplicationController < ActionController::Base
   def current_sj_user(user_id = nil)
     @current_sj_user ||= begin
                            user = user_id ? User.find(user_id) : current_user
-                           Supplejack::User.new({ authentication_token: user.api_key }) if user
+                           Supplejack::User.new(authentication_token: user.api_key) if user
                          end
   end
 end

@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UserSetsController do
   describe 'GET show' do
-    let(:set) {
-      double(:set, {
-        items: [
-          double(:record),
-          double(:record)
+    let(:set) do
+      instance_double(
+        'Supplejack::UserSet', items: [
+          FactoryBot.build(:record),
+          FactoryBot.build(:record)
         ]
-      })
-    }
+      )
+    end
 
     before do
-      allow(Supplejack::UserSet).to receive(:find) {set}
+      allow(Supplejack::UserSet).to receive(:find) { set }
 
       get :show, params: { id: '' }
     end
@@ -22,7 +24,6 @@ RSpec.describe UserSetsController do
     end
 
     it 'assigns @records to the sets items' do
-
       expect(assigns(:records)).to eq(set.items)
     end
 

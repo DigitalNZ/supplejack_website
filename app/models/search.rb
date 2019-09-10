@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Search < Supplejack::Search
   def initialize(params = {})
     params = params.dup

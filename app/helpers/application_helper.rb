@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def title(*args)
-    args.delete_if { |e| e.blank? }
+    args.delete_if(&:blank?)
     args = args.map { |e| truncate(e, length: 40) }
     title = (args + [t('site_title')]).join(' | ')
     content_for(:title) { title }
