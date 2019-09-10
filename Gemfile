@@ -53,9 +53,11 @@ group :test do
   gem 'webdrivers'
 
   gem 'simplecov'
-  gem "rspec-rails", "~> 3.8"
+  gem 'rspec-rails', '4.0.0.beta2'
+  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'vcr'
+  gem 'webmock'
   gem 'faker'
 end
 
