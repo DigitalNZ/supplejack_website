@@ -1,0 +1,17 @@
+# Please copy this file with the name 'application.yml'
+# and adjust the values to your environment
+
+test:
+  api_url: 'localhost:3001'
+  api_key: 'my_testing_api_key'
+  thumbnail_server_url: 'https://magickly.afeld.me/'
+
+development:
+  api_url: 'localhost:3001'
+  api_key: 'my_development_api_key'
+  thumbnail_server_url: 'https://magickly.afeld.me/'
+
+production:
+  api_url: 'https://api.mydomain.org/'
+  api_key: 'PrGwM6mEZ5hoKydzsy9N'
+  thumbnail_server_url: 'https://thumbnailer.mydomain.com/'

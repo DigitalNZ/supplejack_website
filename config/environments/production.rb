@@ -115,8 +115,4 @@ Rails.application.configure do
     password: ENV['SMTP_PASSWORD']
   }
   config.action_mailer.default_url_options = { host: ENV['ACTION_MAILER_DEFAULT_HOST'] }
-
-  API_HOST = ENV['API_HOST']
-  API_KEY = ENV['API_KEY']
-  THUMBNAIL_SERVER_URL = ENV['THUMBNAIL_SERVER_URL']
 end

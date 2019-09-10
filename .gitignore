@@ -68,8 +68,6 @@ capybara-*html
 #rbenv
 .rbenv-version
 
-/config/local_env.rb# Rails
-
 # RubyMine
 .idea
 
@@ -86,8 +84,9 @@ capybara-*html
 # vendor/extensions dummy applications.
 vendor/extensions/**/spec/dummy
 
-config/local_env.rb
-
 # Sublime Text project files
 /*.sublime-project
 /*.sublime-workspace
+
+# Ignore application configuration
+/config/application.yml
