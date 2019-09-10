@@ -10,10 +10,11 @@ RSpec.describe UserSetsController do
         ]
       })
     }
+
     before do
       allow(Supplejack::UserSet).to receive(:find) {set}
 
-      get :show, id: ''
+      get :show, params: { id: '' }
     end
 
     it 'assigns @user_set to the set' do

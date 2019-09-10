@@ -1,16 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe RecordsHelper do
-  def mock_record(stubs={})
-    @mock_record ||= mock_model(Record, stubs).as_null_object
-  end
+  let(:record) { FactoryBot.build(:record) }
 
   describe '#source_contributor_name' do
-    let(:record) { mock_record(title: 'Title', description: 'Description').as_null_record }
-
     it 'displays the contributing content partner' do
-      record = mock_record(source_contributor_name: ['Culture', 'Europeana'])
-      expect(helper.source_contributor_name(record)).to eq(%{<p>Culture, Europeana</p>})
+      expect(helper.source_contributor_name(record)).to eq('<p>Culture, Europeana</p>')
     end
   end
 
@@ -21,46 +16,26 @@ RSpec.describe RecordsHelper do
 
     context 'the record has an image' do
       it 'should render a link with an image' do
-        record = mock_record(:image_url => 'http://google.com/icon.gif', id: 1, title: 'title')
-        expect(helper.record_thumbnail(record, @search)).to eq(%{<div>#{link_to image_tag("http://google.com/icon.gif", :alt => "title", :title => "title"), "/records/1"}</div>})
+        expect(helper.record_thumbnail(record, @search)).to eq(
+          %{<div>#{link_to image_tag(record.image_url, :alt => "Title", :title => "Title"), "/records/#{record.id}"}</div>}
+        )
       end
     end
 
-    it 'should render a link with a image with the specified alt and title text' do
-      record = mock_record(image_url: 'http://google.com/icon.gif', :id => 1)
-      helper.record_thumbnail(record, @search)
-    end
-
     it 'should append the search options to the image link' do
-      record = mock_record(:image_url => 'http://google.com/icon.gif', :id => 1)
-      allow(@search).to receive(:options) { {:text=>'fish'} }
+      allow(@search).to receive(:options) { { text: 'fish'} }
 
       expect(helper.record_thumbnail(record, @search)).to match('search%5Btext%5D=fish')
     end
 
-    context 'placeholder image' do
-      before(:each) do
-        @record = double(:record)
-        allow(@record).to receive(:thumbnail_height) { }
-        allow(@record).to receive(:image_url) { }
-        allow(@record).to receive(:text?) { false }
-        allow(@record).to receive(:creator) { 'Dave' }
-      end
-
-    end
-
     it 'should generate a link with no query parameters when there are no search options' do
-      record = mock_record(:id => 1)
-
       allow(@search).to receive(:options) { {} }
-      expect(helper.record_thumbnail(record, @search)).to match('<a href="\/records\/1">')
+      expect(helper.record_thumbnail(record, @search)).to match('<a href="\/records\/31938663">')
     end
 
     it 'should generate a link with search parameters when search options are passed' do
-      record = mock_record(:id => 1)
-
       allow(@search).to receive(:options) { {text: 'fish'} }
-      expect(helper.record_thumbnail(record, @search)).to match('<a href="\/records\/1\?search%5Btext%5D=fish">')
+      expect(helper.record_thumbnail(record, @search)).to match('<a href="\/records\/31938663\?search%5Btext%5D=fish">')
     end
 
     context '#date_parser_for' do
