@@ -1,14 +1,14 @@
 !!!
 %html
-	= render "shared/head"
+  = render "shared/head"
 
-	%body{ class: yield(:body_class) }
-		= render "shared/header"
-		- if notice
-			%p.alert.alert-success= notice
-		- if alert
-			%p.alert.alert-danger= alert
+  %body{ class: yield(:body_class) }
+    = render "shared/header"
+    - if notice
+      %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
 
-		.main= yield
+    .main= yield
 
-		= render "shared/footer"
+    = render "shared/footer"

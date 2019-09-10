@@ -1,14 +1,14 @@
 !!!
 %html
-	= render "shared/head"
+  = render "shared/head"
 
-	%body
-		= render "shared/header"
-		- if notice
-			%p.alert.alert-success= notice
-		- if alert
-			%p.alert.alert-danger= alert
+  %body
+    = render "shared/header"
+    - if notice
+      %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
 
-		.story= yield
+    .story= yield
 
-		= render "shared/footer"
+    = render "shared/footer"
