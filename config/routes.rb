@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
 
   root to: 'records#home'
 
-  resources :records, only: [:index, :show]
+  resources :records, only: %i[index show]
 
-  resources :user_sets, only: [:show, :create, :index] do
+  resources :user_sets, only: %i[show create index] do
     resources :set_items, only: [:create]
   end
 
@@ -14,5 +16,4 @@ Rails.application.routes.draw do
   get '/become_a_partner', to: 'static_pages#become_a_partner'
   get '/terms', to: 'static_pages#terms'
   get '/base_template', to: 'static_pages#base_template'
-
 end

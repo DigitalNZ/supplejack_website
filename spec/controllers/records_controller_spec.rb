@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe RecordsController do
@@ -9,36 +11,36 @@ RSpec.describe RecordsController do
   end
 
   describe 'GET index', :vcr do
-    before(:each) do
+    before do
       search = Search.new
       allow(search).to receive(:results) { [mock_record] }
     end
 
-    it 'should be successful' do
+    it 'is successful' do
       get :index
       expect(response).to have_http_status(:success)
     end
 
-    it 'should assign records as @records' do
+    it 'assigns records as @records' do
       get :index
       expect(assigns(:records)).to be_a(Array)
     end
 
-    it 'should assign tab_counts' do
-      expect(controller).to receive(:tab_counts).and_return('images' => 16)
+    it 'assigns tab_counts' do
+      allow(controller).to receive(:tab_counts).and_return('images' => 16)
       get :index
-      expect(assigns(:counts)).to eq({'images' => 16})
+      expect(assigns(:counts)).to eq('images' => 16)
     end
   end
 
   describe 'GET show', :vcr do
-    it 'should be successful' do
-      get :show, params: { id: 34870516 }
+    it 'is successful' do
+      get :show, params: { id: 34_870_516 }
       expect(response).to have_http_status(:success)
     end
 
     it 'finds the record and passes any search params' do
-      get :show, params: { id: 34870516, search: { i: { type: 'Images' } } }
+      get :show, params: { id: 34_870_516, search: { i: { type: 'Images' } } }
       expect(assigns(:record)).to be_a(Record)
     end
   end

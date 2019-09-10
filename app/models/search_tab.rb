@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SearchTab
-  TABS = %w(All Images Audio Videos Sets)
+  TABS = %w[All Images Audio Videos Sets].freeze
   attr_reader :tab
 
   def initialize(tab = 'All')
@@ -7,11 +9,11 @@ class SearchTab
   end
 
   def self.add_category_facets(search, category)
-    if valid_category_facets.include?(category)
-      search.and ||= {}
-      search.and[:category] ||= {}
-      search.and[:category] = category
-    end
+    return unless valid_category_facets.include?(category)
+
+    search.and ||= {}
+    search.and[:category] ||= {}
+    search.and[:category] = category
   end
 
   def self.valid_category_facets
@@ -27,7 +29,7 @@ class SearchTab
   end
 
   def self.tab_label(name, count)
-    %{#{name.capitalize} <span class="count">#{count}</span>}.html_safe
+    %(#{name.capitalize} <span class="count">#{count}</span>).html_safe
   end
 
   def all?
