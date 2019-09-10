@@ -1,12 +1,17 @@
-Supplejack.configure do |config|
+# frozen_string_literal: true
 
+Supplejack.configure do |config|
   # ===> Credentials
   # Use the api_key for your Supplejack user
   # Please replace XXXX with your own api key
+  raise StandardError('An API_KEY must be provided') if API_KEY.blank?
+
   config.api_key = API_KEY
   #
   # ===> End point
   # For production use default url which is http://api.youapihost.org
+  raise StandardError('An API_HOST must be provided') if API_HOST.blank?
+
   config.api_url = API_HOST
   #
   # ===> URL Format
@@ -18,12 +23,12 @@ Supplejack.configure do |config|
   # The is the list of facets that are going to be requested to the api
   # When you ask for the facets, they are going to be ordered in the
   # order presented here
-  config.facets = [
-    :category,
-    :content_partner,
-    :primary_collection,
-    :usage,
-    :date
+  config.facets = %i[
+    category
+    content_partner
+    primary_collection
+    usage
+    date
   ]
   #
   # ===> Facet values sorting
@@ -37,17 +42,17 @@ Supplejack.configure do |config|
   # This is a list of fields/groups that will be requested to the API for every
   # record. :default will return the default set of fields.
   #
-  config.fields = [
-    :default,
-    :source_contributor_name,
-    :display_collection,
-    :display_content_partner,
-    :source_url,
-    :thumbnail_url,
-    :display_date,
-    :creator,
-    :category,
-    :subject
+  config.fields = %i[
+    default
+    source_contributor_name
+    display_collection
+    display_content_partner
+    source_url
+    thumbnail_url
+    display_date
+    creator
+    category
+    subject
   ]
 
   # ===> Number of facet values
