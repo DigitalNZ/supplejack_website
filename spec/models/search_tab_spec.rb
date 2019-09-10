@@ -1,99 +1,92 @@
 require 'rails_helper'
 
 RSpec.describe SearchTab do
-
-  let(:st) { SearchTab.new }
-
   describe 'initialize' do
     it 'assigns the tab' do
-      SearchTab.new('images').tab.should eq 'images'
+      expect(SearchTab.new('images').tab).to eq('images')
     end
 
     it 'defaults to all' do
-      SearchTab.new(nil).tab.should eq 'All'
+      expect(SearchTab.new(nil).tab).to eq('All')
     end
   end
 
   describe 'valid_category_facets' do
+    let (:search) { Search.new }
     before(:each) do
-      @search = Search.new
-      SearchTab.stub(:valid_category_facets) { ['Images']}
+      allow(SearchTab).to receive(:valid_category_facets).and_return(['Images'])
     end
 
     it 'gets the valid category facets' do
-      SearchTab.should_receive(:valid_category_facets)
-      SearchTab.add_category_facets(@search, 'Images')
+      expect(SearchTab).to receive(:valid_category_facets)
+      SearchTab.add_category_facets(search, 'Images')
     end
 
     context 'valid category' do
       it 'adds the category to the search' do
-        SearchTab.add_category_facets(@search, 'Images')
-        @search.and[:category].should eq 'Images'
+        SearchTab.add_category_facets(search, 'Images')
+        expect(search.and[:category]).to eq('Images')
       end
     end
 
     context 'invalid category' do
       it 'doesn\'t add invalid categories to the search' do
-        SearchTab.add_category_facets(@search, 'INVALID')
-        @search.and[:INVALID].should eq nil
+        SearchTab.add_category_facets(search, 'INVALID')
+        expect(search.and[:INVALID]).to be_nil
       end
     end
   end
 
   describe 'valid_category_facets' do
-    let(:search) { double('search', :facet_values => {}) }
-
     it 'returns the valid type facets' do
-      Search.stub(:new) { search }
-      search.should_receive(:facet_values).with('category')
+      expect_any_instance_of(Search).to receive(:facet_values).with('category').and_call_original
       SearchTab.valid_category_facets
     end
   end
 
   describe 'sorted counts' do
-    let(:unsorted_counts) { { 'Newspapers'=>1346566, 'Images'=>1056473, 'Journals'=>39515, 'Videos'=>7655, 'Audio'=>2553, 'All'=>2448694 } }
+    let(:unsorted_counts) {{
+        'Newspapers' => 1346566,
+        'Images' => 1056473,
+        'Journals' => 39515,
+        'Videos' => 7655,
+        'Audio' => 2553,
+        'All' => 2448694
+    }}
 
     it 'returns five categories' do
-      SearchTab.sorted_counts(unsorted_counts).count.should eq 5
+      expect(SearchTab.sorted_counts(unsorted_counts).count).to eq 5
     end
 
     it 'sorts by count' do
-      SearchTab.sorted_counts(unsorted_counts).shift.should eq ['All', 2448694]
+      expect(SearchTab.sorted_counts(unsorted_counts).shift).to eq ['All', 2448694]
     end
   end
 
   describe 'tab_label' do
     it 'creates label html with given values' do
-      SearchTab.tab_label('images', '1,234').should eq(%{Images <span class="count">1,234</span>})
+      expect(SearchTab.tab_label('images', '1,234')).to eq('Images <span class="count">1,234</span>')
     end
   end
 
   describe 'all?' do
-    it 'returns true' do
-      st.stub(:tab) { 'All' }
-      expect(st.all?).to be true
+    it 'returns true when initialized with no parameter' do
+      expect(SearchTab.new.all?).to be true
     end
 
-    it 'returns true' do
-      st = SearchTab.new('')
-      expect(st.all?).to be true
+    it 'returns true when initialized with an empty string' do
+      expect(SearchTab.new('').all?).to be true
     end
 
-    it 'returns false' do
-      st.stub(:tab) { 'Images' }
-      expect(st.all?).to be false
+    it 'returns false when initialized with "Images"' do
+      expect(SearchTab.new('Images').all?).to be false
     end
   end
 
   describe 'value' do
     it 'returns the value if view is present' do
-      st.instance_variable_set(:@tab, 'sets')
-      st.value.should eq('sets')
-    end
-
-    it 'returns nil if view is not present' do
-      st.instance_variable_set(:@tab, nil)
-      st.value.should be_nil
+      # search_tab.instance_variable_set(:@tab, 'sets')
+      expect(SearchTab.new('sets').value).to eq('sets')
     end
   end
 end

@@ -1,19 +1,16 @@
 class RecordsController < ApplicationController
-  def home
-    @search = search
-  end
+  def home; end
 
   def index
-    @search = search(params.dup)
     SearchTab.add_category_facets(@search, params[:tab])
     @records = @search.results
     @facets = @search.facets
     @counts = tab_counts(params.dup)
-    @sets = current_sj_user.try(:sets)
+    @sets = current_sj_user&.sets
   end
 
   def show
-    @record = Record.find(params[:id])
+    @record = Record.find(params[:id], params[:search] || {})
 
     if @record.present? && @record.attributes[:category].equal?(['Sets'])
       search_params = params[:search] ? params[:search].merge(record_id: params[:id]) : nil
@@ -21,8 +18,6 @@ class RecordsController < ApplicationController
       user_set_id = @record.landing_url.split('/').last
       redirect_to user_set_path(user_set_id, search: search_params)
     end
-
-    @search = search(params[:search])
   end
 
   private

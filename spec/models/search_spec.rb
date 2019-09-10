@@ -6,8 +6,7 @@ RSpec.describe Search do
 
   describe '#initialize' do
     it 'should set the category if tab is present' do
-      @search = Search.new(tab: 'nz')
-      @search.and.should_not be_nil
+      expect(Search.new(tab: 'nz').and).to_not be_nil
     end
   end
 end
