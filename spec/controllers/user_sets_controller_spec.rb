@@ -11,7 +11,7 @@ RSpec.describe UserSetsController do
       })
     }
     before do
-      Supplejack::UserSet.stub(:find) {set}
+      allow(Supplejack::UserSet).to receive(:find) {set}
 
       get :show, id: ''
     end
