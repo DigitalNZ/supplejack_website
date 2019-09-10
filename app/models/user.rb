@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   include ApiUser
 
@@ -10,17 +12,16 @@ class User < ApplicationRecord
 
   def create_supplejack_user
     user = Supplejack::User.create(
-      email: self.email,
-      name: self.name,
-      username: self.username,
-      encrypted_password: self.encrypted_password,
-      sets: [{ name: "Favourites", privacy: "hidden", priority: 0 }]
+      email: email,
+      name: name,
+      username: username,
+      encrypted_password: encrypted_password,
+      sets: [{ name: 'Favourites', privacy: 'hidden', priority: 0 }]
     )
-    self.create_key(token: user.api_key, terms: false)
+    create_key(token: user.api_key, terms: false)
   rescue StandardError => e
-    byebug
-    Rails.logger.warn("There was a error when creating the API User and default set for member: #{self.id}. Error: #{e.message}")
-    self.errors.add(:base, I18n.t('registration.account_creation_error'))
+    Rails.logger.warn("There was a error when creating the API User and default set for member: #{id}. Error: #{e.message}")
+    errors.add(:base, I18n.t('registration.account_creation_error'))
     raise ActiveRecord::Rollback
   end
 end

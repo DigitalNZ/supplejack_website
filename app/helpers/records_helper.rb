@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RecordsHelper
   def record_thumbnail(record, search = nil)
     image_options = {}
@@ -32,7 +34,11 @@ module RecordsHelper
   end
 
   def date_parser_for(string)
-    Date.parse string rescue return string
+    begin
+      Date.parse string
+    rescue StandardError
+      return string
+    end
     Date.parse(string).strftime('%d %b %Y')
   end
 end
