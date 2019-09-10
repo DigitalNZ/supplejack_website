@@ -4,15 +4,11 @@ Supplejack.configure do |config|
   # ===> Credentials
   # Use the api_key for your Supplejack user
   # Please replace XXXX with your own api key
-  raise StandardError('An API_KEY must be provided') if API_KEY.blank?
-
-  config.api_key = API_KEY
+  config.api_key = Figaro.env.api_key!
   #
   # ===> End point
   # For production use default url which is http://api.youapihost.org
-  raise StandardError('An API_HOST must be provided') if API_HOST.blank?
-
-  config.api_url = API_HOST
+  config.api_url = Figaro.env.api_url!
   #
   # ===> URL Format
   # This is the format use for the url's in the application

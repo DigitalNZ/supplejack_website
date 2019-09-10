@@ -28,9 +28,9 @@ class RecordsController < ApplicationController
 
       counts_search = Search.new(options)
       begin
-      Hash.new(0).merge(counts_search.categories)
+        Hash.new(0).merge(counts_search.categories)
       rescue StandardError
         {}
-    end
+      end
     end
 end
