@@ -23,20 +23,20 @@ gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
 gem 'json'
-gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client.git'
+gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client'
 gem 'will_paginate'
 
 # Assets
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails', '~> 4.7'
-gem 'foundation-rails', '~> 5.4.5.0'
+gem 'foundation-rails', '~> 6.5'
 gem 'jquery-rails'
 
 group :test, :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
-  gem 'boost-styles', git: 'https://github.com/boost/boost-styles.git'
+  gem 'boost-styles', git: 'https://github.com/boost/boost-styles'
 end
 
 group :development do
