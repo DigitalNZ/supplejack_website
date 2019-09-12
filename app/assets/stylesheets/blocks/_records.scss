@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'colors.scss';
-@import 'media-ranges.scss';
-
 /**********************
 GALLERY STYLES
 **********************/
@@ -60,11 +57,11 @@ RECORDS STYLES
 
   .gallery-record {
     padding: 8px 8px 20px 8px !important;
-    color: $light-grey;
+    color: $light-gray;
     width: 194px;
     margin: 0.5em;
     margin-bottom: 51px;
-    background-color: $light-grey;
+    background-color: $light-gray;
     border: 1px solid #ddd;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.3);
@@ -92,7 +89,7 @@ RECORDS STYLES
       color: $brand-colour;
       font-weight: 500;
       letter-spacing: 1px;
-      border-bottom: 1px solid $light-grey;
+      border-bottom: 1px solid $light-gray;
       h3 {
         margin-top: 18px;
         font-size: 14px;
@@ -110,7 +107,7 @@ RECORDS STYLES
 
 h1 {
   font-size: 2em;
-  color: $dark-grey;
+  color: $dark-gray;
 }
 
 .record {
@@ -125,7 +122,7 @@ h1 {
     &> img {
       padding: 0.5em;
 
-      border: 1px solid $light-grey;
+      border: 1px solid $light-gray;
       display: block;
     }
   }
@@ -136,7 +133,7 @@ h1 {
   width: 100%;
   z-index: 10;
   display: none;
-  border: 1px solid $gray;
+  border: 1px solid $medium-gray;
   height: 500px;
   overflow: scroll;
   margin-top: 0em;
@@ -177,7 +174,7 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
     width: 0;
     height: 0;
     border: inset 0.5em;
-    border-color: transparent transparent $gray transparent;
+    border-color: transparent transparent $medium-gray transparent;
     border-bottom-style: solid;
     position: absolute;
     top: -1em;
@@ -189,7 +186,7 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
     @media only screen and (min-width: 65em) {
       padding: 0 2em;
     }
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid $medium-gray;
     li {
       display: inline-block;
       &.active {
@@ -204,7 +201,7 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
         margin-right: 1em;
         font-weight: normal;
         display: block;
-        color: $dark-grey;
+        color: $dark-gray;
         border-bottom: none;
         margin-bottom: -2px;
       }
@@ -234,13 +231,13 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
       }
       a {
         cursor: pointer;
-        color: $dark-grey;
+        color: $dark-gray;
         &.active {
           color: $brand-colour;
         }
         span {
           font-size: 0.6em;
-          color: $middle-grey;
+          color: $medium-gray;
         }
       }
     }
@@ -263,15 +260,15 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
     padding-top: 1em;
   }
   a.disabled {
-    color: $dark-grey;
+    color: $dark-gray;
     cursor: default;
 
     &:hover {
-      color: $dark-grey;
+      color: $dark-gray;
     }
 
     span, span:hover {
-      color: $dark-grey !important;
+      color: $dark-gray !important;
     }
   }
 }
@@ -293,7 +290,7 @@ box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
   float: left;
   border: none;
   padding: 0.5em 4em 0.5em 1em;
-  background-color: $gray;
+  background-color: $medium-gray;
   /*@include border-radius(0);*/
   color: #000;
   font-size: 0.8em;

@@ -1,15 +1,3 @@
-@import 'colors.scss';
-@import 'media-ranges.scss';
-
-a, button, input, textarea {
-  &:focus {
-    outline: none;
-  }
-}
-
-body {
-  font-family: 'Raleway';
-}
 footer {
   padding: 4em 0;
   border-top: 1px solid #eaeaea;
@@ -44,7 +32,7 @@ footer {
       box-shadow: none;
       border: 1px solid #ddddd;
       border-right: none;
-      background-color: #E5E5E5;
+      background-color: $light-gray;
       width: 22em;
       padding: .5em 1em;
       line-height: 2em;
@@ -108,7 +96,7 @@ footer {
 }
 .filters {
   margin-top: 2em;
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $medium-gray;
   ul {
     margin: 0;
     padding: 0;
@@ -123,7 +111,7 @@ footer {
     a {
       display: block;
       padding: 1rem;
-      color: $dark-grey;
+      color: $dark-gray;
     }
     a span {
       display: block;
@@ -133,37 +121,29 @@ footer {
     &.active {
       a {
         background: white;
-        color: $brand-colour; /*color: $hilite;*/
-        border-bottom: 3px solid $brand-colour; /*$hilite; */
+        color: $brand-colour;
+        border-bottom: 3px solid $brand-colour;
       }
     }
   }
 }
 
-  @media #{$small-only} {
-    .filters {
-      border-bottom: 0px;
-      li {
-        float: none !important;
-        border-bottom: 1px solid $gray;
-        &.active {
-          a {
-            border-bottom: 0px;
-            border-left: 3px solid $hilite;
-          }
+@media #{$small-only} {
+  .filters {
+    border-bottom: 0px;
+    li {
+      float: none !important;
+      border-bottom: 1px solid $medium-gray;
+      &.active {
+        a {
+          border-bottom: 0px;
+          border-left: 3px solid $hilite;
         }
-        a span {
-          display: inline;
-          color: $gray;
-        }
+      }
+      a span {
+        display: inline;
+        color: $medium-gray;
       }
     }
   }
-
-
-
-.container {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 60rem;
 }
