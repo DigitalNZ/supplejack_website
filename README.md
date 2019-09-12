@@ -12,7 +12,7 @@ You can install Rails 3.2, Rails 4.1 or Rails 4.2 to run this website. Please do
 :warning: **It is very important that you have setup an API instance with correct record schema before setting up this project(or any projects that interact with the API). The most important component of the API is record schema. Refer to [API docs](http://digitalnz.github.io/supplejack/api/creating-schemas.html) for instruction.**
 
 ## Installation
-
+test
 Start API server on port 3000
 
 ```bash
