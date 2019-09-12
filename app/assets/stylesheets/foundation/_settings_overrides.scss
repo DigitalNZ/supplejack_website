@@ -1,0 +1,15 @@
+// Overrides for the global foundation settings
+//
+// To override a foundation variable:
+//     - copy it here
+//     - comment it in the `_settings.scss` file
+//
+// DON'T CHANGE DIRECTLY IN THE _SETTINGS.SCSS FILE
+
+@import 'util/util';
+
+
+// 1. Global
+// ---------
+
+$body-font-family: 'Railway', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
