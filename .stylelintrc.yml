@@ -1,0 +1,15 @@
+extends: stylelint-config-standard
+
+rules:
+  # Complains about FontAwesome
+  font-family-no-missing-generic-family-keyword: null
+
+  at-rule-no-unknown:
+    - true
+    - ignoreAtRules:
+      - extend
+      - if
+      - each
+      - include
+      - mixin
+      - at-root

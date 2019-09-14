@@ -2,7 +2,7 @@
   - filter_facets.each_with_index do |facet, index|
     %section
       = facet[0].capitalize.gsub('_', ' ')
-      %ul#quick-filters
+      %ul
         - facet[1].each_with_index do |filter, i|
           - if i < 5
 
