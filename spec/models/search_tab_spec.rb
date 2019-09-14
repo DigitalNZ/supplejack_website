@@ -21,8 +21,8 @@ RSpec.describe SearchTab do
     end
 
     it 'gets the valid category facets' do
+      expect(described_class).to receive(:valid_category_facets)
       described_class.add_category_facets(search, 'Images')
-      expect(described_class).to have_received(:valid_category_facets)
     end
 
     context 'with a valid category' do
