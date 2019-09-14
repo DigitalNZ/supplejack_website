@@ -1,6 +1,6 @@
 .grid-container
   .centerScreen
     %h1.logo= t('site_title')
-    = render "shared/search"
+    = render partial: 'shared/search', locals: { search: @search }
 
     %p.introText= t('home.intro').html_safe

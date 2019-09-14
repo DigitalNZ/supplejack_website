@@ -1,34 +1,32 @@
-.title-bar{'data-hide-for' => 'medium', 'data-responsive-toggle' => 'responsive-menu'}
-  %button.menu-icon{'data-toggle' => 'responsive-menu', type: 'button'}
-  .title-bar-title Menu
+%header
+  .title-bar{ 'data-hide-for': 'medium', 'data-responsive-toggle': 'responsive-menu' }
+    %button.menu-icon{ 'data-toggle': 'responsive-menu', type: 'button' }
+    .title-bar-title Menu
 
-#responsive-menu.top-bar
-  .top-bar-left
-    %ul.dropdown.menu{'data-dropdown-menu' => ''}
-      %li.menu-text= t('site_title')
-      %li= link_to 'Home', root_url
-      %li= link_to 'Contact', '/contact'
-      %li= link_to 'About', '/about'
-      - unless current_page? root_url
-        %li
-          = form_with scope: :get, url: records_path, local: false, class: 'input-group' do |form|
-            = form.hidden_field 'tab', params[:tab] if params[:tab].present?
-            = form.text_field @search.text, class: 'input-group-field', placeholder: t('records.enter_search')
-            .input-group-button
-              = form.submit 'Search', class: 'button'
-  .top-bar-right
-    %ul.dropdown.menu{'data-dropdown-menu' => ''}
-      - if user_signed_in?
-        %li.has-submenu
-          %a= current_user.email.split('@').first
-          %ul.submenu.menu.vertical{'data-submenu': true}
-            %li= link_to 'Edit profile', edit_user_registration_path
-            %li= link_to 'Logout', destroy_user_session_path, method: :delete
-      - else
-        %li= link_to 'Sign up', new_user_registration_path
-        %li= link_to 'Login', new_user_session_path
-
-
-/ .contain-to-grid.sticky
-/   %nav.top-bar{role: 'navigation'}
-
+  .top-bar#responsive-menu
+    .top-bar-left
+      %ul.dropdown.menu{ 'data-dropdown-menu': true }
+        %li.menu-text= t('site_title')
+        %li= link_to 'Home', root_url
+        %li= link_to 'Contact', '/contact'
+        %li= link_to 'About', '/about'
+        - unless current_page? root_url
+          %li
+            = form_with url: records_path, local: false, class: 'input-group' do |form|
+              = form.hidden_field 'tab', params[:tab] if params[:tab].present?
+              = form.text_field search.text,
+                  class: 'input-group-field',
+                  placeholder: t('records.enter_search')
+              .input-group-button
+                = form.submit 'Search', class: 'button'
+    .top-bar-right
+      %ul.dropdown.menu{ 'data-dropdown-menu': '' }
+        - if user_signed_in?
+          %li.has-submenu
+            %a= current_user.email.split('@').first
+            %ul.submenu.menu.vertical{ 'data-submenu': true }
+              %li= link_to 'Edit profile', edit_user_registration_path
+              %li= link_to 'Logout', destroy_user_session_path, method: :delete
+        - else
+          %li= link_to 'Sign up', new_user_registration_path
+          %li= link_to 'Login', new_user_session_path

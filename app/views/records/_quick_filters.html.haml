@@ -1,4 +1,4 @@
-#panel1-1.quick-filters.content.active
+.quick-filters.content.active#panel1-1
   - filter_facets.each_with_index do |facet, index|
     %section
       = facet[0].capitalize.gsub('_', ' ')
@@ -7,8 +7,8 @@
           - if i < 5
 
             %li
-              %a{class: filter_class(filter[0]), data: { facet: facet[0], filter: filter[0] }}
-                = "#{date_parser_for(filter[0])}"
+              %a{ class: filter_class(filter[0]), data: { facet: facet[0], filter: filter[0] } }
+                #{date_parser_for(filter[0])}
                 %span.count= number_with_precision(filter[1], delimiter: ',', precision: 0)
         %li
-          %a.more{:href => "#panel1-#{index + 2}"} More +
+          %a.more{ href: "#panel1-#{index + 2}" } More +
