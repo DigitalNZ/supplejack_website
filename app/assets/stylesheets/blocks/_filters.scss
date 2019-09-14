@@ -1,0 +1,207 @@
+.filter-btn {
+  margin: 1rem 0;
+}
+
+#quick-filters {
+  list-style: none;
+  margin-left: 0;
+}
+
+.filters {
+  margin-top: 2rem;
+  border-bottom: 1px solid $medium-gray;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    float: left;
+    display: block;
+    a {
+      display: block;
+      padding: 1rem;
+      color: $dark-gray;
+    }
+    a span {
+      display: block;
+      margin-top: 1em;
+      font-size: 0.8em;
+    }
+    &.active {
+      a {
+        background: white;
+        color: $brand-colour;
+        border-bottom: 3px solid $brand-colour;
+      }
+    }
+  }
+}
+
+@media #{$small-only} {
+  .filters {
+    border-bottom: 0px;
+    li {
+      float: none !important;
+      border-bottom: 1px solid $medium-gray;
+      &.active {
+        a {
+          border-bottom: 0px;
+          border-left: 3px solid $hilite;
+        }
+      }
+      a span {
+        display: inline;
+        color: $medium-gray;
+      }
+    }
+  }
+}
+.filter-container {
+  position: absolute;
+  background-color: #f0f0f0;
+  width: 100%;
+  z-index: 10;
+  display: none;
+  border: 1px solid $medium-gray;
+  height: 500px;
+  overflow: scroll;
+  margin-top: 0em;
+  opacity: .97;
+  @media only screen and (max-height: 1000px) {
+    -webkit-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+    box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+  }
+
+  @media only screen and (min-height: 1000px) {
+    height: auto;
+    overflow: initial;
+  }
+  .tabs {
+    background-color: inherit;
+    border: none;
+  }
+  &.menu {
+    .active > a {
+      background-color: inherit;
+    }
+  }
+
+  .tabs-content .content {
+    //text-align: justify;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    color: $brand-colour;
+    line-height: 1;
+    font-size: 4em;
+    padding: 0 .5em 0 0;
+  }
+  &.open {
+    display: block;
+  }
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 0.5em;
+    border-color: transparent transparent $medium-gray transparent;
+    border-bottom-style: solid;
+    position: absolute;
+    top: -1em;
+    left: 3em;
+    z-index: 99;
+  }
+
+  header {
+    @media only screen and (min-width: 65em) {
+      padding: 0 2em;
+    }
+    border-bottom: 1px solid $medium-gray;
+    li {
+      display: inline-block;
+      &.active {
+        a {
+          color: $brand-colour;
+          border-bottom: 4px solid $brand-colour;
+        }
+      }
+      a {
+        padding: 1.5em 0 1em 0;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: normal;
+        display: block;
+        color: $dark-gray;
+        border-bottom: none;
+        margin-bottom: -2px;
+      }
+    }
+  }
+  .content {
+    @media only screen and (min-width: 65em) {
+      padding: 0 2em;
+    }
+    section {
+      display: inline-block;
+      padding: 2em 1em;
+      /*width: 33%;*/
+      color: $brand-colour;
+      float: left !important;
+      box-sizing: border-box;
+      a, a:hover, .active {
+        padding: 0.5em 0;
+        border-bottom: none;
+        font-weight: normal;
+        display: block;
+        font-size: 0.9em;
+
+        span {
+          color: $brand-colour;
+        }
+      }
+      a {
+        cursor: pointer;
+        color: $black;
+        &.active {
+          color: $brand-colour;
+        }
+        span {
+          font-size: 0.6em;
+          color: $medium-gray;
+        }
+      }
+    }
+  }
+
+  li a.more, li a.more:hover {
+    font-size: 0.7em;
+    border-top: 1px solid #ccc;
+    margin-top: 0.5em;
+    padding-top: 1em;
+  }
+  a.disabled {
+    color: $dark-gray;
+    cursor: default;
+
+    &:hover {
+      color: $dark-gray;
+    }
+
+    span, span:hover {
+      color: $dark-gray !important;
+    }
+  }
+}

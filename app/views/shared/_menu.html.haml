@@ -1,33 +1,34 @@
-.contain-to-grid.sticky
-  %nav.top-bar{'data-topbar' => true, role: "navigation"}
-    %ul.title-area
-      %li.name
-        %h1= link_to t('site_title'), root_url
-      %li.toggle-topbar.menu-icon= link_to "Menu", '#'
+.title-bar{'data-hide-for' => 'medium', 'data-responsive-toggle' => 'responsive-menu'}
+  %button.menu-icon{'data-toggle' => 'responsive-menu', type: 'button'}
+  .title-bar-title Menu
 
-    %section.top-bar-section
-      %ul.left
-        %li= link_to 'Home', root_url
-        %li= link_to 'Contact', '/contact'
-        %li= link_to 'About', '/about'
-        - unless current_page? root_url
-          %li.has-form
-            .row.collapse
-              = form_tag records_path, :method => :get, class: 'search' do
-                = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
-                .large-8.small-9.columns
-                  = text_field_tag :text, @search.text, class: 'search-input', placeholder: t('records.enter_search')
-                .large-4.small-3.columns
-                  = submit_tag "Search", class: "search-button"
+#responsive-menu.top-bar
+  .top-bar-left
+    %ul.dropdown.menu{'data-dropdown-menu' => ''}
+      %li.menu-text= t('site_title')
+      %li= link_to 'Home', root_url
+      %li= link_to 'Contact', '/contact'
+      %li= link_to 'About', '/about'
+      - unless current_page? root_url
+        %li
+          = form_with scope: :get, url: records_path, local: false, class: 'input-group' do |form|
+            = form.hidden_field 'tab', params[:tab] if params[:tab].present?
+            = form.text_field @search.text, class: 'input-group-field', placeholder: t('records.enter_search')
+            .input-group-button
+              = form.submit 'Search', class: 'button'
+  .top-bar-right
+    %ul.dropdown.menu{'data-dropdown-menu' => ''}
+      - if user_signed_in?
+        %li.has-submenu
+          %a= current_user.email.split('@').first
+          %ul.submenu.menu.vertical{'data-submenu': true}
+            %li= link_to 'Edit profile', edit_user_registration_path
+            %li= link_to 'Logout', destroy_user_session_path, method: :delete
+      - else
+        %li= link_to 'Sign up', new_user_registration_path
+        %li= link_to 'Login', new_user_session_path
 
-      %ul.right
-        - if user_signed_in?
-          %li.has-dropdown
-            %a= current_user.email.split('@').first
-            %ul.dropdown
-              %li= link_to 'Edit profile', edit_user_registration_path
-              %li= link_to "Logout", destroy_user_session_path, method: :delete
-        - else
-          %li= link_to "Sign up", new_user_registration_path
-          %li= link_to "Login", new_user_session_path
+
+/ .contain-to-grid.sticky
+/   %nav.top-bar{role: 'navigation'}
 
