@@ -1,11 +1,11 @@
 !!!
 %html
-  = render "shared/head"
+  = render 'shared/head'
 
   %body{ class: yield(:body_class) }
-    = render "shared/header"
-    = render "shared/flash"
+    = render partial: 'shared/menu', locals: { search: @search }
+    = render 'shared/flash'
 
     .main= yield
 
-    = render "shared/footer"
+    = render 'shared/footer'

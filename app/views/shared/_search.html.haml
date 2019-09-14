@@ -1,4 +1,4 @@
 = form_with url: records_path, method: :get, local: true, class: 'search clearfix' do |form|
   = form.hidden_field 'tab', params[:tab] if params[:tab].present?
-  = form.text_field @search.text, class: 'search-input', placeholder: t('records.enter_search')
+  = form.text_field search.text, class: 'search-input', placeholder: t('records.enter_search')
   = form.submit 'Search', class: 'search-button'

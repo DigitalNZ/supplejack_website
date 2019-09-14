@@ -1,1 +1,2 @@
-= render partial: "shared/add_to_set_logged_#{logged_in ? 'in' : 'out'}", locals: {record_id: record.id}
+= render partial: "shared/add_to_set_logged_#{logged_in ? 'in' : 'out'}",
+         locals: { record_id: record.id }

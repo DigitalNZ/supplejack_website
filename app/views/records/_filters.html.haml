@@ -1,10 +1,10 @@
 %body
   .clearfix
-    %button.filter-btn.button.menu{type: 'button', value: 0} Filters
+    %button.filter-btn.button.menu{ type: 'button', value: 0 } Filters
     = render 'active_filters'
-  .filter-container.menu.clearfix{style: "display:none"}
+  .filter-container.menu.clearfix
     %header.clearfix
-      %ul.tabs{"data-tab" => ""}
+      %ul.tabs{ 'data-tab': true }
         %li.active= link_to 'Quick filters', '#panel1-1'
         = render 'filter_tabs'
     %button.close

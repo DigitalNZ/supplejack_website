@@ -1,5 +1,5 @@
 - filter_facets.each_with_index do |facet, index|
   %li.filterTitle
-    %a{href: "#panel1-#{(index + 2)}"}= facet[0].capitalize.gsub("_", " ")
+    %a{ href: "#panel1-#{(index + 2)}" }= facet[0].capitalize.gsub("_", " ")
 / %li
 /   %a.button.tiny.filter-close{:href => "#panel1-1"} X

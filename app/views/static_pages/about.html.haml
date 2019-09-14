@@ -1,8 +1,18 @@
 .grid-container
   %h1 About
-  %p This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources. This website connects to harvested content via the Supplejack API. The default configuration of this website assumes the use of common schema elements and matching test data.
-  %p If you are not seeing the expected content in this demo, you may need to either check you have harvested the right data, update your schema in the supplejack_api, or update your connecting fields in the supplejack_client and supplejack_website applications.
   %p
-    The standard search tabs and filter options are populated dynamically based on top record counts, and can be overridden in the supplejack_website application. You can find further details at
+    This website demo is part of the standard Supplejack platform that can
+    aggregate data and content from many different sources. This website
+    connects to harvested content via the Supplejack API. The default configuration
+    of this website assumes the use of common schema elements and matching test data.
+  %p
+    If you are not seeing the expected content in this demo, you may need to either
+    check you have harvested the right data, update your schema in the supplejack_api,
+    or update your connecting fields in the supplejack_client and supplejack_website
+    applications.
+  %p
+    The standard search tabs and filter options are populated dynamically based on top
+    record counts, and can be overridden in the supplejack_website application.
+    You can find further details at
     = succeed "." do
-      %a{:href => "http://www.digitalnz.org/supplejack"} www.digitalnz.org/supplejack
+      %a{ href: 'http://www.digitalnz.org/supplejack' } www.digitalnz.org/supplejack
