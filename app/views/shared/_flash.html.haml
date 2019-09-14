@@ -1,0 +1,8 @@
+- if flash.present?
+  .grid-container
+    - flash.each do |name, msg|
+      .callout{'data-closable': true, class: name}
+        %p= msg
+        %button.close-button{'aria-label': 'Dismiss alert', 'data-close': true, type: 'button'}
+          %span{'aria-hidden': true}
+            &times;

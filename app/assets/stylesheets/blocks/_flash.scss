@@ -1,0 +1,5 @@
+.callout {
+  &.notice {
+    @include callout-style(map-get($foundation-palette, success));
+  }
+}

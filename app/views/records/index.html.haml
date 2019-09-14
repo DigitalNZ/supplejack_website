@@ -1,7 +1,9 @@
 - content_for(:body_class) {'records'}
 - title @search.text
-= render 'search_tabs'
-.container.results
+
+.grid-container
+  = render 'search_tabs'
+.grid-container.results
   = render 'filters'
   .gallery-container
     %span.gallery-spinner
