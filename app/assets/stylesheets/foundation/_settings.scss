@@ -1,23 +1,6 @@
-// To change a foundation variable:
+// TO CHANGE A FOUNDATION VARIABLE:
 //     - Copy it in `_settings_overrides.scss`
 //     - Comment the variable here
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  Foundation for Sites Settings
 //  -----------------------------
@@ -688,8 +671,8 @@ $prototype-separator-margin-top: $global-margin;
 // --------------------
 
 $prototype-shadow-breakpoints: $global-prototype-breakpoints;
-$prototype-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-                       0 2px 10px 0 rgba(0,0,0,.12);
+$prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
 // 41. Prototype Sizing
 // --------------------
