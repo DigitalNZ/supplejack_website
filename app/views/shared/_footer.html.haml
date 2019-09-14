@@ -1,8 +1,10 @@
 %footer
-  .row
+  .grid-container
     %nav
-      / <haml_loud> link_to &quot;Become a Partner&quot;, become_a_partner_path </haml_loud>
-      / <haml_loud> link_to &quot;Contact&quot;, contact_path </haml_loud>
-      = link_to 'Terms of use', terms_path
+      %ul.menu.align-center
+        %li= link_to 'Become a Partner', become_a_partner_path
+        %li= link_to 'Contact', contact_path
+        %li= link_to 'Terms of use', terms_path
+
 = javascript_include_tag 'application'
 = javascript_pack_tag 'application'
