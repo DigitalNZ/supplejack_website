@@ -1,11 +1,11 @@
 - @search['i']&.each do |facet, value|
-  = content_tag :button, date_parser_for(value),          |
-    class: "filter-unit",                |
-    id: "target-#{filter_class(value)}", |
-    data: {facet: facet, filter: value}  |
--@search['or']&.each do |facet, values|
+  = tag.button, date_parser_for(value),
+    class: "filter-unit",
+    id: "target-#{filter_class(value)}",
+    data: { facet: facet, filter: value }
+- @search['or']&.each do |facet, values|
   - values.each do |value|
-    = content_tag :button, date_parser_for(value),          |
-      class: "filter-unit",                |
-      id: "target-#{filter_class(value)}", |
-      data: {facet: facet, filter: value}  |
+    = tag.button, date_parser_for(value),
+      class: "filter-unit",
+      id: "target-#{filter_class(value)}",
+      data: { facet: facet, filter: value }
