@@ -6,7 +6,15 @@ addons:
 services:
   - mysql
 
-cache: bundler
+cache:
+  bundler: true
+  yarn: true
+  directories:
+    - node_modules
+
+before_install:
+  - gem update --system
+  - gem install bundler --version $(tail -n 1 Gemfile.lock)
 
 jobs:
   include:
@@ -15,6 +23,16 @@ jobs:
       name: 'Rubocop'
       script:
         - bundle exec rubocop
+
+    - stage: lint
+      name: 'Haml Lint'
+      script:
+        - bundle exec haml-lint app/**/*.html.haml
+
+    - stage: lint
+      name: 'Stylelint'
+      script:
+        - ./node_modules/.bin/stylelint --color app/assets/stylesheets/**/*.scss
 
     - stage: test
       name: 'Unit tests'
