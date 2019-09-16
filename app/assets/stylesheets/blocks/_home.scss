@@ -1,28 +1,8 @@
 .home {
-  height: calc(100vh - 2em);
-  width: 100%;
-
-  .display-table & {
-    display: table;
-  }
-
-  header {
-    li {
-      line-height: 2em;
-    }
-  }
-
-  .centerScreen {
-    .display-table & {
-      display: table-cell;
-      vertical-align: middle;
-      height: 100%;
-      margin: auto 0 auto;
-    }
-  }
+  height: calc(80vh);
 
   .search {
-    width: 26em;
+    width: 26rem;
     margin: 0 auto;
 
     .search-input {
@@ -30,34 +10,32 @@
       border: 1px solid $dark-gray;
       border-right: none;
       background-color: $light-gray;
-      width: 22em;
-      padding: 0.5em 1em;
-      line-height: 2em;
-      font-size: 1em;
-      height: 3em !important;
+      width: 22rem;
+      padding: 0.5rem 1rem;
+      line-height: 2rem;
+      font-size: 1rem;
+      height: 3rem !important;
       box-sizing: border-box;
+    }
+
+    ::placeholder {
+      color: $dark-gray;
     }
 
     .search-button {
       background: url("../assets/search-icon.svg") center center no-repeat;
-      background-size: 3.5em;
-      width: 4em;
-      height: 4em;
-      font-size: 1em;
+      background-size: 3.5rem;
+      width: 4rem;
+      height: 4rem;
+      font-size: 1rem;
       background-color: $brand-colour;
       outline: none;
       border: none;
-      text-indent: -999em;
-      margin-top: -0.5em;
+      text-indent: -999rem;
+      margin-top: -0.5rem;
       -webkit-box-shadow: -14px 0 20px -6px rgba(0, 0, 0, 0.45);
       -moz-box-shadow: -14px 0 20px -6px rgba(0, 0, 0, 0.45);
       box-shadow: -14px 0 20px -6px rgba(0, 0, 0, 0.45);
-    }
-
-    input[placeholder],
-    [placeholder],
-    *[placeholder] {
-      color: #666;
     }
 
     .search-input,
@@ -67,26 +45,17 @@
   }
 
   .logo {
-    .display-table & {
-      padding: 0 0 0.7em 0;
-    }
-
-    .no-display-table & {
-      padding: 4em 0 0.7em 0;
-    }
-
-    text-align: center;
-    color: #4b4b51;
+    color: $black;
     font-weight: 400;
-    font-size: 3em;
+    margin-bottom: 2rem;
   }
 
   .introText {
-    line-height: 1.8em;
-    font-size: 1.3em;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
     text-align: center;
     color: #777;
-    max-width: 35em;
-    margin: 4em auto 0 auto;
+    max-width: 45rem;
+    margin: 4rem auto 0 auto;
   }
 }
