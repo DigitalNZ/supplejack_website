@@ -1,5 +1,5 @@
 // fonts
-@import 'fonts/railway';
+@import 'fonts/raleway';
 @import 'fonts/rokkitt';
 
 // variables
@@ -16,12 +16,14 @@
 // mixins
 @import 'mixins/bem';
 
+// base element styles
+@import 'base';
+
 // blocks
 @import 'blocks/add_to_set';
 @import 'blocks/category_tabs';
 @import 'blocks/filter_container';
 @import 'blocks/flash';
-@import 'blocks/footer';
 @import 'blocks/gallery';
 @import 'blocks/home';
 @import 'blocks/records';
