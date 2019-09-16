@@ -1,8 +1,8 @@
 .content{ id: "panel1-#{index + 2}" }
   %section
-    %ul.grid-x
+    %ul.grid-x.grid-margin-x
       - facet_values.each do |label, count|
-        %li.cell.small-6.medium-3.large-2
+        %li.cell.small-6.medium-3
           %a{ class: filter_class(label), data: { facet: facet, filter: label } }
             #{date_parser_for(label)}
             %span.count= number_with_precision(count, delimiter: ',', precision: 0)

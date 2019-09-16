@@ -1,6 +1,5 @@
 .gallery-record {
   .add-to-set {
-    display: none;
     float: right;
     background-color: #777;
     color: white;
@@ -11,6 +10,7 @@
   }
 
   .add-to-set-popup {
+    display: none;
     position: absolute;
     z-index: 2;
     background-color: #020202;

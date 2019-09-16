@@ -24,22 +24,21 @@
     }
   }
 
-  .tabs {
-    background-color: inherit;
-    border: none;
-  }
-
   header {
     border-bottom: 1px solid $medium-gray;
 
-    ul {
+    ul.tabs {
+      background-color: inherit;
+
       li {
         display: inline-block;
+        background-color: inherit;
+        border: none;
 
         a {
-          padding: 1.5em 0 1em 0;
-          margin-left: 1em;
-          margin-right: 1em;
+          padding: 1.5rem 0 1rem 0;
+          margin-left: 1rem;
+          margin-right: 1rem;
           font-weight: normal;
           display: block;
           color: $dark-gray;
@@ -50,6 +49,7 @@
         &.active {
           a {
             color: $brand-colour;
+            background-color: inherit;
             border-bottom: 4px solid $brand-colour;
           }
         }
@@ -57,59 +57,52 @@
     }
   }
 
-  &.menu {
-    .active > a {
-      background-color: inherit;
-    }
-  }
-
   .tabs-content .content {
     display: none;
 
-    @media only screen and (min-width: 65em) {
-      padding: 0 2em;
+    &.active {
+      display: block;
     }
 
     section {
       display: inline-block;
-      padding: 2em 1em;
-
-      /* width: 33%; */
+      padding: 2rem 1rem;
       color: $brand-colour;
       float: left !important;
       box-sizing: border-box;
 
-      a {
-        cursor: pointer;
-        color: $black;
+      ul {
+        list-style: none;
+        margin: 1rem 0 0 0;
 
-        span {
-          font-size: 0.6em;
-          color: $medium-gray;
-        }
+        li a {
+          cursor: pointer;
+          color: $black;
+          padding: 0.5rem 0;
+          border-bottom: none;
+          font-weight: normal;
+          line-height: inherit;
+          display: block;
+          font-size: 0.9rem;
 
-        &.active {
-          color: $brand-colour;
+          span {
+            font-size: 0.6rem;
+            color: $dark-gray;
+          }
+
+          &.active {
+            color: $brand-colour;
+          }
+
+          &.more,
+          &.more:hover {
+            font-size: 0.7rem;
+            border-top: 1px solid #ccc;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+          }
         }
       }
-
-      a,
-      .active,
-      a:hover {
-        padding: 0.5em 0;
-        border-bottom: none;
-        font-weight: normal;
-        display: block;
-        font-size: 0.9em;
-
-        span {
-          color: $brand-colour;
-        }
-      }
-    }
-
-    &.active {
-      display: block;
     }
   }
 
@@ -120,8 +113,8 @@
     background-color: transparent;
     color: $brand-colour;
     line-height: 1;
-    font-size: 4em;
-    padding: 0 0.5em 0 0;
+    font-size: 4rem;
+    padding: 0 0.5rem 0 0;
   }
 
   &.open {
@@ -133,20 +126,12 @@
     display: block;
     width: 0;
     height: 0;
-    border: inset 0.5em;
+    border: inset 0.5rem;
     border-color: transparent transparent $medium-gray transparent;
     border-bottom-style: solid;
     position: absolute;
-    top: -1em;
-    left: 3em;
+    top: -1rem;
+    left: 3rem;
     z-index: 99;
-  }
-
-  li a.more,
-  li a.more:hover {
-    font-size: 0.7em;
-    border-top: 1px solid #ccc;
-    margin-top: 0.5em;
-    padding-top: 1em;
   }
 }

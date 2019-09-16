@@ -1,20 +1,15 @@
-h1 {
-  font-size: 2em;
-  color: $dark-gray;
-}
-
 .about {
+  margin: 3rem 0;
+
   .field-label {
     text-transform: none;
     font-weight: bold;
     display: block;
   }
-
-  margin: 3em 0;
 }
 
 .record {
-  padding-top: 3em;
+  padding-top: 3rem;
 
   .about,
   figure {
@@ -26,7 +21,7 @@ h1 {
     border-bottom: none;
 
     & > img {
-      padding: 0.5em;
+      padding: 0.5rem;
       border: 1px solid $light-gray;
       display: block;
     }
@@ -34,31 +29,36 @@ h1 {
 }
 
 .results {
-  padding-top: 2em;
+  padding-top: 2rem;
   position: relative;
+}
 
-  /* .filters-button {
-      background-color: $brand-colour;
-      color: white;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      &:hover, &:focus {
-        background-color: lighten($brand-colour, 10%);
-        color: white;
-      }
-    } */
+.filter-btn,
+.filter-unit,
+.filter-button {
+  float: left;
+  padding: 0.4rem;
+  line-height: 1.3rem;
+  vertical-align: bottom;
+  margin: 1rem 0.1rem;
+
+  &::after {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 0.2rem;
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 0 0 0.5rem;
+  }
 }
 
 .filter-btn {
-  float: left;
-  border: none;
-  padding: 0.5em 4em 0.5em 1em;
+  border: 1px solid $medium-gray;
   background-color: $medium-gray;
-
-  /* @include border-radius(0); */
   color: #000;
-  font-size: 0.8em;
-  position: relative;
-  vertical-align: bottom;
 
   &.on {
     background-color: $brand-colour;
@@ -66,60 +66,30 @@ h1 {
 
     &::after {
       content: '-';
-      border-left: 1px solid darken($brand-colour, 10%);
     }
   }
 
   &::after {
     content: '+';
-    border-left: 1px solid #aaa;
-    position: absolute;
-    right: 0.2em;
-    top: 0;
-    color: #000;
-    height: 2.2em;
-    width: 2em;
-    line-height: 2.2em;
-    font-size: 1em;
   }
 
   &:hover {
+    border: 1px solid $brand-colour;
     background-color: $brand-colour;
     color: #000;
   }
 }
 
-.filter-btn:hover::after {
-  border-left: 1px solid darken($brand-colour, 10%);
-}
-
 .filter-unit,
 .filters-button {
-  float: left;
   border: 1px solid $brand-colour;
   background-color: #fff;
-  font-size: 0.8em;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 0.4em;
   color: $brand-colour;
-  margin: 0 0 0 0.1em;
-  vertical-align: bottom;
-  line-height: 1.3em;
 }
 
 .filter-unit {
   &::after {
     content: '×';
-    padding: 0.3em;
-    font-size: 0.9em;
-    line-height: 0.2em;
-    height: 0.9em;
-    width: 0.9em;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    margin: 0 0 0 0.5em;
-    color: tint($brand-colour, 80);
   }
 
   &:hover {
@@ -129,8 +99,8 @@ h1 {
 }
 
 .pullout {
-  padding: 1em;
+  padding: 1rem;
   border: 1px solid #efefef;
-  border-left: 0.3em solid red;
-  margin-top: 1em;
+  border-left: 0.3rem solid red;
+  margin-top: 1rem;
 }
