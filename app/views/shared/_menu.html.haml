@@ -13,7 +13,7 @@
         - unless current_page? root_url
           %li
             = form_with url: records_path, local: false, class: 'input-group' do |form|
-              = form.hidden_field 'tab', params[:tab] if params[:tab].present?
+              = form.hidden_field :tab, value: params[:tab] if params[:tab].present?
               = form.text_field search.text,
                   class: 'input-group-field',
                   placeholder: t('records.enter_search')
