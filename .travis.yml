@@ -32,6 +32,7 @@ jobs:
     - stage: lint
       name: 'Stylelint'
       script:
+        - yarn install
         - ./node_modules/.bin/stylelint --color app/assets/stylesheets/**/*.scss
 
     - stage: test
