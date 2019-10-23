@@ -16,6 +16,7 @@ gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'pry-byebug'
 
 # custom gems
 gem 'activeresource'

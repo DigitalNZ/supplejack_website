@@ -1,6 +1,6 @@
 (function(global) {
   var init = function() {
-    $(".container").on('click', '.add-to-set', handleInitClick);
+    $(".grid-container").on('click', '.add-to-set', handleInitClick);
   };
 
   var handleInitClick = function(e) {
@@ -89,8 +89,8 @@
 
     $.ajax({
       method: "POST",
-      url: '/user_sets.js', 
-      data: {user_set: {name: setName}, record_id: recordId}, 
+      url: '/user_sets.js',
+      data: {user_set: {name: setName}, record_id: recordId},
       dataType: 'json'
     })
     .done(function(data) {
