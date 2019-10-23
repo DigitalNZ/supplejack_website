@@ -12,14 +12,14 @@ class SetItemsController < ApplicationController
       success = set_item.save
     end
 
-    render success ? { plain: "OK", status: 200 } : { plain: "OK", status: 500 }
+    render success ? { plain: 'OK', status: 200 } : { plain: 'OK', status: 500 }
   end
 
   private
 
-  def set_items_params
-    params.require(:user_set_id)
-    params.require(:user_set_item)
-    params.permit(:user_set_id, user_set_item: [:record_id])
-  end
+    def set_items_params
+      params.require(:user_set_id)
+      params.require(:user_set_item)
+      params.permit(:user_set_id, user_set_item: [:record_id])
+    end
 end

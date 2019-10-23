@@ -38,8 +38,8 @@ class UserSetsController < ApplicationController
 
   private
 
-  def user_set_params
-    params.require(:user_set).permit(:name)
-    params.permit(:record_id, :name, user_set: [:name])
-  end
+    def user_set_params
+      params.require(:user_set).permit(:name)
+      params.permit(:record_id, :name, user_set: [:name])
+    end
 end
