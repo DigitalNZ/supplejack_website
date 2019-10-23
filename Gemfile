@@ -16,6 +16,7 @@ gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'pry-byebug'
 
 # custom gems
 gem 'activeresource'
@@ -23,7 +24,8 @@ gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
 gem 'json'
-gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client'
+# gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client'
+gem 'supplejack_client', path: '/webspace/supplejack_client'
 gem 'will_paginate'
 
 # Assets
