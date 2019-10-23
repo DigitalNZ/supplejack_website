@@ -24,8 +24,7 @@ gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
 gem 'json'
-# gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client'
-gem 'supplejack_client', path: '/webspace/supplejack_client'
+gem 'supplejack_client', git: 'https://github.com/DigitalNZ/supplejack_client'
 gem 'will_paginate'
 
 # Assets

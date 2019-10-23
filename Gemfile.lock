@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/DigitalNZ/supplejack_client
+  revision: 3f31104d06480b5a183e97ff2e1f76b62624a4f2
+  specs:
+    supplejack_client (1.0.7)
+      rails (>= 3.2.12)
+      rails_autolink (~> 1.0)
+      rest-client (~> 2.0)
+      rubocop
+
+GIT
   remote: https://github.com/boost/boost-styles
   revision: c68ae8ebb28c2ec414da4747dbccf3f0266418e6
   specs:
@@ -7,15 +17,6 @@ GIT
       rubocop (~> 0.73)
       rubocop-performance (~> 1.4.0)
       rubocop-rspec (~> 1.33)
-
-PATH
-  remote: /webspace/supplejack_client
-  specs:
-    supplejack_client (1.0.7)
-      rails (>= 3.2.12)
-      rails_autolink (~> 1.0)
-      rest-client (~> 2.0)
-      rubocop
 
 GEM
   remote: https://rubygems.org/
