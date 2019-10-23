@@ -24,8 +24,6 @@ class UserSetsController < ApplicationController
   def create
     render nothing: true, status: 500 if params[:user_set].nil?
 
-    binding.pry
-
     user_set = current_sj_user.sets.build(user_set_params[:user_set].to_h)
     user_set.records = [{ record_id: user_set_params[:record_id] }] if user_set_params[:record_id]
     user_set.save
