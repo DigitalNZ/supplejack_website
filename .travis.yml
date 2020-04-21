@@ -62,11 +62,6 @@ jobs:
   allow_failures:
 
     - stage: test
-      name: 'yarn audit'
-      script:
-        - yarn audit
-
-    - stage: test
       name: 'brakeman check'
       script:
         - gem install brakeman
