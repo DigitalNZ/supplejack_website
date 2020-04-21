@@ -3,7 +3,7 @@
 .grid-container.record
   %figure
     = link_to(image_tag(@record.image_url(original: true), alt: @record.title, itemprop: 'image'),
-              @record.source_url)
+              html_escape(@record.source_url))
     .pullout
 
       = attribute(@record, :display_collection,
