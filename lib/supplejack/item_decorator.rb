@@ -16,5 +16,5 @@ module Supplejack
     end
   end
 
-  Item.send(:include, ItemDecorator)
+  Item.include ItemDecorator
 end
