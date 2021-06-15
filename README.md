@@ -1,8 +1,6 @@
 Supplejack Website
 ==================
 
-[![Build Status](https://travis-ci.org/DigitalNZ/supplejack_website.svg?branch=master)](https://travis-ci.org/DigitalNZ/supplejack_website)
-
 This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources.
 
 It uses the `supplejack_client` gem to connect to the Supplejack API. For more information about Supplejack Client gem, please refer to the [documentation](http://digitalnz.github.io/supplejack/start/supplejack-client.html).
