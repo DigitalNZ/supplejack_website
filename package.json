@@ -2,21 +2,23 @@
   "name": "supplejack_demo_website",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.2-2",
-    "@rails/activestorage": "^6.0.2-2",
-    "@rails/ujs": "^6.0.2-2",
-    "@rails/webpacker": "^5.1.1",
-    "glob-parent": "^5.1.2",
-    "hosted-git-info": "^3.0.8",
-    "is-svg": "^4.2.2",
-    "normalize-url": "^4.5.1",
+    "@rails/actioncable": "^6.0.4-1",
+    "@rails/activestorage": "^6.0.4-1",
+    "@rails/ujs": "^6.0.4-1",
+    "@rails/webpacker": "^5.4.3",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
-    "trim-newlines": "^3.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
+  },
+  "resolutions": {
+    "ansi-regex": "^5.0.1",
+    "glob-parent": ">= 5.1.2",
+    "is-svg": ">= 4.2.2",
+    "nth-check": ">= 2.0.1",
+    "set-value": ">= 4.0.1"
   }
 }
